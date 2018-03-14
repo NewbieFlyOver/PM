@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.taotao.mapper.ItemsMapper" >
+  <resultMap id="BaseResultMap" type="com.taotao.dto.Items" >
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="name" property="name" jdbcType="VARCHAR" />
+    <result column="price" property="price" jdbcType="REAL" />
+    <result column="pic" property="pic" jdbcType="VARCHAR" />
+    <result column="createtime" property="createtime" jdbcType="TIMESTAMP" />
+  </resultMap>
+ <select id="selectItems" resultMap="BaseResultMap">
+ 	select * from items
+ </select>
+ <select id="selectItemsById" resultMap="BaseResultMap" parameterType="Integer">
+ 	select * from items where id = #{id}
+ </select>
+
+
+ <update id="updateItemsById" parameterType="com.taotao.dto.Items">
+ 
+ 	update items set name=#{name}, price=#{price},detail=#{detail},pic=#{pic}
+ 	where id=#{id}
+ 	
+ </update>
+ 
+</mapper>
