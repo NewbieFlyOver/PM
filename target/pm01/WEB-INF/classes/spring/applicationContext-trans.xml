@@ -28,7 +28,7 @@
     </bean>
     <!-- 配置扫描包，加载mapper代理对象 -->
     <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
-        <property name="basePackage" value="com.taotao.mapper"></property>
+        <property name="basePackage" value="**.*.mapper"></property>
     </bean>
 
 
@@ -57,7 +57,7 @@
     <!-- 切面 -->
     <aop:config>
         <aop:advisor advice-ref="txAdvice"
-                     pointcut="execution(* com.taotao.service.*.*(..))" />
+                     pointcut="execution(* *..*ServiceImpl.*(..)))" />
     </aop:config>
 
 

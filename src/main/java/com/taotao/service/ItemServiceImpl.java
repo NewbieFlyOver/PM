@@ -1,6 +1,7 @@
 package com.taotao.service;
 
 import com.github.pagehelper.PageHelper;
+import com.pm.dsis.mm.mapper.UserMemberMapper;
 import com.taotao.dto.Items;
 import com.taotao.mapper.ItemsMapper;
 import org.springframework.beans.factory.annotation.Autowired;

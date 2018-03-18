@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.pm.dsis.mm.mapper.UserInfoMapper" >
+    <resultMap id="BaseResultMap" type="com.pm.dsis.mm.dto.UserInfo" >
+        <id column="USER_ID" property="userId" jdbcType="BIGINT" />
+        <result column="USER_ACCOUNT" property="userAccount" jdbcType="VARCHAR" />
+        <result column="USER_PASSWORD" property="userPassword" jdbcType="VARCHAR" />
+        <result column="USER_NAME" property="userName" jdbcType="VARCHAR" />
+        <result column="USER_NATIONAL" property="userNational" jdbcType="VARCHAR" />
+        <result column="USER_GENDER" property="userGender" jdbcType="VARCHAR" />
+        <result column="USER_NATIVE_PLACE" property="userNativePlace" jdbcType="VARCHAR" />
+        <result column="USER_ID_NUMBER" property="userIdNumber" jdbcType="VARCHAR" />
+        <result column="FIXED_TELEPHONE" property="fixedTelephone" jdbcType="VARCHAR" />
+        <result column="USER_QQ" property="userQq" jdbcType="VARCHAR" />
+        <result column="USER_EMAIL" property="userEmail" jdbcType="VARCHAR" />
+        <result column="USER_PHONE" property="userPhone" jdbcType="VARCHAR" />
+        <result column="USER_WE_CHAT" property="userWeChat" jdbcType="VARCHAR" />
+        <result column="USER_BLOG" property="userBlog" jdbcType="VARCHAR" />
+        <result column="USER_WORK_UNITS" property="userWorkUnits" jdbcType="VARCHAR" />
+        <result column="USER_DEPARTMENT" property="userDepartment" jdbcType="VARCHAR" />
+        <result column="USER_HOME ADDRESS" property="userHomeAddress" jdbcType="VARCHAR" />
+        <result column="USER_CORRESPONDENCE_ADDRESS" property="userCorrespondenceAddress" jdbcType="VARCHAR" />
+        <result column="USER_CAR_BRAND" property="userCarBrand" jdbcType="VARCHAR" />
+        <result column="USER_HOBBY" property="userHobby" jdbcType="VARCHAR" />
+        <result column="EMERGENCY_CONTACT" property="emergencyContact" jdbcType="VARCHAR" />
+        <result column="EMERGENCY_CONTACT_PHONE" property="emergencyContactPhone" jdbcType="VARCHAR" />
+        <result column="USER_TABOO" property="userTaboo" jdbcType="VARCHAR" />
+        <result column="USER_NOTE" property="userNote" jdbcType="VARCHAR" />
+        <result column="OBJECT" property="object" jdbcType="VARCHAR" />
+        <result column="ATTRIBUTE1" property="attribute1" jdbcType="VARCHAR" />
+        <result column="ATTRIBUTE2" property="attribute2" jdbcType="VARCHAR" />
+        <result column="ATTRIBUTE3" property="attribute3" jdbcType="VARCHAR" />
+        <result column="ATTRIBUTE4" property="attribute4" jdbcType="VARCHAR" />
+        <result column="ATTRIBUTE5" property="attribute5" jdbcType="VARCHAR" />
+        <result column="ATTRIBUTE6" property="attribute6" jdbcType="VARCHAR" />
+    </resultMap>
+
+    <insert id="insertUserInfo" parameterType="com.pm.dsis.mm.dto.UserInfo" >
+    insert into USER_INFO (USER_ACCOUNT, USER_PASSWORD,
+        USER_NAME, USER_NATIONAL, USER_GENDER,
+        USER_NATIVE_PLACE, USER_ID_NUMBER, FIXED_TELEPHONE,
+        USER_QQ, USER_EMAIL, USER_PHONE,
+        USER_WE_CHAT, USER_BLOG, USER_WORK_UNITS,
+        USER_DEPARTMENT, USER_HOME_ADDRESS, USER_CORRESPONDENCE_ADDRESS,
+        USER_CAR_BRAND, USER_HOBBY, EMERGENCY_CONTACT,
+        EMERGENCY_CONTACT_PHONE, USER_TABOO, USER_NOTE,OBJECT,
+        ATTRIBUTE1, ATTRIBUTE2, ATTRIBUTE3,
+        ATTRIBUTE4,ATTRIBUTE5,ATTRIBUTE6)
+    values (#{userAccount,jdbcType=VARCHAR},'123',
+        #{userName,jdbcType=VARCHAR}, #{userNational,jdbcType=VARCHAR}, #{userGender,jdbcType=VARCHAR},
+        #{userNativePlace,jdbcType=VARCHAR}, #{userIdNumber,jdbcType=VARCHAR}, #{fixedTelephone,jdbcType=VARCHAR},
+        #{userQq,jdbcType=VARCHAR}, #{userEmail,jdbcType=VARCHAR}, #{userPhone,jdbcType=VARCHAR},
+        #{userWeChat,jdbcType=VARCHAR}, #{userBlog,jdbcType=VARCHAR}, #{userWorkUnits,jdbcType=VARCHAR},
+        #{userDepartment,jdbcType=VARCHAR}, #{userHomeAddress,jdbcType=VARCHAR}, #{userCorrespondenceAddress,jdbcType=VARCHAR},
+        #{userCarBrand,jdbcType=VARCHAR}, #{userHobby,jdbcType=VARCHAR}, #{emergencyContact,jdbcType=VARCHAR},
+        #{emergencyContactPhone,jdbcType=VARCHAR}, #{userTaboo,jdbcType=VARCHAR}, #{userNote,jdbcType=VARCHAR}, #{object,jdbcType=VARCHAR},
+        #{attribute1,jdbcType=VARCHAR}, #{attribute2,jdbcType=VARCHAR}, #{attribute3,jdbcType=VARCHAR},
+        #{attribute4,jdbcType=VARCHAR},#{attribute5,jdbcType=VARCHAR},#{attribute6,jdbcType=VARCHAR}
+      )
+  </insert>
+
+
+</mapper>
+
+
+
+
+
+

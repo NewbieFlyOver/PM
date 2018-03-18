@@ -1,4 +1,4 @@
-package com.taotao.controller;
+package com.taotao.controllers;
 
 
 import com.taotao.dto.Items;
@@ -33,7 +33,7 @@ public class ItemController {
 
 	@RequestMapping("/test")
 	public  String index(){
-		return "test";
+		return "dsis/mm/mm_edit";
 	}
 
 	@RequestMapping("/")
@@ -71,7 +71,7 @@ public class ItemController {
 		return list;
 	}
 	//去修改页面 入参 id
-	@RequestMapping(value = "/itemEdit.action")
+	@RequestMapping(value = "/itemEdit")
 //	public ModelAndView toEdit(@RequestParam(value = "id",required = false,defaultValue = "1") Integer idaaq,
 	//public ModelAndView toEdit(Integer id,
 	public String toEdit(Integer id,

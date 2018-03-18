@@ -396,8 +396,8 @@ $(function(){
 	/*菜单json*/
 	var menu = [{"id":"1","name":"主菜单","parentId":"0","url":"","icon":"","order":"1","isHeader":"1","childMenus":[
 					{"id":"3","name":"商品管理","parentId":"1","url":"","icon":"&#xe604;","order":"1","isHeader":"0","childMenus":[
-						{"id":"4","name":"品牌管理","parentId":"3","url":"test1.html","icon":"","order":"1","isHeader":"0","childMenus":""},
-						{"id":"5","name":"分类管理","parentId":"3","url":"test2.html","icon":"","order":"1","isHeader":"0","childMenus":""},
+						{"id":"4","name":"会员信息","parentId":"3","url":"test","icon":"","order":"1","isHeader":"0","childMenus":""},
+						{"id":"5","name":"会员信息01","parentId":"3","url":"view/dsis/mm/mm_edit.html","icon":"","order":"1","isHeader":"0","childMenus":""},
                         {"id":"5","name":"分类管理","parentId":"3","url":"test2.html","icon":"","order":"1","isHeader":"0","childMenus":""}
 					]},
 					{"id":"6","name":"订单管理","parentId":"1","url":"","icon":"&#xe602;","order":"1","isHeader":"0","childMenus":[

@@ -7,7 +7,7 @@
         http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc-4.0.xsd
         http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
 
-    <context:component-scan base-package="com.taotao.controller" />
+    <context:component-scan base-package="**.*.controllers" />
     <mvc:annotation-driven />
 
     <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
@@ -19,5 +19,4 @@
     <mvc:resources location="/WEB-INF/kendoui/" mapping="/kendoui/**"/>
     <mvc:resources location="/WEB-INF/view/" mapping="/view/**"/>
     <mvc:resources location="/WEB-INF/common/" mapping="/common/**"/>
-    <!--<mvc:resources location="/WEB-INF/jsp/" mapping="/jsp/**"/>-->
 </beans>
