@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.pm.dsis.mm.mapper.QueryUserInfoMapper" >
+    <resultMap id="BaseResultMap" type="com.pm.dsis.mm.dto.QueryUserInfo" >
+        <id column="USER_ID" property="userId" jdbcType="BIGINT" />
+        <result column="USER_NAME" property="userName" jdbcType="VARCHAR" />
+        <result column="USER_PHONE" property="userPhone" jdbcType="VARCHAR" />
+        <result column="OBJECT" property="object" jdbcType="VARCHAR" />
+        <result column="MEMBER_SITUATION" property="memberSituation" jdbcType="VARCHAR" />
+        <result column="BUILDING_THEATER" property="buildingTheater" jdbcType="VARCHAR" />
+        <result column="BUILDING_UNIT" property="buildingUnit" jdbcType="VARCHAR" />
+        <result column="BUILDING_FLOOR" property="buildingFloor" jdbcType="VARCHAR" />
+        <result column="BUILDING_ROOM" property="buildingRoom" jdbcType="VARCHAR" />
+        <result column="HOUSING_USAGE" property="housingUsage" jdbcType="VARCHAR" />
+    </resultMap>
+
+    <select id="queryAllUserInfo" parameterType="com.pm.dsis.mm.dto.QueryUserInfo" resultMap="BaseResultMap">
+      select ui.USER_ID, ui.USER_NAME,ui.OBJECT,um.MEMBER_SITUATION,
+              bi.BUILDING_THEATER,bi.BUILDING_UNIT,bi.BUILDING_FLOOR,bi.BUILDING_ROOM,bi.HOUSING_USAGE
+      FROM user_info ui,building_info bi, user_member um
+      <where>
+          ui.USER_ID = bi.USER_ID
+          AND ui.USER_ID = um.USER_ID
+          <if test="userName!=null">
+             AND ui.USER_NAME like concat('%', concat(#{userName}, '%'))
+          </if>
+          <if test="userPhone!=null">
+              and ui.USER_PHONE like concat('%', concat(#{userPhone}, '%'))
+          </if>
+          <if test="object!=null">
+              and ui.OBJECT =#{object}
+          </if>
+          <if test="memberSituation!=null">
+              and um.MEMBER_SITUATION =  #{memberSituation}
+          </if>
+          <if test="buildingTheater!=null">
+              and bi.BUILDING_THEATER =  #{buildingTheater}
+          </if>
+          <if test="buildingUnit!=null">
+              and bi.BUILDING_UNIT =  #{buildingUnit}
+          </if>
+          <if test="buildingFloor!=null">
+              and bi.BUILDING_FLOOR =  #{buildingFloor}
+          </if>
+          <if test="buildingRoom!=null">
+              and bi.BUILDING_ROOM =  #{buildingRoom}
+          </if>
+          <if test="housingUsage!=null">
+          and bi.bi.HOUSING_USAGE =  #{housingUsage}
+      </if>
+      </where>
+    </select>
+
+
+
+
+</mapper>
+
+
+

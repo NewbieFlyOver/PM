@@ -2,6 +2,9 @@ package com.pm.dsis.mm.dto;
 
 import java.util.Date;
 
+/**
+ * 房屋信息
+ */
 public class BuildingInfo {
     private Long buildingId;
 
@@ -27,6 +30,8 @@ public class BuildingInfo {
 
     private Date stayinDate;
 
+    private String checkinStrDate;
+
     private String attribute1;
 
     private String attribute2;
@@ -38,6 +43,14 @@ public class BuildingInfo {
     private String attribute5;
 
     private String attribute6;
+
+    public String getCheckinStrDate() {
+        return checkinStrDate;
+    }
+
+    public void setCheckinStrDate(String checkinStrDate) {
+        this.checkinStrDate = checkinStrDate;
+    }
 
     public Long getBuildingId() {
         return buildingId;

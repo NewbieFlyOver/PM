@@ -13,4 +13,19 @@ public interface UserInfoMapper {
      * @return
      */
     int insertUserInfo(UserInfo userInfo);
+
+    /**
+     * 通过户主id查找户主基本信息
+     * @param userId
+     * @return
+     */
+    UserInfo selectByUserId(Long userId);
+
+    /**
+     * 更新户主基本信息
+     * @param userInfo
+     * @return
+     */
+    int updateByUserId(UserInfo userInfo);
+
 }

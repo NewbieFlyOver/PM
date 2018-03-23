@@ -1,8 +1,12 @@
 package com.pm.dsis.mm.service.serviceImpl;
 
+import com.pm.dsis.mm.dto.BuildingInfo;
+import com.pm.dsis.mm.dto.QueryUserInfo;
 import com.pm.dsis.mm.dto.UserInfo;
 
 import com.pm.dsis.mm.dto.UserMember;
+import com.pm.dsis.mm.mapper.BuildingInfoMapper;
+import com.pm.dsis.mm.mapper.QueryUserInfoMapper;
 import com.pm.dsis.mm.mapper.UserInfoMapper;
 import com.pm.dsis.mm.mapper.UserMemberMapper;
 import com.pm.dsis.mm.service.UserInfoService;
@@ -10,6 +14,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 
@@ -25,9 +32,24 @@ public class UserInfoServiceImpl implements UserInfoService {
     @Autowired
     private UserMemberMapper userMemberMapper;
 
+    @Autowired
+    private BuildingInfoMapper buildingInfoMapper;
+
+    @Autowired
+    private QueryUserInfoMapper queryUserInfoMapper;
+
 
     public int insertUserInfo(UserInfo userInfo){
-        return userInfoMapper.insertUserInfo(userInfo);
+        if (null == userInfo.getUserId()||userInfo.getUserId()==0) {
+            return userInfoMapper.insertUserInfo(userInfo);
+        }else{
+            return userInfoMapper.updateByUserId(userInfo);
+        }
+
+    }
+
+    public UserInfo selectByUserId(Long userId) {
+        return userInfoMapper.selectByUserId(userId);
     }
 
     @Transactional
@@ -56,4 +78,36 @@ public class UserInfoServiceImpl implements UserInfoService {
         }
     }
 
+    public int insertBuildingInfo(BuildingInfo buildingInfo){
+        if (null==buildingInfo.getBuildingId()||buildingInfo.getBuildingId()==0) {
+            return buildingInfoMapper.insertBuildingInfo(buildingInfo);
+        }else{
+            return  buildingInfoMapper.updateByBuildId(buildingInfo);
+        }
+
+    }
+
+    public BuildingInfo selectBuildById(Long userId){
+        BuildingInfo buildingInfo =  buildingInfoMapper.selectBuildById(userId);
+        buildingInfo.setCheckinStrDate(getStringDateShort(buildingInfo.getCheckinDate()));
+        return buildingInfoMapper.selectBuildById(userId);
+    }
+
+    public String getStringDateShort(Date time) {
+
+        SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");
+        String dateString = formatter.format(1521734400000L);
+        return dateString;
+    }
+
+
+    public List<QueryUserInfo> queryAllUserInfo(QueryUserInfo queryUserInfo){
+        List<QueryUserInfo> queryUserInfoList = queryUserInfoMapper.queryAllUserInfo(queryUserInfo);
+        //拼接房号，如：1-1-101
+        for (QueryUserInfo q: queryUserInfoList){
+            String roomName = q.getBuildingTheater()+"-"+q.getBuildingUnit()+"-"+q.getBuildingRoom();
+            q.setRoomName(roomName);
+        }
+        return queryUserInfoList;
+    }
 }

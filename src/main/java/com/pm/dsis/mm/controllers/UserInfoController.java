@@ -1,5 +1,7 @@
 package com.pm.dsis.mm.controllers;
 
+import com.pm.dsis.mm.dto.BuildingInfo;
+import com.pm.dsis.mm.dto.QueryUserInfo;
 import com.pm.dsis.mm.dto.UserInfo;
 import com.pm.dsis.mm.dto.UserMember;
 import com.pm.dsis.mm.service.UserInfoService;
@@ -8,10 +10,7 @@ import com.taotao.dto.Items;
 import com.taotao.service.ItemService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -26,6 +25,13 @@ public class UserInfoController {
     @Autowired
     private UserInfoService userInfoService;
 
+    /**
+     * 保存/更新户主信息
+     * @param request
+     * @param response
+     * @param userInfo
+     * @return
+     */
     @RequestMapping(value = "/mm/saveUserInfo",method = RequestMethod.POST)
     @ResponseBody
     public ResponseData saveUserInfo(HttpServletRequest request, HttpServletResponse response,@RequestBody UserInfo userInfo){
@@ -34,6 +40,24 @@ public class UserInfoController {
         return null;
 
     }
+
+    /**
+     * 根据户主id查询户主基本信息
+     * @param request
+     * @param response
+     * @param userId
+     * @return
+     */
+    @RequestMapping(value = "/mm/selectByUserId",method = RequestMethod.POST)
+    @ResponseBody
+    public ResponseData selectByUserId(HttpServletRequest request, HttpServletResponse response,@RequestParam Long userId){
+
+        List<UserInfo> userInfoList = new ArrayList<UserInfo>();
+        UserInfo userInfo = userInfoService.selectByUserId(userId);
+        userInfoList.add(userInfo);
+        return new ResponseData(userInfoList);
+    }
+
 
     /**
      * 保存/更新常住成员的信息
@@ -48,12 +72,28 @@ public class UserInfoController {
 
     }
 
+
+
+
+    /**
+     * 查询所有常住人员
+     * @param request
+     * @param response
+     * @return
+     */
     @RequestMapping(value = "/mm/selectAllUserMember",method = RequestMethod.POST)
     @ResponseBody
     public ResponseData selectAllUserInfo(HttpServletRequest request, HttpServletResponse response){
        return new ResponseData(userInfoService.selectAllUserMember());
     }
 
+    /**
+     * 删除根据id常住人员
+     * @param request
+     * @param response
+     * @param userMemberList
+     * @return
+     */
     @RequestMapping(value = "/mm/deteleUserMember",method = RequestMethod.POST)
     @ResponseBody
     public ResponseData deteleUserInfo(HttpServletRequest request, HttpServletResponse response,@RequestBody List<UserMember> userMemberList){
@@ -61,6 +101,67 @@ public class UserInfoController {
         userInfoService.deleteById(userMemberList);
         return new ResponseData(userInfoService.selectAllUserMember());
     }
+
+    /**
+     * 添加或者更新房屋信息
+     * @param request
+     * @param response
+     * @param buildingInfo
+     * @return
+     */
+    @RequestMapping(value = "/mm/insertBuildingInfo",method = RequestMethod.POST)
+    @ResponseBody
+    public ResponseData insertBuildingInfo(HttpServletRequest request, HttpServletResponse response,@RequestBody BuildingInfo buildingInfo){
+
+        userInfoService.insertBuildingInfo(buildingInfo);
+        return new ResponseData();
+    }
+
+    /**
+     * 根据户主id查询房屋信息
+     * @param request
+     * @param response
+     * @return
+     */
+    @RequestMapping(value = "/mm/selectBuildById",method = RequestMethod.POST)
+    @ResponseBody
+    public ResponseData selectBuildById(HttpServletRequest request, HttpServletResponse response,@RequestParam Long userId){
+
+        BuildingInfo buildingInfo = userInfoService.selectBuildById(userId);
+        List<BuildingInfo> buildingInfoList = new ArrayList<BuildingInfo>();
+        buildingInfoList.add(buildingInfo);
+        return new ResponseData(buildingInfoList);
+    }
+
+    /**
+     * 查询所有户主信息列表
+     * @param request
+     * @param response
+     * @return
+     */
+    @RequestMapping(value = "/mm/queryAllUserInfo",method = RequestMethod.POST)
+    @ResponseBody
+    public ResponseData queryAllUserInfo(HttpServletRequest request, HttpServletResponse response){
+        QueryUserInfo queryUserInfo = new QueryUserInfo();
+        List<QueryUserInfo> queryAllUserInfo = userInfoService.queryAllUserInfo(queryUserInfo);
+
+        return new ResponseData(queryAllUserInfo);
+    }
+    /**
+     * 查询所有户主信息列表
+     * @param request
+     * @param response
+     * @return
+     */
+    @RequestMapping(value = "/mm/queryAllUserInfo11",method = RequestMethod.POST, consumes = "application/json")
+    @ResponseBody
+    public ResponseData queryAllUserInfo11(HttpServletRequest request, HttpServletResponse response,@RequestBody QueryUserInfo queryUserInfo){
+
+        List<QueryUserInfo> queryAllUserInfo = userInfoService.queryAllUserInfo(queryUserInfo);
+
+        return new ResponseData(queryAllUserInfo);
+    }
+
 
 
 }

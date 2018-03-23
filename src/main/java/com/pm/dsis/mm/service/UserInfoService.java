@@ -1,5 +1,7 @@
 package com.pm.dsis.mm.service;
 
+import com.pm.dsis.mm.dto.BuildingInfo;
+import com.pm.dsis.mm.dto.QueryUserInfo;
 import com.pm.dsis.mm.dto.UserInfo;
 import com.pm.dsis.mm.dto.UserMember;
 
@@ -10,11 +12,18 @@ import java.util.List;
  */
 public interface UserInfoService {
     /**
-     * 添加户主信息
+     * 添加/更新户主信息
      * @param userInfo
      * @return
      */
     int insertUserInfo(UserInfo userInfo);
+
+    /**
+     * 根据户主id查询信息
+     * @param userId
+     * @return
+     */
+    UserInfo selectByUserId(Long userId);
 
     /**
      * 添加/更新常住人员的信息
@@ -32,8 +41,30 @@ public interface UserInfoService {
 
     /**
      * 根据id删除常住人员的信息
-     * @param memberId
+     * @param userMemberList
      * @return
      */
     void deleteById(List<UserMember> userMemberList);
+
+    /**
+     * 添加户主房屋信息
+     * @param buildingInfo
+     * @return
+     */
+    int insertBuildingInfo(BuildingInfo buildingInfo);
+
+    /**
+     * 根据户主id查询房屋信息
+     * @param userId
+     * @return
+     */
+    BuildingInfo selectBuildById(Long userId);
+
+    /**
+     * 查询户主信息列表
+     * @param queryUserInfo
+     * @return
+     */
+    List<QueryUserInfo> queryAllUserInfo(QueryUserInfo queryUserInfo);
+
 }
