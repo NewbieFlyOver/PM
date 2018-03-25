@@ -1,9 +1,6 @@
 package com.pm.dsis.mm.controllers;
 
-import com.pm.dsis.mm.dto.BuildingInfo;
-import com.pm.dsis.mm.dto.QueryUserInfo;
-import com.pm.dsis.mm.dto.UserInfo;
-import com.pm.dsis.mm.dto.UserMember;
+import com.pm.dsis.mm.dto.*;
 import com.pm.dsis.mm.service.UserInfoService;
 import com.pm.platform.ResponseData;
 import com.taotao.dto.Items;
@@ -212,6 +209,20 @@ public class UserInfoController {
         return new ResponseData(queryAllUserInfo);
     }
 
+    /**
+     * 查询所有的房屋类型
+     * @param request
+     * @param response
+     * @return
+     */
+    @RequestMapping(value = "/mm/selectAllType",method = RequestMethod.POST)
+    @ResponseBody
+    public ResponseData selectAllType(HttpServletRequest request, HttpServletResponse response){
+
+        List<BuildingType> BuildingTypes = userInfoService.selectAllType();
+
+        return new ResponseData(BuildingTypes);
+    }
 
 
 }

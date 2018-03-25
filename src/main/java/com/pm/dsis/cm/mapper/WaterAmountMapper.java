@@ -16,6 +16,8 @@ public interface WaterAmountMapper {
 
     List<WaterAmount> selectWaterAByMonth(int month);
 
+    List<WaterAmount> selectAllWaterA();
+
 
 
     int insertSelective(WaterAmount record);

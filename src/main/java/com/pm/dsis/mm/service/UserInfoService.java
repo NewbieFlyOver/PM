@@ -1,9 +1,6 @@
 package com.pm.dsis.mm.service;
 
-import com.pm.dsis.mm.dto.BuildingInfo;
-import com.pm.dsis.mm.dto.QueryUserInfo;
-import com.pm.dsis.mm.dto.UserInfo;
-import com.pm.dsis.mm.dto.UserMember;
+import com.pm.dsis.mm.dto.*;
 
 import java.util.List;
 
@@ -87,4 +84,9 @@ public interface UserInfoService {
      */
     List<QueryUserInfo> queryAllUserInfo(QueryUserInfo queryUserInfo);
 
+    /**
+     * 查询所有的房屋类型
+     * @return
+     */
+    List<BuildingType> selectAllType();
 }

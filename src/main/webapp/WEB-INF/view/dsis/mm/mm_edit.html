@@ -673,6 +673,8 @@
                 data: JSON.stringify(dataSource),
                 success: function (data) {
                     if (data.success) {
+                        alert("保存成功！")
+
                     }
                 }
             });
@@ -691,15 +693,7 @@
                 data: userInfo,
                 success: function (data) {
                     if (data.success) {
-                       /* kendo.ui.showInfoDialog({
-                            title: '提示信息',
-                            message: '更新成功!'
-                        }).done(function (event) {
-                            if (event.button == 'OK') {
-                                window.parent.$("#editUser").data("kendoWindow").close();
-                                window.parent.$("#grid").data("kendoGrid").dataSource.page(1);
-                            }
-                        })*/
+                       alert("保存成功！")
                     }
                 }
             });
@@ -714,16 +708,19 @@
                 contentType: "application/json",
                 data: userInfo,
                 success: function (data) {
-                    if (data.success) {/*
-                        kendo.ui.showInfoDialog({
-                            title: '提示信息',
-                            message: '更新成功!'
-                        }).done(function (event) {
-                            if (event.button == 'OK') {
-                                window.parent.$("#editUser").data("kendoWindow").close();
-                                window.parent.$("#grid").data("kendoGrid").dataSource.page(1);
+                    if (data.success) {
+                        alert("保存成功！")
+                        $.ajax({
+                            type : "POST" ,
+                            url: "/mm/selectBuildById",
+                            dataType: "json",
+                            data: {userId:userId},
+                            success: function (data) {
+                                if (data.success) {
+                                    viewModel.model.set('BuildingInfo',data.rows[0]);
+                                }
                             }
-                        })*/
+                        });
                     }
                 }
             });

@@ -20,6 +20,7 @@ public class WaterAmountServiceImpl implements WaterAmountService {
 
     public void insertWaterAmount(List<WaterAmount> waterAmounts){
         for (WaterAmount wat:waterAmounts) {
+            //TODO：添加本月用量
             if(null == wat.getWaId()){
                 waterAmountMapper.insertWaterAmount(wat);
             }else {

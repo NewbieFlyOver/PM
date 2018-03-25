@@ -1,0 +1,273 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.pm.dsis.cm.mapper.PmFeeMapper" >
+  <resultMap id="BaseResultMap" type="com.pm.dsis.cm.dto.PmFee" >
+    <id column="PM_ID" property="pmId" jdbcType="BIGINT" />
+    <result column="USER_ID" property="userId" jdbcType="BIGINT" />
+    <result column="BUILDING_FULL_ROOM" property="buildingFullRoom" jdbcType="BIGINT" />
+    <result column="PM_UP_ID" property="pmUpId" jdbcType="BIGINT" />
+    <result column="ENERGY" property="energy" jdbcType="REAL" />
+    <result column="PM_MONTH" property="pmMonth" jdbcType="INTEGER" />
+    <result column="PM_BEGIN_DATE" property="pmBeginDate" jdbcType="DATE" />
+    <result column="PM_END_DATE" property="pmEndDate" jdbcType="DATE" />
+    <result column="PM_FLAG" property="pmFlag" jdbcType="VARCHAR" />
+    <result column="PM_OBJECT" property="pmObject" jdbcType="VARCHAR" />
+    <result column="ATTRIBUTE1" property="attribute1" jdbcType="VARCHAR" />
+    <result column="ATTRIBUTE2" property="attribute2" jdbcType="VARCHAR" />
+    <result column="ATTRIBUTE3" property="attribute3" jdbcType="VARCHAR" />
+    <result column="ATTRIBUTE4" property="attribute4" jdbcType="VARCHAR" />
+    <result column="ATTRIBUTE5" property="attribute5" jdbcType="VARCHAR" />
+    <result column="ATTRIBUTE6" property="attribute6" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Example_Where_Clause" >
+    <where >
+      <foreach collection="oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause" >
+    <where >
+      <foreach collection="example.oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List" >
+    PM_ID, BUILDING_FULL_ROOM, PM_UP_ID, ENERGY, PM_MONTH, PM_BEGIN_DATE, PM_END_DATE, PM_FLAG,
+    PM_OBJECT, ATTRIBUTE1, ATTRIBUTE2, ATTRIBUTE3, ATTRIBUTE4, ATTRIBUTE5, ATTRIBUTE6
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Long" >
+    select 
+    <include refid="Base_Column_List" />
+    from pm_fee
+    where PM_ID = #{pmId,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long" >
+    delete from pm_fee
+    where PM_ID = #{pmId,jdbcType=BIGINT}
+  </delete>
+
+  <insert id="insert" parameterType="com.pm.dsis.cm.dto.PmFee" >
+    insert into pm_fee (PM_ID, BUILDING_FULL_ROOM, PM_UP_ID,
+      ENERGY, PM_MONTH, PM_BEGIN_DATE, 
+      PM_END_DATE, PM_FLAG, PM_OBJECT, 
+      ATTRIBUTE1, ATTRIBUTE2, ATTRIBUTE3, 
+      ATTRIBUTE4, ATTRIBUTE5, ATTRIBUTE6
+      )
+    values (#{pmId,jdbcType=BIGINT}, #{buildingFullRoom,jdbcType=BIGINT}, #{pmUpId,jdbcType=BIGINT},
+      #{energy,jdbcType=REAL}, #{pmMonth,jdbcType=INTEGER}, #{pmBeginDate,jdbcType=DATE}, 
+      #{pmEndDate,jdbcType=DATE}, 'N', #{pmObject,jdbcType=VARCHAR},
+      #{attribute1,jdbcType=VARCHAR}, #{attribute2,jdbcType=VARCHAR}, #{attribute3,jdbcType=VARCHAR}, 
+      #{attribute4,jdbcType=VARCHAR}, #{attribute5,jdbcType=VARCHAR}, #{attribute6,jdbcType=VARCHAR}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.pm.dsis.cm.dto.PmFee" >
+    insert into pm_fee
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="pmId != null" >
+        PM_ID,
+      </if>
+      <if test="userId != null" >
+        USER_ID,
+      </if>
+      <if test="pmUpId != null" >
+        PM_UP_ID,
+      </if>
+      <if test="energy != null" >
+        ENERGY,
+      </if>
+      <if test="pmMonth != null" >
+        PM_MONTH,
+      </if>
+      <if test="pmBeginDate != null" >
+        PM_BEGIN_DATE,
+      </if>
+      <if test="pmEndDate != null" >
+        PM_END_DATE,
+      </if>
+      <if test="pmFlag != null" >
+        PM_FLAG,
+      </if>
+      <if test="pmObject != null" >
+        PM_OBJECT,
+      </if>
+      <if test="attribute1 != null" >
+        ATTRIBUTE1,
+      </if>
+      <if test="attribute2 != null" >
+        ATTRIBUTE2,
+      </if>
+      <if test="attribute3 != null" >
+        ATTRIBUTE3,
+      </if>
+      <if test="attribute4 != null" >
+        ATTRIBUTE4,
+      </if>
+      <if test="attribute5 != null" >
+        ATTRIBUTE5,
+      </if>
+      <if test="attribute6 != null" >
+        ATTRIBUTE6,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="pmId != null" >
+        #{pmId,jdbcType=BIGINT},
+      </if>
+      <if test="userId != null" >
+        #{userId,jdbcType=BIGINT},
+      </if>
+      <if test="pmUpId != null" >
+        #{pmUpId,jdbcType=BIGINT},
+      </if>
+      <if test="energy != null" >
+        #{energy,jdbcType=REAL},
+      </if>
+      <if test="pmMonth != null" >
+        #{pmMonth,jdbcType=INTEGER},
+      </if>
+      <if test="pmBeginDate != null" >
+        #{pmBeginDate,jdbcType=DATE},
+      </if>
+      <if test="pmEndDate != null" >
+        #{pmEndDate,jdbcType=DATE},
+      </if>
+      <if test="pmFlag != null" >
+        #{pmFlag,jdbcType=VARCHAR},
+      </if>
+      <if test="pmObject != null" >
+        #{pmObject,jdbcType=VARCHAR},
+      </if>
+      <if test="attribute1 != null" >
+        #{attribute1,jdbcType=VARCHAR},
+      </if>
+      <if test="attribute2 != null" >
+        #{attribute2,jdbcType=VARCHAR},
+      </if>
+      <if test="attribute3 != null" >
+        #{attribute3,jdbcType=VARCHAR},
+      </if>
+      <if test="attribute4 != null" >
+        #{attribute4,jdbcType=VARCHAR},
+      </if>
+      <if test="attribute5 != null" >
+        #{attribute5,jdbcType=VARCHAR},
+      </if>
+      <if test="attribute6 != null" >
+        #{attribute6,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+
+  <update id="updateByPrimaryKeySelective" parameterType="com.pm.dsis.cm.dto.PmFee" >
+    update pm_fee
+    <set >
+      <if test="userId != null" >
+        BUILDING_FULL_ROOM = #{buildingFullRoom,jdbcType=BIGINT},
+      </if>
+      <if test="pmUpId != null" >
+        PM_UP_ID = #{pmUpId,jdbcType=BIGINT},
+      </if>
+      <if test="energy != null" >
+        ENERGY = #{energy,jdbcType=REAL},
+      </if>
+      <if test="pmMonth != null" >
+        PM_MONTH = #{pmMonth,jdbcType=INTEGER},
+      </if>
+      <if test="pmBeginDate != null" >
+        PM_BEGIN_DATE = #{pmBeginDate,jdbcType=DATE},
+      </if>
+      <if test="pmEndDate != null" >
+        PM_END_DATE = #{pmEndDate,jdbcType=DATE},
+      </if>
+      <if test="pmFlag != null" >
+        PM_FLAG = #{pmFlag,jdbcType=VARCHAR},
+      </if>
+      <if test="pmObject != null" >
+        PM_OBJECT = #{pmObject,jdbcType=VARCHAR},
+      </if>
+      <if test="attribute1 != null" >
+        ATTRIBUTE1 = #{attribute1,jdbcType=VARCHAR},
+      </if>
+      <if test="attribute2 != null" >
+        ATTRIBUTE2 = #{attribute2,jdbcType=VARCHAR},
+      </if>
+      <if test="attribute3 != null" >
+        ATTRIBUTE3 = #{attribute3,jdbcType=VARCHAR},
+      </if>
+      <if test="attribute4 != null" >
+        ATTRIBUTE4 = #{attribute4,jdbcType=VARCHAR},
+      </if>
+      <if test="attribute5 != null" >
+        ATTRIBUTE5 = #{attribute5,jdbcType=VARCHAR},
+      </if>
+      <if test="attribute6 != null" >
+        ATTRIBUTE6 = #{attribute6,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where PM_ID = #{pmId,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.pm.dsis.cm.dto.PmFee" >
+    update pm_fee
+    set BUILDING_FULL_ROOM = #{buildingFullRoom,jdbcType=BIGINT},
+      PM_UP_ID = #{pmUpId,jdbcType=BIGINT},
+      ENERGY = #{energy,jdbcType=REAL},
+      PM_MONTH = #{pmMonth,jdbcType=INTEGER},
+      PM_BEGIN_DATE = #{pmBeginDate,jdbcType=DATE},
+      PM_END_DATE = #{pmEndDate,jdbcType=DATE},
+      PM_FLAG = #{pmFlag,jdbcType=VARCHAR},
+      PM_OBJECT = #{pmObject,jdbcType=VARCHAR},
+      ATTRIBUTE1 = #{attribute1,jdbcType=VARCHAR},
+      ATTRIBUTE2 = #{attribute2,jdbcType=VARCHAR},
+      ATTRIBUTE3 = #{attribute3,jdbcType=VARCHAR},
+      ATTRIBUTE4 = #{attribute4,jdbcType=VARCHAR},
+      ATTRIBUTE5 = #{attribute5,jdbcType=VARCHAR},
+      ATTRIBUTE6 = #{attribute6,jdbcType=VARCHAR}
+    where PM_ID = #{pmId,jdbcType=BIGINT}
+  </update>
+</mapper>

@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.pm.dsis.fee.mapper.WaterUnitPriceMapper" >
+  <resultMap id="BaseResultMap" type="com.pm.dsis.fee.dto.WaterUnitPrice" >
+    <id column="WA_UR_ID" property="waUrId" jdbcType="BIGINT" />
+    <result column="WA_UR_CEILING" property="waUrCeiling" jdbcType="REAL" />
+    <result column="WA_UR_LOWER" property="waUrLower" jdbcType="REAL" />
+    <result column="WA_UR_PRICE" property="waUrPrice" jdbcType="REAL" />
+    <result column="ATTRIBUTE1" property="attribute1" jdbcType="VARCHAR" />
+    <result column="ATTRIBUTE2" property="attribute2" jdbcType="VARCHAR" />
+    <result column="ATTRIBUTE3" property="attribute3" jdbcType="VARCHAR" />
+    <result column="ATTRIBUTE4" property="attribute4" jdbcType="VARCHAR" />
+    <result column="ATTRIBUTE5" property="attribute5" jdbcType="VARCHAR" />
+    <result column="ATTRIBUTE6" property="attribute6" jdbcType="VARCHAR" />
+  </resultMap>
+
+  <sql id="Base_Column_List" >
+    WA_UR_ID, WA_UR_CEILING, WA_UR_LOWER, WA_UR_PRICE, ATTRIBUTE1, ATTRIBUTE2, ATTRIBUTE3, 
+    ATTRIBUTE4, ATTRIBUTE5, ATTRIBUTE6
+  </sql>
+
+  <select id="selectAllWaterPrice" resultMap="BaseResultMap" parameterType="java.lang.Long" >
+    select
+    <include refid="Base_Column_List" />
+    from water_unit_price
+  </select>
+
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Long" >
+    select 
+    <include refid="Base_Column_List" />
+    from water_unit_price
+    where WA_UR_ID = #{waUrId,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long" >
+    delete from water_unit_price
+    where WA_UR_ID = #{waUrId,jdbcType=BIGINT}
+  </delete>
+
+  <insert id="insert" parameterType="com.pm.dsis.fee.dto.WaterUnitPrice" >
+    insert into water_unit_price (WA_UR_ID, WA_UR_CEILING, WA_UR_LOWER, 
+      WA_UR_PRICE, ATTRIBUTE1, ATTRIBUTE2, 
+      ATTRIBUTE3, ATTRIBUTE4, ATTRIBUTE5, 
+      ATTRIBUTE6)
+    values (#{waUrId,jdbcType=BIGINT}, #{waUrCeiling,jdbcType=REAL}, #{waUrLower,jdbcType=REAL}, 
+      #{waUrPrice,jdbcType=REAL}, #{attribute1,jdbcType=VARCHAR}, #{attribute2,jdbcType=VARCHAR}, 
+      #{attribute3,jdbcType=VARCHAR}, #{attribute4,jdbcType=VARCHAR}, #{attribute5,jdbcType=VARCHAR}, 
+      #{attribute6,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.pm.dsis.fee.dto.WaterUnitPrice" >
+    insert into water_unit_price
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="waUrId != null" >
+        WA_UR_ID,
+      </if>
+      <if test="waUrCeiling != null" >
+        WA_UR_CEILING,
+      </if>
+      <if test="waUrLower != null" >
+        WA_UR_LOWER,
+      </if>
+      <if test="waUrPrice != null" >
+        WA_UR_PRICE,
+      </if>
+      <if test="attribute1 != null" >
+        ATTRIBUTE1,
+      </if>
+      <if test="attribute2 != null" >
+        ATTRIBUTE2,
+      </if>
+      <if test="attribute3 != null" >
+        ATTRIBUTE3,
+      </if>
+      <if test="attribute4 != null" >
+        ATTRIBUTE4,
+      </if>
+      <if test="attribute5 != null" >
+        ATTRIBUTE5,
+      </if>
+      <if test="attribute6 != null" >
+        ATTRIBUTE6,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="waUrId != null" >
+        #{waUrId,jdbcType=BIGINT},
+      </if>
+      <if test="waUrCeiling != null" >
+        #{waUrCeiling,jdbcType=REAL},
+      </if>
+      <if test="waUrLower != null" >
+        #{waUrLower,jdbcType=REAL},
+      </if>
+      <if test="waUrPrice != null" >
+        #{waUrPrice,jdbcType=REAL},
+      </if>
+      <if test="attribute1 != null" >
+        #{attribute1,jdbcType=VARCHAR},
+      </if>
+      <if test="attribute2 != null" >
+        #{attribute2,jdbcType=VARCHAR},
+      </if>
+      <if test="attribute3 != null" >
+        #{attribute3,jdbcType=VARCHAR},
+      </if>
+      <if test="attribute4 != null" >
+        #{attribute4,jdbcType=VARCHAR},
+      </if>
+      <if test="attribute5 != null" >
+        #{attribute5,jdbcType=VARCHAR},
+      </if>
+      <if test="attribute6 != null" >
+        #{attribute6,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+
+  <update id="updateByPrimaryKeySelective" parameterType="com.pm.dsis.fee.dto.WaterUnitPrice" >
+    update water_unit_price
+    <set >
+      <if test="waUrCeiling != null" >
+        WA_UR_CEILING = #{waUrCeiling,jdbcType=REAL},
+      </if>
+      <if test="waUrLower != null" >
+        WA_UR_LOWER = #{waUrLower,jdbcType=REAL},
+      </if>
+      <if test="waUrPrice != null" >
+        WA_UR_PRICE = #{waUrPrice,jdbcType=REAL},
+      </if>
+      <if test="attribute1 != null" >
+        ATTRIBUTE1 = #{attribute1,jdbcType=VARCHAR},
+      </if>
+      <if test="attribute2 != null" >
+        ATTRIBUTE2 = #{attribute2,jdbcType=VARCHAR},
+      </if>
+      <if test="attribute3 != null" >
+        ATTRIBUTE3 = #{attribute3,jdbcType=VARCHAR},
+      </if>
+      <if test="attribute4 != null" >
+        ATTRIBUTE4 = #{attribute4,jdbcType=VARCHAR},
+      </if>
+      <if test="attribute5 != null" >
+        ATTRIBUTE5 = #{attribute5,jdbcType=VARCHAR},
+      </if>
+      <if test="attribute6 != null" >
+        ATTRIBUTE6 = #{attribute6,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where WA_UR_ID = #{waUrId,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.pm.dsis.fee.dto.WaterUnitPrice" >
+    update water_unit_price
+    set WA_UR_CEILING = #{waUrCeiling,jdbcType=REAL},
+      WA_UR_LOWER = #{waUrLower,jdbcType=REAL},
+      WA_UR_PRICE = #{waUrPrice,jdbcType=REAL},
+      ATTRIBUTE1 = #{attribute1,jdbcType=VARCHAR},
+      ATTRIBUTE2 = #{attribute2,jdbcType=VARCHAR},
+      ATTRIBUTE3 = #{attribute3,jdbcType=VARCHAR},
+      ATTRIBUTE4 = #{attribute4,jdbcType=VARCHAR},
+      ATTRIBUTE5 = #{attribute5,jdbcType=VARCHAR},
+      ATTRIBUTE6 = #{attribute6,jdbcType=VARCHAR}
+    where WA_UR_ID = #{waUrId,jdbcType=BIGINT}
+  </update>
+</mapper>

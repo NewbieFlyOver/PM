@@ -1,14 +1,8 @@
 package com.pm.dsis.mm.service.serviceImpl;
 
-import com.pm.dsis.mm.dto.BuildingInfo;
-import com.pm.dsis.mm.dto.QueryUserInfo;
-import com.pm.dsis.mm.dto.UserInfo;
+import com.pm.dsis.mm.dto.*;
 
-import com.pm.dsis.mm.dto.UserMember;
-import com.pm.dsis.mm.mapper.BuildingInfoMapper;
-import com.pm.dsis.mm.mapper.QueryUserInfoMapper;
-import com.pm.dsis.mm.mapper.UserInfoMapper;
-import com.pm.dsis.mm.mapper.UserMemberMapper;
+import com.pm.dsis.mm.mapper.*;
 import com.pm.dsis.mm.service.UserInfoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -37,6 +31,9 @@ public class UserInfoServiceImpl implements UserInfoService {
 
     @Autowired
     private QueryUserInfoMapper queryUserInfoMapper;
+
+    @Autowired
+    private BuildingTypeMapper buildingTypeMapper;
 
 
     public int insertUserInfo(UserInfo userInfo){
@@ -90,7 +87,7 @@ public class UserInfoServiceImpl implements UserInfoService {
 
         String buildingFullRoom = buildingInfo.getBuildingTheater()+"-"+buildingInfo.getBuildingUnit()+"-"+buildingInfo.getBuildingRoom();
         buildingInfo.setBuildingFullRoom(buildingFullRoom);
-        if (null==buildingInfo.getBuildingId()||buildingInfo.getBuildingId()==0) {
+        if (null == buildingInfo.getBuildingId()) {
             return buildingInfoMapper.insertBuildingInfo(buildingInfo);
         }else{
             return  buildingInfoMapper.updateByBuildId(buildingInfo);
@@ -120,5 +117,9 @@ public class UserInfoServiceImpl implements UserInfoService {
             q.setRoomName(roomName);
         }
         return queryUserInfoList;
+    }
+
+    public List<BuildingType> selectAllType(){
+        return buildingTypeMapper.selectAllType();
     }
 }
