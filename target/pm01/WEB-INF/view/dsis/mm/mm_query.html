@@ -237,11 +237,30 @@
                     style  : "text-align: center"
                 },
                 width: 120
+            },{
+                title: '详情',
+                width: 80,
+                template: function (rowdata) {
+                    if (!!rowdata.userId) {
+                        return '<a href="javascript:void(0);" onclick="editUserInfo('+rowdata.userId +')">查看</a>'
+                    }
+                    return '';
+                },
+                attributes: {style: "text-align:center"},
+                headerAttributes: { style: "text-align:center"}
+
             }
         ],
         editable: true,
     });
 
+
+     function editUserInfo(userId) {
+         //top.location='./mm_edit.html';
+         window.open ("./mm_edit.html", "newwindow","'location=no, toolbar=no'")
+            /* "height=100, width=400, top=0, left=0, toolbar=no, menubar=no, scrollbars=no, resizable=no,location=no, status=no")*/
+         window.localStorage["editUserId"]=JSON.stringify(userId);
+     }
     function queryAllUserInfo() {
         queryUserInfo=JSON.stringify(viewModel.model.queryUserInfo)
         $.ajax({

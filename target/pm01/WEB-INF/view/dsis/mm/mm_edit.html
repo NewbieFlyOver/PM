@@ -295,10 +295,10 @@
                             </div>
                             <div class="col-sm-4" id="25">
                                 <div class="form-group">
-                                    <label class="col-sm-4 control-label">小区名</label>
+                                    <label class="col-sm-4 control-label">房屋全称</label>
                                     <div class="col-sm-8">
-                                        <input id="buildingCommunity"  type="text" style="width: 100%" data-bind="value:model.BuildingInfo.buildingCommunity" class="k-textbox">
-                                    </div>
+                                        <input id="buildingFullRoom"  type="text" style="width: 100%" data-bind="value:model.BuildingInfo.buildingFullRoom" class="k-textbox">
+                                   </div>
                                 </div>
                             </div>
                             <div class="col-sm-4" id="26">
@@ -358,10 +358,6 @@
                                         <div class="col-sm-8">
                                             <input id="checkinDate"  type="date" style="width: 100%" data-bind="value:model.BuildingInfo.checkinDate">
                                         </div>
-                                          <!-- <script>
-                                                $("#stayinDate").kendoDatePicker({
-                                                format:"yyyy-MM-dd"
-                                            });</script>-->
                                     </div>
                                 </div>
                                 <div class="row">
@@ -371,9 +367,6 @@
                                             <div class="col-sm-8">
                                                 <input id="stayinDate"  type="date" style="width: 100%" data-bind="value:model.BuildingInfo.stayinDate">
                                             </div>
-                                            <!--<script> $("#stayinDate").kendoDatePicker({
-                                                format:"yyyy-MM-dd"
-                                            });</script>-->
                                         </div>
                                     </div>
                                 </div>
@@ -387,7 +380,7 @@
 
                     <div class="pull-left" id="toolbar-btn" style="padding-bottom:10px;">
                         <span class="btn btn-primary k-grid-add" style="float:left;margin-right:5px;" data-bind="click:createFunction">新建</span>
-                        <span class="btn btn-success k-grid-save-changes"   data-bind="click:saveFunction" style="float:left;margin-right:5px;">保存</span>
+                        <span class="btn btn-success k-grid-save-changes"  onclick="saveMemberInfo()" style="float:left;margin-right:5px;">保存</span>
                         <span  onclick="deleteData()"  class="btn btn-danger" style="float:left;">删除</span>
                     </div>
                     <script>kendo.bind($('#toolbar-btn'), viewModel);</script>
@@ -399,11 +392,11 @@
 
 
                 <script type="text/javascript">
-
+                    var userId=JSON.parse(window.localStorage["editUserId"]||'');
                         dataSource = new kendo.data.DataSource({
                             transport: {
                                 read:  {
-                                    url: "/mm/selectAllUserMember",
+                                    url: "/mm/selectMemberByUserId?userId="+userId,
                                     type : "POST",
                                     dataType: "json"
                                 },
@@ -527,6 +520,7 @@
                         editable: true,
                     });
 
+
                     function deleteData() {
                         var grid = $('#Grid').data('kendoGrid');
                         var userInfo = JSON.stringify(grid.selectedDataItems());
@@ -615,7 +609,6 @@
     </style>
 
     <script>
-        $(document).ready(function() {
             $("#tabstrip").kendoTabStrip({
                 animation:  {
                     open: {
@@ -623,13 +616,15 @@
                     }
                 }
             });
-        });
 
+
+       // var userId='${RequestParameters.userId!0}';
+        var userId=JSON.parse(window.localStorage["editUserId"]||'');
         $.ajax({
             type: 'POST',
             url: '/mm/selectBuildById',
             dataType: "json",
-            data:{userId:-1},
+            data:{userId:userId},
             success: function (data) {
                 viewModel.model.set('BuildingInfo', data.rows[0]);
                 var checkInDate = new Date(viewModel.model.BuildingInfo.checkinDate);
@@ -639,6 +634,7 @@
             }
         });
 
+        //时间格式化
         function dateStr(oDate) {
             oYear = oDate.getFullYear(),
                 oMonth = oDate.getMonth()+1,
@@ -660,13 +656,28 @@
             type: 'POST',
             url: '/mm/selectByUserId',
             dataType: "json",
-            data:{userId:1},
+            data:{userId:userId},
             success: function (data) {
                 viewModel.model.set('userInfo', data.rows[0]);
             }
         });
 
 
+        function saveMemberInfo() {
+            var dataSource = $("#Grid").data('kendoGrid').dataSource.data();
+            $.ajax({
+                type : "POST" ,
+                url: "/mm/addUserMember?userId="+userId,
+                dataType: "json",
+                contentType: "application/json",
+                data: JSON.stringify(dataSource),
+                success: function (data) {
+                    if (data.success) {
+                    }
+                }
+            });
+
+        }
 
 
         function saveUserInfo(){
@@ -718,7 +729,7 @@
             });
         }
 
-
+       // window.localStorage["editUserId"]=JSON.stringify('');
     </script>
 </div>
 

@@ -40,12 +40,15 @@ public class UserInfoServiceImpl implements UserInfoService {
 
 
     public int insertUserInfo(UserInfo userInfo){
-        if (null == userInfo.getUserId()||userInfo.getUserId()==0) {
-            return userInfoMapper.insertUserInfo(userInfo);
-        }else{
             return userInfoMapper.updateByUserId(userInfo);
-        }
+    }
 
+    public int addUserInfo(UserInfo userInfo){
+        return userInfoMapper.insertUserInfo(userInfo);
+    }
+
+    public Long queryUserId(){
+        return userInfoMapper.queryUserId();
     }
 
     public UserInfo selectByUserId(Long userId) {
@@ -71,6 +74,11 @@ public class UserInfoServiceImpl implements UserInfoService {
         return userMemberMapper.selectAllUserMember();
     }
 
+    public List<UserMember> selectMemberByUserId(Long userId){
+        return userMemberMapper.selectMemberByUserId(userId);
+    }
+
+
     public void deleteById(List<UserMember> userMemberList){
 
         for (UserMember userMember:userMemberList) {
@@ -79,6 +87,9 @@ public class UserInfoServiceImpl implements UserInfoService {
     }
 
     public int insertBuildingInfo(BuildingInfo buildingInfo){
+
+        String buildingFullRoom = buildingInfo.getBuildingTheater()+"-"+buildingInfo.getBuildingUnit()+"-"+buildingInfo.getBuildingRoom();
+        buildingInfo.setBuildingFullRoom(buildingFullRoom);
         if (null==buildingInfo.getBuildingId()||buildingInfo.getBuildingId()==0) {
             return buildingInfoMapper.insertBuildingInfo(buildingInfo);
         }else{
@@ -89,7 +100,7 @@ public class UserInfoServiceImpl implements UserInfoService {
 
     public BuildingInfo selectBuildById(Long userId){
         BuildingInfo buildingInfo =  buildingInfoMapper.selectBuildById(userId);
-        buildingInfo.setCheckinStrDate(getStringDateShort(buildingInfo.getCheckinDate()));
+       // buildingInfo.setCheckinStrDate(getStringDateShort(buildingInfo.getCheckinDate()));
         return buildingInfoMapper.selectBuildById(userId);
     }
 

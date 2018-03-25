@@ -396,17 +396,30 @@ $(function(){
 	/*菜单json*/
 	var menu = [{"id":"1","name":"主菜单","parentId":"0","url":"","icon":"","order":"1","isHeader":"1","childMenus":[
 					{"id":"3","name":"住户管理","parentId":"1","url":"","icon":"&#xe604;","order":"1","isHeader":"0","childMenus":[
-						{"id":"4","name":"户主信息","parentId":"3","url":"view/dsis/mm/mm_edit.html","icon":"","order":"1","isHeader":"0","childMenus":""},
-						{"id":"5","name":"户主查询","parentId":"3","url":"view/dsis/mm/mm_query.html","icon":"","order":"1","isHeader":"0","childMenus":""},
-                        {"id":"5","name":"分类管理","parentId":"3","url":"test2.html","icon":"","order":"1","isHeader":"0","childMenus":""}
+						{"id":"4","name":"户主查询","parentId":"3","url":"view/dsis/mm/mm_query.html","icon":"","order":"1","isHeader":"0","childMenus":""},
+						{"id":"5","name":"户主新建","parentId":"3","url":"view/dsis/mm/mm_new_edit.html","icon":"","order":"1","isHeader":"0","childMenus":""},
 					]},
 					{"id":"6","name":"费用管理","parentId":"1","url":"","icon":"&#xe602;","order":"1","isHeader":"0","childMenus":[
-						{"id":"7","name":"已付款","parentId":"6","url":"home3.html","icon":"","order":"1","isHeader":"0","childMenus":""},
-						{"id":"19","name":"测试","parentId":"6","url":"test01.html","icon":"","order":"1","isHeader":"0","childMenus":""}
+						{"id":"19","name":"物业费","parentId":"6","url":"home3.html","icon":"","order":"1","isHeader":"0","childMenus":""},
+                        {"id":"20","name":"水费","parentId":"6","url":"home3.html","icon":"","order":"1","isHeader":"0","childMenus":""},
+                        {"id":"21","name":"电费","parentId":"6","url":"home3.html","icon":"","order":"1","isHeader":"0","childMenus":""},
+                        {"id":"22","name":"燃气费","parentId":"6","url":"home3.html","icon":"","order":"1","isHeader":"0","childMenus":""},
+
+					]},
+					{"id":"7","name":"用量管理","parentId":"1","url":"","icon":"&#xe602;","order":"1","isHeader":"0","childMenus":[
+						{"id":"23","name":"用水量","parentId":"7","url":"view/dsis/cm/cm_water_amount.html","icon":"","order":"1","isHeader":"0","childMenus":""},
+						{"id":"24","name":"用电量","parentId":"7","url":"view/dsis/cm/cm_elect_amount.html","icon":"","order":"1","isHeader":"0","childMenus":""},
+						{"id":"19","name":"测试","parentId":"7","url":"test01.html","icon":"","order":"1","isHeader":"0","childMenus":""}
+					]},
+					{"id":"8","name":"车位管理","parentId":"1","url":"","icon":"&#xe602;","order":"1","isHeader":"0","childMenus":[
+						{"id":"27","name":"车位查询","parentId":"8","url":"home3.html","icon":"","order":"1","isHeader":"0","childMenus":""},
+					]},
+					{"id":"9","name":"报修管理","parentId":"1","url":"","icon":"&#xe602;","order":"1","isHeader":"0","childMenus":[
+						{"id":"27","name":"报修处理","parentId":"9","url":"home3.html","icon":"","order":"1","isHeader":"0","childMenus":""},
 					]}
 				]},
 				{"id":"2","name":"框架案例","parentId":"0","url":"","icon":"","order":"2","isHeader":"1","childMenus":[
-					{"id":"9","name":"新功能","parentId":"2","url":"","icon":"","order":"1","isHeader":"0","childMenus":""},
+					{"id":"30","name":"新功能","parentId":"2","url":"","icon":"","order":"1","isHeader":"0","childMenus":""},
 					{"id":"10","name":"多级","parentId":"2","url":"","icon":"","order":"1","isHeader":"0","childMenus":[
 						{"id":"11","name":"一级","parentId":"10","url":"","icon":"","order":"1","isHeader":"0","childMenus":""},
 						{"id":"12","name":"一级","parentId":"10","url":"","icon":"","order":"1","isHeader":"0","childMenus":[

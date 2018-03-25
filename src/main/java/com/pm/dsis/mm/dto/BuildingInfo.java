@@ -22,6 +22,8 @@ public class BuildingInfo {
 
     private String buildingRoom;
 
+    private String buildingFullRoom;
+
     private Float buildingArea;
 
     private String housingUsage;
@@ -43,6 +45,14 @@ public class BuildingInfo {
     private String attribute5;
 
     private String attribute6;
+
+    public String getBuildingFullRoom() {
+        return buildingFullRoom;
+    }
+
+    public void setBuildingFullRoom(String buildingFullRoom) {
+        this.buildingFullRoom = buildingFullRoom;
+    }
 
     public String getCheckinStrDate() {
         return checkinStrDate;

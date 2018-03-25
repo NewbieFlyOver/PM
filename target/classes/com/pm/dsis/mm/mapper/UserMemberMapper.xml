@@ -88,7 +88,12 @@
   <include refid="Base_Column_List" />
   from user_member
   </select>
-
+  <select id="selectMemberByUserId" resultMap="BaseResultMap" parameterType="java.lang.Long">
+    select
+    <include refid="Base_Column_List" />
+    from user_member
+    where USER_ID = #{userId}
+  </select>
    <select id="selectUserMember" resultMap="BaseResultMap" parameterType="java.lang.Long" >
     select 
     <include refid="Base_Column_List" />
@@ -109,7 +114,7 @@
       ATTRIBUTE1, ATTRIBUTE2, ATTRIBUTE3, 
       ATTRIBUTE4, ATTRIBUTE5, ATTRIBUTE6
       )
-    values ('-1', #{memberName,jdbcType=VARCHAR},
+    values (#{userId}, #{memberName,jdbcType=VARCHAR},
       #{memberRelationship,jdbcType=VARCHAR}, #{memberAge,jdbcType=INTEGER}, #{memberIdNumber,jdbcType=VARCHAR}, 
       #{memberWorkUnits,jdbcType=VARCHAR}, #{memberPhone,jdbcType=VARCHAR}, #{memberSituation,jdbcType=VARCHAR}, 
       #{memberSituationInstructions,jdbcType=VARCHAR}, #{memberNote,jdbcType=VARCHAR}, 

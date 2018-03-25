@@ -37,9 +37,32 @@ public class UserInfoController {
     public ResponseData saveUserInfo(HttpServletRequest request, HttpServletResponse response,@RequestBody UserInfo userInfo){
 
         int i = userInfoService.insertUserInfo(userInfo);
-        return null;
+        Long lastUserId = userInfoService.queryUserId();
+        List<Long> userIds = new ArrayList<Long>();
+        userIds.add(lastUserId);
+        return new ResponseData(userIds);
 
     }
+
+    /**
+     * 保存户主信息
+     * @param request
+     * @param response
+     * @param userInfo
+     * @return
+     */
+    @RequestMapping(value = "/mm/addUserInfo",method = RequestMethod.POST)
+    @ResponseBody
+    public ResponseData addUserInfo(HttpServletRequest request, HttpServletResponse response,@RequestBody UserInfo userInfo){
+
+        int i = userInfoService.addUserInfo(userInfo);
+        Long lastUserId = userInfoService.queryUserId();
+        List<Long> userIds = new ArrayList<Long>();
+        userIds.add(lastUserId);
+        return new ResponseData(userIds);
+
+    }
+
 
     /**
      * 根据户主id查询户主基本信息
@@ -66,14 +89,27 @@ public class UserInfoController {
      */
     @RequestMapping(value = "/mm/saveUserMember",method = RequestMethod.POST)
     @ResponseBody
-    public ResponseData saveUserInfo(HttpServletRequest request, HttpServletResponse response,@RequestBody List<UserMember> userInfo){
-        userInfoService.insertUserMember(userInfo);
+    public ResponseData saveUserInfo(HttpServletRequest request, HttpServletResponse response,@RequestBody List<UserMember> userMembers){
+        userInfoService.insertUserMember(userMembers);
         return new ResponseData();
 
     }
 
+    /**
+     * 保存常住成员的信息
+     * @param userMembers
+     * @return
+     */
+    @RequestMapping(value = "/mm/addUserMember",method = RequestMethod.POST)
+    @ResponseBody
+    public ResponseData addUserInfo(HttpServletRequest request, HttpServletResponse response,@RequestBody List<UserMember> userMembers ,@RequestParam Long userId){
+        for(UserMember userMember:userMembers){
+            userMember.setUserId(userId);
+        }
+        userInfoService.insertUserMember(userMembers);
+        return new ResponseData();
 
-
+    }
 
     /**
      * 查询所有常住人员
@@ -86,6 +122,20 @@ public class UserInfoController {
     public ResponseData selectAllUserInfo(HttpServletRequest request, HttpServletResponse response){
        return new ResponseData(userInfoService.selectAllUserMember());
     }
+
+    /**
+     * 根据户主id查询常住人员
+     * @param request
+     * @param response
+     * @return
+     */
+    @RequestMapping(value = "/mm/selectMemberByUserId",method = RequestMethod.POST)
+    @ResponseBody
+    public ResponseData selectUserMemberByUserId(HttpServletRequest request, HttpServletResponse response,@RequestParam Long userId){
+        return new ResponseData(userInfoService.selectMemberByUserId(userId));
+    }
+
+
 
     /**
      * 删除根据id常住人员

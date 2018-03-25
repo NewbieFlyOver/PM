@@ -19,6 +19,19 @@ public interface UserInfoService {
     int insertUserInfo(UserInfo userInfo);
 
     /**
+     * 新建户主信息
+     * @param userInfo
+     * @return
+     */
+    int addUserInfo(UserInfo userInfo);
+
+    /**
+     * 查询最新的userId
+     * @return
+     */
+    Long queryUserId();
+
+    /**
      * 根据户主id查询信息
      * @param userId
      * @return
@@ -38,6 +51,13 @@ public interface UserInfoService {
      * @return
      */
     List<UserMember> selectAllUserMember();
+
+    /**
+     * 根据户主id查询常住人员
+     * @param userId
+     * @return
+     */
+    List<UserMember> selectMemberByUserId(Long userId);
 
     /**
      * 根据id删除常住人员的信息

@@ -14,6 +14,10 @@ public interface UserMemberMapper {
 
     List<UserMember> selectAllUserMember();
 
+    List<UserMember> selectMemberByUserId(Long userId);
+
+
+
 
 
     int insertSelective(UserMember record);

@@ -10,6 +10,7 @@
     <result column="BUILDING_UNIT" property="buildingUnit" jdbcType="VARCHAR" />
     <result column="BUILDING_FLOOR" property="buildingFloor" jdbcType="VARCHAR" />
     <result column="BUILDING_ROOM" property="buildingRoom" jdbcType="VARCHAR" />
+    <result column="BUILDING_FULL_ROOM" property="buildingFullRoom" jdbcType="VARCHAR" />
     <result column="BUILDING_AREA" property="buildingArea" jdbcType="REAL" />
     <result column="HOUSING_USAGE" property="housingUsage" jdbcType="VARCHAR" />
     <result column="CHECKIN_DATE" property="checkinDate" jdbcType="DATE" />
@@ -81,7 +82,7 @@
   </sql>
   <sql id="Base_Column_List" >
     BUILDING_ID, USER_ID, BUILDING_TYPE_ID, BUILDING_COMMUNITY, BUILDING_THEATER, BUILDING_UNIT, 
-    BUILDING_FLOOR, BUILDING_ROOM, BUILDING_AREA, HOUSING_USAGE, CHECKIN_DATE, STAYIN_DATE, 
+    BUILDING_FLOOR, BUILDING_ROOM, BUILDING_FULL_ROOM, BUILDING_AREA, HOUSING_USAGE, CHECKIN_DATE, STAYIN_DATE,
     ATTRIBUTE1, ATTRIBUTE2, ATTRIBUTE3, ATTRIBUTE4, ATTRIBUTE5, ATTRIBUTE6
   </sql>
 
@@ -97,16 +98,16 @@
   </delete>
 
   <insert id="insertBuildingInfo" parameterType="com.pm.dsis.mm.dto.BuildingInfo" >
-    insert into building_info (BUILDING_ID, USER_ID, BUILDING_TYPE_ID, 
+    insert into building_info (USER_ID, BUILDING_TYPE_ID,
       BUILDING_COMMUNITY, BUILDING_THEATER, BUILDING_UNIT, 
-      BUILDING_FLOOR, BUILDING_ROOM, BUILDING_AREA, 
+      BUILDING_FLOOR, BUILDING_ROOM, BUILDING_FULL_ROOM, BUILDING_AREA,
       HOUSING_USAGE, CHECKIN_DATE, STAYIN_DATE, 
       ATTRIBUTE1, ATTRIBUTE2, ATTRIBUTE3, 
       ATTRIBUTE4, ATTRIBUTE5, ATTRIBUTE6
       )
-    values (#{buildingId,jdbcType=BIGINT}, '-1', '-2',
+    values (#{userId}, '-2',
       #{buildingCommunity,jdbcType=VARCHAR}, #{buildingTheater,jdbcType=VARCHAR}, #{buildingUnit,jdbcType=VARCHAR}, 
-      #{buildingFloor,jdbcType=VARCHAR}, #{buildingRoom,jdbcType=VARCHAR}, #{buildingArea,jdbcType=REAL}, 
+      #{buildingFloor,jdbcType=VARCHAR},#{buildingRoom,jdbcType=VARCHAR}, #{buildingFullRoom,jdbcType=VARCHAR}, #{buildingArea,jdbcType=REAL},
       #{housingUsage,jdbcType=VARCHAR}, #{checkinDate,jdbcType=DATE}, #{stayinDate,jdbcType=DATE}, 
       #{attribute1,jdbcType=VARCHAR}, #{attribute2,jdbcType=VARCHAR}, #{attribute3,jdbcType=VARCHAR}, 
       #{attribute4,jdbcType=VARCHAR}, #{attribute5,jdbcType=VARCHAR}, #{attribute6,jdbcType=VARCHAR}
@@ -318,6 +319,7 @@
       BUILDING_UNIT = #{buildingUnit,jdbcType=VARCHAR},
       BUILDING_FLOOR = #{buildingFloor,jdbcType=VARCHAR},
       BUILDING_ROOM = #{buildingRoom,jdbcType=VARCHAR},
+      BUILDING_FULL_ROOM = #{buildingFullRoom,jdbcType=VARCHAR},
       BUILDING_AREA = #{buildingArea,jdbcType=REAL},
       HOUSING_USAGE = #{housingUsage,jdbcType=VARCHAR},
       CHECKIN_DATE = #{checkinDate,jdbcType=DATE},

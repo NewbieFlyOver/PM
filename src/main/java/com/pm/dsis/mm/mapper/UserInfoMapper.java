@@ -14,6 +14,8 @@ public interface UserInfoMapper {
      */
     int insertUserInfo(UserInfo userInfo);
 
+    Long queryUserId();
+
     /**
      * 通过户主id查找户主基本信息
      * @param userId

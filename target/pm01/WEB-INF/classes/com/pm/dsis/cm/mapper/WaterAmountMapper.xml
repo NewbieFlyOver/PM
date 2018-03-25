@@ -1,0 +1,267 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.pm.dsis.cm.mapper.WaterAmountMapper" >
+  <resultMap id="BaseResultMap" type="com.pm.dsis.cm.dto.WaterAmount" >
+    <id column="WA_ID" property="waId" jdbcType="BIGINT" />
+    <result column="BUILDING_FULL_ROOM" property="buildingFullRoom" jdbcType="BIGINT" />
+    <result column="WA_NUMBER" property="waNumber" jdbcType="REAL" />
+    <result column="WA_MONTH" property="waMonth" jdbcType="INTEGER" />
+    <result column="WA_BIGEN_DATE" property="waBigenDate" jdbcType="DATE" />
+    <result column="WA_END_DATE" property="waEndDate" jdbcType="DATE" />
+    <result column="WA_WRITER" property="waWriter" jdbcType="VARCHAR" />
+    <result column="WA_FLAG" property="waFlag" jdbcType="VARCHAR" />
+    <result column="ATTRIBUTE1" property="attribute1" jdbcType="VARCHAR" />
+    <result column="ATTRIBUTE2" property="attribute2" jdbcType="VARCHAR" />
+    <result column="ATTRIBUTE3" property="attribute3" jdbcType="VARCHAR" />
+    <result column="ATTRIBUTE4" property="attribute4" jdbcType="VARCHAR" />
+    <result column="ATTRIBUTE5" property="attribute5" jdbcType="VARCHAR" />
+    <result column="ATTRIBUTE6" property="attribute6" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Example_Where_Clause" >
+    <where >
+      <foreach collection="oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause" >
+    <where >
+      <foreach collection="example.oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List" >
+    WA_ID, BUILDING_FULL_ROOM, WA_NUMBER, WA_MONTH, WA_BIGEN_DATE, WA_END_DATE, WA_WRITER, WA_FLAG,
+    ATTRIBUTE1, ATTRIBUTE2, ATTRIBUTE3, ATTRIBUTE4, ATTRIBUTE5, ATTRIBUTE6
+  </sql>
+  <select id="selectWaterAByMonth" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select
+    <include refid="Base_Column_List" />
+    from water_amount
+    where WA_MONTH = #{waMonth}
+  </select>
+
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Long" >
+    select
+    <include refid="Base_Column_List" />
+    from water_amount
+    where WA_ID = #{waId,jdbcType=BIGINT}
+  </select>
+
+  <delete id="deleteByWaterAId" parameterType="java.lang.Long" >
+    delete from water_amount
+    where WA_ID = #{waId,jdbcType=BIGINT}
+  </delete>
+
+  <insert id="insertWaterAmount" parameterType="com.pm.dsis.cm.dto.WaterAmount" >
+    insert into water_amount (BUILDING_FULL_ROOM, WA_NUMBER,
+      WA_MONTH, WA_BIGEN_DATE, WA_END_DATE, 
+      WA_WRITER, WA_FLAG, ATTRIBUTE1, 
+      ATTRIBUTE2, ATTRIBUTE3, ATTRIBUTE4, 
+      ATTRIBUTE5, ATTRIBUTE6)
+    values (#{buildingFullRoom,jdbcType=BIGINT}, #{waNumber,jdbcType=REAL},
+      #{waMonth,jdbcType=INTEGER}, #{waBigenDate,jdbcType=DATE}, #{waEndDate,jdbcType=DATE}, 
+      #{waWriter,jdbcType=VARCHAR}, 'N', #{attribute1,jdbcType=VARCHAR},
+      #{attribute2,jdbcType=VARCHAR}, #{attribute3,jdbcType=VARCHAR}, #{attribute4,jdbcType=VARCHAR}, 
+      #{attribute5,jdbcType=VARCHAR}, #{attribute6,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.pm.dsis.cm.dto.WaterAmount" >
+    insert into water_amount
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="waId != null" >
+        WA_ID,
+      </if>
+      <if test="userId != null" >
+        USER_ID,
+      </if>
+      <if test="waNumber != null" >
+        WA_NUMBER,
+      </if>
+      <if test="waMonth != null" >
+        WA_MONTH,
+      </if>
+      <if test="waBigenDate != null" >
+        WA_BIGEN_DATE,
+      </if>
+      <if test="waEndDate != null" >
+        WA_END_DATE,
+      </if>
+      <if test="waWriter != null" >
+        WA_WRITER,
+      </if>
+      <if test="waFlag != null" >
+        WA_FLAG,
+      </if>
+      <if test="attribute1 != null" >
+        ATTRIBUTE1,
+      </if>
+      <if test="attribute2 != null" >
+        ATTRIBUTE2,
+      </if>
+      <if test="attribute3 != null" >
+        ATTRIBUTE3,
+      </if>
+      <if test="attribute4 != null" >
+        ATTRIBUTE4,
+      </if>
+      <if test="attribute5 != null" >
+        ATTRIBUTE5,
+      </if>
+      <if test="attribute6 != null" >
+        ATTRIBUTE6,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="waId != null" >
+        #{waId,jdbcType=BIGINT},
+      </if>
+      <if test="userId != null" >
+        #{userId,jdbcType=BIGINT},
+      </if>
+      <if test="waNumber != null" >
+        #{waNumber,jdbcType=REAL},
+      </if>
+      <if test="waMonth != null" >
+        #{waMonth,jdbcType=INTEGER},
+      </if>
+      <if test="waBigenDate != null" >
+        #{waBigenDate,jdbcType=DATE},
+      </if>
+      <if test="waEndDate != null" >
+        #{waEndDate,jdbcType=DATE},
+      </if>
+      <if test="waWriter != null" >
+        #{waWriter,jdbcType=VARCHAR},
+      </if>
+      <if test="waFlag != null" >
+        #{waFlag,jdbcType=VARCHAR},
+      </if>
+      <if test="attribute1 != null" >
+        #{attribute1,jdbcType=VARCHAR},
+      </if>
+      <if test="attribute2 != null" >
+        #{attribute2,jdbcType=VARCHAR},
+      </if>
+      <if test="attribute3 != null" >
+        #{attribute3,jdbcType=VARCHAR},
+      </if>
+      <if test="attribute4 != null" >
+        #{attribute4,jdbcType=VARCHAR},
+      </if>
+      <if test="attribute5 != null" >
+        #{attribute5,jdbcType=VARCHAR},
+      </if>
+      <if test="attribute6 != null" >
+        #{attribute6,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+
+  <update id="updateByPrimaryKeySelective" parameterType="com.pm.dsis.cm.dto.WaterAmount" >
+    update water_amount
+    <set >
+      <if test="userId != null" >
+        USER_ID = #{userId,jdbcType=BIGINT},
+      </if>
+      <if test="waNumber != null" >
+        WA_NUMBER = #{waNumber,jdbcType=REAL},
+      </if>
+      <if test="waMonth != null" >
+        WA_MONTH = #{waMonth,jdbcType=INTEGER},
+      </if>
+      <if test="waBigenDate != null" >
+        WA_BIGEN_DATE = #{waBigenDate,jdbcType=DATE},
+      </if>
+      <if test="waEndDate != null" >
+        WA_END_DATE = #{waEndDate,jdbcType=DATE},
+      </if>
+      <if test="waWriter != null" >
+        WA_WRITER = #{waWriter,jdbcType=VARCHAR},
+      </if>
+      <if test="waFlag != null" >
+        WA_FLAG = #{waFlag,jdbcType=VARCHAR},
+      </if>
+      <if test="attribute1 != null" >
+        ATTRIBUTE1 = #{attribute1,jdbcType=VARCHAR},
+      </if>
+      <if test="attribute2 != null" >
+        ATTRIBUTE2 = #{attribute2,jdbcType=VARCHAR},
+      </if>
+      <if test="attribute3 != null" >
+        ATTRIBUTE3 = #{attribute3,jdbcType=VARCHAR},
+      </if>
+      <if test="attribute4 != null" >
+        ATTRIBUTE4 = #{attribute4,jdbcType=VARCHAR},
+      </if>
+      <if test="attribute5 != null" >
+        ATTRIBUTE5 = #{attribute5,jdbcType=VARCHAR},
+      </if>
+      <if test="attribute6 != null" >
+        ATTRIBUTE6 = #{attribute6,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where WA_ID = #{waId,jdbcType=BIGINT}
+  </update>
+  <update id="updateByWaterAId" parameterType="com.pm.dsis.cm.dto.WaterAmount" >
+    update water_amount
+    set BUILDING_FULL_ROOM = #{buildingFullRoom,jdbcType=BIGINT},
+      WA_NUMBER = #{waNumber,jdbcType=REAL},
+      WA_MONTH = #{waMonth,jdbcType=INTEGER},
+      WA_BIGEN_DATE = #{waBigenDate,jdbcType=DATE},
+      WA_END_DATE = #{waEndDate,jdbcType=DATE},
+      WA_WRITER = #{waWriter,jdbcType=VARCHAR},
+      WA_FLAG = #{waFlag,jdbcType=VARCHAR},
+      ATTRIBUTE1 = #{attribute1,jdbcType=VARCHAR},
+      ATTRIBUTE2 = #{attribute2,jdbcType=VARCHAR},
+      ATTRIBUTE3 = #{attribute3,jdbcType=VARCHAR},
+      ATTRIBUTE4 = #{attribute4,jdbcType=VARCHAR},
+      ATTRIBUTE5 = #{attribute5,jdbcType=VARCHAR},
+      ATTRIBUTE6 = #{attribute6,jdbcType=VARCHAR}
+    where WA_ID = #{waId,jdbcType=BIGINT}
+  </update>
+</mapper>

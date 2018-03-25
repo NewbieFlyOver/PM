@@ -33,6 +33,20 @@ public class BaseDTO implements Serializable {
 
     private String attribute6;
 
+    private String __status;
+
+    public void setAttribute6(String attribute6) {
+        this.attribute6 = attribute6;
+    }
+
+    public String get__status() {
+        return __status;
+    }
+
+    public void set__status(String __status) {
+        this.__status = __status;
+    }
+
     public String getAttribute1() {
         return attribute1;
     }
