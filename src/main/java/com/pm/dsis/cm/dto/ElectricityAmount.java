@@ -20,6 +20,10 @@ public class ElectricityAmount {
     private String eaWriter;
 
     private String eaFlag;
+    //本月用量
+    private float eaDosage;
+    //本月费用
+    private float monthFee;
 
     private String attribute1;
 
@@ -32,6 +36,22 @@ public class ElectricityAmount {
     private String attribute5;
 
     private String attribute6;
+
+    public float getEaDosage() {
+        return eaDosage;
+    }
+
+    public void setEaDosage(float eaDosage) {
+        this.eaDosage = eaDosage;
+    }
+
+    public float getMonthFee() {
+        return monthFee;
+    }
+
+    public void setMonthFee(float monthFee) {
+        this.monthFee = monthFee;
+    }
 
     public String getBuildingFullRoom() {
         return buildingFullRoom;

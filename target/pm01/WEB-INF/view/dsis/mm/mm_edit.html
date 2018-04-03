@@ -69,7 +69,11 @@
                                         <label class="col-sm-4 control-label">户主姓名</label>
                                         <div class="col-sm-8">
                                             <input id="userName" name="userName" data-bind="value:model.userInfo.userName" type="text" style="width: 100%" class="k-textbox">
+                                            <span style="color: red">*</span>
                                         </div>
+                                        <script>
+                                            $("#userName").attr("required", true);
+                                        </script>
                                     </div>
                                 </div>
                                 <div class="col-sm-4" id="2">
@@ -95,9 +99,28 @@
                                     <div class="form-group">
                                         <label class="col-sm-4 control-label">性别</label>
                                         <div class="col-sm-8">
-                                            <input id="userGender" name="userGender" data-bind="value:model.userInfo.userGender" type="text" style="width: 100%" class="k-textbox">
+                                            <input id="userGender" name="userGender" data-bind="value:model.userInfo.userGender" type="text" style="width: 100%">
                                         </div>
                                     </div>
+                                    <script>
+                                        var gender = 'gender';
+                                        $.ajax({
+                                            type : "GET" ,
+                                            url: "/ci/selectByType",
+                                            dataType: "json",
+                                            data:{commonType : gender},
+                                            success: function (data) {
+                                                if (data.success) {
+                                                    commonInfoSource = eval(data.rows);
+                                                    $("#userGender").kendoComboBox({
+                                                        dataTextField: "commonName",
+                                                        dataValueField: "commonValue",
+                                                        dataSource: commonInfoSource,
+                                                    });
+                                                }
+                                            }
+                                        });
+                                    </script>
                                 </div>
                                 <div class="col-sm-4" id="5">
                                     <div class="form-group">
@@ -176,9 +199,28 @@
                                     <div class="form-group">
                                         <label class="col-sm-4 control-label">缴费对象</label>
                                         <div class="col-sm-8">
-                                            <input id="object" name="object" type="text" style="width: 100%" data-bind="value:model.userInfo.object" class="k-textbox">
+                                            <input id="object" name="object" type="text" style="width: 100%" data-bind="value:model.userInfo.object">
                                         </div>
                                     </div>
+                                    <script>
+                                        var gender = 'payObject';
+                                        $.ajax({
+                                            type : "GET" ,
+                                            url: "/ci/selectByType",
+                                            dataType: "json",
+                                            data:{commonType : gender},
+                                            success: function (data) {
+                                                if (data.success) {
+                                                    commonInfoSource = eval(data.rows);
+                                                    $("#object").kendoComboBox({
+                                                        dataTextField: "commonName",
+                                                        dataValueField: "commonValue",
+                                                        dataSource: commonInfoSource,
+                                                    });
+                                                }
+                                            }
+                                        });
+                                    </script>
                                 </div>
                                 <div class="col-sm-4" id="13">
                                     <div class="form-group">
@@ -288,16 +330,38 @@
                             <div class="col-sm-4" id="24">
                                 <div class="form-group">
                                     <label class="col-sm-4 control-label">房屋类型</label>
-                                    <div class="col-sm-8">
-                                        <input id="buildType"  type="text" style="width: 100%" data-bind="value:model.BuildingInfo.buildType" class="k-textbox">
+                                    <div class="col-sm-8"><!--data-bind="value:model.BuildingInfo.buildType"-->
+                                        <input id="buildType"  type="text" style="width: 100%" data-bind="value:model.BuildingInfo.buildType" >
                                     </div>
                                 </div>
+                                <script>
+                                    TypeDataSource = [];
+                                    $.ajax({
+                                        type : "POST" ,
+                                        url: "/mm/selectAllType",
+                                        dataType: "json",
+                                        contentType: "application/json",
+                                        success: function (data) {
+                                            if (data.success) {
+                                                TypeDataSource = eval(data.rows);
+                                                $("#buildType").kendoComboBox({
+                                                    dataTextField: "buildingTypeName",
+                                                    dataValueField: "buildingTypeId",
+                                                    dataSource: TypeDataSource,
+                                                });
+                                            }
+                                        }
+                                    });
+                                </script>
                             </div>
                             <div class="col-sm-4" id="25">
                                 <div class="form-group">
                                     <label class="col-sm-4 control-label">房屋全称</label>
                                     <div class="col-sm-8">
                                         <input id="buildingFullRoom"  type="text" style="width: 100%" data-bind="value:model.BuildingInfo.buildingFullRoom" class="k-textbox">
+                                        <script>
+                                            $("#buildingFullRoom").attr("disabled", true);
+                                        </script>
                                    </div>
                                 </div>
                             </div>
@@ -340,9 +404,28 @@
                                     <div class="form-group">
                                         <label class="col-sm-4 control-label">房屋使用情况</label>
                                         <div class="col-sm-8">
-                                            <input id="housingUsage"  type="text" style="width: 100%" data-bind="value:model.BuildingInfo.housingUsage" class="k-textbox">
+                                            <input id="housingUsage"  type="text" style="width: 100%" data-bind="value:model.BuildingInfo.housingUsage">
                                         </div>
                                     </div>
+                                    <script>
+                                        var type = 'HouseUsage';
+                                        $.ajax({
+                                            type : "GET" ,
+                                            url: "/ci/selectByType",
+                                            dataType: "json",
+                                            data:{commonType : type},
+                                            success: function (data) {
+                                                if (data.success) {
+                                                    commonInfoSource = eval(data.rows);
+                                                    $("#housingUsage").kendoComboBox({
+                                                        dataTextField: "commonName",
+                                                        dataValueField: "commonValue",
+                                                        dataSource: commonInfoSource,
+                                                    });
+                                                }
+                                            }
+                                        });
+                                    </script>
                                 </div>
                                 <div class="col-sm-4" id="31">
                                     <div class="form-group">
@@ -631,6 +714,8 @@
                 var stayInDate = new Date(viewModel.model.BuildingInfo.stayinDate);
                 $("#checkinDate").val(dateStr(checkInDate));
                 $("#stayinDate").val(dateStr(stayInDate));
+                type = viewModel.model.BuildingInfo.buildingTypeId;
+                $("#buildType").data("kendoComboBox").value(type);
             }
         });
 
@@ -659,6 +744,10 @@
             data:{userId:userId},
             success: function (data) {
                 viewModel.model.set('userInfo', data.rows[0]);
+                gender = viewModel.model.userInfo.userGender;
+                $("#userGender").data("kendoComboBox").value(gender);
+                object = viewModel.model.userInfo.object;
+                $("#object").data("kendoComboBox").value(object);
             }
         });
 
@@ -683,8 +772,13 @@
 
 
         function saveUserInfo(){
+            gender = viewModel.model.userInfo.userGender.commonValue;
+            viewModel.model.userInfo.set('userGender',gender);
+            object = viewModel.model.userInfo.object.commonValue;
+            viewModel.model.userInfo.set('object',object);
+
             var userInfo = JSON.stringify(viewModel.model.userInfo);
-            console.log(viewModel.model.userInfo)
+            //console.log(viewModel.model.userInfo)
             $.ajax({
                 type: 'POST',
                 url: '/mm/saveUserInfo',
@@ -700,13 +794,16 @@
         }
 
         function saveBuildingInfo(){
-            var userInfo = JSON.stringify(viewModel.model.BuildingInfo);
+            viewModel.model.BuildingInfo.set("buildingTypeId",$("#buildType").data("kendoComboBox").value())
+            viewModel.model.BuildingInfo.set("housingUsage",$("#housingUsage").data("kendoComboBox").value())
+
+            var buildingInfo = JSON.stringify(viewModel.model.BuildingInfo);
             $.ajax({
                 type: 'POST',
                 url: '/mm/insertBuildingInfo',
                 dataType: "json",
                 contentType: "application/json",
-                data: userInfo,
+                data: buildingInfo,
                 success: function (data) {
                     if (data.success) {
                         alert("保存成功！")
@@ -718,6 +815,12 @@
                             success: function (data) {
                                 if (data.success) {
                                     viewModel.model.set('BuildingInfo',data.rows[0]);
+                                    var checkInDate = new Date(viewModel.model.BuildingInfo.checkinDate);
+                                    var stayInDate = new Date(viewModel.model.BuildingInfo.stayinDate);
+                                    $("#checkinDate").val(dateStr(checkInDate));
+                                    $("#stayinDate").val(dateStr(stayInDate));
+                                    type = viewModel.model.BuildingInfo.buildingTypeId;
+                                    $("#buildType").data("kendoComboBox").value(type);
                                 }
                             }
                         });

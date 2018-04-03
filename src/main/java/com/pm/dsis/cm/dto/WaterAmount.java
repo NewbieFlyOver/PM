@@ -22,9 +22,9 @@ public class WaterAmount {
     private String waFlag;
 
     //本月用量
-    private Long waDosage;
+    private float waDosage;
     //本月费用
-    private Long monthFee;
+    private float monthFee;
 
     private String attribute1;
 
@@ -38,19 +38,19 @@ public class WaterAmount {
 
     private String attribute6;
 
-    public Long getWaDosage() {
+    public float getWaDosage() {
         return waDosage;
     }
 
-    public void setWaDosage(Long waDosage) {
+    public void setWaDosage(float waDosage) {
         this.waDosage = waDosage;
     }
 
-    public Long getMonthFee() {
+    public float getMonthFee() {
         return monthFee;
     }
 
-    public void setMonthFee(Long monthFee) {
+    public void setMonthFee(float monthFee) {
         this.monthFee = monthFee;
     }
 

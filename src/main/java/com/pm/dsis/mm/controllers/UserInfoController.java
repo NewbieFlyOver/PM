@@ -81,7 +81,7 @@ public class UserInfoController {
 
     /**
      * 保存/更新常住成员的信息
-     * @param userInfo
+     * @param userMembers
      * @return
      */
     @RequestMapping(value = "/mm/saveUserMember",method = RequestMethod.POST)

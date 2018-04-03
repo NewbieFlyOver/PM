@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.pm.dsis.common.mapper.CommonInfoMapper" >
+    <resultMap id="BaseResultMap" type="com.pm.dsis.common.dto.CommonInfo" >
+        <id column="COMMON_ID" property="commonId" jdbcType="BIGINT" />
+        <result column="COMMON_TYPE" property="commonType" jdbcType="VARCHAR" />
+        <result column="COMMON_NAME" property="commonName" jdbcType="VARCHAR" />
+        <result column="COMMON_VALUE" property="commonValue" jdbcType="VARCHAR" />
+    </resultMap>
+
+    <select id="selectByType" resultMap="BaseResultMap" parameterType="java.lang.String" >
+        select COMMON_ID, COMMON_TYPE, COMMON_NAME, COMMON_VALUE
+        from common_info
+        where COMMON_TYPE = #{commonType,jdbcType=BIGINT}
+    </select>
+
+
+
+</mapper>

@@ -23,6 +23,7 @@
     select
     <include refid="Base_Column_List" />
     from water_unit_price
+    ORDER BY WA_UR_CEILING desc
   </select>
 
   <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Long" >

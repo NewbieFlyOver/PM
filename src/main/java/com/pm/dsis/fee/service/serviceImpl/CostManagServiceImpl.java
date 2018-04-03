@@ -20,9 +20,10 @@ public class CostManagServiceImpl implements CostManagService {
 
     @Autowired
     private WaterAmountMapper waterAmountMapper;
-//TODO:计算度数分阶梯计价
+//TODO:不在此处做计算度数分阶梯计价，直接取
     public List<WaterAmount> selectAllWaterFee(){
 
+        //获取水价阶梯
         List<WaterUnitPrice> waterUnitPrices = waterUnitPriceMapper.selectAllWaterPrice();
         return null;
 

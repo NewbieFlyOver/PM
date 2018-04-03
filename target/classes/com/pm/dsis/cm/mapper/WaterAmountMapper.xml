@@ -11,6 +11,7 @@
     <result column="WA_WRITER" property="waWriter" jdbcType="VARCHAR" />
     <result column="WA_FLAG" property="waFlag" jdbcType="VARCHAR" />
     <result column="WA_DOSAGE" property="waDosage" jdbcType="VARCHAR" />
+    <result column="MONTH_FEE" property="monthFee" jdbcType="VARCHAR" />
     <result column="ATTRIBUTE1" property="attribute1" jdbcType="VARCHAR" />
     <result column="ATTRIBUTE2" property="attribute2" jdbcType="VARCHAR" />
     <result column="ATTRIBUTE3" property="attribute3" jdbcType="VARCHAR" />
@@ -18,66 +19,8 @@
     <result column="ATTRIBUTE5" property="attribute5" jdbcType="VARCHAR" />
     <result column="ATTRIBUTE6" property="attribute6" jdbcType="VARCHAR" />
   </resultMap>
-  <sql id="Example_Where_Clause" >
-    <where >
-      <foreach collection="oredCriteria" item="criteria" separator="or" >
-        <if test="criteria.valid" >
-          <trim prefix="(" suffix=")" prefixOverrides="and" >
-            <foreach collection="criteria.criteria" item="criterion" >
-              <choose >
-                <when test="criterion.noValue" >
-                  and ${criterion.condition}
-                </when>
-                <when test="criterion.singleValue" >
-                  and ${criterion.condition} #{criterion.value}
-                </when>
-                <when test="criterion.betweenValue" >
-                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
-                </when>
-                <when test="criterion.listValue" >
-                  and ${criterion.condition}
-                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
-                    #{listItem}
-                  </foreach>
-                </when>
-              </choose>
-            </foreach>
-          </trim>
-        </if>
-      </foreach>
-    </where>
-  </sql>
-  <sql id="Update_By_Example_Where_Clause" >
-    <where >
-      <foreach collection="example.oredCriteria" item="criteria" separator="or" >
-        <if test="criteria.valid" >
-          <trim prefix="(" suffix=")" prefixOverrides="and" >
-            <foreach collection="criteria.criteria" item="criterion" >
-              <choose >
-                <when test="criterion.noValue" >
-                  and ${criterion.condition}
-                </when>
-                <when test="criterion.singleValue" >
-                  and ${criterion.condition} #{criterion.value}
-                </when>
-                <when test="criterion.betweenValue" >
-                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
-                </when>
-                <when test="criterion.listValue" >
-                  and ${criterion.condition}
-                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
-                    #{listItem}
-                  </foreach>
-                </when>
-              </choose>
-            </foreach>
-          </trim>
-        </if>
-      </foreach>
-    </where>
-  </sql>
   <sql id="Base_Column_List" >
-    WA_ID, BUILDING_FULL_ROOM, WA_NUMBER, WA_MONTH, WA_BIGEN_DATE, WA_END_DATE, WA_WRITER, WA_FLAG,WA_DOSAGE,
+    WA_ID, BUILDING_FULL_ROOM, WA_NUMBER, WA_MONTH, WA_BIGEN_DATE, WA_END_DATE, WA_WRITER, WA_FLAG,WA_DOSAGE,MONTH_FEE,
     ATTRIBUTE1, ATTRIBUTE2, ATTRIBUTE3, ATTRIBUTE4, ATTRIBUTE5, ATTRIBUTE6
   </sql>
   <select id="selectWaterAByMonth" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
@@ -91,6 +34,15 @@
     <include refid="Base_Column_List" />
     from water_amount
   </select>
+
+  <select id="selectByRoomMonth" resultMap="BaseResultMap" >
+    select
+    <include refid="Base_Column_List" />
+    from water_amount
+    where BUILDING_FULL_ROOM = #{buildingFullRoom}
+    and WA_MONTH = #{waMonth}
+  </select>
+
   <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Long" >
     select
     <include refid="Base_Column_List" />
@@ -106,12 +58,12 @@
   <insert id="insertWaterAmount" parameterType="com.pm.dsis.cm.dto.WaterAmount" >
     insert into water_amount (BUILDING_FULL_ROOM, WA_NUMBER,
       WA_MONTH, WA_BIGEN_DATE, WA_END_DATE, 
-      WA_WRITER, WA_FLAG,WA_DOSAGE, ATTRIBUTE1,
+      WA_WRITER, WA_FLAG,WA_DOSAGE,MONTH_FEE, ATTRIBUTE1,
       ATTRIBUTE2, ATTRIBUTE3, ATTRIBUTE4, 
       ATTRIBUTE5, ATTRIBUTE6)
     values (#{buildingFullRoom,jdbcType=BIGINT}, #{waNumber,jdbcType=REAL},
       #{waMonth,jdbcType=INTEGER}, #{waBigenDate,jdbcType=DATE}, #{waEndDate,jdbcType=DATE}, 
-      #{waWriter,jdbcType=VARCHAR}, 'N', #{waDosage},#{attribute1,jdbcType=VARCHAR},
+      #{waWriter,jdbcType=VARCHAR}, 'N', #{waDosage}, #{monthFee}, #{attribute1,jdbcType=VARCHAR},
       #{attribute2,jdbcType=VARCHAR}, #{attribute3,jdbcType=VARCHAR}, #{attribute4,jdbcType=VARCHAR}, 
       #{attribute5,jdbcType=VARCHAR}, #{attribute6,jdbcType=VARCHAR})
   </insert>
@@ -262,6 +214,7 @@
       WA_WRITER = #{waWriter,jdbcType=VARCHAR},
       WA_FLAG = #{waFlag,jdbcType=VARCHAR},
       WA_DOSAGE = #{waDosage,jdbcType=VARCHAR},
+      MONTH_FEE = #{monthFee,jdbcType=VARCHAR},
       ATTRIBUTE1 = #{attribute1,jdbcType=VARCHAR},
       ATTRIBUTE2 = #{attribute2,jdbcType=VARCHAR},
       ATTRIBUTE3 = #{attribute3,jdbcType=VARCHAR},

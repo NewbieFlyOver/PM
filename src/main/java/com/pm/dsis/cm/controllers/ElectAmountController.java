@@ -1,7 +1,7 @@
 package com.pm.dsis.cm.controllers;
 
 import com.pm.dsis.cm.dto.ElectricityAmount;
-import com.pm.dsis.cm.dto.WaterAmount;
+
 import com.pm.dsis.cm.service.ElectAmountService;
 import com.pm.platform.ResponseData;
 import org.springframework.beans.factory.annotation.Autowired;

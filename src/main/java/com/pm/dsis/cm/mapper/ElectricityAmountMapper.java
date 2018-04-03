@@ -16,6 +16,8 @@ public interface ElectricityAmountMapper {
 
     int deleteByEAId(Long eaId);
 
+    // 查询上一个月指定用户的读数
+    ElectricityAmount selectByRoomMonth(@Param("eaMonth") int waMonth, @Param("buildingFullRoom") String buildingFullRoom);
 
 
 

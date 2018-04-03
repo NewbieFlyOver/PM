@@ -16,12 +16,15 @@
     </resultMap>
 
     <select id="queryAllUserInfo" parameterType="com.pm.dsis.mm.dto.QueryUserInfo" resultMap="BaseResultMap">
-      select ui.USER_ID, ui.USER_NAME,ui.OBJECT,um.MEMBER_SITUATION,
+      select ui.USER_ID, ui.USER_NAME,ui.OBJECT,
               bi.BUILDING_THEATER,bi.BUILDING_UNIT,bi.BUILDING_FLOOR,bi.BUILDING_ROOM,bi.HOUSING_USAGE
-      FROM user_info ui,building_info bi, user_member um
+      FROM user_info ui,building_info bi
       <where>
           ui.USER_ID = bi.USER_ID
-          AND ui.USER_ID = um.USER_ID
+          <if test="memberSituation!=null">
+              AND ui.USER_ID = um.USER_ID
+          </if>
+
           <if test="userName!=null">
              AND ui.USER_NAME like concat('%', concat(#{userName}, '%'))
           </if>
