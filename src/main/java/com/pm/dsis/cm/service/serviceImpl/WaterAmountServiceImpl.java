@@ -9,6 +9,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.RequestBody;
 
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -23,34 +26,60 @@ public class WaterAmountServiceImpl implements WaterAmountService {
     private WaterUnitPriceMapper waterUnitPriceMapper;
 
     public void insertWaterAmount(List<WaterAmount> waterAmounts){
+
         for (WaterAmount wat:waterAmounts) {
-            //添加本月用量
-            int month = wat.getWaMonth()-1;
-            WaterAmount waterAmount = selectByRoomMonth(month,wat.getBuildingFullRoom());
-            if (waterAmount == null) {
-                wat.setWaDosage(wat.getWaNumber());
-            }else {
-                wat.setWaDosage(wat.getWaNumber() - waterAmount.getWaNumber());
-            }
-            //TODO：根据本月用量计算本月费用
-            //获取水价阶梯
-            List<WaterUnitPrice> waterUnitPrices = waterUnitPriceMapper.selectAllWaterPrice();
-            float tempWater = wat.getWaDosage();
-            float waterSum = 0L;
-            for (WaterUnitPrice wup:waterUnitPrices ) {
-                //TODO:超过最大值处理
-                if ( tempWater>wup.getWaUrLower() || tempWater == wup.getWaUrLower()) {
-                    float temp = wup.getWaUrPrice()*(tempWater-wup.getWaUrLower());
-                    waterSum = waterSum + temp;
-                    tempWater = tempWater - wup.getWaUrLower();
+            if (null == wat.getWaId()) {
+                //时间类型转换
+                Date date = wat.getWaBigenDate();
+                DateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+                String dateStr = sdf.format(date);
+
+                String yearStr = dateStr.substring(0,dateStr.length()-6);
+                String monthStr = dateStr.substring(5,7);
+
+                int yearInt = Integer.parseInt(yearStr);
+                int monthInt = Integer.parseInt(monthStr);
+
+                wat.setWaMonth(Integer.parseInt(dateStr.substring(0,dateStr.length()-6)+dateStr.substring(5,7)));
+
+                String month = "";
+                if (monthInt<12&&monthInt>9) {
+                    yearStr = Integer.toString(yearInt -1) ;
+                    month = yearStr+monthStr;
+                }else {
+                    monthStr = Integer.toString(monthInt-1);
+                    if (monthInt<10) {
+                        month = yearStr+"0"+monthStr;
+                    }
+                }
+                int monthPara = Integer.parseInt(month);
+                WaterAmount waterAmount = selectByRoomMonth(monthPara,wat.getBuildingFullRoom());
+                //todo:加个判断
+                //添加本月用量
+                if (waterAmount == null) {
+                    wat.setWaDosage(wat.getWaNumber());
+                }else {
+                    wat.setWaDosage(wat.getWaNumber() - waterAmount.getWaNumber());
+                }
+
+                //获取水价阶梯
+                List<WaterUnitPrice> waterUnitPrices = waterUnitPriceMapper.selectAllWaterPrice();
+                float tempWater = wat.getWaDosage();
+                float waterSum = 0L;
+                //根据本月用量计算本月费用
+                for (WaterUnitPrice wup:waterUnitPrices ) {
+                    //超过最大值处理
+                    if ( tempWater>wup.getWaUrLower() || tempWater == wup.getWaUrLower()) {
+                        float temp = wup.getWaUrPrice()*(tempWater-wup.getWaUrLower());
+                        waterSum = waterSum + temp;
+                        tempWater = tempWater - wup.getWaUrLower();
+                     }
+                }
+                wat.setMonthFee(waterSum);
+                if(null == wat.getWaId()){
+                    waterAmountMapper.insertWaterAmount(wat);
                 }
             }
-            if(null == wat.getWaId()){
-                waterAmountMapper.insertWaterAmount(wat);
-            }else {
-                waterAmountMapper.updateByWaterAId(wat);
-            }
-
         }
     }
 

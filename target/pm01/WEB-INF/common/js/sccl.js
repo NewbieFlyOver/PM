@@ -403,10 +403,8 @@ $(function(){
 						{"id":"19","name":"物业费","parentId":"6","url":"home3.html","icon":"","order":"1","isHeader":"0","childMenus":""},
                         {"id":"20","name":"水费","parentId":"6","url":"home3.html","icon":"","order":"1","isHeader":"0","childMenus":""},
                         {"id":"21","name":"电费","parentId":"6","url":"home3.html","icon":"","order":"1","isHeader":"0","childMenus":""},
-                        {"id":"22","name":"燃气费","parentId":"6","url":"home3.html","icon":"","order":"1","isHeader":"0","childMenus":""},
-
 					]},
-					{"id":"7","name":"用量管理","parentId":"1","url":"","icon":"&#xe602;","order":"1","isHeader":"0","childMenus":[
+					{"id":"7","name":"用量录入","parentId":"1","url":"","icon":"&#xe602;","order":"1","isHeader":"0","childMenus":[
 						{"id":"23","name":"用水量","parentId":"7","url":"view/dsis/cm/cm_water_amount.html","icon":"","order":"1","isHeader":"0","childMenus":""},
 						{"id":"24","name":"用电量","parentId":"7","url":"view/dsis/cm/cm_elect_amount.html","icon":"","order":"1","isHeader":"0","childMenus":""},
 						{"id":"19","name":"测试","parentId":"7","url":"test01.html","icon":"","order":"1","isHeader":"0","childMenus":""}
@@ -418,7 +416,7 @@ $(function(){
 						{"id":"27","name":"报修处理","parentId":"9","url":"home3.html","icon":"","order":"1","isHeader":"0","childMenus":""},
 					]}
 				]},
-				{"id":"2","name":"框架案例","parentId":"0","url":"","icon":"","order":"2","isHeader":"1","childMenus":[
+				/*{"id":"2","name":"框架案例","parentId":"0","url":"","icon":"","order":"2","isHeader":"1","childMenus":[
 					{"id":"30","name":"新功能","parentId":"2","url":"","icon":"","order":"1","isHeader":"0","childMenus":""},
 					{"id":"10","name":"多级","parentId":"2","url":"","icon":"","order":"1","isHeader":"0","childMenus":[
 						{"id":"11","name":"一级","parentId":"10","url":"","icon":"","order":"1","isHeader":"0","childMenus":""},
@@ -433,7 +431,7 @@ $(function(){
 							]}
 						]}
 					]}
-				]}
+				]}*/
 				];
 	initMenu(menu,$(".side-menu"));
 	$(".side-menu > li").addClass("menu-item");

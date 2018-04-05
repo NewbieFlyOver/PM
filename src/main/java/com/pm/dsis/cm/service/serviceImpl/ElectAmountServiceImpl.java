@@ -8,6 +8,9 @@ import com.pm.dsis.fee.mapper.ElectricityUnitPriceMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -24,31 +27,59 @@ public class ElectAmountServiceImpl implements ElectAmountService {
 
     public void insertElect(List<ElectricityAmount> electricityAmounts){
         for(ElectricityAmount ea: electricityAmounts) {
-            //获取本月用量
-            int month = ea.getEaMonth()-1;
-            ElectricityAmount electricityAmount = electricityAmountMapper.selectByRoomMonth(month,ea.getBuildingFullRoom());
-            if ( electricityAmount ==null ) {
-                ea.setEaDosage(electricityAmount.getEaNumber());
-            }else{
-                ea.setEaDosage(ea.getEaNumber()-electricityAmount.getEaNumber());
-            }
-            //根据本月用量计算本月费用
-            //获取水价阶梯
-            List<ElectricityUnitPrice> electricityUnitPrices = electricityUnitPriceMapper.selectAllelectPrice();
-            float tempElect = ea.getEaDosage();
-            float electSum = 0L;
-            for (ElectricityUnitPrice eup:electricityUnitPrices) {
-                //TODO:超过最大值处理
-                if (tempElect>eup.getEaUrLower() || tempElect ==eup.getEaUrLower() ) {
-                    float temp = eup.getEaUrPrice() * (tempElect - eup.getEaUrLower());
-                    electSum = electSum + temp;
-                    tempElect = tempElect - eup.getEaUrLower();
-                }
-            }
             if (ea.getEaId() == null) {
-                electricityAmountMapper.insertElect(ea);
-            }else {
-                electricityAmountMapper.updateElectById(ea);
+                Date date = ea.getEaBigenDate();
+                DateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+                String dateStr = sdf.format(date);
+
+                String yearStr = dateStr.substring(0,dateStr.length()-6);
+                String monthStr = dateStr.substring(5,7);
+
+                int yearInt = Integer.parseInt(yearStr);
+                int monthInt = Integer.parseInt(monthStr);
+
+                ea.setEaMonth(Integer.parseInt(dateStr.substring(0,dateStr.length()-6)+dateStr.substring(5,7)));
+
+                String month = "";
+                if (monthInt<12&&monthInt>9) {
+                    yearStr = Integer.toString(yearInt -1) ;
+                    month = yearStr+monthStr;
+                }else {
+                    monthStr = Integer.toString(monthInt-1);
+                    if (monthInt<10) {
+                        month = yearStr+"0"+monthStr;
+                    }
+                }
+                //查询上月用量
+                int monthPara = Integer.parseInt(month);
+                ElectricityAmount electricityAmount = electricityAmountMapper.selectByRoomMonth(monthPara,ea.getBuildingFullRoom());
+
+                //获取本月用量
+                if ( electricityAmount ==null ) {
+                    ea.setEaDosage(ea.getEaNumber());
+                }else{
+                    ea.setEaDosage(ea.getEaNumber()-electricityAmount.getEaNumber());
+                }
+                //根据本月用量计算本月费用
+                //获取水价阶梯
+                List<ElectricityUnitPrice> electricityUnitPrices = electricityUnitPriceMapper.selectAllelectPrice();
+                float tempElect = ea.getEaDosage();
+                float electSum = 0L;
+                for (ElectricityUnitPrice eup:electricityUnitPrices) {
+                    //超过最大值处理
+                    if (tempElect > eup.getEaUrLower() || tempElect == eup.getEaUrLower() ) {
+                        float temp = eup.getEaUrPrice() * (tempElect - eup.getEaUrLower());
+                        electSum = electSum + temp;
+                        tempElect = tempElect - eup.getEaUrLower();
+                        System.out.println(eup.getEaUrPrice() +"*"+ (tempElect - eup.getEaUrLower()));
+                    }
+                }
+                ea.setMonthFee(electSum);
+                //添加本月用电信息
+                if (ea.getEaId() == null) {
+                    electricityAmountMapper.insertElect(ea);
+                }
+
             }
         }
     }

@@ -27,7 +27,10 @@
     select
     <include refid="Base_Column_List" />
     from water_amount
-    where WA_MONTH = #{waMonth}
+    <if test="0>10">
+      where WA_MONTH = #{waMonth}
+    </if>
+
   </select>
   <select id="selectAllWaterA" resultMap="BaseResultMap"  >
     select

@@ -36,7 +36,10 @@
   select
   <include refid="Base_Column_List" />
   from electricity_amount
-  where EA_MONTH = #{eaMonth,jdbcType=BIGINT}
+    <if test="0>10">
+      where EA_MONTH = #{eaMonth,jdbcType=BIGINT}
+    </if>
+
 </select>
   <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Long" >
     select 

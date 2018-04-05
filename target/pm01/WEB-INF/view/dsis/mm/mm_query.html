@@ -183,6 +183,43 @@
             }
         });
 
+        var gender = 'payObject';
+        $.ajax({
+            type : "GET" ,
+            url: "/ci/selectByType",
+            dataType: "json",
+            data:{commonType : gender},
+            success: function (data) {
+                if (data.success) {
+                    commonInfoSource = eval(data.rows);
+                   /* $("#object").kendoComboBox({
+                        dataTextField: "commonName",
+                        dataValueField: "commonValue",
+                        dataSource: commonInfoSource,
+                    });*/
+                }
+            }
+        });
+
+        var type = 'HouseUsage';
+        $.ajax({
+            type : "GET" ,
+            url: "/ci/selectByType",
+            dataType: "json",
+            data:{commonType : type},
+            success: function (data) {
+                if (data.success) {
+                    commonInfoSourceHouse = eval(data.rows);
+                    /* $("#object").kendoComboBox({
+                     dataTextField: "commonName",
+                     dataValueField: "commonValue",
+                     dataSource: commonInfoSource,
+                     });*/
+                }
+            }
+        });
+
+
     $("#grid").kendoGrid({
         dataSource: dataSource,
         height: 400,
@@ -220,7 +257,27 @@
                     "class": "table-header-cell",
                     style  : "text-align: center"
                 },
-                width: 120
+                width: 120,
+                template: function(dataItem){
+                    var v = dataItem.housingUsage;
+                    $.each(commonInfoSourceHouse,function(i,n){
+                        if((n.commonValue||'').toLowerCase() == (v||'').toLowerCase()){
+                            v = n.commonName;
+                            return v;
+                        }
+                    })
+                    return v;
+                },
+                editor: function (container, options) {
+                    $('<input  name="' + options.field + '"/>').appendTo(container)
+                        .kendoDropDownList(
+                            {
+                                dataTextField: "commonName",
+                                dataValueField: "commonValue",
+                                dataSource: commonInfoSourceHouse,
+
+                            });
+                }
             }, {
                 field: "object",
                 title: "缴费对象",
@@ -228,7 +285,32 @@
                     "class": "table-header-cell",
                     style  : "text-align: center"
                 },
-                width: 120
+                width: 120,
+                template: function(dataItem){
+                    var v = dataItem.object;
+                    $.each(commonInfoSource,function(i,n){
+                        if((n.commonValue||'').toLowerCase() == (v||'').toLowerCase()){
+                            v = n.commonName;
+                            return v;
+                        }
+                    })
+                    return v;
+                },
+                editor: function (container, options) {
+                    $('<input  name="' + options.field + '"/>').appendTo(container)
+                        .kendoDropDownList(
+                            {
+                                dataTextField: "commonName",
+                                dataValueField: "commonValue",
+                                dataSource: commonInfoSource,
+                                valuePrimitive: true,
+                               /* change : function (e) {
+                                    options.model.object = {};
+                                    options.model.object.name = this.text();
+                                    options.model.object.value = this.value();
+                                }*/
+                            });
+                }
             }, {
                 title: '详情',
                 width: 80,
@@ -243,9 +325,8 @@
 
             }
         ],
-        editable: true,
+        editable:false
     });
-
 
      function editUserInfo(userId) {
          //top.location='./mm_edit.html';

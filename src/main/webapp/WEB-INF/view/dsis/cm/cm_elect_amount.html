@@ -63,7 +63,7 @@
                             </div>
                         </div>
                         <div class="row">
-                            <div class="col-sm-4" id="3">
+                            <!--<div class="col-sm-4" id="3">
                                 <div class="form-group">
                                     <label class="col-sm-4 control-label">月份</label>
                                     <div class="col-sm-8">
@@ -71,7 +71,7 @@
                                                class="k-textbox">
                                     </div>
                                 </div>
-                            </div>
+                            </div>-->
                             <div class="col-sm-4" id="4">
                                 <div class="form-group">
                                     <label class="col-sm-4 control-label">抄表员</label>
@@ -133,6 +133,7 @@
                 model: {
                     id: "waId",
                     fields: {
+                        eaMonth:{editable:false}
                     }
                 }
             }
@@ -167,6 +168,14 @@
                         style  : "text-align: center"
                     },
                     width: 120
+                },{
+                    field: "eaMonth",
+                    title: "年月",
+                    headerAttributes: {
+                        "class": "table-header-cell",
+                        style  : "text-align: center"
+                    },
+                    width: 120
                 }
             ],
             editable: true,
@@ -188,7 +197,7 @@
                 dataSource[i].eaMonth=eaMonth;
             }
             dataSource = JSON.stringify(dataSource);
-
+            eaMonth = -1;
             $.ajax({
                 type : "POST" ,
                 url: "/cm/insertElect",
