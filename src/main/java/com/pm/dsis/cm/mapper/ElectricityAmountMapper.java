@@ -19,6 +19,13 @@ public interface ElectricityAmountMapper {
     // 查询上一个月指定用户的读数
     ElectricityAmount selectByRoomMonth(@Param("eaMonth") int waMonth, @Param("buildingFullRoom") String buildingFullRoom);
 
+    //条件查询
+    List<ElectricityAmount> selectElect(ElectricityAmount electricityAmount);
+
+    //更新电费是否已交
+    int updateElectStatu(ElectricityAmount electricityAmount);
+
+
 
     int insertSelective(ElectricityAmount record);
 

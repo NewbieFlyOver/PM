@@ -32,6 +32,23 @@
     and BUILDING_FULL_ROOM = #{buildingFullRoom}
   </select>
 
+  <select id="selectElect" resultMap="BaseResultMap" parameterType="com.pm.dsis.cm.dto.ElectricityAmount" >
+    select
+    <include refid="Base_Column_List" />
+    from electricity_amount
+    <where>
+      <if test="buildingFullRoom!=null">
+        BUILDING_FULL_ROOM = #{buildingFullRoom}
+      </if>
+      <if test="eaMonth!=null">
+        and EA_MONTH = #{eaMonth}
+      </if>
+      <if test="eaFlag">
+        and EA_FLAG = #{eaFlag}
+      </if>
+    </where>
+  </select>
+
   <select id="selectByMonth" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
   select
   <include refid="Base_Column_List" />
@@ -218,6 +235,17 @@
       ATTRIBUTE4 = #{attribute4,jdbcType=VARCHAR},
       ATTRIBUTE5 = #{attribute5,jdbcType=VARCHAR},
       ATTRIBUTE6 = #{attribute6,jdbcType=VARCHAR}
+    where EA_ID = #{eaId,jdbcType=BIGINT}
+  </update>
+
+
+  <update id="updateElectStatu" parameterType="com.pm.dsis.cm.dto.ElectricityAmount" >
+    update electricity_amount
+    <set >
+      <if test="eaFlag != null" >
+        EA_FLAG = #{eaFlag,jdbcType=VARCHAR},
+      </if>
+    </set>
     where EA_ID = #{eaId,jdbcType=BIGINT}
   </update>
 </mapper>

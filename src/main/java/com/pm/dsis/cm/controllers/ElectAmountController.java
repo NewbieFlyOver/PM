@@ -2,6 +2,7 @@ package com.pm.dsis.cm.controllers;
 
 import com.pm.dsis.cm.dto.ElectricityAmount;
 
+import com.pm.dsis.cm.dto.WaterAmount;
 import com.pm.dsis.cm.service.ElectAmountService;
 import com.pm.platform.ResponseData;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -69,4 +70,34 @@ public class ElectAmountController {
         return new ResponseData();
 
     }
+
+    /**
+     * 条件查询
+     * @param request
+     * @param response
+     * @param electricityAmount
+     * @return
+     */
+    @RequestMapping(value = "/cm/selectElect",method = RequestMethod.POST, consumes="application/json")
+    @ResponseBody//
+    public ResponseData selectElect(HttpServletRequest request, HttpServletResponse response, @RequestBody ElectricityAmount electricityAmount){
+        return new ResponseData(electAmountService.selectElect(electricityAmount));
+
+    }
+
+    /**
+     * 更新是否缴费状态
+     * @param request
+     * @param response
+     * @param electricityAmounts
+     * @return
+     */
+    @RequestMapping(value = "/cm/updateElectStatu",method = RequestMethod.POST)
+    @ResponseBody
+    public ResponseData updateElectStatu(HttpServletRequest request, HttpServletResponse response, @RequestBody List<ElectricityAmount> electricityAmounts){
+        electAmountService.updateElectStatu(electricityAmounts);
+        return new ResponseData();
+
+    }
+
 }

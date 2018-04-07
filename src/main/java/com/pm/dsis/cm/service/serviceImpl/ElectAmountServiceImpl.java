@@ -96,4 +96,29 @@ public class ElectAmountServiceImpl implements ElectAmountService {
             electricityAmountMapper.deleteByEAId(ea.getEaId());
         }
     }
+
+
+    //条件查询
+    public List<ElectricityAmount> selectElect(ElectricityAmount electricityAmount){
+
+        List<ElectricityAmount> electAmountList = electricityAmountMapper.selectElect(electricityAmount);
+        //时间类型转换
+        for ( ElectricityAmount ea : electAmountList ) {
+            // Date date = wa.getWaBigenDate();
+            DateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+            String bigenDateStr = sdf.format(ea.getEaBigenDate());
+            String endDateStr = sdf.format(ea.getEaEndDate());
+            ea.setEaBigenDateStr(bigenDateStr);
+            ea.setEaEndDateStr(endDateStr);
+        }
+        return electAmountList;
+    }
+
+    //更新电费是否已交
+    public void updateElectStatu(List<ElectricityAmount> electricityAmounts) {
+        for (ElectricityAmount ea: electricityAmounts) {
+            electricityAmountMapper.updateElectById(ea);
+        }
+
+    }
 }

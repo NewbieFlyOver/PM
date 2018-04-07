@@ -28,4 +28,10 @@ public interface ElectAmountService {
      * @return
      */
     void deleteByEAId( List<ElectricityAmount> electricityAmounts);
+
+    //条件查询
+    List<ElectricityAmount> selectElect(ElectricityAmount electricityAmount);
+
+    //更新电费是否已交
+    void updateElectStatu(List<ElectricityAmount> electricityAmounts);
 }

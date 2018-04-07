@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>水费</title>
+    <title>电费</title>
     <script src="/kendoui/kendoui/js/jquery.min.js"></script>
     <script src="/kendoui/kendoui/js/kendo.all.min.js"></script>
     <link href="/kendoui/bootstrap-3.3.7/css/bootstrap.css" rel="stylesheet" type="text/css"/>
@@ -18,7 +18,7 @@
 <script type="text/javascript">
     var viewModel = kendo.observable({
         model:{
-            waterAmountInfo:{}
+            electAmountInfo:{}
         },
         /* createFunction: function(){
          $('#Grid').data('kendoGrid').addRow();
@@ -43,7 +43,7 @@
                             <div class="form-group">
                                 <label class="col-sm-4 control-label">房号</label>
                                 <div class="col-sm-8">
-                                    <input id="buildingFullRoom"  type="text" style="width: 100%" data-bind="value:model.waterAmountInfo.buildingFullRoom"
+                                    <input id="buildingFullRoom"  type="text" style="width: 100%" data-bind="value:model.electAmountInfo.buildingFullRoom"
                                            class="k-textbox">
                                 </div>
                             </div>
@@ -53,7 +53,7 @@
                             <div class="form-group">
                                 <label class="col-sm-4 control-label">年月</label>
                                 <div class="col-sm-8">
-                                    <input id="waMonth"  type="text" style="width: 100%" data-bind="value:model.waterAmountInfo.waMonth"
+                                    <input id="eaMonth"  type="text" style="width: 100%" data-bind="value:model.electAmountInfo.eaMonth"
                                            class="k-textbox">
                                 </div>
                             </div>
@@ -63,7 +63,7 @@
                             <div class="form-group">
                                 <label class="col-sm-4 control-label">是否已交</label>
                                 <div class="col-sm-8">
-                                    <input id="waFlag"  type="text" style="width: 100%" data-bind="value:model.waterAmountInfo.waFlag">
+                                    <input id="eaFlag"  type="text" style="width: 100%" data-bind="value:model.electAmountInfo.eaFlag">
                                 </div>
                             </div>
                         </div>
@@ -78,12 +78,11 @@
                             success: function (data) {
                                 if (data.success) {
                                     commonInfoSource = eval(data.rows);
-                                    $("#waFlag").kendoComboBox({
+                                    $("#eaFlag").kendoComboBox({
                                         dataTextField: "commonName",
                                         dataValueField: "commonValue",
                                         dataSource: commonInfoSource,
                                     });
-                                    // viewModel.model.waterAmountInfo.waFlag.set("commonValue",null)
                                 }
                             }
                         });
@@ -117,7 +116,7 @@
                  dataType: "json",*/
             },
             update: {
-                url: "/cm/selectWater",
+                url: "/cm/selectElect",
                 type : "POST" ,
                 contentType: "application/json"
             },
@@ -137,16 +136,17 @@
             data:'rows',
             total:'total',
             model: {
-                id: "waId",
+                id: "eaId",
                 fields: {
                     buildingFullRoom:{ editable: false},
-                    waNumber:{ editable: false},
-                    waDosage:{ editable: false},
+                    eaNumber:{ editable: false},
+                    eaDosage:{ editable: false},
                     monthFee:{ editable: false},
-                    waBigenDateStr:{ editable: false},
-                    waEndDateStr:{ editable: false},
-                    waMonth:{ editable: false},
-                    waWriter:{ editable: false}
+                    eaBigenDateStr:{ editable: false},
+                    eaEndDateStr:{ editable: false},
+                    eaMonth:{ editable: false},
+                    eaWriter:{ editable: false},
+                    eaFlag: {editable: false}
                 }
             }
         }
@@ -175,16 +175,16 @@
                 },
                 width: 120
             }, {
-                field: "waNumber",
-                title: "本次读数（m3）",
+                field: "eaNumber",
+                title: "本次读数（度）",
                 headerAttributes: {
                     "class": "table-header-cell",
                     style  : "text-align: center"
                 },
                 width: 120
             }, {
-                field: "waDosage",
-                title: "本月用水量(m3)",
+                field: "eaDosage",
+                title: "本月用电量(度)",
                 headerAttributes: {
                     "class": "table-header-cell",
                     style  : "text-align: center"
@@ -199,7 +199,7 @@
                 },
                 width: 120
             },{
-                field: "waBigenDateStr",
+                field: "eaBigenDateStr",
                 title: "开始时间",
                 headerAttributes: {
                     "class": "table-header-cell",
@@ -207,7 +207,7 @@
                 },
                 width: 120
             }, {
-                field: "waEndDateStr",
+                field: "eaEndDateStr",
                 title: "结束时间",
                 headerAttributes: {
                     "class": "table-header-cell",
@@ -215,7 +215,7 @@
                 },
                 width: 120
             }, {
-                field: "waMonth",
+                field: "eaMonth",
                 title: "年月",
                 headerAttributes: {
                     "class": "table-header-cell",
@@ -223,7 +223,7 @@
                 },
                 width: 120
             }, {
-                field: "waWriter",
+                field: "eaWriter",
                 title: "抄表人",
                 headerAttributes: {
                     "class": "table-header-cell",
@@ -231,7 +231,7 @@
                 },
                 width: 120
             }, {
-                field: "waFlag",
+                field: "eaFlag",
                 title: "是否已交",
                 headerAttributes: {
                     "class": "table-header-cell",
@@ -239,7 +239,7 @@
                 },
                 width: 120,
                 template: function(dataItem){
-                    var v = dataItem.waFlag;
+                    var v = dataItem.eaFlag;
                     $.each(commonInfoSource,function(i,n){
                         if((n.commonValue||'').toLowerCase() == (v||'').toLowerCase()){
                             v = n.commonName;
@@ -263,13 +263,13 @@
         editable: true,
     });
 
-    waterAmount=JSON.stringify(viewModel.model.waterAmountInfo)
+    electAmount=JSON.stringify(viewModel.model.electAmountInfo)
     $.ajax({
         type : "POST" ,
-        url: "/cm/selectWater",
+        url: "/cm/selectElect",
         dataType: "json",
         contentType: "application/json",
-        data: waterAmount,
+        data: electAmount,
         // sync:false,
         success: function (data) {
             if (data.success) {
@@ -281,16 +281,17 @@
                             return data.rows.length;
                         },
                         model: {
-                            id: "waId",
+                            id: "eaId",
                             fields: {
                                 buildingFullRoom:{ editable: false},
-                                waNumber:{ editable: false},
-                                waDosage:{ editable: false},
+                                eaNumber:{ editable: false},
+                                eaDosage:{ editable: false},
                                 monthFee:{ editable: false},
-                                waBigenDateStr:{ editable: false},
-                                waEndDateStr:{ editable: false},
-                                waMonth:{ editable: false},
-                                waWriter:{ editable: false}
+                                eaBigenDateStr:{ editable: false},
+                                eaEndDateStr:{ editable: false},
+                                eaMonth:{ editable: false},
+                                eaWriter:{ editable: false},
+                                eaFlag: {editable: false}
                             }
                         }
                     },
@@ -307,19 +308,19 @@
         if (gridData.length>0) {
             var sumFee = 0;
             $.each(gridData,function(index,r){
-                if (r.waFlag != "Y") {
+                if (r.eaFlag != "Y") {
                     sumFee += sumFee + r.monthFee;
                 }
             });
             var flag = confirm("共计未交水费：" +sumFee);
             if (flag) {
                 $.each(gridData,function(index,r){
-                    r.waFlag = "Y";
+                    r.eaFlag = "Y";
                 });
 
                 $.ajax({
                     type : "POST" ,
-                    url: "/cm/updateWaterStatu",
+                    url: "/cm/updateElectStatu",
                     dataType: "json",
                     contentType: "application/json",
                     data: JSON.stringify(gridData),
@@ -329,10 +330,10 @@
                             alert("缴费成功！")
                             $.ajax({
                                 type: 'POST',
-                                url: '/cm/selectWater',
+                                url: '/cm/selectElect',
                                 dataType: "json",
                                 contentType: "application/json",
-                                data: waterAmount,
+                                data: electAmount,
                                 success: function (data) {
                                     if (data.success) {
                                         var grid = $('#grid').data('kendoGrid');
@@ -343,16 +344,17 @@
                                                     return data.rows.length;
                                                 },
                                                 model: {
-                                                    id: "waId",
+                                                    id: "eaId",
                                                     fields: {
                                                         buildingFullRoom: {editable: false},
-                                                        waNumber: {editable: false},
-                                                        waDosage: {editable: false},
+                                                        eaNumber: {editable: false},
+                                                        eaDosage: {editable: false},
                                                         monthFee: {editable: false},
-                                                        waBigenDateStr: {editable: false},
-                                                        waEndDateStr: {editable: false},
-                                                        waMonth: {editable: false},
-                                                        waWriter: {editable: false}
+                                                        eaBigenDateStr: {editable: false},
+                                                        eaEndDateStr: {editable: false},
+                                                        eaMonth: {editable: false},
+                                                        eaWriter: {editable: false},
+                                                        eaFlag: {editable: false}
                                                     }
                                                 },
                                                 page: 1,
@@ -374,17 +376,17 @@
     }
 
     function queryAllUserInfo() {
-        if( $("#waFlag").val()!="" ){
-            waFlag = viewModel.model.waterAmountInfo.waFlag.commonValue;
-            viewModel.model.waterAmountInfo.set('waFlag',waFlag);
+        if( $("#eaFlag").val()!="" ){
+            eaFlag = viewModel.model.electAmountInfo.eaFlag.commonValue;
+            viewModel.model.electAmountInfo.set('eaFlag',eaFlag);
         }
-        waterAmount=JSON.stringify(viewModel.model.waterAmountInfo)
+        electAmount=JSON.stringify(viewModel.model.electAmountInfo)
         $.ajax({
             type: 'POST',
-            url: '/cm/selectWater',
+            url: '/cm/selectElect',
             dataType: "json",
             contentType: "application/json",
-            data: waterAmount,
+            data: electAmount,
             success: function (data) {
                 if (data.success) {
                     var grid = $('#grid').data('kendoGrid');
@@ -395,16 +397,16 @@
                                 return data.rows.length;
                             },
                             model: {
-                                id: "waId",
+                                id: "eaId",
                                 fields: {
                                     buildingFullRoom: {editable: false},
-                                    waNumber: {editable: false},
-                                    waDosage: {editable: false},
+                                    eaNumber: {editable: false},
+                                    eaDosage: {editable: false},
                                     monthFee: {editable: false},
-                                    waBigenDateStr: {editable: false},
-                                    waEndDateStr: {editable: false},
-                                    waMonth: {editable: false},
-                                    waWriter: {editable: false}
+                                    eaBigenDateStr: {editable: false},
+                                    eaEndDateStr: {editable: false},
+                                    eaMonth: {editable: false},
+                                    eaWriter: {editable: false}
                                 }
                             },
                             page: 1,

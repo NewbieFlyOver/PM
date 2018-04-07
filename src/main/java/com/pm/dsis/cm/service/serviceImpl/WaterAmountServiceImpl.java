@@ -112,9 +112,6 @@ public class WaterAmountServiceImpl implements WaterAmountService {
      * @return
      */
     public List<WaterAmount> selectWater(WaterAmount waterAmount){
-        /*if (waterAmount.getWaFlag() == null) {
-            waterAmount.setWaFlag("N");
-        }*/
         List<WaterAmount> waterAmountList = waterAmountMapper.selectWater(waterAmount);
         //时间类型转换
         for ( WaterAmount wa : waterAmountList ) {
