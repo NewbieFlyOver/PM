@@ -7,6 +7,8 @@ public class PmFee {
 
     private Long userId;
 
+    private String buildingFullRoom;
+
     private Long pmUpId;
 
     private Float energy;
@@ -21,6 +23,8 @@ public class PmFee {
 
     private String pmObject;
 
+    private Float monthFee;
+
     private String attribute1;
 
     private String attribute2;
@@ -32,6 +36,14 @@ public class PmFee {
     private String attribute5;
 
     private String attribute6;
+
+    public String getBuildingFullRoom() {
+        return buildingFullRoom;
+    }
+
+    public void setBuildingFullRoom(String buildingFullRoom) {
+        this.buildingFullRoom = buildingFullRoom;
+    }
 
     public Long getPmId() {
         return pmId;
@@ -103,6 +115,14 @@ public class PmFee {
 
     public void setPmObject(String pmObject) {
         this.pmObject = pmObject == null ? null : pmObject.trim();
+    }
+
+    public Float getMonthFee() {
+        return monthFee;
+    }
+
+    public void setMonthFee(Float monthFee) {
+        this.monthFee = monthFee;
     }
 
     public String getAttribute1() {

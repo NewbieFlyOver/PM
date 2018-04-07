@@ -46,6 +46,26 @@
     and WA_MONTH = #{waMonth}
   </select>
 
+  <select id="selectWater" resultMap="BaseResultMap" parameterType="com.pm.dsis.cm.dto.WaterAmount">
+    select
+    <include refid="Base_Column_List" />
+    from water_amount
+    <where>
+      <if test="buildingFullRoom!=null">
+        BUILDING_FULL_ROOM = #{buildingFullRoom}
+      </if>
+      <if test="waMonth!=null">
+        and WA_MONTH = #{waMonth}
+      </if>
+      <if test="waFlag">
+        and WA_FLAG = #{waFlag}
+      </if>
+    </where>
+
+  </select>
+
+
+
   <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Long" >
     select
     <include refid="Base_Column_List" />
@@ -161,6 +181,16 @@
       </if>
     </trim>
   </insert>
+
+  <update id="updateWaterStatu" parameterType="com.pm.dsis.cm.dto.WaterAmount" >
+    update water_amount
+    <set >
+      <if test="waFlag != null" >
+        WA_FLAG = #{waFlag,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where WA_ID = #{waId,jdbcType=BIGINT}
+  </update>
 
   <update id="updateByPrimaryKeySelective" parameterType="com.pm.dsis.cm.dto.WaterAmount" >
     update water_amount

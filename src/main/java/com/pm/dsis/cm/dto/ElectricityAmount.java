@@ -25,6 +25,26 @@ public class ElectricityAmount {
     //本月费用
     private float monthFee;
 
+    private String waBigenDateStr;
+
+    private String waEndDateStr;
+
+    public String getWaBigenDateStr() {
+        return waBigenDateStr;
+    }
+
+    public void setWaBigenDateStr(String waBigenDateStr) {
+        this.waBigenDateStr = waBigenDateStr;
+    }
+
+    public String getWaEndDateStr() {
+        return waEndDateStr;
+    }
+
+    public void setWaEndDateStr(String waEndDateStr) {
+        this.waEndDateStr = waEndDateStr;
+    }
+
     private String attribute1;
 
     private String attribute2;

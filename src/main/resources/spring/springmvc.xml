@@ -35,4 +35,30 @@
     </bean>
 
 
+    <!--  job 定时任务  -->
+    <bean id="sc" class="org.springframework.scheduling.quartz.SchedulerFactoryBean">
+        <property name="triggers">
+            <list>
+                <ref bean="cronTrigger"/>
+            </list>
+        </property>
+    </bean>
+
+
+    <!--  注入调度的object -->
+    <bean id="pmFeeJob" class="com.pm.dsis.fee.job.PmFeeJob"></bean>
+    <!-- 引入调用的方法 -->
+    <bean id="jobDetailBean" class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
+        <property name="targetObject" ref="pmFeeJob"></property><!-- 定时器类 -->
+        <property name="targetMethod" value="insertPmFee"></property><!-- 定时器类的具体处理方法 -->
+        <property name="concurrent" value="false"></property><!-- 定时器是否支持并发 -->
+    </bean>
+
+    <!-- job定时规则 -->
+    <bean id="cronTrigger" class="org.springframework.scheduling.quartz.CronTriggerFactoryBean">
+        <property name="jobDetail" ref="jobDetailBean"></property>
+        <property name="cronExpression" value="0 0/1 * * * ?"></property>
+    </bean>
+
+
 </beans>

@@ -21,6 +21,10 @@ public class WaterAmount {
 
     private String waFlag;
 
+    private String waBigenDateStr;
+
+    private String waEndDateStr;
+
     //本月用量
     private float waDosage;
     //本月费用
@@ -37,6 +41,22 @@ public class WaterAmount {
     private String attribute5;
 
     private String attribute6;
+
+    public String getWaBigenDateStr() {
+        return waBigenDateStr;
+    }
+
+    public void setWaBigenDateStr(String waBigenDateStr) {
+        this.waBigenDateStr = waBigenDateStr;
+    }
+
+    public String getWaEndDateStr() {
+        return waEndDateStr;
+    }
+
+    public void setWaEndDateStr(String waEndDateStr) {
+        this.waEndDateStr = waEndDateStr;
+    }
 
     public float getWaDosage() {
         return waDosage;

@@ -18,7 +18,7 @@
 <script type="text/javascript">
     var viewModel = kendo.observable({
         model:{
-            queryUserInfo:{}
+            waterAmountInfo:{}
         },
        /* createFunction: function(){
             $('#Grid').data('kendoGrid').addRow();
@@ -43,7 +43,7 @@
                             <div class="form-group">
                                 <label class="col-sm-4 control-label">房号</label>
                                 <div class="col-sm-8">
-                                    <input id="userName"  type="text" style="width: 100%" data-bind="value:model.queryUserInfo.userName"
+                                    <input id="buildingFullRoom"  type="text" style="width: 100%" data-bind="value:model.waterAmountInfo.buildingFullRoom"
                                            class="k-textbox">
                                 </div>
                             </div>
@@ -51,9 +51,9 @@
 
                         <div class="col-sm-4" id="2">
                             <div class="form-group">
-                                <label class="col-sm-4 control-label">月份</label>
+                                <label class="col-sm-4 control-label">年月</label>
                                 <div class="col-sm-8">
-                                    <input id="userPhone"  type="text" style="width: 100%" data-bind="value:model.queryUserInfo.userPhone"
+                                    <input id="waMonth"  type="text" style="width: 100%" data-bind="value:model.waterAmountInfo.waMonth"
                                            class="k-textbox">
                                 </div>
                             </div>
@@ -63,10 +63,31 @@
                             <div class="form-group">
                                 <label class="col-sm-4 control-label">是否已交</label>
                                 <div class="col-sm-8">
-                                    <input id="object"  type="text" style="width: 100%" data-bind="value:model.queryUserInfo.object"
-                                           class="k-textbox">
+                                    <input id="waFlag"  type="text" style="width: 100%" data-bind="value:model.waterAmountInfo.waFlag">
                                 </div>
                             </div>
+                        </div>
+                    </div>
+                            <script>
+                                var type = 'YesOrNo';
+                                $.ajax({
+                                    type : "GET" ,
+                                    url: "/ci/selectByType",
+                                    dataType: "json",
+                                    data:{commonType : type},
+                                    success: function (data) {
+                                        if (data.success) {
+                                            commonInfoSource = eval(data.rows);
+                                            $("#waFlag").kendoComboBox({
+                                                dataTextField: "commonName",
+                                                dataValueField: "commonValue",
+                                                dataSource: commonInfoSource,
+                                            });
+                                           // viewModel.model.waterAmountInfo.waFlag.set("commonValue",null)
+                                        }
+                                    }
+                                });
+                            </script>
                         </div>
                     </div>
 
@@ -74,6 +95,7 @@
 
                 <div class="panel-footer text-right"><!--data-bind="click:queryApply"-->
                     <span class="btn btn-success" onclick="queryAllUserInfo()"><i class="fa fa-search"></i>查询</span>
+                    <span class="btn btn-primary k-grid-add"  onclick="saveMemberInfo()" style="float:right;margin-left:15px;">缴费</span>
                 </div>
 
             </form>
@@ -90,12 +112,12 @@
         dataSource = new kendo.data.DataSource({
             transport: {
                 read:  {
-                    url: "/mm/queryAllUserInfo",
+                   /* url: "/cm/selectWater",
                     type : "POST",
-                    dataType: "json",
+                    dataType: "json",*/
                 },
                 update: {
-                    url: "/mm/queryAllUserInfo",
+                    url: "/cm/selectWater",
                     type : "POST" ,
                     contentType: "application/json"
                 },
@@ -115,8 +137,16 @@
                 data:'rows',
                 total:'total',
                 model: {
-                    id: "userId",
+                    id: "waId",
                     fields: {
+                        buildingFullRoom:{ editable: false},
+                        waNumber:{ editable: false},
+                        waDosage:{ editable: false},
+                        monthFee:{ editable: false},
+                        waBigenDateStr:{ editable: false},
+                        waEndDateStr:{ editable: false},
+                        waMonth:{ editable: false},
+                        waWriter:{ editable: false}
                     }
                 }
             }
@@ -128,7 +158,7 @@
         resizable  : true,
         scrollable : true,
         navigatable: false,
-        //selectable : 'multiple, rowbox',
+        selectable : 'multiple, rowbox',
         rownumber : true,
         pageable: {
             pageSizes:[5, 10, 20, 50],
@@ -137,7 +167,7 @@
         },
         columns: [
             {
-                field: "roomName",
+                field: "buildingFullRoom",
                 title: "房号",
                 headerAttributes: {
                     "class": "table-header-cell",
@@ -145,31 +175,31 @@
                 },
                 width: 120
             }, {
-                field: "userName",
-                title: "本次读数",
+                field: "waNumber",
+                title: "本次读数（m3）",
                 headerAttributes: {
                     "class": "table-header-cell",
                     style  : "text-align: center"
                 },
                 width: 120
             }, {
-                field: "housingUsage",
-                title: "本月用量",
+                field: "waDosage",
+                title: "本月用水量(m3)",
                 headerAttributes: {
                     "class": "table-header-cell",
                     style  : "text-align: center"
                 },
                 width: 120
             },{
-                field: "housingUsage",
-                title: "费用",
+                field: "monthFee",
+                title: "本月费用(元)",
                 headerAttributes: {
                     "class": "table-header-cell",
                     style  : "text-align: center"
                 },
                 width: 120
             },{
-                field: "object",
+                field: "waBigenDateStr",
                 title: "开始时间",
                 headerAttributes: {
                     "class": "table-header-cell",
@@ -177,7 +207,7 @@
                 },
                 width: 120
             }, {
-                field: "memberSituation",
+                field: "waEndDateStr",
                 title: "结束时间",
                 headerAttributes: {
                     "class": "table-header-cell",
@@ -185,33 +215,62 @@
                 },
                 width: 120
             }, {
-                field: "memberSituation",
-                title: "月份",
+                field: "waMonth",
+                title: "年月",
                 headerAttributes: {
                     "class": "table-header-cell",
                     style  : "text-align: center"
                 },
                 width: 120
+            }, {
+                field: "waWriter",
+                title: "抄表人",
+                headerAttributes: {
+                    "class": "table-header-cell",
+                    style  : "text-align: center"
+                },
+                width: 120
+            }, {
+                field: "waFlag",
+                title: "是否已交",
+                headerAttributes: {
+                    "class": "table-header-cell",
+                    style  : "text-align: center"
+                },
+                width: 120,
+                template: function(dataItem){
+                    var v = dataItem.waFlag;
+                    $.each(commonInfoSource,function(i,n){
+                        if((n.commonValue||'').toLowerCase() == (v||'').toLowerCase()){
+                            v = n.commonName;
+                            return v;
+                        }
+                    })
+                    return v;
+                },
+                editor: function(container, options){
+                    $('<input name="' + options.field + '"/>')
+                        .appendTo(container)
+                        .kendoDropDownList({
+                            dataTextField: "commonName",
+                            dataValueField: "commonValue",
+                            valuePrimitive: true,
+                            dataSource: commonInfoSource
+                        });
+                }
             }
         ],
         editable: true,
     });
 
-
-     function editUserInfo(userId) {
-         //top.location='./mm_edit.html';
-         window.open ("./mm_edit.html", "newwindow","'location=no, toolbar=no'")
-            /* "height=100, width=400, top=0, left=0, toolbar=no, menubar=no, scrollbars=no, resizable=no,location=no, status=no")*/
-         window.localStorage["editUserId"]=JSON.stringify(userId);
-     }
-    function queryAllUserInfo() {
-        queryUserInfo=JSON.stringify(viewModel.model.queryUserInfo)
+        waterAmount=JSON.stringify(viewModel.model.waterAmountInfo)
         $.ajax({
-            type: 'POST',
-            url: '/mm/queryAllUserInfo11',
+            type : "POST" ,
+            url: "/cm/selectWater",
             dataType: "json",
             contentType: "application/json",
-            data: JSON.stringify(viewModel.model.queryUserInfo),
+            data: waterAmount,
+           // sync:false,
             success: function (data) {
                 if (data.success) {
                     var grid = $('#grid').data('kendoGrid');
@@ -222,13 +281,135 @@
                                 return data.rows.length;
                             },
                             model: {
-                                id: "userId",
+                                id: "waId",
                                 fields: {
+                                    buildingFullRoom:{ editable: false},
+                                    waNumber:{ editable: false},
+                                    waDosage:{ editable: false},
+                                    monthFee:{ editable: false},
+                                    waBigenDateStr:{ editable: false},
+                                    waEndDateStr:{ editable: false},
+                                    waMonth:{ editable: false},
+                                    waWriter:{ editable: false}
                                 }
                             }
                         },
                         page:1,
                         pageSize:5
+                    });
+                    grid.setDataSource(dataSource);
+                }
+            }
+        });
+
+        function saveMemberInfo() {
+            var gridData = $('#grid').data('kendoGrid').selectedDataItems();
+            if (gridData.length>0) {
+                var sumFee = 0;
+                $.each(gridData,function(index,r){
+                    if (r.waFlag != "Y") {
+                        sumFee += sumFee + r.monthFee;
+                    }
+                });
+                var flag = confirm("共计未交水费：" +sumFee);
+                if (flag) {
+                    $.each(gridData,function(index,r){
+                        r.waFlag = "Y";
+                    });
+
+                    $.ajax({
+                        type : "POST" ,
+                        url: "/cm/updateWaterStatu",
+                        dataType: "json",
+                        contentType: "application/json",
+                        data: JSON.stringify(gridData),
+                        sync:false,
+                        success: function (data) {
+                            if (data.success) {
+                                alert("缴费成功！")
+                                $.ajax({
+                                    type: 'POST',
+                                    url: '/cm/selectWater',
+                                    dataType: "json",
+                                    contentType: "application/json",
+                                    data: waterAmount,
+                                    success: function (data) {
+                                        if (data.success) {
+                                            var grid = $('#grid').data('kendoGrid');
+                                            var dataSource = new kendo.data.DataSource({
+                                                data: data.rows,
+                                                schema: {
+                                                    total: function (e) {
+                                                        return data.rows.length;
+                                                    },
+                                                    model: {
+                                                        id: "waId",
+                                                        fields: {
+                                                            buildingFullRoom: {editable: false},
+                                                            waNumber: {editable: false},
+                                                            waDosage: {editable: false},
+                                                            monthFee: {editable: false},
+                                                            waBigenDateStr: {editable: false},
+                                                            waEndDateStr: {editable: false},
+                                                            waMonth: {editable: false},
+                                                            waWriter: {editable: false}
+                                                        }
+                                                    },
+                                                    page: 1,
+                                                    pageSize: 5
+                                                }
+                                            });
+                                            grid.setDataSource(dataSource);
+                                        }
+                                    }
+                                })
+                            }
+                        }
+                    });
+                }
+            }else{
+                alert("请选择需要交费的月份");
+            }
+
+        }
+
+    function queryAllUserInfo() {
+        if( $("#waFlag").val()!="" ){
+            waFlag = viewModel.model.waterAmountInfo.waFlag.commonValue;
+            viewModel.model.waterAmountInfo.set('waFlag',waFlag);
+        }
+        waterAmount=JSON.stringify(viewModel.model.waterAmountInfo)
+        $.ajax({
+            type: 'POST',
+            url: '/cm/selectWater',
+            dataType: "json",
+            contentType: "application/json",
+            data: waterAmount,
+            success: function (data) {
+                if (data.success) {
+                    var grid = $('#grid').data('kendoGrid');
+                    var dataSource = new kendo.data.DataSource({
+                        data: data.rows,
+                        schema: {
+                            total: function (e) {
+                                return data.rows.length;
+                            },
+                            model: {
+                                id: "waId",
+                                fields: {
+                                    buildingFullRoom: {editable: false},
+                                    waNumber: {editable: false},
+                                    waDosage: {editable: false},
+                                    monthFee: {editable: false},
+                                    waBigenDateStr: {editable: false},
+                                    waEndDateStr: {editable: false},
+                                    waMonth: {editable: false},
+                                    waWriter: {editable: false}
+                                }
+                            },
+                            page: 1,
+                            pageSize: 5
+                        }
                     });
                     grid.setDataSource(dataSource);
                 }

@@ -76,8 +76,11 @@ public class ElectAmountServiceImpl implements ElectAmountService {
                 }
                 ea.setMonthFee(electSum);
                 //添加本月用电信息
-                if (ea.getEaId() == null) {
+                ElectricityAmount elecAmount = electricityAmountMapper.selectByRoomMonth(ea.getEaMonth(),ea.getBuildingFullRoom());
+                if (elecAmount == null) {
                     electricityAmountMapper.insertElect(ea);
+                } else {
+                    System.out.println("此月数据已存在！");
                 }
 
             }

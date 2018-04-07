@@ -44,4 +44,16 @@ public interface WaterAmountService {
      */
     WaterAmount selectByRoomMonth(int waMonth,String buildingFullRoom);
 
+    /**
+     * 根据条件查询
+     * @return
+     */
+    List<WaterAmount> selectWater(WaterAmount waterAmount);
+
+    /**
+     * 更新是否缴费状态
+     * @return
+     */
+    void updateWaterStatu(List<WaterAmount> waterAmount);
+
 }

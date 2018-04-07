@@ -25,6 +25,20 @@ public interface WaterAmountMapper {
     WaterAmount selectByRoomMonth(@Param("waMonth") int waMonth, @Param("buildingFullRoom") String buildingFullRoom);
 
 
+    /**
+     * 根据条件查询
+     * @return
+     */
+    List<WaterAmount> selectWater(WaterAmount waterAmount);
+
+    /**
+     * 更新是否缴费状态
+     * @return
+     */
+    int updateWaterStatu(WaterAmount waterAmount);
+
+
+
     int insertSelective(WaterAmount record);
     WaterAmount selectByPrimaryKey(Long waId);
     int updateByPrimaryKeySelective(WaterAmount record);

@@ -76,8 +76,12 @@ public class WaterAmountServiceImpl implements WaterAmountService {
                      }
                 }
                 wat.setMonthFee(waterSum);
+
+                WaterAmount watAmount = selectByRoomMonth(wat.getWaMonth(),wat.getBuildingFullRoom());
                 if(null == wat.getWaId()){
                     waterAmountMapper.insertWaterAmount(wat);
+                } else {
+                    System.out.println("此月数据已存在！");
                 }
             }
         }
@@ -101,6 +105,34 @@ public class WaterAmountServiceImpl implements WaterAmountService {
 
     public WaterAmount selectByRoomMonth(int waMonth,String buildingFullRoom){
         return waterAmountMapper.selectByRoomMonth(waMonth,buildingFullRoom);
+    }
+
+    /**
+     * 根据条件查询
+     * @return
+     */
+    public List<WaterAmount> selectWater(WaterAmount waterAmount){
+        /*if (waterAmount.getWaFlag() == null) {
+            waterAmount.setWaFlag("N");
+        }*/
+        List<WaterAmount> waterAmountList = waterAmountMapper.selectWater(waterAmount);
+        //时间类型转换
+        for ( WaterAmount wa : waterAmountList ) {
+       // Date date = wa.getWaBigenDate();
+            DateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+            String bigenDateStr = sdf.format(wa.getWaBigenDate());
+            String endDateStr = sdf.format(wa.getWaEndDate());
+            wa.setWaBigenDateStr(bigenDateStr);
+            wa.setWaEndDateStr(endDateStr);
+        }
+        return waterAmountList;
+    }
+
+    public void updateWaterStatu(List<WaterAmount> waterAmounts){
+        for (WaterAmount wa: waterAmounts) {
+            waterAmountMapper.updateWaterStatu(wa);
+        }
+
     }
 
 }

@@ -401,10 +401,11 @@ $(function(){
 					]},
 					{"id":"6","name":"费用管理","parentId":"1","url":"","icon":"&#xe602;","order":"1","isHeader":"0","childMenus":[
 						{"id":"19","name":"物业费","parentId":"6","url":"home3.html","icon":"","order":"1","isHeader":"0","childMenus":""},
-                        {"id":"20","name":"水费","parentId":"6","url":"home3.html","icon":"","order":"1","isHeader":"0","childMenus":""},
-                        {"id":"21","name":"电费","parentId":"6","url":"home3.html","icon":"","order":"1","isHeader":"0","childMenus":""},
+                        {"id":"20","name":"水费","parentId":"6","url":"view/dsis/fee/fee_water.html","icon":"","order":"1","isHeader":"0","childMenus":""},
+                        {"id":"21","name":"电费","parentId":"6","url":"view/dsis/fee/fee_elect.html","icon":"","order":"1","isHeader":"0","childMenus":""},
 					]},
 					{"id":"7","name":"用量录入","parentId":"1","url":"","icon":"&#xe602;","order":"1","isHeader":"0","childMenus":[
+                        {"id":"23","name":"物业费","parentId":"7","url":"view/dsis/cm/cm_fee_amount.html","icon":"","order":"1","isHeader":"0","childMenus":""},
 						{"id":"23","name":"用水量","parentId":"7","url":"view/dsis/cm/cm_water_amount.html","icon":"","order":"1","isHeader":"0","childMenus":""},
 						{"id":"24","name":"用电量","parentId":"7","url":"view/dsis/cm/cm_elect_amount.html","icon":"","order":"1","isHeader":"0","childMenus":""},
 						{"id":"19","name":"测试","parentId":"7","url":"test01.html","icon":"","order":"1","isHeader":"0","childMenus":""}

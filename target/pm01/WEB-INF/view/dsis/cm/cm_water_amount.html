@@ -212,7 +212,6 @@
                 success: function (data) {
                     if (data.success) {
                         alert("保存成功！")
-
                         $.ajax({
                             type : "POST" ,
                             url: "/cm/selectWaterAByMonth",
@@ -230,6 +229,7 @@
                                             model: {
                                                 id: "id",
                                                 fields: {
+                                                    waMonth:{editable: false}
                                                 }
                                             }
                                         },
@@ -237,13 +237,9 @@
                                         pageSize:5
                                     });
                                     grid.setDataSource(dataSource);
-
-
                                 }
                             }
                         });
-
-
                     }
                 }
             });

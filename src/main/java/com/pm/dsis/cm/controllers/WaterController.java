@@ -33,7 +33,6 @@ public class WaterController {
     @ResponseBody
     public ResponseData insertWaterAmount(HttpServletRequest request, HttpServletResponse response,
                                            @RequestBody List<WaterAmount> waterAmounts){
-
         waterAmountService.insertWaterAmount(waterAmounts);
         return new ResponseData();
 
@@ -73,7 +72,9 @@ public class WaterController {
         waterAmountService.deleteByWaterAId(waterAmounts);
         return new ResponseData();
 
-    }/**
+    }
+
+    /**
      * 根据月份查询用水量
      * @param request
      * @param response
@@ -84,9 +85,37 @@ public class WaterController {
     @ResponseBody
     public ResponseData selectWaterAByMonth(HttpServletRequest request, HttpServletResponse response,
                                          @RequestParam int month){
-
-
         return new ResponseData(waterAmountService.selectWaterAByMonth(month));
+
+    }
+
+    /**
+     * 条件查询
+     * @param request
+     * @param response
+     * @param waterAmount
+     * @return
+     */
+    @RequestMapping(value = "/cm/selectWater",method = RequestMethod.POST, consumes="application/json")
+    @ResponseBody//
+    public ResponseData selectWater(HttpServletRequest request, HttpServletResponse response, @RequestBody WaterAmount waterAmount){
+        return new ResponseData(waterAmountService.selectWater(waterAmount));
+
+    }
+
+    /**
+     * 更新是否缴费状态
+     * @param request
+     * @param response
+     * @param waterAmounts
+     * @return
+     */
+    @RequestMapping(value = "/cm/updateWaterStatu",method = RequestMethod.POST)
+    @ResponseBody//
+    public ResponseData updateWaterStatu(HttpServletRequest request, HttpServletResponse response, @RequestBody List<WaterAmount> waterAmounts){
+        //WaterAmount waterAmount = new WaterAmount();
+        waterAmountService.updateWaterStatu(waterAmounts);
+        return new ResponseData();
 
     }
 }

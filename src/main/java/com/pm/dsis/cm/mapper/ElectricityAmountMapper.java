@@ -20,7 +20,6 @@ public interface ElectricityAmountMapper {
     ElectricityAmount selectByRoomMonth(@Param("eaMonth") int waMonth, @Param("buildingFullRoom") String buildingFullRoom);
 
 
-
     int insertSelective(ElectricityAmount record);
 
     ElectricityAmount selectByPrimaryKey(Long eaId);

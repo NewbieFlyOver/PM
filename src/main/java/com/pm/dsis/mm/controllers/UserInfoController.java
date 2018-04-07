@@ -1,5 +1,6 @@
 package com.pm.dsis.mm.controllers;
 
+import com.pm.dsis.fee.service.PmFeeService;
 import com.pm.dsis.mm.dto.*;
 import com.pm.dsis.mm.service.UserInfoService;
 import com.pm.platform.ResponseData;
@@ -21,6 +22,8 @@ import java.util.List;
 public class UserInfoController {
     @Autowired
     private UserInfoService userInfoService;
+    @Autowired
+    private PmFeeService pmFeeService;
 
     /**
      * 保存/更新户主信息
@@ -203,6 +206,8 @@ public class UserInfoController {
     @RequestMapping(value = "/mm/queryAllUserInfo11",method = RequestMethod.POST, consumes = "application/json")
     @ResponseBody
     public ResponseData queryAllUserInfo11(HttpServletRequest request, HttpServletResponse response,@RequestBody QueryUserInfo queryUserInfo){
+
+        pmFeeService.insert();
 
         List<QueryUserInfo> queryAllUserInfo = userInfoService.queryAllUserInfo(queryUserInfo);
 
