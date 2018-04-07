@@ -18,7 +18,7 @@
 <script type="text/javascript">
     var viewModel = kendo.observable({
         model:{
-            electAmountInfo:{}
+            pmFeeAmountInfo:{}
         },
         /* createFunction: function(){
          $('#Grid').data('kendoGrid').addRow();
@@ -43,7 +43,7 @@
                             <div class="form-group">
                                 <label class="col-sm-4 control-label">房号</label>
                                 <div class="col-sm-8">
-                                    <input id="buildingFullRoom"  type="text" style="width: 100%" data-bind="value:model.electAmountInfo.buildingFullRoom"
+                                    <input id="buildingFullRoom"  type="text" style="width: 100%" data-bind="value:model.pmFeeAmountInfo.buildingFullRoom"
                                            class="k-textbox">
                                 </div>
                             </div>
@@ -53,7 +53,7 @@
                             <div class="form-group">
                                 <label class="col-sm-4 control-label">年月</label>
                                 <div class="col-sm-8">
-                                    <input id="eaMonth"  type="text" style="width: 100%" data-bind="value:model.electAmountInfo.eaMonth"
+                                    <input id="pmMonth"  type="text" style="width: 100%" data-bind="value:model.pmFeeAmountInfo.pmMonth"
                                            class="k-textbox">
                                 </div>
                             </div>
@@ -63,7 +63,7 @@
                             <div class="form-group">
                                 <label class="col-sm-4 control-label">是否已交</label>
                                 <div class="col-sm-8">
-                                    <input id="eaFlag"  type="text" style="width: 100%" data-bind="value:model.electAmountInfo.eaFlag">
+                                    <input id="pmFlag"  type="text" style="width: 100%" data-bind="value:model.pmFeeAmountInfo.pmFlag">
                                 </div>
                             </div>
                         </div>
@@ -78,7 +78,7 @@
                             success: function (data) {
                                 if (data.success) {
                                     commonInfoSource = eval(data.rows);
-                                    $("#eaFlag").kendoComboBox({
+                                    $("#pmFlag").kendoComboBox({
                                         dataTextField: "commonName",
                                         dataValueField: "commonValue",
                                         dataSource: commonInfoSource,
@@ -116,7 +116,7 @@
                  dataType: "json",*/
             },
             update: {
-                url: "/cm/selectElect",
+                url: "/fee/selecPmFee",
                 type : "POST" ,
                 contentType: "application/json"
             },
@@ -136,7 +136,7 @@
             data:'rows',
             total:'total',
             model: {
-                id: "eaId",
+                id: "pmId",
                 fields: {
                     buildingFullRoom:{ editable: false},
                     eaNumber:{ editable: false},
@@ -175,31 +175,23 @@
                 },
                 width: 120
             }, {
-                field: "eaNumber",
-                title: "本次读数（度）",
+                field: "monthFee",
+                title: "本月费用（元）",
                 headerAttributes: {
                     "class": "table-header-cell",
                     style  : "text-align: center"
                 },
                 width: 120
             }, {
-                field: "eaDosage",
-                title: "本月用电量(度)",
+                field: "pmPrice",
+                title: "本月单价(元/m3)",
                 headerAttributes: {
                     "class": "table-header-cell",
                     style  : "text-align: center"
                 },
                 width: 120
-            },{
-                field: "monthFee",
-                title: "本月费用(元)",
-                headerAttributes: {
-                    "class": "table-header-cell",
-                    style  : "text-align: center"
-                },
-                width: 120
-            },{
-                field: "eaBigenDateStr",
+            },  {
+                field: "beginDateStr",
                 title: "开始时间",
                 headerAttributes: {
                     "class": "table-header-cell",
@@ -207,7 +199,7 @@
                 },
                 width: 120
             }, {
-                field: "eaEndDateStr",
+                field: "endDateStr",
                 title: "结束时间",
                 headerAttributes: {
                     "class": "table-header-cell",
@@ -215,7 +207,7 @@
                 },
                 width: 120
             }, {
-                field: "eaMonth",
+                field: "pmMonth",
                 title: "年月",
                 headerAttributes: {
                     "class": "table-header-cell",
@@ -223,15 +215,7 @@
                 },
                 width: 120
             }, {
-                field: "eaWriter",
-                title: "抄表人",
-                headerAttributes: {
-                    "class": "table-header-cell",
-                    style  : "text-align: center"
-                },
-                width: 120
-            }, {
-                field: "eaFlag",
+                field: "pmFlag",
                 title: "是否已交",
                 headerAttributes: {
                     "class": "table-header-cell",
@@ -239,7 +223,7 @@
                 },
                 width: 120,
                 template: function(dataItem){
-                    var v = dataItem.eaFlag;
+                    var v = dataItem.pmFlag;
                     $.each(commonInfoSource,function(i,n){
                         if((n.commonValue||'').toLowerCase() == (v||'').toLowerCase()){
                             v = n.commonName;
@@ -260,16 +244,16 @@
                 }
             }
         ],
-        editable: true,
+        editable: false,
     });
 
-    electAmount=JSON.stringify(viewModel.model.electAmountInfo)
+    pmFeeAmount=JSON.stringify(viewModel.model.pmFeeAmountInfo)
     $.ajax({
         type : "POST" ,
-        url: "/cm/selectElect",
+        url: "/fee/selecPmFee",
         dataType: "json",
         contentType: "application/json",
-        data: electAmount,
+        data: pmFeeAmount,
         // sync:false,
         success: function (data) {
             if (data.success) {
@@ -281,17 +265,8 @@
                             return data.rows.length;
                         },
                         model: {
-                            id: "eaId",
+                            id: "pmId",
                             fields: {
-                                buildingFullRoom:{ editable: false},
-                                eaNumber:{ editable: false},
-                                eaDosage:{ editable: false},
-                                monthFee:{ editable: false},
-                                eaBigenDateStr:{ editable: false},
-                                eaEndDateStr:{ editable: false},
-                                eaMonth:{ editable: false},
-                                eaWriter:{ editable: false},
-                                eaFlag: {editable: false}
                             }
                         }
                     },
@@ -305,22 +280,24 @@
 
     function saveMemberInfo() {
         var gridData = $('#grid').data('kendoGrid').selectedDataItems();
+        console.log(gridData)
         if (gridData.length>0) {
             var sumFee = 0;
+
             $.each(gridData,function(index,r){
-                if (r.eaFlag != "Y") {
-                    sumFee += sumFee + r.monthFee;
+                if (r.pmFlag != "Y") {
+                    sumFee += r.monthFee;
                 }
             });
-            var flag = confirm("共计未交水费：" +sumFee);
+            var flag = confirm("共计未交物业费：" +sumFee);
             if (flag) {
                 $.each(gridData,function(index,r){
-                    r.eaFlag = "Y";
+                    r.pmFlag = "Y";
                 });
 
                 $.ajax({
                     type : "POST" ,
-                    url: "/cm/updateElectStatu",
+                    url: "/fee/updatePmFeeStatu",
                     dataType: "json",
                     contentType: "application/json",
                     data: JSON.stringify(gridData),
@@ -330,10 +307,10 @@
                             alert("缴费成功！")
                             $.ajax({
                                 type: 'POST',
-                                url: '/cm/selectElect',
+                                url: '/fee/selecPmFee',
                                 dataType: "json",
                                 contentType: "application/json",
-                                data: electAmount,
+                                data: pmFeeAmount,
                                 success: function (data) {
                                     if (data.success) {
                                         var grid = $('#grid').data('kendoGrid');
@@ -344,17 +321,8 @@
                                                     return data.rows.length;
                                                 },
                                                 model: {
-                                                    id: "eaId",
+                                                    id: "pmId",
                                                     fields: {
-                                                        buildingFullRoom: {editable: false},
-                                                        eaNumber: {editable: false},
-                                                        eaDosage: {editable: false},
-                                                        monthFee: {editable: false},
-                                                        eaBigenDateStr: {editable: false},
-                                                        eaEndDateStr: {editable: false},
-                                                        eaMonth: {editable: false},
-                                                        eaWriter: {editable: false},
-                                                        eaFlag: {editable: false}
                                                     }
                                                 },
                                                 page: 1,
@@ -376,17 +344,17 @@
     }
 
     function queryAllUserInfo() {
-        if( $("#eaFlag").val()!="" ){
-            eaFlag = viewModel.model.electAmountInfo.eaFlag.commonValue;
-            viewModel.model.electAmountInfo.set('eaFlag',eaFlag);
+        if( $("#pmFlag").val()!="" ){
+            pmFlag = viewModel.model.pmFeeAmountInfo.pmFlag.commonValue;
+            viewModel.model.pmFeeAmountInfo.set('pmFlag',pmFlag);
         }
-        electAmount=JSON.stringify(viewModel.model.electAmountInfo)
+        pmFeeAmount=JSON.stringify(viewModel.model.pmFeeAmountInfo)
         $.ajax({
             type: 'POST',
-            url: '/cm/selectElect',
+            url: '/fee/selecPmFee',
             dataType: "json",
             contentType: "application/json",
-            data: electAmount,
+            data: pmFeeAmount,
             success: function (data) {
                 if (data.success) {
                     var grid = $('#grid').data('kendoGrid');
@@ -397,16 +365,9 @@
                                 return data.rows.length;
                             },
                             model: {
-                                id: "eaId",
+                                id: "pmId",
                                 fields: {
-                                    buildingFullRoom: {editable: false},
-                                    eaNumber: {editable: false},
-                                    eaDosage: {editable: false},
-                                    monthFee: {editable: false},
-                                    eaBigenDateStr: {editable: false},
-                                    eaEndDateStr: {editable: false},
-                                    eaMonth: {editable: false},
-                                    eaWriter: {editable: false}
+
                                 }
                             },
                             page: 1,

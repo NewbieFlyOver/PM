@@ -309,7 +309,7 @@
                 var sumFee = 0;
                 $.each(gridData,function(index,r){
                     if (r.waFlag != "Y") {
-                        sumFee += sumFee + r.monthFee;
+                        sumFee += r.monthFee;
                     }
                 });
                 var flag = confirm("共计未交水费：" +sumFee);

@@ -2,32 +2,30 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="fae49d94-6251-4fda-977e-4cfe51227b06" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/dsis/fee/pm_fee.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/pm/dsis/cm/controllers/ElectAmountController.class" afterPath="$PROJECT_DIR$/target/classes/com/pm/dsis/cm/controllers/ElectAmountController.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/pm/dsis/cm/dto/ElectricityAmount.class" afterPath="$PROJECT_DIR$/target/classes/com/pm/dsis/cm/dto/ElectricityAmount.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/pm/dsis/cm/mapper/ElectricityAmountMapper.class" afterPath="$PROJECT_DIR$/target/classes/com/pm/dsis/cm/mapper/ElectricityAmountMapper.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/pm/dsis/cm/service/ElectAmountService.class" afterPath="$PROJECT_DIR$/target/classes/com/pm/dsis/cm/service/ElectAmountService.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/pm/dsis/cm/service/serviceImpl/ElectAmountServiceImpl.class" afterPath="$PROJECT_DIR$/target/classes/com/pm/dsis/cm/service/serviceImpl/ElectAmountServiceImpl.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/pm/dsis/cm/service/serviceImpl/WaterAmountServiceImpl.class" afterPath="$PROJECT_DIR$/target/classes/com/pm/dsis/cm/service/serviceImpl/WaterAmountServiceImpl.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/pm01/WEB-INF/classes/com/pm/dsis/cm/controllers/ElectAmountController.class" afterPath="$PROJECT_DIR$/target/pm01/WEB-INF/classes/com/pm/dsis/cm/controllers/ElectAmountController.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/pm01/WEB-INF/classes/com/pm/dsis/cm/dto/ElectricityAmount.class" afterPath="$PROJECT_DIR$/target/pm01/WEB-INF/classes/com/pm/dsis/cm/dto/ElectricityAmount.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/pm01/WEB-INF/classes/com/pm/dsis/cm/mapper/ElectricityAmountMapper.class" afterPath="$PROJECT_DIR$/target/pm01/WEB-INF/classes/com/pm/dsis/cm/mapper/ElectricityAmountMapper.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/pm01/WEB-INF/classes/com/pm/dsis/cm/service/ElectAmountService.class" afterPath="$PROJECT_DIR$/target/pm01/WEB-INF/classes/com/pm/dsis/cm/service/ElectAmountService.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/pm01/WEB-INF/classes/com/pm/dsis/cm/service/serviceImpl/ElectAmountServiceImpl.class" afterPath="$PROJECT_DIR$/target/pm01/WEB-INF/classes/com/pm/dsis/cm/service/serviceImpl/ElectAmountServiceImpl.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/pm01/WEB-INF/classes/com/pm/dsis/cm/service/serviceImpl/WaterAmountServiceImpl.class" afterPath="$PROJECT_DIR$/target/pm01/WEB-INF/classes/com/pm/dsis/cm/service/serviceImpl/WaterAmountServiceImpl.class" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/com/pm/dsis/cm/controllers/PmFeeController.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/com/pm/dsis/fee/dto/PmFee.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/com/pm/dsis/mm/controllers/UserInfoController.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/pm01/WEB-INF/classes/com/pm/dsis/cm/controllers/PmFeeController.class" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/pm/dsis/fee/service/serviceImpl/PmFeeServiceImpl.class" afterPath="$PROJECT_DIR$/target/classes/com/pm/dsis/fee/service/serviceImpl/PmFeeServiceImpl.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/pm01/WEB-INF/classes/com/pm/dsis/fee/dto/PmFee.class" afterPath="$PROJECT_DIR$/target/pm01/WEB-INF/classes/com/pm/dsis/fee/dto/PmFee.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/pm01/WEB-INF/classes/com/pm/dsis/fee/service/serviceImpl/PmFeeServiceImpl.class" afterPath="$PROJECT_DIR$/target/pm01/WEB-INF/classes/com/pm/dsis/fee/service/serviceImpl/PmFeeServiceImpl.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/pm/dsis/cm/controllers/ElectAmountController.java" afterPath="$PROJECT_DIR$/src/main/java/com/pm/dsis/cm/controllers/ElectAmountController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/pm/dsis/cm/dto/ElectricityAmount.java" afterPath="$PROJECT_DIR$/src/main/java/com/pm/dsis/cm/dto/ElectricityAmount.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/pm/dsis/cm/mapper/ElectricityAmountMapper.java" afterPath="$PROJECT_DIR$/src/main/java/com/pm/dsis/cm/mapper/ElectricityAmountMapper.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/pm/dsis/cm/service/ElectAmountService.java" afterPath="$PROJECT_DIR$/src/main/java/com/pm/dsis/cm/service/ElectAmountService.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/pm/dsis/cm/service/serviceImpl/ElectAmountServiceImpl.java" afterPath="$PROJECT_DIR$/src/main/java/com/pm/dsis/cm/service/serviceImpl/ElectAmountServiceImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/pm/dsis/cm/service/serviceImpl/WaterAmountServiceImpl.java" afterPath="$PROJECT_DIR$/src/main/java/com/pm/dsis/cm/service/serviceImpl/WaterAmountServiceImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/com/pm/dsis/cm/mapper/ElectricityAmountMapper.xml" afterPath="$PROJECT_DIR$/src/main/resources/com/pm/dsis/cm/mapper/ElectricityAmountMapper.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/pm/dsis/fee/dto/PmFee.java" afterPath="$PROJECT_DIR$/src/main/java/com/pm/dsis/fee/dto/PmFee.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/pm/dsis/fee/job/PmFeeJob.java" afterPath="$PROJECT_DIR$/src/main/java/com/pm/dsis/fee/job/PmFeeJob.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/pm/dsis/fee/mapper/PmFeeMapper.java" afterPath="$PROJECT_DIR$/src/main/java/com/pm/dsis/fee/mapper/PmFeeMapper.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/pm/dsis/fee/service/PmFeeService.java" afterPath="$PROJECT_DIR$/src/main/java/com/pm/dsis/fee/service/PmFeeService.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/pm/dsis/fee/service/serviceImpl/PmFeeServiceImpl.java" afterPath="$PROJECT_DIR$/src/main/java/com/pm/dsis/fee/service/serviceImpl/PmFeeServiceImpl.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/pm/dsis/mm/controllers/UserInfoController.java" afterPath="$PROJECT_DIR$/src/main/java/com/pm/dsis/mm/controllers/UserInfoController.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/com/pm/dsis/cm/mapper/WaterAmountMapper.xml" afterPath="$PROJECT_DIR$/src/main/resources/com/pm/dsis/cm/mapper/WaterAmountMapper.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/com/pm/dsis/fee/mapper/PmFeeMapper.xml" afterPath="$PROJECT_DIR$/src/main/resources/com/pm/dsis/fee/mapper/PmFeeMapper.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/common/js/sccl.js" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/common/js/sccl.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/dsis/fee/fee_elect.html" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/dsis/fee/fee_elect.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/dsis/fee/fee_water.html" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/dsis/fee/fee_water.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/pm/dsis/cm/mapper/ElectricityAmountMapper.xml" afterPath="$PROJECT_DIR$/target/classes/com/pm/dsis/cm/mapper/ElectricityAmountMapper.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/pm01/WEB-INF/classes/com/pm/dsis/cm/mapper/ElectricityAmountMapper.xml" afterPath="$PROJECT_DIR$/target/pm01/WEB-INF/classes/com/pm/dsis/cm/mapper/ElectricityAmountMapper.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/pm01/WEB-INF/view/dsis/fee/fee_elect.html" afterPath="$PROJECT_DIR$/target/pm01/WEB-INF/view/dsis/fee/fee_elect.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/dsis/fee/pm_fee.html" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/dsis/fee/pm_fee.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/pm/dsis/fee/mapper/PmFeeMapper.xml" afterPath="$PROJECT_DIR$/target/classes/com/pm/dsis/fee/mapper/PmFeeMapper.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/pm01/WEB-INF/classes/com/pm/dsis/fee/mapper/PmFeeMapper.xml" afterPath="$PROJECT_DIR$/target/pm01/WEB-INF/classes/com/pm/dsis/fee/mapper/PmFeeMapper.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/pm01/WEB-INF/view/dsis/fee/pm_fee.html" afterPath="$PROJECT_DIR$/target/pm01/WEB-INF/view/dsis/fee/pm_fee.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/pm/dsis/cm/controllers/PmFeeController.java" afterPath="$PROJECT_DIR$/src/main/java/com/pm/dsis/fee/controllers/PmFeeController.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -48,31 +46,59 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="ElectAmountController.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/pm/dsis/cm/controllers/ElectAmountController.java">
+      <file leaf-file-name="PmFeeService.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/pm/dsis/fee/service/PmFeeService.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="65">
-              <caret line="83" column="0" lean-forward="false" selection-start-line="83" selection-start-column="0" selection-end-line="83" selection-end-column="0" />
+              <caret line="30" column="0" lean-forward="false" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="PmFeeServiceImpl.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/pm/dsis/fee/service/serviceImpl/PmFeeServiceImpl.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="85">
+              <caret line="87" column="0" lean-forward="false" selection-start-line="87" selection-start-column="0" selection-end-line="87" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ElectricityAmount.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/pm/dsis/cm/dto/ElectricityAmount.java">
+      <file leaf-file-name="sccl.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/common/js/sccl.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="240">
-              <caret line="30" column="0" lean-forward="true" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
+            <state relative-caret-position="60">
+              <caret line="402" column="90" lean-forward="false" selection-start-line="402" selection-start-column="90" selection-end-line="402" selection-end-column="90" />
               <folding>
-                <element signature="e#537#538#0" expanded="true" />
-                <element signature="e#574#575#0" expanded="true" />
-                <element signature="e#634#635#0" expanded="true" />
-                <element signature="e#686#687#0" expanded="true" />
-                <element signature="e#725#726#0" expanded="true" />
-                <element signature="e#760#761#0" expanded="true" />
-                <element signature="e#816#817#0" expanded="true" />
-                <element signature="e#864#865#0" expanded="true" />
+                <marker date="1523098438455" expanded="true" signature="1877:1885" ph="&amp;##xe617;" />
+                <marker date="1523098438455" expanded="true" signature="8397:8405" ph="&amp;##xe60b;" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="PmFeeController.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/pm/dsis/fee/controllers/PmFeeController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="234">
+              <caret line="49" column="0" lean-forward="false" selection-start-line="49" selection-start-column="0" selection-end-line="49" selection-end-column="0" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="pm_fee.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/view/dsis/fee/pm_fee.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="201">
+              <caret line="288" column="41" lean-forward="false" selection-start-line="288" selection-start-column="41" selection-end-line="288" selection-end-column="41" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -80,31 +106,11 @@
       <file leaf-file-name="fee_water.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/view/dsis/fee/fee_water.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1420">
-              <caret line="293" column="37" lean-forward="false" selection-start-line="293" selection-start-column="37" selection-end-line="293" selection-end-column="37" />
+            <state relative-caret-position="172">
+              <caret line="311" column="33" lean-forward="false" selection-start-line="311" selection-start-column="33" selection-end-line="311" selection-end-column="33" />
               <folding>
                 <element signature="n#style#0;n#span#1;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="WaterAmountServiceImpl.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/pm/dsis/cm/service/serviceImpl/WaterAmountServiceImpl.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="115">
-              <caret line="122" column="43" lean-forward="false" selection-start-line="122" selection-start-column="43" selection-end-line="122" selection-end-column="43" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ElectAmountServiceImpl.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/pm/dsis/cm/service/serviceImpl/ElectAmountServiceImpl.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="99">
-              <caret line="103" column="104" lean-forward="true" selection-start-line="103" selection-start-column="49" selection-end-line="103" selection-end-column="104" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -112,8 +118,8 @@
       <file leaf-file-name="fee_elect.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/view/dsis/fee/fee_elect.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="60">
-              <caret line="3" column="26" lean-forward="true" selection-start-line="3" selection-start-column="26" selection-end-line="3" selection-end-column="26" />
+            <state relative-caret-position="232">
+              <caret line="314" column="37" lean-forward="false" selection-start-line="314" selection-start-column="37" selection-end-line="314" selection-end-column="37" />
               <folding>
                 <element signature="n#style#0;n#span#1;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
               </folding>
@@ -121,52 +127,71 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="pm_fee.html" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/view/dsis/fee/pm_fee.html">
+      <file leaf-file-name="PmFee.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/pm/dsis/fee/dto/PmFee.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="80">
-              <caret line="4" column="13" lean-forward="false" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ElectAmountService.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/pm/dsis/cm/service/ElectAmountService.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="139">
-              <caret line="32" column="28" lean-forward="false" selection-start-line="32" selection-start-column="28" selection-end-line="32" selection-end-column="28" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ElectricityAmountMapper.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/pm/dsis/cm/mapper/ElectricityAmountMapper.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="88">
-              <caret line="22" column="28" lean-forward="false" selection-start-line="22" selection-start-column="28" selection-end-line="22" selection-end-column="28" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ElectricityAmountMapper.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/com/pm/dsis/cm/mapper/ElectricityAmountMapper.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="79">
-              <caret line="241" column="30" lean-forward="false" selection-start-line="241" selection-start-column="14" selection-end-line="241" selection-end-column="30" />
+            <state relative-caret-position="100">
+              <caret line="5" column="21" lean-forward="false" selection-start-line="5" selection-start-column="17" selection-end-line="5" selection-end-column="21" />
               <folding>
-                <marker date="1523089262430" expanded="true" signature="1796:1952" ph="select from electricity_amount" />
-                <marker date="1523089262430" expanded="true" signature="2078:2153" ph="select from electricity_amount" />
-                <marker date="1523089262430" expanded="true" signature="2078:2427" ph="select from electricity_amount" />
-                <marker date="1523089262430" expanded="true" signature="2534:2687" ph="select from electricity_amount" />
-                <marker date="1523089262430" expanded="true" signature="2795:2913" ph="select from electricity_amount" />
-                <marker date="1523089262430" expanded="true" signature="2991:3063" ph="delete from " />
-                <marker date="1523089262430" expanded="true" signature="3163:3829" ph="insert into electricity_amount... " />
-                <marker date="1523089262430" expanded="true" signature="6372:7775" ph="update elect... " />
-                <marker date="1523089262430" expanded="true" signature="7878:8661" ph="update elect... " />
-                <marker date="1523089262430" expanded="true" signature="8767:8948" ph="update elect... " />
+                <element signature="e#748#749#0" expanded="true" />
+                <element signature="e#783#784#0" expanded="true" />
+                <element signature="e#839#840#0" expanded="true" />
+                <element signature="e#887#888#0" expanded="true" />
+                <element signature="e#924#925#0" expanded="true" />
+                <element signature="e#957#958#0" expanded="true" />
+                <element signature="e#1009#1010#0" expanded="true" />
+                <element signature="e#1053#1054#0" expanded="true" />
+                <element signature="e#1091#1092#0" expanded="true" />
+                <element signature="e#1126#1127#0" expanded="true" />
+                <element signature="e#1181#1182#0" expanded="true" />
+                <element signature="e#1229#1230#0" expanded="true" />
+                <element signature="e#1262#1263#0" expanded="true" />
+                <element signature="e#1292#1293#0" expanded="true" />
+                <element signature="e#1337#1338#0" expanded="true" />
+                <element signature="e#1375#1376#0" expanded="true" />
+                <element signature="e#2987#2988#0" expanded="true" />
+                <element signature="e#3018#3019#0" expanded="true" />
+                <element signature="e#3065#3066#0" expanded="true" />
+                <element signature="e#3105#3106#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="PmFeeMapper.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/com/pm/dsis/fee/mapper/PmFeeMapper.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="190">
+              <caret line="252" column="72" lean-forward="false" selection-start-line="252" selection-start-column="72" selection-end-line="252" selection-end-column="72" />
+              <folding>
+                <marker date="1523097529823" expanded="true" signature="2237:2438" ph="select bf.BU... building_info" />
+                <marker date="1523097529823" expanded="true" signature="2552:2895" ph="select bf.BU... building_info" />
+                <marker date="1523097529823" expanded="true" signature="3006:3112" ph="select from pm_fee" />
+                <marker date="1523097529823" expanded="true" signature="3196:3256" ph="delete from " />
+                <marker date="1523097529823" expanded="true" signature="3340:4118" ph="insert into pm_fee... " />
+                <marker date="1523097529823" expanded="true" signature="6763:8239" ph="update pm_fe... " />
+                <marker date="1523097529823" expanded="true" signature="8334:9176" ph="update pm_fe... " />
+                <marker date="1523097529823" expanded="true" signature="9270:9439" ph="update pm_fe... " />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="WaterAmountMapper.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/com/pm/dsis/cm/mapper/WaterAmountMapper.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1021">
+              <caret line="59" column="28" lean-forward="false" selection-start-line="59" selection-start-column="28" selection-end-line="59" selection-end-column="28" />
+              <folding>
+                <marker date="1523097028848" expanded="true" signature="2030:2099" ph="select from water_amount" />
+                <marker date="1523097028848" expanded="true" signature="2178:2328" ph="select from water_amount" />
+                <marker date="1523097028848" expanded="true" signature="2447:2516" ph="select from water_amount" />
+                <marker date="1523097028848" expanded="true" signature="2910:3021" ph="select from water_amount" />
+                <marker date="1523097028848" expanded="true" signature="3104:3170" ph="delete from " />
+                <marker date="1523097028848" expanded="true" signature="3270:3944" ph="insert into water_amount... " />
+                <marker date="1523097028848" expanded="true" signature="6458:6633" ph="update water... " />
+                <marker date="1523097028848" expanded="true" signature="6743:8119" ph="update water... " />
+                <marker date="1523097028848" expanded="true" signature="8217:9028" ph="update water... " />
               </folding>
             </state>
           </provider>
@@ -186,16 +211,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>saveBu</find>
-      <find>100%</find>
-      <find>姓名</find>
-      <find>房屋类型</find>
-      <find>showErrorDialog</find>
-      <find>mm/queryAllUserInfo11</find>
-      <find>saveU</find>
-      <find>saveUseri</find>
-      <find>缴费对</find>
-      <find>saveUserin</find>
       <find>缴费对象</find>
       <find>saveUserI</find>
       <find>object = viewModel.model.userInfo.object.commonValue;             viewModel.model.userInfo.set('userGender',gender);             viewModel.model.userInfo.set('object',object);</find>
@@ -216,6 +231,16 @@
       <find>waterAmount</find>
       <find>selectWater</find>
       <find>updateWaterStatuupdateElectStatu</find>
+      <find>queryAllUserInfo</find>
+      <find>selectElect</find>
+      <find>pmFeeAmountInfo</find>
+      <find>electAmountInfo</find>
+      <find>electAmount</find>
+      <find>fee/selecPmFee</find>
+      <find>eaId</find>
+      <find>waMonth</find>
+      <find>/fee/selecPmFee</find>
+      <find>sumFee</find>
     </findStrings>
     <dirStrings>
       <dir>D:\Graduation design\code\PM\propertyManagement\src\main\webapp\WEB-INF\view\dsis</dir>
@@ -232,8 +257,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/resources/com/pm/dsis/fee/mapper/ElectricityUnitPriceMapper.xml" />
-        <option value="$PROJECT_DIR$/src/main/resources/com/pm/dsis/mm/mapper/QueryUserInfoMapper.xml" />
         <option value="$PROJECT_DIR$/src/main/java/com/pm/dsis/mm/controllers/commonController.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/pm/platform/controllers/commonController.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/pm/platform/dto/CommonInfo.java" />
@@ -256,23 +279,14 @@
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/dsis/cm/cm_fee_amount.html" />
         <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/src/main/java/com/pm/dsis/cm/job/PmFeeJob.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/pm/dsis/fee/dto/PmFee.java" />
         <option value="$PROJECT_DIR$/src/main/resources/com/pm/dsis/cm/mapper/PmFeeMapper.xml" />
-        <option value="$PROJECT_DIR$/src/main/java/com/pm/dsis/fee/mapper/PmFeeMapper.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/pm/dsis/fee/controllers/PmFeeController.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/pm/dsis/fee/service/PmFeeService.java" />
         <option value="$PROJECT_DIR$/src/main/resources/spring/springmvc.xml" />
-        <option value="$PROJECT_DIR$/src/main/java/com/pm/dsis/mm/controllers/UserInfoController.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/pm/dsis/fee/service/serviceImpl/PmFeeServiceImpl.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/pm/dsis/fee/job/PmFeeJob.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/pm/dsis/cm/dto/WaterAmount.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/dsis/cm/cm_water_amount.html" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/dsis/mm/mm_edit.html" />
         <option value="$PROJECT_DIR$/src/main/java/com/pm/dsis/cm/mapper/WaterAmountMapper.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/pm/dsis/cm/service/WaterAmountService.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/pm/dsis/cm/controllers/WaterController.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/com/pm/dsis/cm/mapper/WaterAmountMapper.xml" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/common/js/sccl.js" />
         <option value="$PROJECT_DIR$/src/main/java/com/pm/dsis/cm/service/serviceImpl/WaterAmountServiceImpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/pm/dsis/cm/dto/ElectricityAmount.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/pm/dsis/cm/mapper/ElectricityAmountMapper.java" />
@@ -280,9 +294,20 @@
         <option value="$PROJECT_DIR$/src/main/java/com/pm/dsis/cm/controllers/ElectAmountController.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/pm/dsis/cm/service/serviceImpl/ElectAmountServiceImpl.java" />
         <option value="$PROJECT_DIR$/src/main/resources/com/pm/dsis/cm/mapper/ElectricityAmountMapper.xml" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/dsis/fee/fee_elect.html" />
+        <option value="$PROJECT_DIR$/src/main/java/com/pm/dsis/fee/dto/ElectricityUnitPrice.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/pm/dsis/mm/controllers/UserInfoController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/pm/dsis/fee/job/PmFeeJob.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/pm/dsis/fee/dto/PmFee.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/pm/dsis/fee/mapper/PmFeeMapper.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/pm/dsis/fee/service/PmFeeService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/pm/dsis/fee/service/serviceImpl/PmFeeServiceImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/pm/dsis/fee/controllers/PmFeeController.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/com/pm/dsis/cm/mapper/WaterAmountMapper.xml" />
+        <option value="$PROJECT_DIR$/src/main/resources/com/pm/dsis/fee/mapper/PmFeeMapper.xml" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/dsis/fee/fee_water.html" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/dsis/fee/fee_elect.html" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/dsis/fee/pm_fee.html" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/common/js/sccl.js" />
       </list>
     </option>
   </component>
@@ -577,6 +602,70 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="webapp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="WEB-INF" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="common" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="propertyManagement" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="propertyManagement" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="webapp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="WEB-INF" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="common" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="js" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="propertyManagement" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="propertyManagement" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="resources" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -630,6 +719,124 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="com" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="propertyManagement" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="propertyManagement" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="resources" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="com" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="pm" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="dsis" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="propertyManagement" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="propertyManagement" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="resources" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="com" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="pm" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="dsis" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="fee" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mapper" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="propertyManagement" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="propertyManagement" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="resources" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="com" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="pm" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="dsis" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="cm" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mapper" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -1290,7 +1497,7 @@
     <property name="js-jscs-nodeInterpreter" value="C:\Program Files\nodejs\node.exe" />
     <property name="last_opened_file_path" value="D:/hand/yggnbz" />
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
-    <property name="SearchEverywhereHistoryKey" value="edit&#9;FILE&#9;file://D:/Graduation design/code/PM/propertyManagement/src/main/webapp/WEB-INF/view/dsis/mm/mm_edit.html&#10;water&#9;FILE&#9;file://D:/Graduation design/code/PM/propertyManagement/src/main/webapp/WEB-INF/view/dsis/cm/cm_water_amount.html&#10;query&#9;FILE&#9;file://D:/Graduation design/code/PM/propertyManagement/src/main/webapp/WEB-INF/view/dsis/mm/mm_query.html&#10;elect&#9;PSI&#9;JAVA://com.pm.dsis.cm.dto.ElectricityAmount&#10;cm_elect&#9;FILE&#9;file://D:/Graduation design/code/PM/propertyManagement/src/main/webapp/WEB-INF/view/dsis/cm/cm_elect_amount.html&#10;cm/cm_water_amount.html&#9;FILE&#9;file://D:/Graduation design/code/PM/propertyManagement/src/main/webapp/WEB-INF/view/dsis/cm/cm_water_amount.html&#10;mm_&#9;FILE&#9;file://D:/Graduation design/code/PM/propertyManagement/src/main/webapp/WEB-INF/view/dsis/mm/mm_query.html&#10;mm_q&#9;FILE&#9;file://D:/Graduation design/code/PM/propertyManagement/src/main/webapp/WEB-INF/view/dsis/mm/mm_query.html&#10;index.html&#9;FILE&#9;file://D:/Graduation design/code/PM/propertyManagement/src/main/webapp/WEB-INF/view/index.html&#10;login.html&#9;FILE&#9;file://D:/Graduation design/code/PM/propertyManagement/src/main/webapp/WEB-INF/view/login.html&#10;mm_edit.html&#9;FILE&#9;file://D:/Graduation design/code/PM/propertyManagement/src/main/webapp/WEB-INF/view/dsis/mm/mm_edit.html&#10;mm/mm_new_edit.html&#9;FILE&#9;file://D:/Graduation design/code/PM/propertyManagement/src/main/webapp/WEB-INF/view/dsis/mm/mm_new_edit.html&#10;mm&#9;FILE&#9;file://D:/Graduation design/code/PM/propertyManagement/src/main/webapp/WEB-INF/view/dsis/mm/mm_query.html&#10;mm_query&#9;FILE&#9;file://D:/Graduation design/code/PM/propertyManagement/src/main/webapp/WEB-INF/view/dsis/mm/mm_query.html" />
+    <property name="SearchEverywhereHistoryKey" value="query&#9;FILE&#9;file://D:/Graduation design/code/PM/propertyManagement/src/main/webapp/WEB-INF/view/dsis/mm/mm_query.html&#10;edit&#9;FILE&#9;file://D:/Graduation design/code/PM/propertyManagement/src/main/webapp/WEB-INF/view/dsis/mm/mm_edit.html&#10;water&#9;FILE&#9;file://D:/Graduation design/code/PM/propertyManagement/src/main/webapp/WEB-INF/view/dsis/cm/cm_water_amount.html&#10;elect&#9;PSI&#9;JAVA://com.pm.dsis.cm.dto.ElectricityAmount&#10;cm_elect&#9;FILE&#9;file://D:/Graduation design/code/PM/propertyManagement/src/main/webapp/WEB-INF/view/dsis/cm/cm_elect_amount.html&#10;cm/cm_water_amount.html&#9;FILE&#9;file://D:/Graduation design/code/PM/propertyManagement/src/main/webapp/WEB-INF/view/dsis/cm/cm_water_amount.html&#10;mm_&#9;FILE&#9;file://D:/Graduation design/code/PM/propertyManagement/src/main/webapp/WEB-INF/view/dsis/mm/mm_query.html&#10;mm_q&#9;FILE&#9;file://D:/Graduation design/code/PM/propertyManagement/src/main/webapp/WEB-INF/view/dsis/mm/mm_query.html&#10;index.html&#9;FILE&#9;file://D:/Graduation design/code/PM/propertyManagement/src/main/webapp/WEB-INF/view/index.html&#10;login.html&#9;FILE&#9;file://D:/Graduation design/code/PM/propertyManagement/src/main/webapp/WEB-INF/view/login.html&#10;mm_edit.html&#9;FILE&#9;file://D:/Graduation design/code/PM/propertyManagement/src/main/webapp/WEB-INF/view/dsis/mm/mm_edit.html&#10;mm/mm_new_edit.html&#9;FILE&#9;file://D:/Graduation design/code/PM/propertyManagement/src/main/webapp/WEB-INF/view/dsis/mm/mm_new_edit.html&#10;mm&#9;FILE&#9;file://D:/Graduation design/code/PM/propertyManagement/src/main/webapp/WEB-INF/view/dsis/mm/mm_query.html&#10;mm_query&#9;FILE&#9;file://D:/Graduation design/code/PM/propertyManagement/src/main/webapp/WEB-INF/view/dsis/mm/mm_query.html" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -1843,12 +2050,12 @@
       <workItem from="1522853643621" duration="1848000" />
       <workItem from="1522888505895" duration="15096000" />
       <workItem from="1522938274260" duration="175000" />
-      <workItem from="1523002067900" duration="27705000" />
+      <workItem from="1523002067900" duration="35582000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="226478000" />
+    <option name="totallyTimeSpent" value="234355000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -1866,7 +2073,7 @@
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.16065574" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21639344" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.124590166" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -1877,7 +2084,7 @@
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.019672131" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.0" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.28441754" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.093797274" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.12622951" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -1961,7 +2168,7 @@
       <breakpoints-dialog>
         <breakpoints-dialog />
       </breakpoints-dialog>
-      <option name="time" value="285" />
+      <option name="time" value="294" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -1970,42 +2177,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/resources/spring/applicationContext-trans.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-985">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/pm/dsis/common/controllers/CommonInfoController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="40">
-          <caret line="2" column="29" lean-forward="false" selection-start-line="2" selection-start-column="29" selection-end-line="2" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/pm/dsis/mm/dto/UserInfo.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1060">
-          <caret line="53" column="25" lean-forward="false" selection-start-line="53" selection-start-column="19" selection-end-line="53" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/com/pm/dsis/mm/mapper/UserInfoMapper.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-350">
-          <caret line="74" column="77" lean-forward="false" selection-start-line="74" selection-start-column="77" selection-end-line="74" selection-end-column="77" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/pm/dsis/mm/mapper/UserInfoMapper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="600">
-          <caret line="30" column="8" lean-forward="false" selection-start-line="30" selection-start-column="8" selection-end-line="30" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/pm/dsis/mm/service/UserInfoService.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1360">
@@ -2098,14 +2269,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/pm/dsis/fee/dto/PmUnitPrice.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="40">
-          <caret line="2" column="13" lean-forward="false" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/view/dsis/cm/cm_elect_amount.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="120">
@@ -2148,85 +2311,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/pm/dsis/fee/mapper/PmFeeMapper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="89">
-          <caret line="13" column="16" lean-forward="false" selection-start-line="13" selection-start-column="16" selection-end-line="13" selection-end-column="16" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-web/4.1.3.RELEASE/spring-web-4.1.3.RELEASE.jar!/org/springframework/web/method/support/InvocableHandlerMethod.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="139" column="0" lean-forward="false" selection-start-line="139" selection-start-column="0" selection-end-line="139" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/pm/dsis/fee/service/PmFeeService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="157">
-          <caret line="11" column="9" lean-forward="false" selection-start-line="11" selection-start-column="9" selection-end-line="11" selection-end-column="9" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/com/pm/dsis/fee/mapper/PmFeeMapper.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="660">
-          <caret line="33" column="2" lean-forward="false" selection-start-line="33" selection-start-column="2" selection-end-line="33" selection-end-column="2" />
-          <folding>
-            <marker date="1523010248438" expanded="true" signature="2078:2261" ph="select bf.BU... building_info" />
-            <marker date="1523010248438" expanded="true" signature="2373:2479" ph="select from pm_fee" />
-            <marker date="1523010248438" expanded="true" signature="2563:2623" ph="delete from " />
-            <marker date="1523010248438" expanded="true" signature="2707:3447" ph="insert into pm_fee... " />
-            <marker date="1523010248438" expanded="true" signature="6092:7568" ph="update pm_fe... " />
-            <marker date="1523010248438" expanded="true" signature="7663:8459" ph="update pm_fe... " />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/pm/dsis/mm/controllers/UserInfoController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="209" column="0" lean-forward="false" selection-start-line="209" selection-start-column="0" selection-end-line="209" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/pm/dsis/fee/job/PmFeeJob.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="173">
-          <caret line="18" column="2" lean-forward="false" selection-start-line="18" selection-start-column="2" selection-end-line="18" selection-end-column="2" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#545#546#0" expanded="true" />
-            <element signature="e#594#595#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/pm/dsis/fee/service/serviceImpl/PmFeeServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="192">
-          <caret line="25" column="0" lean-forward="false" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/pm/dsis/fee/dto/PmFee.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="9" column="35" lean-forward="false" selection-start-line="9" selection-start-column="19" selection-end-line="9" selection-end-column="35" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-aop/4.1.3.RELEASE/spring-aop-4.1.3.RELEASE.jar!/org/springframework/aop/support/AopUtils.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="140">
@@ -2243,30 +2327,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/view/dsis/mm/mm_query.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="5">
-          <caret line="260" column="16" lean-forward="false" selection-start-line="260" selection-start-column="16" selection-end-line="260" selection-end-column="16" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/view/dsis/mm/mm_edit.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="175">
           <caret line="464" column="52" lean-forward="false" selection-start-line="464" selection-start-column="41" selection-end-line="464" selection-end-column="52" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/common/js/sccl.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="100">
-          <caret line="404" column="92" lean-forward="false" selection-start-line="404" selection-start-column="92" selection-end-line="404" selection-end-column="92" />
-          <folding>
-            <marker date="1523082489233" expanded="true" signature="1877:1885" ph="&amp;##xe617;" />
-            <marker date="1523082489233" expanded="true" signature="8397:8405" ph="&amp;##xe60b;" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -2286,14 +2351,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/pm/dsis/fee/dto/WaterUnitPrice.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="20">
-          <caret line="4" column="13" lean-forward="false" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/pm/dsis/fee/controllers/CostManagController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="160">
@@ -2302,52 +2359,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/pm/dsis/cm/controllers/WaterController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="440">
-          <caret line="119" column="5" lean-forward="true" selection-start-line="91" selection-start-column="3" selection-end-line="119" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/pm/dsis/cm/mapper/WaterAmountMapper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="164">
-          <caret line="31" column="22" lean-forward="false" selection-start-line="31" selection-start-column="22" selection-end-line="31" selection-end-column="22" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/com/pm/dsis/cm/mapper/WaterAmountMapper.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2745">
-          <caret line="183" column="0" lean-forward="false" selection-start-line="183" selection-start-column="0" selection-end-line="183" selection-end-column="0" />
-          <folding>
-            <marker date="1523079106653" expanded="true" signature="2030:2099" ph="select from water_amount" />
-            <marker date="1523079106653" expanded="true" signature="2178:2328" ph="select from water_amount" />
-            <marker date="1523079106653" expanded="true" signature="2447:2516" ph="select from water_amount" />
-            <marker date="1523079106653" expanded="true" signature="2904:3015" ph="select from water_amount" />
-            <marker date="1523079106653" expanded="true" signature="3098:3164" ph="delete from " />
-            <marker date="1523079106653" expanded="true" signature="3264:3938" ph="insert into water_amount... " />
-            <marker date="1523079106653" expanded="true" signature="6452:6627" ph="update water... " />
-            <marker date="1523079106653" expanded="true" signature="6737:8113" ph="update water... " />
-            <marker date="1523079106653" expanded="true" signature="8211:9022" ph="update water... " />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="145">
           <caret line="175" column="16" lean-forward="true" selection-start-line="175" selection-start-column="16" selection-end-line="175" selection-end-column="16" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/pm/dsis/cm/service/serviceImpl/WaterAmountServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="115">
-          <caret line="122" column="43" lean-forward="false" selection-start-line="122" selection-start-column="43" selection-end-line="122" selection-end-column="43" />
           <folding />
         </state>
       </provider>
@@ -2420,31 +2435,257 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/pm/dsis/fee/dto/WaterUnitPrice.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="20">
+          <caret line="4" column="13" lean-forward="false" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/pm/dsis/fee/dto/ElectricityUnitPrice.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="420">
+          <caret line="21" column="30" lean-forward="false" selection-start-line="21" selection-start-column="30" selection-end-line="21" selection-end-column="30" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/pm/dsis/fee/dto/PmUnitPrice.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="40">
+          <caret line="2" column="13" lean-forward="false" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-context-support/4.2.5.RELEASE/spring-context-support-4.2.5.RELEASE.jar!/org/springframework/scheduling/quartz/MethodInvokingJobDetailFactoryBean.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="144" column="0" lean-forward="false" selection-start-line="144" selection-start-column="0" selection-end-line="144" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/view/dsis/mm/mm_query.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="67">
+          <caret line="340" column="40" lean-forward="false" selection-start-line="340" selection-start-column="22" selection-end-line="340" selection-end-column="40" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-web/4.1.3.RELEASE/spring-web-4.1.3.RELEASE.jar!/org/springframework/web/method/support/InvocableHandlerMethod.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="139" column="0" lean-forward="false" selection-start-line="139" selection-start-column="0" selection-end-line="139" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/pm/dsis/fee/job/PmFeeJob.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="100">
+          <caret line="18" column="10" lean-forward="false" selection-start-line="18" selection-start-column="10" selection-end-line="18" selection-end-column="10" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/pm/dsis/mm/controllers/UserInfoController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="171">
+          <caret line="209" column="9" lean-forward="false" selection-start-line="209" selection-start-column="9" selection-end-line="209" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/pm/dsis/fee/mapper/WaterUnitPriceMapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="52">
+          <caret line="6" column="0" lean-forward="true" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/com/pm/dsis/fee/mapper/WaterUnitPriceMapper.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2777">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <marker date="1522051007760" expanded="true" signature="1321:1426" ph="select from water_unit_price" />
+            <marker date="1522051007760" expanded="true" signature="1537:1658" ph="select from water_unit_price" />
+            <marker date="1522051007760" expanded="true" signature="1742:1817" ph="delete from " />
+            <marker date="1522051007760" expanded="true" signature="1910:2421" ph="insert into water_unit_price... " />
+            <marker date="1522051007760" expanded="true" signature="4381:5394" ph="update water... " />
+            <marker date="1522051007760" expanded="true" signature="5498:6023" ph="update water... " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/pm/dsis/cm/service/serviceImpl/WaterAmountServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="298">
+          <caret line="122" column="43" lean-forward="true" selection-start-line="118" selection-start-column="12" selection-end-line="122" selection-end-column="43" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/pm/dsis/cm/controllers/WaterController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="106" column="15" lean-forward="true" selection-start-line="106" selection-start-column="7" selection-end-line="106" selection-end-column="15" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/pm/dsis/cm/mapper/WaterAmountMapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="31" column="22" lean-forward="false" selection-start-line="31" selection-start-column="22" selection-end-line="31" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/pm/dsis/fee/mapper/PmFeeMapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="112">
+          <caret line="27" column="0" lean-forward="false" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/com/pm/dsis/cm/mapper/WaterAmountMapper.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1021">
+          <caret line="59" column="28" lean-forward="false" selection-start-line="59" selection-start-column="28" selection-end-line="59" selection-end-column="28" />
+          <folding>
+            <marker date="1523097028848" expanded="true" signature="2030:2099" ph="select from water_amount" />
+            <marker date="1523097028848" expanded="true" signature="2178:2328" ph="select from water_amount" />
+            <marker date="1523097028848" expanded="true" signature="2447:2516" ph="select from water_amount" />
+            <marker date="1523097028848" expanded="true" signature="2910:3021" ph="select from water_amount" />
+            <marker date="1523097028848" expanded="true" signature="3104:3170" ph="delete from " />
+            <marker date="1523097028848" expanded="true" signature="3270:3944" ph="insert into water_amount... " />
+            <marker date="1523097028848" expanded="true" signature="6458:6633" ph="update water... " />
+            <marker date="1523097028848" expanded="true" signature="6743:8119" ph="update water... " />
+            <marker date="1523097028848" expanded="true" signature="8217:9028" ph="update water... " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/pm/dsis/fee/service/PmFeeService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="65">
+          <caret line="30" column="0" lean-forward="false" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/com/pm/dsis/fee/mapper/PmFeeMapper.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="190">
+          <caret line="252" column="72" lean-forward="false" selection-start-line="252" selection-start-column="72" selection-end-line="252" selection-end-column="72" />
+          <folding>
+            <marker date="1523097529823" expanded="true" signature="2237:2438" ph="select bf.BU... building_info" />
+            <marker date="1523097529823" expanded="true" signature="2552:2895" ph="select bf.BU... building_info" />
+            <marker date="1523097529823" expanded="true" signature="3006:3112" ph="select from pm_fee" />
+            <marker date="1523097529823" expanded="true" signature="3196:3256" ph="delete from " />
+            <marker date="1523097529823" expanded="true" signature="3340:4118" ph="insert into pm_fee... " />
+            <marker date="1523097529823" expanded="true" signature="6763:8239" ph="update pm_fe... " />
+            <marker date="1523097529823" expanded="true" signature="8334:9176" ph="update pm_fe... " />
+            <marker date="1523097529823" expanded="true" signature="9270:9439" ph="update pm_fe... " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/pm/dsis/fee/service/serviceImpl/PmFeeServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="87" column="0" lean-forward="false" selection-start-line="87" selection-start-column="0" selection-end-line="87" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/pm/dsis/fee/controllers/PmFeeController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="234">
+          <caret line="49" column="0" lean-forward="false" selection-start-line="49" selection-start-column="0" selection-end-line="49" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/view/dsis/fee/fee_water.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1420">
-          <caret line="293" column="37" lean-forward="false" selection-start-line="293" selection-start-column="37" selection-end-line="293" selection-end-column="37" />
+        <state relative-caret-position="172">
+          <caret line="311" column="33" lean-forward="false" selection-start-line="311" selection-start-column="33" selection-end-line="311" selection-end-column="33" />
           <folding>
             <element signature="n#style#0;n#span#1;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/view/dsis/fee/fee_elect.html">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/pm/dsis/fee/dto/PmFee.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="3" column="26" lean-forward="true" selection-start-line="3" selection-start-column="26" selection-end-line="3" selection-end-column="26" />
+        <state relative-caret-position="100">
+          <caret line="5" column="21" lean-forward="false" selection-start-line="5" selection-start-column="17" selection-end-line="5" selection-end-column="21" />
           <folding>
-            <element signature="n#style#0;n#span#1;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="e#748#749#0" expanded="true" />
+            <element signature="e#783#784#0" expanded="true" />
+            <element signature="e#839#840#0" expanded="true" />
+            <element signature="e#887#888#0" expanded="true" />
+            <element signature="e#924#925#0" expanded="true" />
+            <element signature="e#957#958#0" expanded="true" />
+            <element signature="e#1009#1010#0" expanded="true" />
+            <element signature="e#1053#1054#0" expanded="true" />
+            <element signature="e#1091#1092#0" expanded="true" />
+            <element signature="e#1126#1127#0" expanded="true" />
+            <element signature="e#1181#1182#0" expanded="true" />
+            <element signature="e#1229#1230#0" expanded="true" />
+            <element signature="e#1262#1263#0" expanded="true" />
+            <element signature="e#1292#1293#0" expanded="true" />
+            <element signature="e#1337#1338#0" expanded="true" />
+            <element signature="e#1375#1376#0" expanded="true" />
+            <element signature="e#2987#2988#0" expanded="true" />
+            <element signature="e#3018#3019#0" expanded="true" />
+            <element signature="e#3065#3066#0" expanded="true" />
+            <element signature="e#3105#3106#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/view/dsis/fee/pm_fee.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="80">
-          <caret line="4" column="13" lean-forward="false" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
+        <state relative-caret-position="201">
+          <caret line="288" column="41" lean-forward="false" selection-start-line="288" selection-start-column="41" selection-end-line="288" selection-end-column="41" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/view/dsis/fee/fee_elect.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="232">
+          <caret line="314" column="37" lean-forward="false" selection-start-line="314" selection-start-column="37" selection-end-line="314" selection-end-column="37" />
+          <folding>
+            <element signature="n#style#0;n#span#1;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/common/js/sccl.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="402" column="90" lean-forward="false" selection-start-line="402" selection-start-column="90" selection-end-line="402" selection-end-column="90" />
+          <folding>
+            <marker date="1523098438455" expanded="true" signature="1877:1885" ph="&amp;##xe617;" />
+            <marker date="1523098438455" expanded="true" signature="8397:8405" ph="&amp;##xe60b;" />
+          </folding>
         </state>
       </provider>
     </entry>

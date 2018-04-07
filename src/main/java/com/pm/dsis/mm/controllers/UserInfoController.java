@@ -207,7 +207,7 @@ public class UserInfoController {
     @ResponseBody
     public ResponseData queryAllUserInfo11(HttpServletRequest request, HttpServletResponse response,@RequestBody QueryUserInfo queryUserInfo){
 
-        pmFeeService.insert();
+       // pmFeeService.insert();
 
         List<QueryUserInfo> queryAllUserInfo = userInfoService.queryAllUserInfo(queryUserInfo);
 

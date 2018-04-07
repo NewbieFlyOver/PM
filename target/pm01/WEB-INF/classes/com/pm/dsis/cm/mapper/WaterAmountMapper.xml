@@ -57,7 +57,7 @@
       <if test="waMonth!=null">
         and WA_MONTH = #{waMonth}
       </if>
-      <if test="waFlag">
+      <if test="waFlag!=null">
         and WA_FLAG = #{waFlag}
       </if>
     </where>

@@ -400,7 +400,7 @@ $(function(){
 						{"id":"5","name":"户主新建","parentId":"3","url":"view/dsis/mm/mm_new_edit.html","icon":"","order":"1","isHeader":"0","childMenus":""},
 					]},
 					{"id":"6","name":"费用管理","parentId":"1","url":"","icon":"&#xe602;","order":"1","isHeader":"0","childMenus":[
-						{"id":"19","name":"物业费","parentId":"6","url":"home3.html","icon":"","order":"1","isHeader":"0","childMenus":""},
+						{"id":"19","name":"物业费","parentId":"6","url":"view/dsis/fee/pm_fee.html","icon":"","order":"1","isHeader":"0","childMenus":""},
                         {"id":"20","name":"水费","parentId":"6","url":"view/dsis/fee/fee_water.html","icon":"","order":"1","isHeader":"0","childMenus":""},
                         {"id":"21","name":"电费","parentId":"6","url":"view/dsis/fee/fee_elect.html","icon":"","order":"1","isHeader":"0","childMenus":""},
 					]},

@@ -19,11 +19,19 @@ public class PmFee {
 
     private Date pmEndDate;
 
+    private String beginDateStr;
+
+    private String endDateStr;
+
     private String pmFlag;
 
     private String pmObject;
 
     private Float monthFee;
+
+    private Float pmPrice;
+
+    private Float buildingArea;
 
     private String attribute1;
 
@@ -36,6 +44,38 @@ public class PmFee {
     private String attribute5;
 
     private String attribute6;
+
+    public String getBeginDateStr() {
+        return beginDateStr;
+    }
+
+    public void setBeginDateStr(String beginDateStr) {
+        this.beginDateStr = beginDateStr;
+    }
+
+    public String getEndDateStr() {
+        return endDateStr;
+    }
+
+    public void setEndDateStr(String endDateStr) {
+        this.endDateStr = endDateStr;
+    }
+
+    public Float getBuildingArea() {
+        return buildingArea;
+    }
+
+    public void setBuildingArea(Float buildingArea) {
+        this.buildingArea = buildingArea;
+    }
+
+    public Float getPmPrice() {
+        return pmPrice;
+    }
+
+    public void setPmPrice(Float pmPrice) {
+        this.pmPrice = pmPrice;
+    }
 
     public String getBuildingFullRoom() {
         return buildingFullRoom;
@@ -124,6 +164,7 @@ public class PmFee {
     public void setMonthFee(Float monthFee) {
         this.monthFee = monthFee;
     }
+
 
     public String getAttribute1() {
         return attribute1;

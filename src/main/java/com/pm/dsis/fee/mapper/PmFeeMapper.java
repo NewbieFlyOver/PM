@@ -20,6 +20,20 @@ public interface PmFeeMapper {
      */
     int insert(PmFee pmFee);
 
+    /**
+     * 条件查询
+     * @param pmFee
+     * @return
+     */
+    List<PmFee> selectPmFee(PmFee pmFee);
+
+    /**
+     * 更新是否缴费状态
+     * @param pmFee
+     * @return
+     */
+    int updatePmFeeStatu(PmFee pmFee);
+
 
 
     int deleteByPrimaryKey(Long pmId);

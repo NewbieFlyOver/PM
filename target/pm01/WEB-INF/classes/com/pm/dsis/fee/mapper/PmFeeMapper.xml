@@ -12,6 +12,7 @@
     <result column="PM_END_DATE" property="pmEndDate" jdbcType="DATE" />
     <result column="PM_FLAG" property="pmFlag" jdbcType="VARCHAR" />
     <result column="PM_OBJECT" property="pmObject" jdbcType="VARCHAR" />
+    <result column="PM_PRICE" property="pmPrice" jdbcType="VARCHAR" />
     <result column="MONTH_FEE" property="monthFee" jdbcType="VARCHAR" />
     <result column="ATTRIBUTE1" property="attribute1" jdbcType="VARCHAR" />
     <result column="ATTRIBUTE2" property="attribute2" jdbcType="VARCHAR" />
@@ -23,22 +24,39 @@
 
   <resultMap id="PriceResultMap" type="com.pm.dsis.fee.dto.PmFee" >
     <result column="BUILDING_FULL_ROOM" property="buildingFullRoom" jdbcType="BIGINT" />
-    <result column="PM_UP_PRICE" property="monthFee" jdbcType="BIGINT" />
+    <result column="PM_UP_PRICE" property="pmPrice" jdbcType="BIGINT" />
+    <result column="BUILDING_AREA" property="buildingArea" jdbcType="BIGINT" />
   </resultMap>
 
   <sql id="Base_Column_List" >
     PM_ID, BUILDING_FULL_ROOM, PM_UP_ID, ENERGY, PM_MONTH, PM_BEGIN_DATE, PM_END_DATE, PM_FLAG,
-    PM_OBJECT,MONTH_FEE, ATTRIBUTE1, ATTRIBUTE2, ATTRIBUTE3, ATTRIBUTE4, ATTRIBUTE5, ATTRIBUTE6
+    PM_OBJECT,PM_PRICE,MONTH_FEE, ATTRIBUTE1, ATTRIBUTE2, ATTRIBUTE3, ATTRIBUTE4, ATTRIBUTE5, ATTRIBUTE6
   </sql>
 
   <select id="selectPriceAndType" resultMap="PriceResultMap">
-    select bf.BUILDING_FULL_ROOM ,pup.PM_UP_PRICE
+    select bf.BUILDING_FULL_ROOM, bf.BUILDING_AREA, pup.PM_UP_PRICE
     from building_info bf, pm_unit_price pup
     where bf.BUILDING_TYPE_ID = pup.BUILDING_TYPE_ID
     and HOUSING_USAGE
     NOT IN ('un')
   </select>
 
+  <select id="selectPmFee" resultMap="BaseResultMap" parameterType="com.pm.dsis.fee.dto.PmFee">
+    select
+    <include refid="Base_Column_List" />
+    from pm_fee
+    <where>
+      <if test="buildingFullRoom!=null">
+        BUILDING_FULL_ROOM = #{buildingFullRoom}
+      </if>
+      <if test="pmMonth!=null">
+        and PM_MONTH = #{pmMonth}
+      </if>
+      <if test="pmFlag!=null">
+        and PM_FLAG = #{pmFlag}
+      </if>
+    </where>
+  </select>
 
   <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Long" >
     select 
@@ -54,13 +72,13 @@
   <insert id="insert" parameterType="com.pm.dsis.fee.dto.PmFee" >
     insert into pm_fee (PM_ID, BUILDING_FULL_ROOM, PM_UP_ID,
       ENERGY, PM_MONTH, PM_BEGIN_DATE, 
-      PM_END_DATE, PM_FLAG, PM_OBJECT, MONTH_FEE,
+      PM_END_DATE, PM_FLAG, PM_OBJECT, PM_PRICE, MONTH_FEE,
       ATTRIBUTE1, ATTRIBUTE2, ATTRIBUTE3, 
       ATTRIBUTE4, ATTRIBUTE5, ATTRIBUTE6
       )
     values (#{pmId,jdbcType=BIGINT}, #{buildingFullRoom,jdbcType=BIGINT}, #{pmUpId,jdbcType=BIGINT},
       #{energy,jdbcType=REAL}, #{pmMonth,jdbcType=INTEGER}, #{pmBeginDate,jdbcType=DATE}, 
-      #{pmEndDate,jdbcType=DATE}, 'N', #{pmObject,jdbcType=VARCHAR},#{monthFee,jdbcType=VARCHAR},
+      #{pmEndDate,jdbcType=DATE}, 'N', #{pmObject,jdbcType=VARCHAR},#{pmPrice,jdbcType=VARCHAR},#{monthFee,jdbcType=VARCHAR},
       #{attribute1,jdbcType=VARCHAR}, #{attribute2,jdbcType=VARCHAR}, #{attribute3,jdbcType=VARCHAR}, 
       #{attribute4,jdbcType=VARCHAR}, #{attribute5,jdbcType=VARCHAR}, #{attribute6,jdbcType=VARCHAR}
       )
@@ -221,6 +239,7 @@
       PM_END_DATE = #{pmEndDate,jdbcType=DATE},
       PM_FLAG = #{pmFlag,jdbcType=VARCHAR},
       PM_OBJECT = #{pmObject,jdbcType=VARCHAR},
+      PM_PRICE = #{pmPrice,jdbcType=VARCHAR},
       MONTH_FEE = #{monthFee,jdbcType=VARCHAR},
       ATTRIBUTE1 = #{attribute1,jdbcType=VARCHAR},
       ATTRIBUTE2 = #{attribute2,jdbcType=VARCHAR},
@@ -230,4 +249,15 @@
       ATTRIBUTE6 = #{attribute6,jdbcType=VARCHAR}
     where PM_ID = #{pmId,jdbcType=BIGINT}
   </update>
+
+  <update id="updatePmFeeStatu" parameterType="com.pm.dsis.fee.dto.PmFee" >
+    update pm_fee
+    <set >
+      <if test="pmFlag != null" >
+        PM_FLAG = #{pmFlag,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where PM_ID = #{pmId,jdbcType=BIGINT}
+  </update>
+
 </mapper>

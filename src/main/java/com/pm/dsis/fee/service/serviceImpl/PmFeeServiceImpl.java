@@ -60,14 +60,33 @@ public class PmFeeServiceImpl implements PmFeeService{
                     e.printStackTrace();
                 }
 
-
+                Float sumFee = pf.getPmPrice()*pf.getBuildingArea();
                 //添加月份
                 pf.setPmBeginDate(beginDate);
                 pf.setPmEndDate(endDate);
                 pf.setPmMonth(Integer.parseInt(yearStr+monthStr));
-
+                pf.setMonthFee(sumFee);
                 pmFeeMapper.insert(pf);
             }
         }
     }
+
+    public List<PmFee> selectPmFee(PmFee pmFee){
+        List<PmFee> pmFeeList = pmFeeMapper.selectPmFee(pmFee);
+        for (PmFee pf : pmFeeList) {
+            DateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+            String bigenDateStr = sdf.format(pf.getPmBeginDate());
+            String endDateStr = sdf.format(pf.getPmEndDate());
+            pf.setBeginDateStr(bigenDateStr);
+            pf.setEndDateStr(endDateStr);
+        }
+        return pmFeeList;
+    }
+
+    public void updatePmFeeStatu(List<PmFee> pmFees){
+        for (PmFee pf:pmFees){
+            pmFeeMapper.updatePmFeeStatu(pf);
+        }
+    }
+
 }
