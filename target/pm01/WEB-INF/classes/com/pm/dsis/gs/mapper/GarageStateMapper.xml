@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.pm.dsis.gs.mapper.GarageStateMapper" >
+  <resultMap id="BaseResultMap" type="com.pm.dsis.gs.dto.GarageState" >
+    <id column="GS_ID" property="gsId" jdbcType="BIGINT" />
+    <result column="GS_NUM" property="gsNum" jdbcType="VARCHAR" />
+    <result column="GS_LOCATION" property="gsLocation" jdbcType="INTEGER" />
+    <result column="GS_STATE" property="gsState" jdbcType="VARCHAR" />
+    <result column="USER_ID" property="userId" jdbcType="BIGINT" />
+    <result column="VF_BIGEN_DATE" property="vfBigenDate" jdbcType="DATE" />
+    <result column="VF_END_DATE" property="vfEndDate" jdbcType="DATE" />
+    <result column="GS_LICEN_NUMBER" property="gsLicenNumber" jdbcType="VARCHAR" />
+    <result column="BUILDING_FULL_ROOM" property="buildingFullRoom" jdbcType="VARCHAR" />
+    <result column="USER_NAME" property="userName" jdbcType="VARCHAR" />
+    <result column="ATTRIBUTE1" property="attribute1" jdbcType="VARCHAR" />
+    <result column="ATTRIBUTE2" property="attribute2" jdbcType="VARCHAR" />
+    <result column="ATTRIBUTE3" property="attribute3" jdbcType="VARCHAR" />
+    <result column="ATTRIBUTE4" property="attribute4" jdbcType="VARCHAR" />
+    <result column="ATTRIBUTE5" property="attribute5" jdbcType="VARCHAR" />
+    <result column="ATTRIBUTE6" property="attribute6" jdbcType="VARCHAR" />
+  </resultMap>
+
+  <sql id="Base_Column_List" >
+    gs.GS_ID, GS_NUM, gs.GS_LOCATION, gs.GS_STATE, gs.USER_ID, gs.VF_BIGEN_DATE, gs.VF_END_DATE, gs.GS_LICEN_NUMBER,
+    gs.BUILDING_FULL_ROOM, ui.USER_NAME,gs.ATTRIBUTE1, gs.ATTRIBUTE2, gs.ATTRIBUTE3, gs.ATTRIBUTE4, gs.ATTRIBUTE5, gs.ATTRIBUTE6
+  </sql>
+
+  <select id="selectGarageState" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from user_info ui, building_info bi, garage_state gs
+    where ui.USER_ID = bi.USER_ID
+    and gs.BUILDING_FULL_ROOM = bi.BUILDING_FULL_ROOM
+    <if test="gsNum !=null and gsNum != ''">
+      and GS_NUM = #{gsNum}
+    </if>
+    <if test="gsState!=null and gsState != ''">
+      and GS_STATE = #{gsState}
+    </if>
+    <if test="userName !=null">
+      and USER_NAME = #{userName}
+    </if>
+    <if test="gsLicenNumber !=null">
+      and GS_LICEN_NUMBER = #{gsLicenNumber}
+    </if>
+    <if test="buildingFullRoom !=null">
+      and gs.BUILDING_FULL_ROOM = #{buildingFullRoom}
+    </if>
+  </select>
+
+
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long" >
+    delete from garage_state
+    where GS_ID = #{gsId,jdbcType=BIGINT}
+  </delete>
+
+  <insert id="insertGarageState" parameterType="com.pm.dsis.gs.dto.GarageState" >
+    insert into garage_state (GS_ID, GS_NUM, GS_LOCATION, 
+      GS_STATE, USER_ID, VF_BIGEN_DATE, 
+      VF_END_DATE, GS_LICEN_NUMBER, BUILDING_FULL_ROOM,
+      ATTRIBUTE1, ATTRIBUTE2,
+      ATTRIBUTE3, ATTRIBUTE4, ATTRIBUTE5, 
+      ATTRIBUTE6)
+    values (#{gsId,jdbcType=BIGINT}, #{gsNum,jdbcType=VARCHAR}, #{gsLocation,jdbcType=INTEGER}, 
+      #{gsState,jdbcType=VARCHAR}, #{userId,jdbcType=BIGINT}, #{vfBigenDate,jdbcType=DATE}, 
+      #{vfEndDate,jdbcType=DATE},#{gsLicenNumber,jdbcType=VARCHAR},#{buildingFullRoom,jdbcType=VARCHAR},
+      #{attribute1,jdbcType=VARCHAR}, #{attribute2,jdbcType=VARCHAR},
+      #{attribute3,jdbcType=VARCHAR}, #{attribute4,jdbcType=VARCHAR}, #{attribute5,jdbcType=VARCHAR}, 
+      #{attribute6,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.pm.dsis.gs.dto.GarageState" >
+    insert into garage_state
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="gsId != null" >
+        GS_ID,
+      </if>
+      <if test="gsNum != null" >
+        GS_NUM,
+      </if>
+      <if test="gsLocation != null" >
+        GS_LOCATION,
+      </if>
+      <if test="gsState != null" >
+        GS_STATE,
+      </if>
+      <if test="userId != null" >
+        USER_ID,
+      </if>
+      <if test="vfBigenDate != null" >
+        VF_BIGEN_DATE,
+      </if>
+      <if test="vfEndDate != null" >
+        VF_END_DATE,
+      </if>
+      <if test="attribute1 != null" >
+        ATTRIBUTE1,
+      </if>
+      <if test="attribute2 != null" >
+        ATTRIBUTE2,
+      </if>
+      <if test="attribute3 != null" >
+        ATTRIBUTE3,
+      </if>
+      <if test="attribute4 != null" >
+        ATTRIBUTE4,
+      </if>
+      <if test="attribute5 != null" >
+        ATTRIBUTE5,
+      </if>
+      <if test="attribute6 != null" >
+        ATTRIBUTE6,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="gsId != null" >
+        #{gsId,jdbcType=BIGINT},
+      </if>
+      <if test="gsNum != null" >
+        #{gsNum,jdbcType=VARCHAR},
+      </if>
+      <if test="gsLocation != null" >
+        #{gsLocation,jdbcType=INTEGER},
+      </if>
+      <if test="gsState != null" >
+        #{gsState,jdbcType=VARCHAR},
+      </if>
+      <if test="userId != null" >
+        #{userId,jdbcType=BIGINT},
+      </if>
+      <if test="vfBigenDate != null" >
+        #{vfBigenDate,jdbcType=DATE},
+      </if>
+      <if test="vfEndDate != null" >
+        #{vfEndDate,jdbcType=DATE},
+      </if>
+      <if test="attribute1 != null" >
+        #{attribute1,jdbcType=VARCHAR},
+      </if>
+      <if test="attribute2 != null" >
+        #{attribute2,jdbcType=VARCHAR},
+      </if>
+      <if test="attribute3 != null" >
+        #{attribute3,jdbcType=VARCHAR},
+      </if>
+      <if test="attribute4 != null" >
+        #{attribute4,jdbcType=VARCHAR},
+      </if>
+      <if test="attribute5 != null" >
+        #{attribute5,jdbcType=VARCHAR},
+      </if>
+      <if test="attribute6 != null" >
+        #{attribute6,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+
+  <update id="updateByPrimaryKeySelective" parameterType="com.pm.dsis.gs.dto.GarageState" >
+    update garage_state
+    <set >
+      <if test="gsNum != null" >
+        GS_NUM = #{gsNum,jdbcType=VARCHAR},
+      </if>
+      <if test="gsLocation != null" >
+        GS_LOCATION = #{gsLocation,jdbcType=INTEGER},
+      </if>
+      <if test="gsState != null" >
+        GS_STATE = #{gsState,jdbcType=VARCHAR},
+      </if>
+      <if test="userId != null" >
+        USER_ID = #{userId,jdbcType=BIGINT},
+      </if>
+      <if test="vfBigenDate != null" >
+        VF_BIGEN_DATE = #{vfBigenDate,jdbcType=DATE},
+      </if>
+      <if test="vfEndDate != null" >
+        VF_END_DATE = #{vfEndDate,jdbcType=DATE},
+      </if>
+      <if test="attribute1 != null" >
+        ATTRIBUTE1 = #{attribute1,jdbcType=VARCHAR},
+      </if>
+      <if test="attribute2 != null" >
+        ATTRIBUTE2 = #{attribute2,jdbcType=VARCHAR},
+      </if>
+      <if test="attribute3 != null" >
+        ATTRIBUTE3 = #{attribute3,jdbcType=VARCHAR},
+      </if>
+      <if test="attribute4 != null" >
+        ATTRIBUTE4 = #{attribute4,jdbcType=VARCHAR},
+      </if>
+      <if test="attribute5 != null" >
+        ATTRIBUTE5 = #{attribute5,jdbcType=VARCHAR},
+      </if>
+      <if test="attribute6 != null" >
+        ATTRIBUTE6 = #{attribute6,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where GS_ID = #{gsId,jdbcType=BIGINT}
+  </update>
+  <update id="updateByGsId" parameterType="com.pm.dsis.gs.dto.GarageState" >
+    update garage_state
+    set GS_NUM = #{gsNum,jdbcType=VARCHAR},
+      GS_STATE = 'free',
+      VF_BIGEN_DATE = #{vfBigenDate,jdbcType=DATE},
+      VF_END_DATE = #{vfEndDate,jdbcType=DATE},
+      GS_LICEN_NUMBER = '',
+      BUILDING_FULL_ROOM = '',
+      ATTRIBUTE1 = #{attribute1,jdbcType=VARCHAR},
+      ATTRIBUTE2 = #{attribute2,jdbcType=VARCHAR},
+      ATTRIBUTE3 = #{attribute3,jdbcType=VARCHAR},
+      ATTRIBUTE4 = #{attribute4,jdbcType=VARCHAR},
+      ATTRIBUTE5 = #{attribute5,jdbcType=VARCHAR},
+      ATTRIBUTE6 = #{attribute6,jdbcType=VARCHAR}
+    where GS_ID = #{gsId,jdbcType=BIGINT}
+  </update>
+</mapper>

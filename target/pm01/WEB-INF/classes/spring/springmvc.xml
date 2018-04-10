@@ -40,6 +40,7 @@
         <property name="triggers">
             <list>
                 <ref bean="cronTrigger"/>
+                <ref bean="cronTrigger2"/>
             </list>
         </property>
     </bean>
@@ -47,6 +48,9 @@
 
     <!--  注入调度的object -->
     <bean id="pmFeeJob" class="com.pm.dsis.fee.job.PmFeeJob"></bean>
+    <bean id="gsJob" class="com.pm.dsis.gs.job"></bean>
+
+
     <!-- 引入调用的方法 -->
     <bean id="jobDetailBean" class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
         <property name="targetObject" ref="pmFeeJob"></property><!-- 定时器类 -->
@@ -58,6 +62,19 @@
     <bean id="cronTrigger" class="org.springframework.scheduling.quartz.CronTriggerFactoryBean">
         <property name="jobDetail" ref="jobDetailBean"></property>
         <property name="cronExpression" value="0 0/1 * * * ?"></property>
+    </bean>
+
+    <!-- 引入调用的方法 -->
+    <bean id="jobDetailBean2" class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
+        <property name="targetObject" ref="gsJob"></property><!-- 定时器类 -->
+        <property name="targetMethod" value="updateGsStatu"></property><!-- 定时器类的具体处理方法 -->
+        <property name="concurrent" value="false"></property><!-- 定时器是否支持并发 -->
+    </bean>
+
+    <!-- job定时规则 -->
+    <bean id="cronTrigger2" class="org.springframework.scheduling.quartz.CronTriggerFactoryBean">
+        <property name="jobDetail" ref="jobDetailBean2"></property>
+        <property name="cronExpression" value="0 0 1 * * ?"></property>
     </bean>
 
 

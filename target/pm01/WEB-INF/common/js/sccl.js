@@ -394,7 +394,12 @@ $(function(){
 	//getSkinByCookie();
 
 	/*菜单json*/
-	var menu = [{"id":"1","name":"主菜单","parentId":"0","url":"","icon":"","order":"1","isHeader":"1","childMenus":[
+	var menu = [
+				{"id":"1","name":"主菜单","parentId":"0","url":"","icon":"","order":"1","isHeader":"1","childMenus":[
+                    {"id":"30","name":"员工管理","parentId":"1","url":"","icon":"&#xe602;","order":"1","isHeader":"0","childMenus":[
+                        {"id":"31","name":"员工查询","parentId":"6","url":"view/dsis/fee/pm_fee.html","icon":"","order":"1","isHeader":"0","childMenus":""},
+                        {"id":"32","name":"修改信息","parentId":"6","url":"view/dsis/fee/fee_water.html","icon":"","order":"1","isHeader":"0","childMenus":""},
+                    ]},
 					{"id":"3","name":"住户管理","parentId":"1","url":"","icon":"&#xe604;","order":"1","isHeader":"0","childMenus":[
 						{"id":"4","name":"户主查询","parentId":"3","url":"view/dsis/mm/mm_query.html","icon":"","order":"1","isHeader":"0","childMenus":""},
 						{"id":"5","name":"户主新建","parentId":"3","url":"view/dsis/mm/mm_new_edit.html","icon":"","order":"1","isHeader":"0","childMenus":""},
@@ -405,13 +410,14 @@ $(function(){
                         {"id":"21","name":"电费","parentId":"6","url":"view/dsis/fee/fee_elect.html","icon":"","order":"1","isHeader":"0","childMenus":""},
 					]},
 					{"id":"7","name":"用量录入","parentId":"1","url":"","icon":"&#xe602;","order":"1","isHeader":"0","childMenus":[
-                        {"id":"23","name":"物业费","parentId":"7","url":"view/dsis/cm/cm_fee_amount.html","icon":"","order":"1","isHeader":"0","childMenus":""},
+                        {"id":"25","name":"物业费","parentId":"7","url":"view/dsis/cm/cm_fee_amount.html","icon":"","order":"1","isHeader":"0","childMenus":""},
 						{"id":"23","name":"用水量","parentId":"7","url":"view/dsis/cm/cm_water_amount.html","icon":"","order":"1","isHeader":"0","childMenus":""},
 						{"id":"24","name":"用电量","parentId":"7","url":"view/dsis/cm/cm_elect_amount.html","icon":"","order":"1","isHeader":"0","childMenus":""},
 						{"id":"19","name":"测试","parentId":"7","url":"test01.html","icon":"","order":"1","isHeader":"0","childMenus":""}
 					]},
 					{"id":"8","name":"车位管理","parentId":"1","url":"","icon":"&#xe602;","order":"1","isHeader":"0","childMenus":[
-						{"id":"27","name":"车位查询","parentId":"8","url":"home3.html","icon":"","order":"1","isHeader":"0","childMenus":""},
+						{"id":"26","name":"车位查询","parentId":"8","url":"view/dsis/gs/gs_query.html","icon":"","order":"1","isHeader":"0","childMenus":""},
+                        {"id":"27","name":"车位添加","parentId":"8","url":"view/dsis/gs/gs_edit.html","icon":"","order":"1","isHeader":"0","childMenus":""},
 					]},
 					{"id":"9","name":"报修管理","parentId":"1","url":"","icon":"&#xe602;","order":"1","isHeader":"0","childMenus":[
 						{"id":"27","name":"报修处理","parentId":"9","url":"home3.html","icon":"","order":"1","isHeader":"0","childMenus":""},
