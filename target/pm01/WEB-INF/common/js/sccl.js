@@ -397,9 +397,8 @@ $(function(){
 	var menu = [
 				{"id":"1","name":"主菜单","parentId":"0","url":"","icon":"","order":"1","isHeader":"1","childMenus":[
                     {"id":"30","name":"员工管理","parentId":"1","url":"","icon":"&#xe602;","order":"1","isHeader":"0","childMenus":[
-                        {"id":"31","name":"员工查询","parentId":"6","url":"view/dsis/fee/pm_fee.html","icon":"","order":"1","isHeader":"0","childMenus":""},
-                        {"id":"32","name":"修改信息","parentId":"6","url":"view/dsis/fee/fee_water.html","icon":"","order":"1","isHeader":"0","childMenus":""},
-                    ]},
+                        {"id":"31","name":"员工查询","parentId":"6","url":"view/dsis/em/em_query.html","icon":"","order":"1","isHeader":"0","childMenus":""},
+					]},
 					{"id":"3","name":"住户管理","parentId":"1","url":"","icon":"&#xe604;","order":"1","isHeader":"0","childMenus":[
 						{"id":"4","name":"户主查询","parentId":"3","url":"view/dsis/mm/mm_query.html","icon":"","order":"1","isHeader":"0","childMenus":""},
 						{"id":"5","name":"户主新建","parentId":"3","url":"view/dsis/mm/mm_new_edit.html","icon":"","order":"1","isHeader":"0","childMenus":""},

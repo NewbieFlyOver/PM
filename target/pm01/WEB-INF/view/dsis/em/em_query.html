@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>物业管理</title>
+    <title>员工查询</title>
     <script src="/kendoui/kendoui/js/jquery.min.js"></script>
     <script src="/kendoui/kendoui/js/kendo.all.min.js"></script>
     <link href="/kendoui/bootstrap-3.3.7/css/bootstrap.css" rel="stylesheet" type="text/css"/>
@@ -236,7 +236,7 @@
         columns: [
             {
                 field: "roomName",
-                title: "房号",
+                title: "姓名",
                 headerAttributes: {
                     "class": "table-header-cell",
                     style  : "text-align: center"
@@ -244,7 +244,7 @@
                 width: 120
             }, {
                 field: "userName",
-                title: "户主姓名",
+                title: "性别",
                 headerAttributes: {
                     "class": "table-header-cell",
                     style  : "text-align: center"
@@ -252,7 +252,7 @@
                 width: 120
             }, {
                 field: "housingUsage",
-                title: "房屋使用情况",
+                title: "职务",
                 headerAttributes: {
                     "class": "table-header-cell",
                     style  : "text-align: center"
@@ -280,7 +280,7 @@
                 }
             }, {
                 field: "object",
-                title: "缴费对象",
+                title: "联系方式",
                 headerAttributes: {
                     "class": "table-header-cell",
                     style  : "text-align: center"
@@ -311,7 +311,7 @@
                                  }*/
                             });
                 }
-            }, {
+            }/*, {
                 title: '详情',
                 width: 80,
                 template: function (rowdata) {
@@ -323,7 +323,7 @@
                 attributes: {style: "text-align:center"},
                 headerAttributes: { style: "text-align:center"}
 
-            }
+            }*/
         ],
         editable:false
     });

@@ -1,0 +1,302 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.pm.dsis.em.mapper.HousekeeperBuildingInfoMapper" >
+  <resultMap id="BaseResultMap" type="com.pm.dsis.em.dto.HousekeeperBuildingInfo" >
+    <id column="HB_ID" property="hbId" jdbcType="BIGINT" />
+    <result column="HB_ACCOUNT" property="hbAccount" jdbcType="VARCHAR" />
+    <result column="HB_PASSWORD" property="hbPassword" jdbcType="VARCHAR" />
+    <result column="HB_NAME" property="hbName" jdbcType="VARCHAR" />
+    <result column="HB_NATIONAL" property="hbNational" jdbcType="VARCHAR" />
+    <result column="HB_GENDER" property="hbGender" jdbcType="VARCHAR" />
+    <result column="HB_NATIVE_PLACE" property="hbNativePlace" jdbcType="VARCHAR" />
+    <result column="HB_PHONE" property="hbPhone" jdbcType="VARCHAR" />
+    <result column="HB_WORK_PHONE" property="hbWorkPhone" jdbcType="VARCHAR" />
+    <result column="HB_EMAIL" property="hbEmail" jdbcType="VARCHAR" />
+    <result column="HB_ID_NUMBER" property="hbIdNumber" jdbcType="VARCHAR" />
+    <result column="HB_HOME_ADDRESS" property="hbHomeAddress" jdbcType="VARCHAR" />
+    <result column="EMERGENCY_CONTACT" property="emergencyContact" jdbcType="VARCHAR" />
+    <result column="EMERGENCY_CONTACT_PHONE" property="emergencyContactPhone" jdbcType="VARCHAR" />
+    <result column="HB_POSITION" property="hbPosition" jdbcType="VARCHAR" />
+    <result column="HB_ROLE" property="hbRole" jdbcType="VARCHAR" />
+    <result column="HB_INDUCTION_DATE" property="hbInductionDate" jdbcType="DATE" />
+    <result column="HB_STATUS" property="hbStatus" jdbcType="VARCHAR" />
+    <result column="HB_STATUS_FALG" property="hbStatusFalg" jdbcType="VARCHAR" />
+    <result column="ATTRIBUTE1" property="attribute1" jdbcType="VARCHAR" />
+    <result column="ATTRIBUTE2" property="attribute2" jdbcType="VARCHAR" />
+    <result column="ATTRIBUTE3" property="attribute3" jdbcType="VARCHAR" />
+    <result column="ATTRIBUTE4" property="attribute4" jdbcType="VARCHAR" />
+    <result column="ATTRIBUTE5" property="attribute5" jdbcType="VARCHAR" />
+    <result column="ATTRIBUTE6" property="attribute6" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    HB_ID, HB_ACCOUNT, HB_PASSWORD, HB_NAME, HB_NATIONAL, HB_GENDER, HB_NATIVE_PLACE, 
+    HB_PHONE, HB_WORK_PHONE, HB_EMAIL, HB_ID_NUMBER, HB_HOME_ADDRESS, EMERGENCY_CONTACT, 
+    EMERGENCY_CONTACT_PHONE, HB_POSITION, HB_ROLE, HB_INDUCTION_DATE, HB_STATUS, HB_STATUS_FALG,
+    ATTRIBUTE1, ATTRIBUTE2, ATTRIBUTE3,ATTRIBUTE4, ATTRIBUTE5, ATTRIBUTE6
+  </sql>
+  <select id="selectHouseInfoById" resultMap="BaseResultMap" parameterType="java.lang.Long" >
+    select 
+    <include refid="Base_Column_List" />
+    from housekeeper_building_info
+    where HB_ID = #{hbId,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long" >
+    delete from housekeeper_building_info
+    where HB_ID = #{hbId,jdbcType=BIGINT}
+  </delete>
+  <insert id="insertHouseInfo" parameterType="com.pm.dsis.em.dto.HousekeeperBuildingInfo" >
+    insert into housekeeper_building_info (HB_ID, HB_ACCOUNT, HB_PASSWORD, 
+      HB_NAME, HB_NATIONAL, HB_GENDER, 
+      HB_NATIVE_PLACE, HB_PHONE, HB_WORK_PHONE, 
+      HB_EMAIL, HB_ID_NUMBER, HB_HOME_ADDRESS, 
+      EMERGENCY_CONTACT, EMERGENCY_CONTACT_PHONE, 
+      HB_POSITION, HB_ROLE, HB_INDUCTION_DATE, HB_STATUS, HB_STATUS_FALG,
+      ATTRIBUTE1,ATTRIBUTE2, ATTRIBUTE3, ATTRIBUTE4,
+      ATTRIBUTE5, ATTRIBUTE6)
+    values (#{hbId,jdbcType=BIGINT}, #{hbAccount,jdbcType=VARCHAR}, #{hbPassword,jdbcType=VARCHAR}, 
+      #{hbName,jdbcType=VARCHAR}, #{hbNational,jdbcType=VARCHAR}, #{hbGender,jdbcType=VARCHAR}, 
+      #{hbNativePlace,jdbcType=VARCHAR}, #{hbPhone,jdbcType=VARCHAR}, #{hbWorkPhone,jdbcType=VARCHAR}, 
+      #{hbEmail,jdbcType=VARCHAR}, #{hbIdNumber,jdbcType=VARCHAR}, #{hbHomeAddress,jdbcType=VARCHAR}, 
+      #{emergencyContact,jdbcType=VARCHAR}, #{emergencyContactPhone,jdbcType=VARCHAR}, 
+      #{hbPosition,jdbcType=VARCHAR},#{hbRole,jdbcType=VARCHAR}, #{hbInductionDate,jdbcType=DATE},
+      #{hbStatus,jdbcType=VARCHAR}, #{hbStatusFalg,jdbcType=VARCHAR},#{attribute1,jdbcType=VARCHAR},
+      #{attribute2,jdbcType=VARCHAR}, #{attribute3,jdbcType=VARCHAR}, #{attribute4,jdbcType=VARCHAR}, 
+      #{attribute5,jdbcType=VARCHAR}, #{attribute6,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.pm.dsis.em.dto.HousekeeperBuildingInfo" >
+    insert into housekeeper_building_info
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="hbId != null" >
+        HB_ID,
+      </if>
+      <if test="hbAccount != null" >
+        HB_ACCOUNT,
+      </if>
+      <if test="hbPassword != null" >
+        HB_PASSWORD,
+      </if>
+      <if test="hbName != null" >
+        HB_NAME,
+      </if>
+      <if test="hbNational != null" >
+        HB_NATIONAL,
+      </if>
+      <if test="hbGender != null" >
+        HB_GENDER,
+      </if>
+      <if test="hbNativePlace != null" >
+        HB_NATIVE_PLACE,
+      </if>
+      <if test="hbPhone != null" >
+        HB_PHONE,
+      </if>
+      <if test="hbWorkPhone != null" >
+        HB_WORK_PHONE,
+      </if>
+      <if test="hbEmail != null" >
+        HB_EMAIL,
+      </if>
+      <if test="hbIdNumber != null" >
+        HB_ID_NUMBER,
+      </if>
+      <if test="hbHomeAddress != null" >
+        HB_HOME_ADDRESS,
+      </if>
+      <if test="emergencyContact != null" >
+        EMERGENCY_CONTACT,
+      </if>
+      <if test="emergencyContactPhone != null" >
+        EMERGENCY_CONTACT_PHONE,
+      </if>
+      <if test="hbPosition != null" >
+        HB_POSITION,
+      </if>
+      <if test="hbRole != null" >
+        HB_ROLE,
+      </if>
+      <if test="attribute1 != null" >
+        ATTRIBUTE1,
+      </if>
+      <if test="attribute2 != null" >
+        ATTRIBUTE2,
+      </if>
+      <if test="attribute3 != null" >
+        ATTRIBUTE3,
+      </if>
+      <if test="attribute4 != null" >
+        ATTRIBUTE4,
+      </if>
+      <if test="attribute5 != null" >
+        ATTRIBUTE5,
+      </if>
+      <if test="attribute6 != null" >
+        ATTRIBUTE6,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="hbId != null" >
+        #{hbId,jdbcType=BIGINT},
+      </if>
+      <if test="hbAccount != null" >
+        #{hbAccount,jdbcType=VARCHAR},
+      </if>
+      <if test="hbPassword != null" >
+        #{hbPassword,jdbcType=VARCHAR},
+      </if>
+      <if test="hbName != null" >
+        #{hbName,jdbcType=VARCHAR},
+      </if>
+      <if test="hbNational != null" >
+        #{hbNational,jdbcType=VARCHAR},
+      </if>
+      <if test="hbGender != null" >
+        #{hbGender,jdbcType=VARCHAR},
+      </if>
+      <if test="hbNativePlace != null" >
+        #{hbNativePlace,jdbcType=VARCHAR},
+      </if>
+      <if test="hbPhone != null" >
+        #{hbPhone,jdbcType=VARCHAR},
+      </if>
+      <if test="hbWorkPhone != null" >
+        #{hbWorkPhone,jdbcType=VARCHAR},
+      </if>
+      <if test="hbEmail != null" >
+        #{hbEmail,jdbcType=VARCHAR},
+      </if>
+      <if test="hbIdNumber != null" >
+        #{hbIdNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="hbHomeAddress != null" >
+        #{hbHomeAddress,jdbcType=VARCHAR},
+      </if>
+      <if test="emergencyContact != null" >
+        #{emergencyContact,jdbcType=VARCHAR},
+      </if>
+      <if test="emergencyContactPhone != null" >
+        #{emergencyContactPhone,jdbcType=VARCHAR},
+      </if>
+      <if test="hbPosition != null" >
+        #{hbPosition,jdbcType=VARCHAR},
+      </if>
+      <if test="hbRole != null" >
+        #{hbRole,jdbcType=VARCHAR},
+      </if>
+      <if test="attribute1 != null" >
+        #{attribute1,jdbcType=VARCHAR},
+      </if>
+      <if test="attribute2 != null" >
+        #{attribute2,jdbcType=VARCHAR},
+      </if>
+      <if test="attribute3 != null" >
+        #{attribute3,jdbcType=VARCHAR},
+      </if>
+      <if test="attribute4 != null" >
+        #{attribute4,jdbcType=VARCHAR},
+      </if>
+      <if test="attribute5 != null" >
+        #{attribute5,jdbcType=VARCHAR},
+      </if>
+      <if test="attribute6 != null" >
+        #{attribute6,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.pm.dsis.em.dto.HousekeeperBuildingInfo" >
+    update housekeeper_building_info
+    <set >
+      <if test="hbAccount != null" >
+        HB_ACCOUNT = #{hbAccount,jdbcType=VARCHAR},
+      </if>
+      <if test="hbPassword != null" >
+        HB_PASSWORD = #{hbPassword,jdbcType=VARCHAR},
+      </if>
+      <if test="hbName != null" >
+        HB_NAME = #{hbName,jdbcType=VARCHAR},
+      </if>
+      <if test="hbNational != null" >
+        HB_NATIONAL = #{hbNational,jdbcType=VARCHAR},
+      </if>
+      <if test="hbGender != null" >
+        HB_GENDER = #{hbGender,jdbcType=VARCHAR},
+      </if>
+      <if test="hbNativePlace != null" >
+        HB_NATIVE_PLACE = #{hbNativePlace,jdbcType=VARCHAR},
+      </if>
+      <if test="hbPhone != null" >
+        HB_PHONE = #{hbPhone,jdbcType=VARCHAR},
+      </if>
+      <if test="hbWorkPhone != null" >
+        HB_WORK_PHONE = #{hbWorkPhone,jdbcType=VARCHAR},
+      </if>
+      <if test="hbEmail != null" >
+        HB_EMAIL = #{hbEmail,jdbcType=VARCHAR},
+      </if>
+      <if test="hbIdNumber != null" >
+        HB_ID_NUMBER = #{hbIdNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="hbHomeAddress != null" >
+        HB_HOME_ADDRESS = #{hbHomeAddress,jdbcType=VARCHAR},
+      </if>
+      <if test="emergencyContact != null" >
+        EMERGENCY_CONTACT = #{emergencyContact,jdbcType=VARCHAR},
+      </if>
+      <if test="emergencyContactPhone != null" >
+        EMERGENCY_CONTACT_PHONE = #{emergencyContactPhone,jdbcType=VARCHAR},
+      </if>
+      <if test="hbPosition != null" >
+        HB_POSITION = #{hbPosition,jdbcType=VARCHAR},
+      </if>
+      <if test="hbRole != null" >
+        HB_ROLE = #{hbRole,jdbcType=VARCHAR},
+      </if>
+      <if test="attribute1 != null" >
+        ATTRIBUTE1 = #{attribute1,jdbcType=VARCHAR},
+      </if>
+      <if test="attribute2 != null" >
+        ATTRIBUTE2 = #{attribute2,jdbcType=VARCHAR},
+      </if>
+      <if test="attribute3 != null" >
+        ATTRIBUTE3 = #{attribute3,jdbcType=VARCHAR},
+      </if>
+      <if test="attribute4 != null" >
+        ATTRIBUTE4 = #{attribute4,jdbcType=VARCHAR},
+      </if>
+      <if test="attribute5 != null" >
+        ATTRIBUTE5 = #{attribute5,jdbcType=VARCHAR},
+      </if>
+      <if test="attribute6 != null" >
+        ATTRIBUTE6 = #{attribute6,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where HB_ID = #{hbId,jdbcType=BIGINT}
+  </update>
+  <update id="updateHouseInfoById" parameterType="com.pm.dsis.em.dto.HousekeeperBuildingInfo" >
+    update housekeeper_building_info
+    set HB_ACCOUNT = #{hbAccount,jdbcType=VARCHAR},
+      HB_PASSWORD = #{hbPassword,jdbcType=VARCHAR},
+      HB_NAME = #{hbName,jdbcType=VARCHAR},
+      HB_NATIONAL = #{hbNational,jdbcType=VARCHAR},
+      HB_GENDER = #{hbGender,jdbcType=VARCHAR},
+      HB_NATIVE_PLACE = #{hbNativePlace,jdbcType=VARCHAR},
+      HB_PHONE = #{hbPhone,jdbcType=VARCHAR},
+      HB_WORK_PHONE = #{hbWorkPhone,jdbcType=VARCHAR},
+      HB_EMAIL = #{hbEmail,jdbcType=VARCHAR},
+      HB_ID_NUMBER = #{hbIdNumber,jdbcType=VARCHAR},
+      HB_HOME_ADDRESS = #{hbHomeAddress,jdbcType=VARCHAR},
+      EMERGENCY_CONTACT = #{emergencyContact,jdbcType=VARCHAR},
+      EMERGENCY_CONTACT_PHONE = #{emergencyContactPhone,jdbcType=VARCHAR},
+      HB_POSITION = #{hbPosition,jdbcType=VARCHAR},
+      HB_ROLE = #{hbRole,jdbcType=VARCHAR},
+      HB_INDUCTION_DATE = #{hbInductionDate,jdbcType=DATE},
+      HB_STATUS = #{hbStatus,jdbcType=VARCHAR},
+      HB_STATUS_FALG = #{hbStatusFalg,jdbcType=VARCHAR},
+      ATTRIBUTE1 = #{attribute1,jdbcType=VARCHAR},
+      ATTRIBUTE2 = #{attribute2,jdbcType=VARCHAR},
+      ATTRIBUTE3 = #{attribute3,jdbcType=VARCHAR},
+      ATTRIBUTE4 = #{attribute4,jdbcType=VARCHAR},
+      ATTRIBUTE5 = #{attribute5,jdbcType=VARCHAR},
+      ATTRIBUTE6 = #{attribute6,jdbcType=VARCHAR}
+    where HB_ID = #{hbId,jdbcType=BIGINT}
+  </update>
+</mapper>
