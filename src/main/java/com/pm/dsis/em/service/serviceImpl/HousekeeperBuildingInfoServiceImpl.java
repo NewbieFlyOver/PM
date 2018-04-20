@@ -6,6 +6,8 @@ import com.pm.dsis.em.service.HousekeeperBuildingInfoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 /**
  * Created by admin on 2018/4/15.
  */
@@ -36,6 +38,8 @@ public class HousekeeperBuildingInfoServiceImpl implements HousekeeperBuildingIn
         return housekeeperBuildingInfoMapper.selectHouseInfoById(hbId);
     }
 
-
+    public List<HousekeeperBuildingInfo> selectHbByCondtion(HousekeeperBuildingInfo hb){
+        return housekeeperBuildingInfoMapper.selectHbByCondtion(hb);
+    }
 
 }

@@ -56,10 +56,27 @@ public class HouserKeeperBuildingInfoController {
     @ResponseBody
     public ResponseData selectHouseInfoById(HttpServletRequest request, HttpServletResponse response,
                                             Long hdId){
-
         housekeeperBuildingInfoService.selectHouseInfoById(hdId);
         return new ResponseData();
 
     }
+
+    /**
+     * 根据条件查询所有的员工信息
+     * @param request
+     * @param response
+     * @param housekeeperBuildingInfo
+     * @return
+     */
+    @RequestMapping(value = "/em/selectHbByCondtion",method = RequestMethod.POST)
+    @ResponseBody
+    public ResponseData selectHbByCondtion(HttpServletRequest request, HttpServletResponse response,
+                                           @RequestBody HousekeeperBuildingInfo housekeeperBuildingInfo){
+
+        return new ResponseData(housekeeperBuildingInfoService.selectHbByCondtion(housekeeperBuildingInfo));
+    }
+
+
+
 
 }

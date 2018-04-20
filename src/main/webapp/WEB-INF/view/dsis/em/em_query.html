@@ -18,7 +18,7 @@
 <script type="text/javascript">
     var viewModel = kendo.observable({
         model:{
-            queryUserInfo:{}
+            houseKeeperInfo:{}
         },
         /* createFunction: function(){
          $('#Grid').data('kendoGrid').addRow();
@@ -41,19 +41,9 @@
                     <div class="row">
                         <div class="col-sm-4" id="1">
                             <div class="form-group">
-                                <label class="col-sm-4 control-label">户主姓名</label>
+                                <label class="col-sm-4 control-label">姓名</label>
                                 <div class="col-sm-8">
-                                    <input id="userName"  type="text" style="width: 100%" data-bind="value:model.queryUserInfo.userName"
-                                           class="k-textbox">
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-sm-4" id="2">
-                            <div class="form-group">
-                                <label class="col-sm-4 control-label">户主手机号</label>
-                                <div class="col-sm-8">
-                                    <input id="userPhone"  type="text" style="width: 100%" data-bind="value:model.queryUserInfo.userPhone"
+                                    <input id="hbName"  type="text" style="width: 100%" data-bind="value:model.houseKeeperInfo.hbName"
                                            class="k-textbox">
                                 </div>
                             </div>
@@ -61,76 +51,92 @@
 
                         <div class="col-sm-4" id="3">
                             <div class="form-group">
-                                <label class="col-sm-4 control-label">缴费对象</label>
+                                <label class="col-sm-4 control-label">职务</label>
                                 <div class="col-sm-8">
-                                    <input id="object"  type="text" style="width: 100%" data-bind="value:model.queryUserInfo.object"
+                                    <input id="hbPosition"  type="text" style="width: 100%" data-bind="value:model.houseKeeperInfo.hbPosition"
                                            class="k-textbox">
                                 </div>
                             </div>
                         </div>
-                    </div>
 
-                    <div class="row">
-                        <div class="col-sm-4" id="4">
-                            <div class="form-group">
-                                <label class="col-sm-4 control-label">楼栋号</label>
-                                <div class="col-sm-8">
-                                    <input id="buildingTheater"  type="text" style="width: 100%" data-bind="value:model.queryUserInfo.buildingTheater"
-                                           class="k-textbox">
-                                </div>
-                            </div>
-                        </div>
 
                         <div class="col-sm-4" id="5">
                             <div class="form-group">
-                                <label class="col-sm-4 control-label">单元号</label>
+                                <label class="col-sm-4 control-label">手机号</label>
                                 <div class="col-sm-8">
-                                    <input id="buildingUnit"  type="text" style="width: 100%" data-bind="value:model.queryUserInfo.buildingUnit">
+                                    <input id="hbPhone"  type="text" style="width: 100%" data-bind="value:model.houseKeeperInfo.hbPhone" class="k-textbox">
                                 </div>
                             </div>
                         </div>
 
-                        <div class="col-sm-4" id="6">
-                            <div class="form-group">
-                                <label class="col-sm-4 control-label">楼层数</label>
-                                <div class="col-sm-8">
-                                    <input id="buildingFloor"  type="text" style="width: 100%" data-bind="value:model.queryUserInfo.buildingFloor">
-                                </div>
-                            </div>
-                        </div>
                     </div>
 
                     <div class="row">
-                        <div class="col-sm-4" id="7">
+
+                        <div class="col-sm-4" id="2">
                             <div class="form-group">
-                                <label class="col-sm-4 control-label">门牌号</label>
+                                <label class="col-sm-4 control-label">性别</label>
                                 <div class="col-sm-8">
-                                    <input type="text" style="width: 100%" data-bind="value:model.queryUserInfo.buildingRoom" id="buildingRoom">
+                                    <input id="hbGender"  type="text" style="width: 100%" data-bind="value:model.houseKeeperInfo.hbGender">
                                 </div>
+                                <script>
+                                    var gender = 'gender';
+                                    $.ajax({
+                                        type : "GET" ,
+                                        url: "/ci/selectByType",
+                                        dataType: "json",
+                                        data:{commonType : gender},
+                                        success: function (data) {
+                                            if (data.success) {
+                                                commonInfoSource = eval(data.rows);
+                                                $("#hbGender").kendoComboBox({
+                                                    dataTextField: "commonName",
+                                                    dataValueField: "commonValue",
+                                                    dataSource: commonInfoSource,
+                                                });
+                                            }
+                                        }
+                                    });
+                                </script>
                             </div>
                         </div>
 
-                        <div class="col-sm-4" id="8">
+                        <div class="col-sm-4" id="4">
                             <div class="form-group">
-                                <label class="col-sm-4 control-label">房屋使用情况</label>
+                                <label class="col-sm-4 control-label">状态</label>
                                 <div class="col-sm-8">
-                                    <input id="housingUsage"  type="text" style="width: 100%" data-bind="value:model.queryUserInfo.housingUsage"
-                                           class="k-textbox">
+                                    <input id="hbStatus"  type="text" style="width: 100%" data-bind="value:model.houseKeeperInfo.hbStatus">
+                                </div>
+                                <script>
+                                    var hbStatus = 'hbStatus';
+                                    $.ajax({
+                                        type : "GET" ,
+                                        url: "/ci/selectByType",
+                                        dataType: "json",
+                                        data:{commonType : hbStatus},
+                                        success: function (data) {
+                                            if (data.success) {
+                                                hbStatusSource = eval(data.rows);
+                                                $("#hbStatus").kendoComboBox({
+                                                    dataTextField: "commonName",
+                                                    dataValueField: "commonValue",
+                                                    dataSource: hbStatusSource,
+                                                });
+                                            }
+                                        }
+                                    });
+                                </script>
+                            </div>
+                        </div>
+                        <div class="col-sm-4" id="6">
+                            <div class="form-group">
+                                <label class="col-sm-4 control-label">工作手机号</label>
+                                <div class="col-sm-8">
+                                    <input id="hbWorkPhone"  type="text" style="width: 100%" data-bind="value:model.houseKeeperInfo.hbWorkPhone" class="k-textbox">
                                 </div>
                             </div>
                         </div>
-
-                        <!--<div class="col-sm-4" id="9">
-                            <div class="form-group">
-                                <label class="col-sm-4 control-label">老人儿童情况</label>
-                                <div class="col-sm-8">
-                                    <input id="memberSituation"  type="text" style="width: 100%" data-bind="value:model.queryUserInfo.memberSituation"
-                                           class="k-textbox">
-                                </div>
-                            </div>
-                        </div>-->
                     </div>
-
                 </div>
 
                 <div class="panel-footer text-right"><!--data-bind="click:queryApply"-->
@@ -151,14 +157,14 @@
     dataSource = new kendo.data.DataSource({
         transport: {
             read:  {
-                url: "/mm/queryAllUserInfo",
+               /* url: "/em/selectHbByCondtion",
                 type : "POST",
-                dataType: "json",
+                dataType: "json",*/
             },
             update: {
-                url: "/mm/queryAllUserInfo",
+              /*  url: "/mm/queryAllUserInfo",
                 type : "POST" ,
-                contentType: "application/json"
+                contentType: "application/json"*/
             },
             parameterMap: function(options, type) {
                 if (type !== "read" && options.models) {
@@ -176,45 +182,9 @@
             data:'rows',
             total:'total',
             model: {
-                id: "userId",
+                id: "hbId",
                 fields: {
                 }
-            }
-        }
-    });
-
-    var gender = 'payObject';
-    $.ajax({
-        type : "GET" ,
-        url: "/ci/selectByType",
-        dataType: "json",
-        data:{commonType : gender},
-        success: function (data) {
-            if (data.success) {
-                commonInfoSource = eval(data.rows);
-                /* $("#object").kendoComboBox({
-                 dataTextField: "commonName",
-                 dataValueField: "commonValue",
-                 dataSource: commonInfoSource,
-                 });*/
-            }
-        }
-    });
-
-    var type = 'HouseUsage';
-    $.ajax({
-        type : "GET" ,
-        url: "/ci/selectByType",
-        dataType: "json",
-        data:{commonType : type},
-        success: function (data) {
-            if (data.success) {
-                commonInfoSourceHouse = eval(data.rows);
-                /* $("#object").kendoComboBox({
-                 dataTextField: "commonName",
-                 dataValueField: "commonValue",
-                 dataSource: commonInfoSource,
-                 });*/
             }
         }
     });
@@ -235,7 +205,7 @@
         },
         columns: [
             {
-                field: "roomName",
+                field: "hbName",
                 title: "姓名",
                 headerAttributes: {
                     "class": "table-header-cell",
@@ -243,51 +213,15 @@
                 },
                 width: 120
             }, {
-                field: "userName",
+                field: "hbGender",
                 title: "性别",
                 headerAttributes: {
                     "class": "table-header-cell",
                     style  : "text-align: center"
                 },
-                width: 120
-            }, {
-                field: "housingUsage",
-                title: "职务",
-                headerAttributes: {
-                    "class": "table-header-cell",
-                    style  : "text-align: center"
-                },
                 width: 120,
                 template: function(dataItem){
-                    var v = dataItem.housingUsage;
-                    $.each(commonInfoSourceHouse,function(i,n){
-                        if((n.commonValue||'').toLowerCase() == (v||'').toLowerCase()){
-                            v = n.commonName;
-                            return v;
-                        }
-                    })
-                    return v;
-                },
-                editor: function (container, options) {
-                    $('<input  name="' + options.field + '"/>').appendTo(container)
-                        .kendoDropDownList(
-                            {
-                                dataTextField: "commonName",
-                                dataValueField: "commonValue",
-                                dataSource: commonInfoSourceHouse,
-
-                            });
-                }
-            }, {
-                field: "object",
-                title: "联系方式",
-                headerAttributes: {
-                    "class": "table-header-cell",
-                    style  : "text-align: center"
-                },
-                width: 120,
-                template: function(dataItem){
-                    var v = dataItem.object;
+                    var v = dataItem.hbGender;
                     $.each(commonInfoSource,function(i,n){
                         if((n.commonValue||'').toLowerCase() == (v||'').toLowerCase()){
                             v = n.commonName;
@@ -303,45 +237,85 @@
                                 dataTextField: "commonName",
                                 dataValueField: "commonValue",
                                 dataSource: commonInfoSource,
-                                valuePrimitive: true,
-                                /* change : function (e) {
-                                 options.model.object = {};
-                                 options.model.object.name = this.text();
-                                 options.model.object.value = this.value();
-                                 }*/
+
                             });
                 }
-            }/*, {
-                title: '详情',
-                width: 80,
-                template: function (rowdata) {
-                    if (!!rowdata.userId) {
-                        return '<a href="javascript:void(0);" onclick="editUserInfo('+rowdata.userId +')">查看</a>'
-                    }
-                    return '';
+            }, {
+                field: "hbPosition",
+                title: "职务",
+                headerAttributes: {
+                    "class": "table-header-cell",
+                    style  : "text-align: center"
                 },
-                attributes: {style: "text-align:center"},
-                headerAttributes: { style: "text-align:center"}
+                width: 120,
 
-            }*/
+            }, {
+                field: "hbStatus",
+                title: "状态",
+                headerAttributes: {
+                    "class": "table-header-cell",
+                    style  : "text-align: center"
+                },
+                width: 120,
+                template: function(dataItem){
+                    var v = dataItem.hbStatus;
+                    $.each(hbStatusSource,function(i,n){
+                        if((n.commonValue||'').toLowerCase() == (v||'').toLowerCase()){
+                            v = n.commonName;
+                            return v;
+                        }
+                    })
+                    return v;
+                },
+                editor: function (container, options) {
+                    $('<input  name="' + options.field + '"/>').appendTo(container)
+                        .kendoDropDownList(
+                            {
+                                dataTextField: "commonName",
+                                dataValueField: "commonValue",
+                                dataSource: hbStatusSource,
+                                valuePrimitive: true,
+                            });
+                }
+            }, {
+                field: "hbPhone",
+                title: "手机号",
+                headerAttributes: {
+                    "class": "table-header-cell",
+                    style  : "text-align: center"
+                },
+                width: 120
+            }, {
+                field: "hbWorkPhone",
+                title: "工作手机号",
+                headerAttributes: {
+                    "class": "table-header-cell",
+                    style  : "text-align: center"
+                },
+                width: 120
+            }
         ],
         editable:false
     });
 
-    function editUserInfo(userId) {
-        //top.location='./mm_edit.html';
-        window.open ("./mm_edit.html", "newwindow","'location=no, toolbar=no'")
-        /* "height=100, width=400, top=0, left=0, toolbar=no, menubar=no, scrollbars=no, resizable=no,location=no, status=no")*/
-        window.localStorage["editUserId"]=JSON.stringify(userId);
-    }
     function queryAllUserInfo() {
-        queryUserInfo=JSON.stringify(viewModel.model.queryUserInfo)
+
+        if( $("#hbGender").val()!="" ){
+            gender = viewModel.model.houseKeeperInfo.hbGender.commonValue;
+            viewModel.model.houseKeeperInfo.set('hbGender',gender);
+        }
+        if( $("#hbStatus").val()!="" ){
+            status = viewModel.model.houseKeeperInfo.hbStatus.commonValue;
+            viewModel.model.houseKeeperInfo.set('hbStatus',status);
+        }
+
+        queryUserInfo=JSON.stringify(viewModel.model.houseKeeperInfo)
         $.ajax({
             type: 'POST',
-            url: '/mm/queryAllUserInfo11',
+            url: '/em/selectHbByCondtion',
             dataType: "json",
             contentType: "application/json",
-            data: JSON.stringify(viewModel.model.queryUserInfo),
+            data: JSON.stringify(viewModel.model.houseKeeperInfo),
             success: function (data) {
                 if (data.success) {
                     var grid = $('#grid').data('kendoGrid');
@@ -352,7 +326,7 @@
                                 return data.rows.length;
                             },
                             model: {
-                                id: "userId",
+                                id: "hbId",
                                 fields: {
                                 }
                             }
@@ -365,6 +339,38 @@
             }
         })
     }
+
+
+    var houseKeeperInfo = JSON.stringify(viewModel.model.houseKeeperInfo);
+    $.ajax({
+        type: 'POST',
+        url: '/em/selectHbByCondtion',
+        dataType: "json",
+        contentType: "application/json",
+        data: houseKeeperInfo,
+        sync:false,
+        success: function (data) {
+            if (data.success) {
+                var grid = $('#grid').data('kendoGrid');
+                var dataSource = new kendo.data.DataSource({
+                    data: data.rows,
+                    schema: {
+                        total:function (e) {
+                            return data.rows.length;
+                        },
+                        model: {
+                            id: "hbId",
+                            fields: {
+                            }
+                        }
+                    },
+                    page:1,
+                    pageSize:5
+                });
+                grid.setDataSource(dataSource);
+            }
+        }
+    })
 
 
 

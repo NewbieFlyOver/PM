@@ -40,6 +40,33 @@
     from housekeeper_building_info
     where HB_ID = #{hbId,jdbcType=BIGINT}
   </select>
+
+  <select id="selectHbByCondtion" resultMap="BaseResultMap" parameterType="java.lang.Long" >
+    select
+    <include refid="Base_Column_List" />
+    from housekeeper_building_info hb
+    <where>
+      <if test="hbName!=null and hbName!=''">
+        hb.HB_NAME = #{hbName}
+      </if>
+      <if test="hbPosition!=null and hbPosition!=''">
+        and hb.HB_POSITION = #{hbPosition}
+      </if>
+      <if test="hbPhone!=null and hbPhone!=''">
+        and hb.HB_PHONE = #{hbPhone}
+      </if>
+      <if test="hbGender!=null and hbGender!=''">
+        and HB_GENDER = #{hbGender}
+      </if>
+      <if test="hbStatus!=null and hbStatus!=''">
+        and HB_STATUS = #{hbStatus}
+      </if>
+      <if test="hbWorkPhone!=null and hbWorkPhone!=''">
+      and HB_WORK_PHONE = #{hbWorkPhone}
+    </if>
+    </where>
+  </select>
+
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Long" >
     delete from housekeeper_building_info
     where HB_ID = #{hbId,jdbcType=BIGINT}

@@ -23,7 +23,7 @@
 				<li class="header-bar-nav">
 					<a href="javascript:;">admin<i class="icon-font" style="margin-left:5px;">&#xe60c;</i></a>
 					<ul class="header-dropdown-menu">
-						<li><a href="javascript:;">个人信息</a></li>
+						<li><a href="javascript:void(0);onclick=editBhInfo()">个人信息</a></li>
 						<li><a href="javascript:;">切换账户</a></li>
 						<li><a href="javascript:;">退出</a></li>
 					</ul>
@@ -68,4 +68,11 @@
 	<script type="text/javascript" src="../common/js/sccl.js"></script>
 	<script type="text/javascript" src="../common/js/sccl-util.js"></script>
   </body>
+
+<script>
+	function editBhInfo() {
+        window.open ("view/dsis/em/em_edit.html", "newwindow","'location=no, toolbar=no'")
+    }
+
+</script>
 </html>

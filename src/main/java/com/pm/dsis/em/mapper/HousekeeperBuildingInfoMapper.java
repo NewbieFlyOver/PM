@@ -28,6 +28,14 @@ public interface HousekeeperBuildingInfoMapper {
     HousekeeperBuildingInfo selectHouseInfoById(Long hbId);
 
 
+    /**
+     * 根据条件查询所有的员工信息
+     * @param hb
+     * @return
+     */
+    List<HousekeeperBuildingInfo> selectHbByCondtion(HousekeeperBuildingInfo hb);
+
+
 
     int deleteByPrimaryKey(Long hbId);
 

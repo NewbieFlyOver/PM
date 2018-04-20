@@ -220,8 +220,6 @@
                                         </div>
                                     </div>
                                 </div>
-
-
                             </div>
                             <div class="row">
                                 <div class="col-sm-4" id="16">
@@ -229,6 +227,8 @@
                                         <label class="col-sm-4 control-label">工作手机号</label>
                                         <div class="col-sm-8">
                                             <input id="hbWorkPhone" name="hbWorkPhone" type="text" style="width:96%" data-bind="value:model.houseKeeperInfo.hbWorkPhone" class="k-textbox">
+                                            <span style="color: red">*</span>
+                                            <span style="color: red">请输入紧急联系人电话</span>
                                         </div>
                                     </div>
                                 </div>
@@ -245,6 +245,7 @@
                     </form>
                 </div>
             </div>
+        <script>kendo.bind($('#base'), viewModel);</script>
     </div>
 
     <style>
@@ -311,14 +312,15 @@
 
 
         function saveHouseInfo(){
-            alert(123)
-            if( $("#hdGender").val()!="" ){
-                gender = viewModel.model.houseKeeperInfo.hdGender.commonValue;
-                viewModel.model.houseKeeperInfo.set('hdGender',gender);
+            if( $("#hbGender").val()!="" ){
+                gender = viewModel.model.houseKeeperInfo.hbGender.commonValue;
+                viewModel.model.houseKeeperInfo.set('hbGender',gender);
+            }
+            if( $("#hbStatus").val()!="" ){
+                status = viewModel.model.houseKeeperInfo.hbStatus.commonValue;
+                viewModel.model.houseKeeperInfo.set('hbStatus',status);
             }
             var houseKeeperInfo = JSON.stringify(viewModel.model.houseKeeperInfo);
-            alert(435)
-            //console.log(viewModel.model.userInfo)
             $.ajax({
                 type: 'POST',
                 url: '/em/insertHouseInfo',
@@ -329,7 +331,7 @@
                     if (data.success) {
                         alert("保存成功！")
                         //userId = data.rows[0];
-                        viewModel.model.houseKeeperInfo.set('userId',data.rows[0]);
+                        //viewModel.model.houseKeeperInfo.set('userId',data.rows[0]);
                     }
                 }
             });
