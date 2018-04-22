@@ -114,6 +114,25 @@ public class ElectAmountServiceImpl implements ElectAmountService {
         return electAmountList;
     }
 
+    /**
+     * 查询根据userId查询
+     * @param electricityAmount
+     * @return
+     */
+    public List<ElectricityAmount> selectElectByUserId(ElectricityAmount electricityAmount) {
+        List<ElectricityAmount> electAmountList = electricityAmountMapper.selectElectByUserId(electricityAmount);
+        //时间类型转换
+        for ( ElectricityAmount ea : electAmountList ) {
+            // Date date = wa.getWaBigenDate();
+            DateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+            String bigenDateStr = sdf.format(ea.getEaBigenDate());
+            String endDateStr = sdf.format(ea.getEaEndDate());
+            ea.setEaBigenDateStr(bigenDateStr);
+            ea.setEaEndDateStr(endDateStr);
+        }
+        return electAmountList;
+    }
+
     //更新电费是否已交
     public void updateElectStatu(List<ElectricityAmount> electricityAmounts) {
         for (ElectricityAmount ea: electricityAmounts) {

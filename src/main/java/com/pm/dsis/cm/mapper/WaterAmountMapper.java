@@ -32,6 +32,12 @@ public interface WaterAmountMapper {
     List<WaterAmount> selectWater(WaterAmount waterAmount);
 
     /**
+     * 根据userId查询
+     * @return
+     */
+    List<WaterAmount> selectWaterByUserId(WaterAmount waterAmount);
+
+    /**
      * 更新是否缴费状态
      * @return
      */

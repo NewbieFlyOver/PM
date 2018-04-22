@@ -104,6 +104,21 @@ public class WaterController {
     }
 
     /**
+     * 条件userId查询
+     * @param request
+     * @param response
+     * @param waterAmount
+     * @return
+     */
+    @RequestMapping(value = "/cm/selectWaterByUserId",method = RequestMethod.POST, consumes="application/json")
+    @ResponseBody//
+    public ResponseData selectWaterByUserId(HttpServletRequest request, HttpServletResponse response, @RequestBody WaterAmount waterAmount){
+        return new ResponseData(waterAmountService.selectWaterByUserId(waterAmount));
+
+    }
+
+
+    /**
      * 更新是否缴费状态
      * @param request
      * @param response

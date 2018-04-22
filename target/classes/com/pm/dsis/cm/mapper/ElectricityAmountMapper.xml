@@ -49,6 +49,22 @@
     </where>
   </select>
 
+<!-- 根据userId查询 -->
+  <select id="selectElectByUserId" resultMap="BaseResultMap" parameterType="com.pm.dsis.cm.dto.ElectricityAmount" >
+    select ea.*
+    from electricity_amount ea, building_info bi
+    <where>
+      ea.BUILDING_FULL_ROOM = bi.BUILDING_FULL_ROOM
+      and bi.USER_ID = #{userId}
+      <if test="eaMonth!=null">
+        and EA_MONTH = #{eaMonth}
+      </if>
+      <if test="eaFlag">
+        and EA_FLAG = #{eaFlag}
+      </if>
+    </where>
+  </select>
+
   <select id="selectByMonth" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
   select
   <include refid="Base_Column_List" />

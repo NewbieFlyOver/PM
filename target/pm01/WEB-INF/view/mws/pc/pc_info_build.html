@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>物业管理</title>
+
+    <script src="/kendoui/kendoui/js/jquery.min.js"></script>
+    <script src="/kendoui/kendoui/js/kendo.all.min.js"></script>
+    <link href="/kendoui/bootstrap-3.3.7/css/bootstrap.css" rel="stylesheet" type="text/css"/>
+    <link href="/kendoui/font-awesome-4.6.3/css/font-awesome.min.css" rel="stylesheet" type="text/css"/>
+    <link href="/kendoui/kendoui/styles/kendo.common-bootstrap.min.css" rel="stylesheet" type="text/css"/>
+    <link href="/kendoui/kendoui/styles/kendo.bootstrap.min.css" rel="stylesheet" type="text/css"/>
+    <link href="/kendoui/kendoui/styles/kendo.hap.css" rel="stylesheet" type="text/css"/>
+    <script src="/kendoui/kendoui/js/kendo.hap.js"></script>
+    <script src="/kendoui/polyfill/es5-shim.min.js"></script>
+    <script src="/kendoui/polyfill/respond.min.js"></script>
+
+</head>
+<body>
+<script type="text/javascript">
+    var viewModel = kendo.observable({
+        model:{
+            BuildingInfo:{}
+        },
+        createFunction: function(){
+            $('#Grid').data('kendoGrid').addRow();
+        },
+        saveFunction: function(){
+            $('#Grid').data('kendoGrid').saveChanges();
+        },
+        queryResource: function(e) {
+            $('#Grid').data('kendoGrid').dataSource.page(1);
+        }
+
+    });
+
+</script>
+<div id="base">
+    <div class="demo-section k-content">
+        <div id="tabstrip">
+            <div>
+                <div class="panel" style="padding: 0px">
+                    <form class="form-horizontal">
+                        <div id="basebuilding" class="panel-body">
+                            <div style="margin-bottom: 10px;margin-top: 5px">
+                                <span class="btn btn-primary" style="width: 150px;">房屋信息</span>
+                            </div>
+                            <div style="margin-top: 5%">
+                                <div class="row">
+                                    <div class="col-sm-4" id="24">
+                                        <div class="form-group">
+                                            <label class="col-sm-4 control-label">房屋类型</label>
+                                            <div class="col-sm-8"><!--data-bind="value:model.BuildingInfo.buildType"-->
+                                                <input id="buildType"  type="text" style="width: 100%" data-bind="value:model.BuildingInfo.buildType" >
+                                            </div>
+                                        </div>
+                                        <script>
+                                            TypeDataSource = [];
+                                            $.ajax({
+                                                type : "POST" ,
+                                                url: "/mm/selectAllType",
+                                                dataType: "json",
+                                                contentType: "application/json",
+                                                success: function (data) {
+                                                    if (data.success) {
+                                                        TypeDataSource = eval(data.rows);
+                                                        $("#buildType").kendoComboBox({
+                                                            dataTextField: "buildingTypeName",
+                                                            dataValueField: "buildingTypeId",
+                                                            dataSource: TypeDataSource,
+                                                        });
+                                                    }
+                                                }
+                                            });
+                                        </script>
+                                    </div>
+                                    <div class="col-sm-4" id="25">
+                                        <div class="form-group">
+                                            <label class="col-sm-4 control-label">房屋全称</label>
+                                            <div class="col-sm-8">
+                                                <input id="buildingFullRoom"  type="text" style="width: 100%" data-bind="value:model.BuildingInfo.buildingFullRoom" class="k-textbox">
+                                                <script>
+                                                    $("#buildingFullRoom").attr("disabled", true);
+                                                </script>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-4" id="26">
+                                        <div class="form-group">
+                                            <label class="col-sm-4 control-label">楼栋号</label>
+                                            <div class="col-sm-8">
+                                                <input id="buildingTheater"  type="text" style="width: 100%" data-bind="value:model.BuildingInfo.buildingTheater" class="k-textbox">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-sm-4" id="27">
+                                        <div class="form-group">
+                                            <label class="col-sm-4 control-label">单元号</label>
+                                            <div class="col-sm-8">
+                                                <input id="buildingUnit"  type="text" style="width: 100%" data-bind="value:model.BuildingInfo.buildingUnit" class="k-textbox">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-4" id="28">
+                                        <div class="form-group">
+                                            <label class="col-sm-4 control-label">楼层数</label>
+                                            <div class="col-sm-8">
+                                                <input id="buildingFloor"  type="text" style="width: 100%" data-bind="value:model.BuildingInfo.buildingFloor" class="k-textbox">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-4" id="29">
+                                        <div class="form-group">
+                                            <label class="col-sm-4 control-label">门牌号</label>
+                                            <div class="col-sm-8">
+                                                <input id="buildingRoom"  type="text" style="width: 100%" data-bind="value:model.BuildingInfo.buildingRoom" class="k-textbox">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-sm-4" id="30">
+                                        <div class="form-group">
+                                            <label class="col-sm-4 control-label">房屋使用情况</label>
+                                            <div class="col-sm-8">
+                                                <input id="housingUsage"  type="text" style="width: 100%" data-bind="value:model.BuildingInfo.housingUsage">
+                                            </div>
+                                        </div>
+                                        <script>
+                                            var type = 'HouseUsage';
+                                            $.ajax({
+                                                type : "GET" ,
+                                                url: "/ci/selectByType",
+                                                dataType: "json",
+                                                data:{commonType : type},
+                                                success: function (data) {
+                                                    if (data.success) {
+                                                        commonInfoSource = eval(data.rows);
+                                                        $("#housingUsage").kendoComboBox({
+                                                            dataTextField: "commonName",
+                                                            dataValueField: "commonValue",
+                                                            dataSource: commonInfoSource,
+                                                        });
+                                                    }
+                                                }
+                                            });
+                                        </script>
+                                    </div>
+                                    <div class="col-sm-4" id="31">
+                                        <div class="form-group">
+                                            <label class="col-sm-4 control-label">房屋面积</label>
+                                            <div class="col-sm-8">
+                                                <input id="buildingArea"  type="text" style="width: 100%" data-bind="value:model.BuildingInfo.buildingArea" class="k-textbox">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-4" id="32">
+                                        <div class="form-group">
+                                            <label class="col-sm-4 control-label">领房时间</label>
+                                            <div class="col-sm-8">
+                                                <input id="checkinDate"  type="date" style="width: 100%" data-bind="value:model.BuildingInfo.checkinDate">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-sm-4" id="33">
+                                            <div class="form-group">
+                                                <label class="col-sm-4 control-label">入住时间</label>
+                                                <div class="col-sm-8">
+                                                    <input id="stayinDate"  type="date" style="width: 100%" data-bind="value:model.BuildingInfo.stayinDate">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="panel-footer text-right">
+                            <span class="btn btn-success" onclick="saveBuildingInfo()">保存</span>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <script>kendo.bind($('#tabstrip'), viewModel);</script>
+    </div>
+
+    <style>
+        .sunny, .cloudy, .rainy {
+            display: block;
+            margin: 30px auto 10px;
+            width: 128px;
+            height: 128px;
+        }
+
+        .cloudy{
+            background-position: -128px 0;
+        }
+
+        .rainy{
+            background-position: -256px 0;
+        }
+
+        .weather {
+            margin: 0 auto 30px;
+            text-align: center;
+        }
+
+        #tabstrip h2 {
+            font-weight: lighter;
+            font-size: 5em;
+            line-height: 1;
+            padding: 0 0 0 30px;
+            margin: 0;
+        }
+
+        #tabstrip h2 span {
+            background: none;
+            padding-left: 5px;
+            font-size: .3em;
+            vertical-align: top;
+        }
+
+        #tabstrip p {
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+
+    <script>
+        var userId= 45;//userID
+        $.ajax({
+            type: 'POST',
+            url: '/mm/selectBuildById',
+            dataType: "json",
+            data:{userId:userId},
+            success: function (data) {
+                viewModel.model.set('BuildingInfo', data.rows[0]);
+                var checkInDate = new Date(viewModel.model.BuildingInfo.checkinDate);
+                var stayInDate = new Date(viewModel.model.BuildingInfo.stayinDate);
+                $("#checkinDate").val(dateStr(checkInDate));
+                $("#stayinDate").val(dateStr(stayInDate));
+
+                type = viewModel.model.BuildingInfo.buildingTypeId;
+                $("#buildType").data("kendoComboBox").value(type);
+
+                housingUsage = viewModel.model.BuildingInfo.housingUsage;
+                $("#housingUsage").data("kendoComboBox").value(housingUsage);
+            }
+        });
+
+        //时间格式化
+        function dateStr(oDate) {
+            oYear = oDate.getFullYear(),
+                oMonth = oDate.getMonth()+1,
+                oDay = oDate.getDate(),
+                oHour = oDate.getHours(),
+                oMin = oDate.getMinutes(),
+                oSen = oDate.getSeconds(),
+                oTime = oYear +'-'+ getzf(oMonth) +'-'+ getzf(oDay);//最后拼接时间
+            return oTime;
+        }
+        function getzf(num){
+            if(parseInt(num) < 10){
+                num = '0'+num;
+            }
+            return num;
+        }
+
+        function saveBuildingInfo(){
+            viewModel.model.BuildingInfo.set("buildingTypeId",$("#buildType").data("kendoComboBox").value())
+            viewModel.model.BuildingInfo.set("housingUsage",$("#housingUsage").data("kendoComboBox").value())
+
+            var buildingInfo = JSON.stringify(viewModel.model.BuildingInfo);
+            $.ajax({
+                type: 'POST',
+                url: '/mm/insertBuildingInfo',
+                dataType: "json",
+                contentType: "application/json",
+                data: buildingInfo,
+                success: function (data) {
+                    if (data.success) {
+                        alert("保存成功！")
+                        $.ajax({
+                            type : "POST" ,
+                            url: "/mm/selectBuildById",
+                            dataType: "json",
+                            data: {userId:userId},
+                            success: function (data) {
+                                if (data.success) {
+                                    viewModel.model.set('BuildingInfo',data.rows[0]);
+                                    var checkInDate = new Date(viewModel.model.BuildingInfo.checkinDate);
+                                    var stayInDate = new Date(viewModel.model.BuildingInfo.stayinDate);
+                                    $("#checkinDate").val(dateStr(checkInDate));
+                                    $("#stayinDate").val(dateStr(stayInDate));
+                                    type = viewModel.model.BuildingInfo.buildingTypeId;
+                                    $("#buildType").data("kendoComboBox").value(type);
+                                }
+                            }
+                        });
+                    }
+                }
+            });
+        }
+    </script>
+</div>
+
+</body>
+</html>
+
+

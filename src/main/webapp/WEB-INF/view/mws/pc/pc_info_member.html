@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>物业管理</title>
+
+    <script src="/kendoui/kendoui/js/jquery.min.js"></script>
+    <script src="/kendoui/kendoui/js/kendo.all.min.js"></script>
+    <link href="/kendoui/bootstrap-3.3.7/css/bootstrap.css" rel="stylesheet" type="text/css"/>
+    <link href="/kendoui/font-awesome-4.6.3/css/font-awesome.min.css" rel="stylesheet" type="text/css"/>
+    <link href="/kendoui/kendoui/styles/kendo.common-bootstrap.min.css" rel="stylesheet" type="text/css"/>
+    <link href="/kendoui/kendoui/styles/kendo.bootstrap.min.css" rel="stylesheet" type="text/css"/>
+    <link href="/kendoui/kendoui/styles/kendo.hap.css" rel="stylesheet" type="text/css"/>
+    <script src="/kendoui/kendoui/js/kendo.hap.js"></script>
+    <script src="/kendoui/polyfill/es5-shim.min.js"></script>
+    <script src="/kendoui/polyfill/respond.min.js"></script>
+
+</head>
+<body>
+<script type="text/javascript">
+    var viewModel = kendo.observable({
+        model:{
+            userInfo:{},
+            BuildingInfo:{}
+        },
+        createFunction: function(){
+            $('#Grid').data('kendoGrid').addRow();
+        },
+        saveFunction: function(){
+            $('#Grid').data('kendoGrid').saveChanges();
+        },
+        queryResource: function(e) {
+            $('#Grid').data('kendoGrid').dataSource.page(1);
+        }
+
+    });
+
+</script>
+<div id="base">
+    <div class="demo-section k-content">
+        <div class="panel" style="padding: 0px">
+            <form class="form-horizontal">
+                <div id="basebuilding" class="panel-body">
+                    <div style="margin-bottom: 10px;margin-top: 5px">
+                        <span class="btn btn-primary" style="width: 150px;">房屋信息</span>
+                    </div>
+                </div>
+            </form>
+            <div style="height: 450px">
+
+            <div class="panel-footer text-right">
+                <span class="btn btn-primary " style="margin-right:5px;" data-bind="click:createFunction">新建</span>
+                <span class="btn btn-success "  onclick="saveMemberInfo()" style="margin-right:5px;">保存</span>
+                <span  onclick="deleteData()"  class="btn btn-danger">删除</span>
+            </div>
+
+            <div style="clear:both">
+                <div id="Grid"></div>
+            </div>
+
+            <script type="text/javascript">
+                var userId=JSON.parse(window.localStorage["editUserId"]||'');
+                dataSource = new kendo.data.DataSource({
+                    transport: {
+                        read:  {
+                            url: "/mm/selectMemberByUserId?userId="+userId,
+                            type : "POST",
+                            dataType: "json"
+                        },
+                        update: {
+                            url: "/mm/saveUserMember",
+                            type : "POST" ,
+                            contentType: "application/json"
+                        },
+                        destroy: {
+                            url: "/mm/deteleUserMember",
+                            type : "POST" ,
+                            contentType: "application/json"
+                        },
+                        create: {
+                            url: "/mm/saveUserMember",
+                            type : "POST" ,
+                            contentType: "application/json"
+                        },
+                        parameterMap: function(options, type) {
+                            if (type !== "read" && options.models) {
+                                var datas = Hap.prepareSubmitParameter(options, type)
+                                return kendo.stringify(datas);
+                            } else if (type === "read") {
+                                return Hap.prepareQueryParameter(viewModel.model.toJSON(), options)
+                            }
+                        }
+                    },
+                    batch: true,
+                    serverPaging : true,
+                    pageSize: 10,
+                    schema: {
+                        data:'rows',
+                        total:'total',
+                        model: {
+                            id: "memberId",
+                            fields: {
+                            }
+                        }
+                    }
+                });
+
+                $("#Grid").kendoGrid({
+                    dataSource: dataSource,
+                    height: 400,
+                    resizable  : true,
+                    scrollable : true,
+                    navigatable: false,
+                    selectable : 'multiple, rowbox',
+                    pageable: {
+                        pageSizes:[5, 10, 20, 50],
+                        refresh:true,
+                        buttonCount:5
+                    },
+                    columns: [
+                        {
+                            field: "memberName",
+                            title: "姓名",
+                            headerAttributes: {
+                                "class": "table-header-cell",
+                                style  : "text-align: center"
+                            },
+                            width: 120
+                        }, {
+                            field: "memberRelationship",
+                            title: "与户主的关系",
+                            headerAttributes: {
+                                "class": "table-header-cell",
+                                style  : "text-align: center"
+                            },
+                            width: 120
+                        }, {
+                            field: "memberAge",
+                            title: "年龄",
+                            headerAttributes: {
+                                "class": "table-header-cell",
+                                style  : "text-align: center"
+                            },
+                            width: 120
+                        }, {
+                            field: "memberIdNumber",
+                            title: "身份证号",
+                            headerAttributes: {
+                                "class": "table-header-cell",
+                                style  : "text-align: center"
+                            },
+                            width: 120
+                        }, {
+                            field: "memberWorkUnits",
+                            title: "工作单位（学校）",
+                            headerAttributes: {
+                                "class": "table-header-cell",
+                                style  : "text-align: center"
+                            },
+                            width: 120
+                        }, {
+                            field: "memberPhone",
+                            title: "联系电话",
+                            headerAttributes: {
+                                "class": "table-header-cell",
+                                style  : "text-align: center"
+                            },
+                            width: 120
+                        }, {
+                            field: "memberSituation",
+                            title: "老人儿童情况",
+                            headerAttributes: {
+                                "class": "table-header-cell",
+                                style  : "text-align: center"
+                            },
+                            width: 120
+                        }, {
+                            field: "memberSituationInstructions",
+                            title: "老人儿童情况说明",
+                            headerAttributes: {
+                                "class": "table-header-cell",
+                                style  : "text-align: center"
+                            },
+                            width: 120
+                        }
+                    ],
+                    editable: true,
+                });
+
+
+                function deleteData() {
+                    var grid = $('#Grid').data('kendoGrid');
+                    var userInfo = JSON.stringify(grid.selectedDataItems());
+                    $.ajax({
+                        type: 'POST',
+                        url: '/mm/deteleUserMember',
+                        dataType: "json",
+                        contentType: "application/json",
+                        data: userInfo,
+                        success: function (data) {
+                            if(data.success){
+                                alert("删除成功！")
+                            }
+                            var grid = $('#Grid').data('kendoGrid');
+                            var dataSource = new kendo.data.DataSource({
+                                data: data.rows,
+                                schema: {
+                                    total:function (e) {
+                                        return data.rows.length;
+                                    },
+                                    model: {
+                                        id: "memberId",
+                                        fields: {
+                                        }
+                                    }
+                                },
+                                page:1,
+                                pageSize:5
+                            });
+                            grid.setDataSource(dataSource);
+                        }
+                    });
+                };
+                Hap.autoResizeGrid("#Grid");
+
+            </script>
+
+        </div>
+        </div>
+    </div>
+
+    <style>
+        .sunny, .cloudy, .rainy {
+            display: block;
+            margin: 30px auto 10px;
+            width: 128px;
+            height: 128px;
+        }
+
+        .cloudy{
+            background-position: -128px 0;
+        }
+
+        .rainy{
+            background-position: -256px 0;
+        }
+
+        .weather {
+            margin: 0 auto 30px;
+            text-align: center;
+        }
+
+        #tabstrip h2 {
+            font-weight: lighter;
+            font-size: 5em;
+            line-height: 1;
+            padding: 0 0 0 30px;
+            margin: 0;
+        }
+
+        #tabstrip h2 span {
+            background: none;
+            padding-left: 5px;
+            font-size: .3em;
+            vertical-align: top;
+        }
+
+        #tabstrip p {
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+
+    <script>
+        var userId= 45; //userID
+        //时间格式化
+        function dateStr(oDate) {
+            oYear = oDate.getFullYear(),
+                oMonth = oDate.getMonth()+1,
+                oDay = oDate.getDate(),
+                oHour = oDate.getHours(),
+                oMin = oDate.getMinutes(),
+                oSen = oDate.getSeconds(),
+                oTime = oYear +'-'+ getzf(oMonth) +'-'+ getzf(oDay);//最后拼接时间
+            return oTime;
+        }
+        function getzf(num){
+            if(parseInt(num) < 10){
+                num = '0'+num;
+            }
+            return num;
+        }
+
+
+        function saveMemberInfo() {
+            var dataSource = $("#Grid").data('kendoGrid').dataSource.data();
+            $.ajax({
+                type : "POST" ,
+                url: "/mm/addUserMember?userId="+userId,
+                dataType: "json",
+                contentType: "application/json",
+                data: JSON.stringify(dataSource),
+                success: function (data) {
+                    if (data.success) {
+                        alert("保存成功！")
+                    }
+                }
+            });
+
+        }
+    </script>
+</div>
+
+</body>
+</html>
+
+

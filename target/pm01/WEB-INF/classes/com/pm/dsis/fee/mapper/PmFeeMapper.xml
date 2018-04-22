@@ -58,6 +58,22 @@
     </where>
   </select>
 
+  <!-- 根据户主id查询  -->
+  <select id="selectPmFeeById" resultMap="BaseResultMap" parameterType="com.pm.dsis.fee.dto.PmFee">
+    select pf.*
+    from pm_fee pf, building_info bi
+    <where>
+      pf.BUILDING_FULL_ROOM = bi.BUILDING_FULL_ROOM
+      and bi.USER_ID = #{userId}
+      <if test="pmMonth!=null">
+        and PM_MONTH = #{pmMonth}
+      </if>
+      <if test="pmFlag!=null">
+        and PM_FLAG = #{pmFlag}
+      </if>
+    </where>
+  </select>
+
   <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Long" >
     select 
     <include refid="Base_Column_List" />

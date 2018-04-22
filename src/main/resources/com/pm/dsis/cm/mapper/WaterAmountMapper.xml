@@ -61,9 +61,23 @@
         and WA_FLAG = #{waFlag}
       </if>
     </where>
-
   </select>
 
+  <!--根据userID查询-->
+  <select id="selectWaterByUserId" resultMap="BaseResultMap" parameterType="com.pm.dsis.cm.dto.WaterAmount">
+    select wa.*
+    from water_amount wa, building_info bi
+    <where>
+      wa.BUILDING_FULL_ROOM = bi.BUILDING_FULL_ROOM
+      and bi.USER_ID = #{userId}
+      <if test="waMonth!=null">
+        and WA_MONTH = #{waMonth}
+      </if>
+      <if test="waFlag!=null">
+        and WA_FLAG = #{waFlag}
+      </if>
+    </where>
+  </select>
 
 
   <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Long" >

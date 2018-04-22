@@ -86,6 +86,20 @@ public class ElectAmountController {
     }
 
     /**
+     * 条件查询
+     * @param request
+     * @param response
+     * @param electricityAmount
+     * @return
+     */
+    @RequestMapping(value = "/cm/selectElectByUserId",method = RequestMethod.POST, consumes="application/json")
+    @ResponseBody//
+    public ResponseData selectElectByUserId(HttpServletRequest request, HttpServletResponse response, @RequestBody ElectricityAmount electricityAmount){
+        return new ResponseData(electAmountService.selectElectByUserId(electricityAmount));
+
+    }
+
+    /**
      * 更新是否缴费状态
      * @param request
      * @param response

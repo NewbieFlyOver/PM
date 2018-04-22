@@ -82,6 +82,23 @@ public class PmFeeServiceImpl implements PmFeeService{
         }
         return pmFeeList;
     }
+    /**
+     * 根据userId查询
+     * @param pmFee
+     * @return
+     */
+    public List<PmFee> selectPmFeeById(PmFee pmFee) {
+        List<PmFee> pmFeeList = pmFeeMapper.selectPmFeeById(pmFee);
+        for (PmFee pf : pmFeeList) {
+            DateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+            String bigenDateStr = sdf.format(pf.getPmBeginDate());
+            String endDateStr = sdf.format(pf.getPmEndDate());
+            pf.setBeginDateStr(bigenDateStr);
+            pf.setEndDateStr(endDateStr);
+        }
+        return pmFeeList;
+    }
+
 
     public void updatePmFeeStatu(List<PmFee> pmFees){
         for (PmFee pf:pmFees){

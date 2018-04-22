@@ -31,11 +31,24 @@ public class PmFeeController {
      * @param pmFee
      * @return
      */
+    @RequestMapping(value = "/fee/selectPmFeeById",method = RequestMethod.POST)
+    @ResponseBody//
+    public ResponseData selectPmFeeById(HttpServletRequest request, HttpServletResponse response, @RequestBody PmFee pmFee){
+        return new ResponseData(pmFeeService.selectPmFeeById(pmFee));
+    }
+    /**
+     * 条件userId查询
+     * @param request
+     * @param response
+     * @param pmFee
+     * @return
+     */
     @RequestMapping(value = "/fee/selecPmFee",method = RequestMethod.POST)
     @ResponseBody//
     public ResponseData selecPmFee(HttpServletRequest request, HttpServletResponse response, @RequestBody PmFee pmFee){
         return new ResponseData(pmFeeService.selectPmFee(pmFee));
     }
+
 
     /**
      * 更新是否缴费状态

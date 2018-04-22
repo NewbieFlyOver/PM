@@ -36,7 +36,7 @@ public class ItemController {
 		return "dsis/mm/mm_edit";
 	}
 
-	@RequestMapping("/")
+	/*@RequestMapping("/")
 	public  String test(){
 		return "index";
 	}
@@ -46,7 +46,7 @@ public class ItemController {
 		ModelAndView mv = new ModelAndView();
 		mv.setViewName(page);
 		return mv;
-	}
+	}*/
 
 	//入门程序 第一   包类 + 类包 + 方法名
 	//URI可以有多个，post、get请求都可以

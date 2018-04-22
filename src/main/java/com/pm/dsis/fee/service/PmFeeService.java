@@ -22,6 +22,12 @@ public interface PmFeeService {
      */
     List<PmFee> selectPmFee(PmFee pmFee);
 
+    /**
+     * 根据userId查询
+     * @param pmFee
+     * @return
+     */
+    List<PmFee> selectPmFeeById(PmFee pmFee);
 
     /**
      * 更新是否缴费状态

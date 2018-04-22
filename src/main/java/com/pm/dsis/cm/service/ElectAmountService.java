@@ -32,6 +32,13 @@ public interface ElectAmountService {
     //条件查询
     List<ElectricityAmount> selectElect(ElectricityAmount electricityAmount);
 
+    /**
+     * 查询根据userId查询
+     * @param electricityAmount
+     * @return
+     */
+    List<ElectricityAmount> selectElectByUserId(ElectricityAmount electricityAmount);
+
     //更新电费是否已交
     void updateElectStatu(List<ElectricityAmount> electricityAmounts);
 }
