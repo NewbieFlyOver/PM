@@ -48,6 +48,16 @@
     </if>
   </select>
 
+  <select id="selectGarageStateByUserId" resultMap="BaseResultMap">
+    select
+    <include refid="Base_Column_List" />
+    from user_info ui, building_info bi, garage_state gs
+    where ui.USER_ID = bi.USER_ID
+    and gs.BUILDING_FULL_ROOM = bi.BUILDING_FULL_ROOM
+    AND bi.USER_ID = #{userId}
+  </select>
+
+
 
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Long" >
     delete from garage_state

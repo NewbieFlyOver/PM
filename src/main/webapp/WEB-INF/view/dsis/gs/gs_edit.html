@@ -258,6 +258,14 @@
                                             dataSource: commonInfoSource
                                         });
                                 }
+                            }, {
+                                field: "vfEndDateStr",
+                                title: "结束时间",
+                                headerAttributes: {
+                                    "class": "table-header-cell",
+                                    style  : "text-align: center"
+                                },
+                                width: 120
                             },
                         ],
                         editable: false,
@@ -315,13 +323,12 @@
 
 
                         function queryAllGarageStateInfo() {
-                            garageState=JSON.stringify(viewModel.model.garageStateInfo)
-                       /*     alert(garageState)
+                           // garageState=JSON.stringify(viewModel.model.garageStateInfo)
+                       /* */    alert(garageState)
                         if( $("#gsState").val() !="" ){
-
                             gsState = viewModel.model.garageStateInfo.gsState.commonValue;
                             viewModel.model.garageStateInfo.set('gsState',gsState);
-                        }*/
+                        }
                         garageState=JSON.stringify(viewModel.model.garageStateInfo)
 
                         $.ajax({

@@ -33,6 +33,23 @@ public class GarageStateServiceImpl implements GarageStateService {
         return garageStateList;
     }
 
+    /**
+     * 根据userId查询车位
+     * @return
+     */
+    public List<GarageState> selectGarageStateByUserId(GarageState garageState) {
+        List<GarageState> garageStateList = garageStateMapper.selectGarageState(garageState);
+        for (GarageState gs: garageStateList) {
+            DateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+            String bigenDateStr = sdf.format(gs.getVfBigenDate());
+            String endDateStr = sdf.format(gs.getVfEndDate());
+            gs.setVfBigenDateStr(bigenDateStr);
+            gs.setVfEndDateStr(endDateStr);
+        }
+
+        return garageStateList;
+    }
+
     public void insertGarageState(GarageState garageStates){
        // for (GarageState gs: garageStates) {
             garageStateMapper.insertGarageState(garageStates);

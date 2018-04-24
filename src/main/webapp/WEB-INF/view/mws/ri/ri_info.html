@@ -1,10 +1,381 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Title</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>物业平台</title>
+    <link href="../css/index.css"  type="text/css" rel="stylesheet"/>
+    <link href="../css/top.css" type="text/css" rel="stylesheet" />
+    <script type="text/javascript" src="http://api.map.baidu.com/api?key=&v=1.1&services=true"></script>
+    <script src="../js/jquery-1.8.3.min.js"></script>
+
+    <script src="/kendoui/kendoui/js/jquery.min.js"></script>
+    <script src="/kendoui/kendoui/js/kendo.all.min.js"></script>
+    <link href="/kendoui/bootstrap-3.3.7/css/bootstrap.css" rel="stylesheet" type="text/css"/>
+    <link href="/kendoui/font-awesome-4.6.3/css/font-awesome.min.css" rel="stylesheet" type="text/css"/>
+    <link href="/kendoui/kendoui/styles/kendo.common-bootstrap.min.css" rel="stylesheet" type="text/css"/>
+    <link href="/kendoui/kendoui/styles/kendo.bootstrap.min.css" rel="stylesheet" type="text/css"/>
+    <link href="/kendoui/kendoui/styles/kendo.hap.css" rel="stylesheet" type="text/css"/>
+    <script src="/kendoui/kendoui/js/kendo.hap.js"></script>
+    <script src="/kendoui/polyfill/es5-shim.min.js"></script>
+    <script src="/kendoui/polyfill/respond.min.js"></script>
+
+    <style>
+        #content {
+            border-top: 1px solid red;
+            width: 75%;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .ul_text {
+            font-size: 20px;
+        }
+        .div_top {
+            margin-top: 20px;
+        }
+    </style>
 </head>
+
 <body>
+<script type="text/javascript">
+    var viewModel = kendo.observable({
+        model:{
+            repairInfo:{},
+            BuildingInfo:{}
+        },
+        createFunction: function(){
+            $('#Grid').data('kendoGrid').addRow();
+        },
+        /*saveMemberInfo2: function () {
+         alert(1)
+         },*/
+        saveFunction: function(){
+            $('#Grid').data('kendoGrid').saveChanges();
+        },
+        queryResource: function(e) {
+            $('#Grid').data('kendoGrid').dataSource.page(1);
+        }
+
+    });
+
+</script>
+    <!--导航开始-->
+    <div class="nav">
+        <div class="nav_l">
+            <a href="#"><img src="../images/logo.jpg" /></a>
+        </div>
+        <div class="nav_r">
+            <ul>
+                <li><a href="../index.html" target="_parent">首页</a></li>
+                <li><a href="../cn/cn_new.html" target="_parent">社区新闻</a></li>
+                <li><a href="../ke/ke_know.html" target="_parent">知识天地</a></li>
+                <li><a href="../pc/pc_center.html" target="_parent">个人中心</a></li>
+                <li><a href="#" class="this">报修信息</a></li>
+                <li><a href="../au/au_intro.html" target="_parent">关于我们</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div id="content">
+        <div id="base">
+            <div class="demo-section k-content">
+                <div id="tabstrip">
+                    <ul class="ul_text">
+                        <li class="k-state-active">
+                            我要报修
+                        </li>
+                        <li>
+                            报修历史
+                        </li>
+                    </ul>
+
+                    <!-- 我要报修 -->
+                    <div>
+                        <div class="panel" style="padding: 0px;">
+                            <form class="form-horizontal">
+                                <div id="baseInfo" class="panel-body">
+                                    <div class="row" class="div_top">
+                                        <div class="col-sm-4" id="1">
+                                            <div class="form-group">
+                                                <label class="col-sm-4 control-label">报修地点<span style="color: red">*</span></label>
+                                                <div class="col-sm-8">
+                                                    <input id="riLocation" name="riLocation" data-bind="value:model.repairInfo.riLocation" type="text" style="width: 96%" class="k-textbox">
+                                                </div>
+                                            </div>
+                                            <script>
+                                                $("#userName").attr("required", true);
+                                            </script>
+                                        </div>
+                                    </div>
+
+                                    <div class="row" style="margin-top: 16px">
+                                        <div class="col-sm-4" id="2">
+                                            <div class="form-group">
+                                                <label class="col-sm-4 control-label">姓名 <span style="color: red">*</span></label>
+                                                <div class="col-sm-8">
+                                                    <input id="riPeople" name="riPeople" data-bind="value:model.repairInfo.riPeople" type="text" style="width: 96%" class="k-textbox">
+                                                </div>
+                                            </div>
+                                            <script>
+                                                $("#userName").attr("required", true);
+                                            </script>
+                                        </div>
+                                    </div>
+
+                                    <div class="row" style="margin-top: 16px">
+                                        <div class="col-sm-4" id="3">
+                                            <div class="form-group">
+                                                <label class="col-sm-4 control-label">联系电话 <span style="color: red">*</span></label>
+                                                <div class="col-sm-8">
+                                                    <input id="riPhone" name="riPhone" data-bind="value:model.repairInfo.riPhone" type="text" style="width: 96%" class="k-textbox">
+                                                </div>
+                                            </div>
+                                            <script>
+                                                $("#userName").attr("required", true);
+                                            </script>
+                                        </div>
+                                    </div>
+
+                                    <div class="row" style="margin-top: 16px">
+                                        <div class="col-sm-4" id="4">
+                                            <div class="form-group">
+                                                <label class="col-sm-4 control-label">报修类型 <span style="color: red">*</span></label>
+                                                <div class="col-sm-8">
+                                                    <input id="riType" name="riType" data-bind="value:model.repairInfo.riType" type="text" style="width: 96%">
+                                                </div>
+                                                <script>
+                                                    var type = 'repairType';
+                                                    $.ajax({
+                                                        type : "GET" ,
+                                                        url: "/ci/selectByType",
+                                                        dataType: "json",
+                                                        data:{commonType : type},
+                                                        success: function (data) {
+                                                            if (data.success) {
+                                                                commonInfoSource = eval(data.rows);
+                                                                $("#riType").kendoComboBox({
+                                                                    dataTextField: "commonName",
+                                                                    dataValueField: "commonValue",
+                                                                    dataSource: commonInfoSource,
+                                                                });
+                                                            }
+                                                        }
+                                                    });
+                                                </script>
+                                            </div>
+                                            <script>
+                                                $("#userName").attr("required", true);
+                                            </script>
+                                        </div>
+                                    </div>
+
+                                    <div class="row" style="margin-top: 16px">
+                                        <div class="col-sm-4" id="5">
+                                            <div class="form-group">
+                                                <label class="col-sm-4 control-label">故障照片 <span style="color: red">*</span></label>
+                                                <div class="col-sm-8">
+                                                    <input id="riImg" name="riImg" data-bind="value:model.repairInfo.riImg" type="file" style="width: 96%"/>
+                                                </div>
+                                            </div>
+                                            <script>
+                                                $("#userName").attr("required", true);
+                                            </script>
+                                        </div>
+                                    </div>
+
+                                    <div class="row" style="margin-top: 16px">
+                                        <div class="col-sm-4" id="6">
+                                            <div class="form-group">
+                                                <label class="col-sm-4 control-label">故障描述 <span style="color: red">*</span></label>
+                                                <div class="col-sm-8">
+                                                    <textarea id="riContent" name="riContent" clos="8" rows="10" placeholder="请输入故障描述" data-bind="value:model.repairInfo.riContent"></textarea>
+                                                    <!--<textarea id="riContent" name="riContent" data-bind="value:model.repairInfo.riContent"
+                                                              placeholder="请输入故障描述" cols="20">
+                                                    </textarea>-->
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="panel-footer text-center">
+                            <span class="btn btn-success" onclick="saveUserInfo()">报修</span>
+                            <!--<span class="btn btn-primary" data-bind="click:resetForm"><i class="fa fa-refresh"></i>取消</span>-->
+                        </div>
+                    </div>
+
+                    <!--报修历史-->
+                    <div>
+                        <div class="panel-footer text-left">
+                            <span class="btn btn-success" onclick="saveBuildingInfo()">保存</span>
+                            <!--<span class="btn btn-primary" data-bind="click:resetForm"><i class="fa fa-refresh"></i>取消</span>-->
+                        </div>
+                        <div class="panel" style="padding: 0px;">
+                            <form class="form-horizontal">
+                                <div id="basebuilding" class="panel-body">
+                                    <div class="col-sm-4" id="24">
+                                        <div class="form-group">
+                                            <label class="col-sm-4 control-label">房屋类型</label>
+                                            <div class="col-sm-8"><!--data-bind="value:model.BuildingInfo.buildingTypeId"-->
+                                                <input id="buildType"  type="text" style="width:96%" >
+                                                <span style="color: red">*</span>
+                                                <span style="color: red">请输入房屋类型</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <script>
+                                        TypeDataSource = [];
+                                        $.ajax({
+                                            type : "POST" ,
+                                            url: "/mm/selectAllType",
+                                            dataType: "json",
+                                            contentType: "application/json",
+                                            success: function (data) {
+                                                if (data.success) {
+                                                    TypeDataSource = eval(data.rows);
+                                                    $("#buildType").kendoComboBox({
+                                                        dataTextField: "buildingTypeName",
+                                                        dataValueField: "buildingTypeId",
+                                                        dataSource: TypeDataSource,
+                                                    });
+                                                }
+                                            }
+                                        });
+                                    </script>
+                                    <div class="col-sm-4" id="25">
+                                        <div class="form-group">
+                                            <label class="col-sm-4 control-label">房屋全称</label>
+                                            <div class="col-sm-8">
+                                                <input id="buildingFullRoom"  type="text" style="width:96%" data-bind="value:model.BuildingInfo.buildingFullRoom" class="k-textbox">
+                                            </div>
+                                        </div>
+                                        <script>
+                                            $("#buildingFullRoom").attr("disabled", true);
+                                        </script>
+                                    </div>
+                                    <div class="col-sm-4" id="26">
+                                        <div class="form-group">
+                                            <label class="col-sm-4 control-label">楼栋号</label>
+                                            <div class="col-sm-8">
+                                                <input id="buildingTheater"  type="text" style="width:96%" data-bind="value:model.BuildingInfo.buildingTheater" class="k-textbox">
+                                                <span style="color: red">*</span>
+                                                <span style="color: red">请输入楼栋号</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-sm-4" id="27">
+                                            <div class="form-group">
+                                                <label class="col-sm-4 control-label">单元号</label>
+                                                <div class="col-sm-8">
+                                                    <input id="buildingUnit"  type="text" style="width:96%" data-bind="value:model.BuildingInfo.buildingUnit" class="k-textbox">
+                                                    <span style="color: red">*</span>
+                                                    <span style="color: red">请输入单元号</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-4" id="28">
+                                            <div class="form-group">
+                                                <label class="col-sm-4 control-label">楼层数</label>
+                                                <div class="col-sm-8">
+                                                    <input id="buildingFloor"  type="text" style="width:96%" data-bind="value:model.BuildingInfo.buildingFloor" class="k-textbox">
+                                                    <span style="color: red">*</span>
+                                                    <span style="color: red">请输入楼层数</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-4" id="29">
+                                            <div class="form-group">
+                                                <label class="col-sm-4 control-label">门牌号</label>
+                                                <div class="col-sm-8">
+                                                    <input id="buildingRoom"  type="text" style="width:96%" data-bind="value:model.BuildingInfo.buildingRoom" class="k-textbox">
+                                                    <span style="color: red">*</span>
+                                                    <span style="color: red">请输入门牌号</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-sm-4" id="30">
+                                            <div class="form-group">
+                                                <label class="col-sm-4 control-label">房屋使用情况</label>
+                                                <div class="col-sm-8">
+                                                    <input id="housingUsage"  type="text" style="width:96%" data-bind="value:model.BuildingInfo.housingUsage">
+                                                    <span style="color: red">*</span>
+                                                    <span style="color: red">请输入房屋使用情况</span>
+                                                </div>
+                                            </div>
+                                            <script>
+                                                var type = 'HouseUsage';
+                                                $.ajax({
+                                                    type : "GET" ,
+                                                    url: "/ci/selectByType",
+                                                    dataType: "json",
+                                                    data:{commonType : type},
+                                                    success: function (data) {
+                                                        if (data.success) {
+                                                            commonInfoSource = eval(data.rows);
+                                                            $("#housingUsage").kendoComboBox({
+                                                                dataTextField: "commonName",
+                                                                dataValueField: "commonValue",
+                                                                dataSource: commonInfoSource,
+                                                            });
+                                                        }
+                                                    }
+                                                });
+                                            </script>
+                                        </div>
+                                        <div class="col-sm-4" id="31">
+                                            <div class="form-group">
+                                                <label class="col-sm-4 control-label">房屋面积</label>
+                                                <div class="col-sm-8">
+                                                    <input id="buildingArea"  type="text" style="width:96%" data-bind="value:model.BuildingInfo.buildingArea" class="k-textbox">
+                                                    <span style="color: red">*</span>
+                                                    <span style="color: red">请输入房屋面积</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-4" id="32">
+                                            <div class="form-group">
+                                                <label class="col-sm-4 control-label">领房时间</label>
+                                                <div class="col-sm-8">
+                                                    <input id="checkinDate"  type="date" style="width:96%" data-bind="value:model.BuildingInfo.checkinDate">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-sm-4" id="33">
+                                                <div class="form-group">
+                                                    <label class="col-sm-4 control-label">入住时间</label>
+                                                    <div class="col-sm-8">
+                                                        <input id="stayinDate"  type="date" style="width:96%" data-bind="value:model.BuildingInfo.stayinDate">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+<script>
+    $("#tabstrip").kendoTabStrip({
+        animation:  {
+            open: {
+                effects: "fadeIn"
+            }
+        }
+    });
+
+
+</script>
 
 </body>
 </html>

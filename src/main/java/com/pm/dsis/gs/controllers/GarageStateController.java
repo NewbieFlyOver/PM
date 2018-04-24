@@ -38,6 +38,19 @@ public class GarageStateController {
     }
 
     /**
+     * 条件查询
+     * @param request
+     * @param response
+     * @return
+             */
+    @RequestMapping(value = "/gs/selectGarageStateByUserId",method = RequestMethod.POST)
+    @ResponseBody
+    public ResponseData selectGarageStateByUserId(HttpServletRequest request, HttpServletResponse response,@RequestBody GarageState garageState){
+        return new ResponseData(garageStateService.selectGarageStateByUserId(garageState));
+    }
+
+
+    /**
      * 添加
      * @param request
      * @param response
