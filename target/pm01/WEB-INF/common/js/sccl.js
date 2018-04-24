@@ -419,7 +419,7 @@ $(function(){
                         {"id":"27","name":"车位添加","parentId":"8","url":"view/dsis/gs/gs_edit.html","icon":"","order":"1","isHeader":"0","childMenus":""},
 					]},
 					{"id":"9","name":"报修管理","parentId":"1","url":"","icon":"&#xe602;","order":"1","isHeader":"0","childMenus":[
-						{"id":"27","name":"报修处理","parentId":"9","url":"home3.html","icon":"","order":"1","isHeader":"0","childMenus":""},
+						{"id":"27","name":"报修处理","parentId":"9","url":"view/dsis/repair/repair_info.html","icon":"","order":"1","isHeader":"0","childMenus":""},
 					]}
 				]},
 				/*{"id":"2","name":"框架案例","parentId":"0","url":"","icon":"","order":"2","isHeader":"1","childMenus":[

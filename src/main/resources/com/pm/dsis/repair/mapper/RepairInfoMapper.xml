@@ -24,7 +24,7 @@
     <result column="ATTRIBUTE6" property="attribute6" jdbcType="VARCHAR" />
   </resultMap>
   <sql id="Base_Column_List" >
-    RI_ID, USER_ID, RI_TYPE, RI_LOCATION,,RI_PHONE, RI_PEOPLE, RI_CONTENT, RI_IMG, RI_DATE, RI_FLAG, RI_DEAL_PEOPLE, RI_DEAL_DATE,
+    RI_ID, USER_ID, RI_TYPE, RI_LOCATION, RI_PHONE, RI_PEOPLE, RI_CONTENT, RI_IMG, RI_DATE, RI_FLAG, RI_DEAL_PEOPLE, RI_DEAL_DATE,
     RI_DEAL_SITUATION, RI_NOTE, ATTRIBUTE1, ATTRIBUTE2, ATTRIBUTE3, ATTRIBUTE4, ATTRIBUTE5, 
     ATTRIBUTE6
   </sql>
@@ -35,6 +35,15 @@
     from repair_info
     where RI_ID = #{riId,jdbcType=BIGINT}
   </select>
+
+  <select id="selectRepairInfo" resultMap="BaseResultMap" parameterType="com.pm.dsis.repair.dto.RepairInfo" >
+    select
+    <include refid="Base_Column_List" />
+    from repair_info
+    where USER_ID = #{userId,jdbcType=BIGINT}
+  </select>
+
+
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Long" >
     delete from repair_info
     where RI_ID = #{riId,jdbcType=BIGINT}
@@ -55,6 +64,24 @@
       #{attribute3,jdbcType=VARCHAR}, #{attribute4,jdbcType=VARCHAR}, #{attribute5,jdbcType=VARCHAR}, 
       #{attribute6,jdbcType=VARCHAR})
   </insert>
+
+  <insert id="insertRepairInfo" parameterType="com.pm.dsis.repair.dto.RepairInfo" >
+    insert into repair_info (RI_ID, USER_ID, RI_TYPE, RI_LOCATION,
+    RI_PHONE,RI_PEOPLE,RI_CONTENT, RI_IMG, RI_DATE, RI_FLAG,
+    RI_DEAL_PEOPLE, RI_DEAL_DATE, RI_DEAL_SITUATION,
+    RI_NOTE, ATTRIBUTE1, ATTRIBUTE2,
+    ATTRIBUTE3, ATTRIBUTE4, ATTRIBUTE5,
+    ATTRIBUTE6)
+    values (#{riId,jdbcType=BIGINT}, #{userId,jdbcType=BIGINT}, #{riType,jdbcType=VARCHAR}, #{riLocation,jdbcType=VARCHAR},
+    #{riPhone,jdbcType=VARCHAR}, #{riPeople,jdbcType=VARCHAR},#{riContent,jdbcType=VARCHAR}, #{riImg,jdbcType=VARCHAR},
+    #{riDate,jdbcType=DATE}, 'N',
+    #{riDealPeople,jdbcType=VARCHAR}, #{riDealDate,jdbcType=DATE}, 'notrepair',
+    #{riNote,jdbcType=VARCHAR}, #{attribute1,jdbcType=VARCHAR}, #{attribute2,jdbcType=VARCHAR},
+    #{attribute3,jdbcType=VARCHAR}, #{attribute4,jdbcType=VARCHAR}, #{attribute5,jdbcType=VARCHAR},
+    #{attribute6,jdbcType=VARCHAR})
+  </insert>
+
+
   <insert id="insertSelective" parameterType="com.pm.dsis.repair.dto.RepairInfo" >
     insert into repair_info
     <trim prefix="(" suffix=")" suffixOverrides="," >

@@ -21,6 +21,8 @@ public class RepairInfo {
 
     private Date riDate;
 
+    private String riDateStr;
+
     private String riFlag;
 
     private String riDealPeople;
@@ -42,6 +44,14 @@ public class RepairInfo {
     private String attribute5;
 
     private String attribute6;
+
+    public String getRiDateStr() {
+        return riDateStr;
+    }
+
+    public void setRiDateStr(String riDateStr) {
+        this.riDateStr = riDateStr;
+    }
 
     public String getRiLocation() {
         return riLocation;
@@ -201,5 +211,25 @@ public class RepairInfo {
 
     public void setAttribute6(String attribute6) {
         this.attribute6 = attribute6 == null ? null : attribute6.trim();
+    }
+
+    @Override
+    public String toString() {
+        return "RepairInfo{" +
+                "riId=" + riId +
+                ", userId=" + userId +
+                ", riType='" + riType + '\'' +
+                ", riLocation='" + riLocation + '\'' +
+                ", riPeople='" + riPeople + '\'' +
+                ", riPhone='" + riPhone + '\'' +
+                ", riContent='" + riContent + '\'' +
+                ", riImg='" + riImg + '\'' +
+                ", riDate=" + riDate +
+                ", riFlag='" + riFlag + '\'' +
+                ", riDealPeople='" + riDealPeople + '\'' +
+                ", riDealDate=" + riDealDate +
+                ", riDealSituation='" + riDealSituation + '\'' +
+                ", riNote='" + riNote + '\'' +
+                '}';
     }
 }
