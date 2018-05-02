@@ -58,7 +58,7 @@
                             </div>
                         </div>
                         <script>
-                            var type = 'CarState';
+                            var type = 'repairType';
                             $.ajax({
                                 type : "GET" ,
                                 url: "/ci/selectByType",
@@ -66,11 +66,11 @@
                                 data:{commonType : type},
                                 success: function (data) {
                                     if (data.success) {
-                                        commonInfoSource = eval(data.rows);
-                                        $("#gsState").kendoComboBox({
+                                        repairTypeInfoSource = eval(data.rows);
+                                        $("#riType").kendoComboBox({
                                             dataTextField: "commonName",
                                             dataValueField: "commonValue",
-                                            dataSource: commonInfoSource,
+                                            dataSource: repairTypeInfoSource,
                                         });
                                     }
                                 }
@@ -92,9 +92,27 @@
                             <div class="form-group">
                                 <label class="col-sm-4 control-label">是否处理</label>
                                 <div class="col-sm-8">
-                                    <input id="riFlag"  type="text" style="width: 100%" data-bind="value:model.repairInfo.riFlag"
-                                           class="k-textbox">
+                                    <input id="riFlag"  type="text" style="width: 100%" data-bind="value:model.repairInfo.riFlag">
                                 </div>
+                                <script>
+                                    var type = 'YesOrNo';
+                                    $.ajax({
+                                        type : "GET" ,
+                                        url: "/ci/selectByType",
+                                        dataType: "json",
+                                        data:{commonType : type},
+                                        success: function (data) {
+                                            if (data.success) {
+                                                YNInfoSource = eval(data.rows);
+                                                $("#riFlag").kendoComboBox({
+                                                    dataTextField: "commonName",
+                                                    dataValueField: "commonValue",
+                                                    dataSource: YNInfoSource,
+                                                });
+                                            }
+                                        }
+                                    });
+                                </script>
                             </div>
                         </div>
                     </div>
@@ -103,9 +121,27 @@
                             <div class="form-group">
                                 <label class="col-sm-4 control-label">处理情况</label>
                                 <div class="col-sm-8">
-                                    <input id="riDealSituation"  type="text" style="width: 100%" data-bind="value:model.repairInfo.riDealSituation"
-                                           class="k-textbox">
+                                    <input id="riDealSituation"  type="text" style="width: 100%" data-bind="value:model.repairInfo.riDealSituation">
                                 </div>
+                                <script>
+                                    var type = 'repairStatus';
+                                    $.ajax({
+                                        type : "GET" ,
+                                        url: "/ci/selectByType",
+                                        dataType: "json",
+                                        data:{commonType : type},
+                                        success: function (data) {
+                                            if (data.success) {
+                                                repairStatusInfoSource = eval(data.rows);
+                                                $("#riDealSituation").kendoComboBox({
+                                                    dataTextField: "commonName",
+                                                    dataValueField: "commonValue",
+                                                    dataSource: repairStatusInfoSource,
+                                                });
+                                            }
+                                        }
+                                    });
+                                </script>
                             </div>
                         </div>
                         <div class="col-sm-6" id="8">
@@ -119,10 +155,9 @@
                         </div>
                     </div>
                 </div>
-
                 <div class="panel-footer text-right">
                     <span class="btn btn-success" onclick="queryAllRepairInfo()"><i class="fa fa-search"></i>查询</span>
-                    <span class="btn btn-success k-grid-save-changes"  onclick="saveAllGarageStateInfo()" style="margin-right: 10px;margin-left: 10px">保存</span>
+                    <span class="btn btn-success k-grid-save-changes"  onclick="saveRepairInfo()" style="margin-right: 10px;margin-left: 10px">保存</span>
                 </div>
 
             </form>
@@ -130,7 +165,7 @@
 
         </div>
         <div>
-            <div style="height: 450px">
+            <div>
                 <script>kendo.bind($('#toolbar-btn'), viewModel);</script>
                 <script>kendo.bind($('#query-form'), viewModel);</script>
                 <script>kendo.bind($('#base'), viewModel);</script>
@@ -138,48 +173,7 @@
                     <div id="grid"></div>
                 </div>
 
-
                 <script type="text/javascript">
-                    var type = 'YesOrNo';
-                    $.ajax({
-                        type : "GET" ,
-                        url: "/ci/selectByType",
-                        dataType: "json",
-                        data:{commonType : type},
-                        success: function (data) {
-                            if (data.success) {
-                                YNInfoSource = eval(data.rows);
-                            }
-                        }
-                    });
-                    var type = 'repairStatus';
-                    $.ajax({
-                        type : "GET" ,
-                        url: "/ci/selectByType",
-                        dataType: "json",
-                        data:{commonType : type},
-                        success: function (data) {
-                            if (data.success) {
-                                repairStatusInfoSource = eval(data.rows);
-                            }
-                        }
-                    });
-
-                    var type = 'repairType';
-                    $.ajax({
-                        type : "GET" ,
-                        url: "/ci/selectByType",
-                        dataType: "json",
-                        data:{commonType : type},
-                        success: function (data) {
-                            if (data.success) {
-                                repairTypeInfoSource = eval(data.rows);
-                            }
-                        }
-                    });
-
-
-
                     dataSource = new kendo.data.DataSource({
                         transport: {
                             read:  {
@@ -217,7 +211,7 @@
 
                     $("#grid").kendoGrid({
                         dataSource: dataSource,
-                        height: 400,
+                        height: 340,
                         resizable  : true,
                         scrollable : true,
                         navigatable: false,
@@ -236,7 +230,7 @@
                                     "class": "table-header-cell",
                                     style  : "text-align: center"
                                 },
-                                width: 120
+                                width: 100
                             }, {
                                 field: "riType",
                                 title: "报修类型",
@@ -244,7 +238,7 @@
                                     "class": "table-header-cell",
                                     style  : "text-align: center"
                                 },
-                                width: 120,
+                                width: 60,
                                 template: function(dataItem){
                                     var v = dataItem.riType;
                                     $.each(repairTypeInfoSource,function(i,n){
@@ -289,22 +283,14 @@
                                     style  : "text-align: center"
                                 },
                                 width: 120
-                            },/*{
-                                field: "riImg",
-                                title: "故障图片",
-                                headerAttributes: {
-                                    "class": "table-header-cell",
-                                    style  : "text-align: center"
-                                },
-                                width: 120
-                            },*/ {
+                            },{
                                 field: "riFlag",
                                 title: "是否处理",
                                 headerAttributes: {
                                     "class": "table-header-cell",
                                     style  : "text-align: center"
                                 },
-                                width: 120,
+                                width: 60,
                                 template: function(dataItem){
                                     var v = dataItem.riFlag;
                                     $.each(YNInfoSource,function(i,n){
@@ -332,7 +318,7 @@
                                     "class": "table-header-cell",
                                     style  : "text-align: center"
                                 },
-                                width: 120,
+                                width: 60,
                                 template: function(dataItem){
                                     var v = dataItem.riDealSituation;
                                     $.each(repairStatusInfoSource,function(i,n){
@@ -360,14 +346,26 @@
                                     "class": "table-header-cell",
                                     style: "text-align: center"
                                 },
-                                width: 120,
+                                width: 80,
+                            }, {
+                                title: '故障图片',
+                                width: 80,
+                                template: function (rowdata) {
+                                    if (!!rowdata.riId) {
+                                          return'<img src="../../../images/riImg/'+rowdata.riImg+'" style="width: 100px;height: 100px">'
+                                    }
+                                    return '';
+                                },
+                                attributes: {style: "text-align:center"},
+                                headerAttributes: { style: "text-align:center"}
+
                             }
                         ],
                         editable: true,
                     });
 
-                    var userId = 45;//userID
-                    viewModel.model.repairInfo.set('userId',userId);
+                   // var userId = 45;//userID
+                    //viewModel.model.repairInfo.set('userId',userId);
                     repairInfo=JSON.stringify(viewModel.model.repairInfo);
                     $.ajax({
                         type : "POST" ,
@@ -404,18 +402,16 @@
 
 
                     function queryAllRepairInfo() {
-                        //garageState=JSON.stringify(viewModel.model.garageStateInfo)
-                        if( $("#gsState").val()!="" ){
-                            gsState = viewModel.model.garageStateInfo.gsState.commonValue;
-                            viewModel.model.garageStateInfo.set('gsState',gsState);
-                        }
-                        garageState=JSON.stringify(viewModel.model.garageStateInfo)
+                        viewModel.model.repairInfo.set('riType',$("#riType").val());
+                        viewModel.model.repairInfo.set('riFlag',$("#riFlag").val());
+                        viewModel.model.repairInfo.set('riDealSituation',$("#riDealSituation").val());
+                        repairInfo=JSON.stringify(viewModel.model.repairInfo)
                         $.ajax({
                             type : "POST" ,
-                            url: "/gs/selectGarageState",
+                            url: "/repair/selectRepairInfo",
                             dataType: "json",
                             contentType: "application/json",
-                            data: garageState,
+                            data: repairInfo,
                             success: function (data) {
                                 if (data.success) {
                                     var grid = $('#grid').data('kendoGrid');
@@ -426,7 +422,7 @@
                                                 return data.rows.length;
                                             },
                                             model: {
-                                                id: "waId",
+                                                id: "riId",
                                                 fields: {}
                                             }
                                         },
@@ -438,6 +434,22 @@
                             }
                         });
                     }
+
+                    function saveRepairInfo() {
+                        var dataSource = $("#grid").data('kendoGrid').dataSource.data();
+                        $.ajax({
+                            type : "POST" ,
+                            url: "/repair/updateRepairInfoById",
+                            dataType: "json",
+                            contentType: "application/json",
+                            data: JSON.stringify(dataSource),
+                            success: function (data) {
+
+                                alert("保存成功！")
+                            }
+                        })
+                    }
+
 
                 </script>
 

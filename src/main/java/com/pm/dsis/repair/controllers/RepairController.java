@@ -13,6 +13,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.File;
 import java.util.Date;
+import java.util.List;
 import java.util.UUID;
 
 /**
@@ -40,8 +41,10 @@ public class RepairController {
         System.out.println(repairInfo.toString());
         //获得物理路径webapp所在路径
         //String pathRoot = request.getSession().getServletContext().getRealPath("");
-        String pathRoot = "D:/Graduation design/code/PM";
+        //String pathRoot = "D:/Graduation design/code/PM";
+        String pathRoot = "D:/Graduation design/code/PM/propertyManagement/src/main/webapp/WEB-INF/images/riImg/";
         String path="";
+        String picName = "";
         if(!file.isEmpty()){
             //生成uuid作为文件名称
             String uuid = UUID.randomUUID().toString().replaceAll("-","");
@@ -49,10 +52,11 @@ public class RepairController {
             String contentType=file.getContentType();
             //获得文件后缀名称
             String imageName=contentType.substring(contentType.indexOf("/")+1);
-            path=pathRoot+"/images/"+uuid+"."+imageName;
+            picName = uuid+"."+imageName;
+            path=pathRoot+picName;
             file.transferTo(new File(path));
         }
-        repairInfo.setRiImg(path);
+        repairInfo.setRiImg(picName);
         repairInfo.setRiDate(new Date());
         repairService.insertRepairInfo(repairInfo);
         return new ResponseData();
@@ -67,6 +71,13 @@ public class RepairController {
         return new ResponseData(repairService.selectRepairInfo(repairInfo));
     }
 
+    @RequestMapping(value = "/repair/updateRepairInfoById", method = RequestMethod.POST)
+    @ResponseBody
+    public ResponseData updateRepairInfoById(HttpServletRequest request, HttpServletResponse response,
+                                         @RequestBody List<RepairInfo> repairInfos) {
+        repairService.updateRepairInfoById(repairInfos);
+        return new ResponseData();
+    }
 
 
 

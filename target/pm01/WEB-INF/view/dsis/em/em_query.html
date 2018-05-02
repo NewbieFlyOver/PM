@@ -73,66 +73,77 @@
 
                     <div class="row">
 
-                        <div class="col-sm-4" id="2">
-                            <div class="form-group">
-                                <label class="col-sm-4 control-label">性别</label>
-                                <div class="col-sm-8">
-                                    <input id="hbGender"  type="text" style="width: 100%" data-bind="value:model.houseKeeperInfo.hbGender">
-                                </div>
-                                <script>
-                                    var gender = 'gender';
-                                    $.ajax({
-                                        type : "GET" ,
-                                        url: "/ci/selectByType",
-                                        dataType: "json",
-                                        data:{commonType : gender},
-                                        success: function (data) {
-                                            if (data.success) {
-                                                commonInfoSource = eval(data.rows);
-                                                $("#hbGender").kendoComboBox({
-                                                    dataTextField: "commonName",
-                                                    dataValueField: "commonValue",
-                                                    dataSource: commonInfoSource,
-                                                });
-                                            }
-                                        }
-                                    });
-                                </script>
+                    <div class="col-sm-4" id="2">
+                        <div class="form-group">
+                            <label class="col-sm-4 control-label">性别</label>
+                            <div class="col-sm-8">
+                                <input id="hbGender"  type="text" style="width: 100%" data-bind="value:model.houseKeeperInfo.hbGender">
                             </div>
+                            <script>
+                                var gender = 'gender';
+                                $.ajax({
+                                    type : "GET" ,
+                                    url: "/ci/selectByType",
+                                    dataType: "json",
+                                    data:{commonType : gender},
+                                    success: function (data) {
+                                        if (data.success) {
+                                            commonInfoSource = eval(data.rows);
+                                            $("#hbGender").kendoComboBox({
+                                                dataTextField: "commonName",
+                                                dataValueField: "commonValue",
+                                                dataSource: commonInfoSource,
+                                            });
+                                        }
+                                    }
+                                });
+                            </script>
                         </div>
+                    </div>
 
-                        <div class="col-sm-4" id="4">
-                            <div class="form-group">
-                                <label class="col-sm-4 control-label">状态</label>
-                                <div class="col-sm-8">
-                                    <input id="hbStatus"  type="text" style="width: 100%" data-bind="value:model.houseKeeperInfo.hbStatus">
-                                </div>
-                                <script>
-                                    var hbStatus = 'hbStatus';
-                                    $.ajax({
-                                        type : "GET" ,
-                                        url: "/ci/selectByType",
-                                        dataType: "json",
-                                        data:{commonType : hbStatus},
-                                        success: function (data) {
-                                            if (data.success) {
-                                                hbStatusSource = eval(data.rows);
-                                                $("#hbStatus").kendoComboBox({
-                                                    dataTextField: "commonName",
-                                                    dataValueField: "commonValue",
-                                                    dataSource: hbStatusSource,
-                                                });
-                                            }
+                    <div class="col-sm-4" id="4">
+                        <div class="form-group">
+                            <label class="col-sm-4 control-label">状态</label>
+                            <div class="col-sm-8">
+                                <input id="hbStatus"  type="text" style="width: 100%" data-bind="value:model.houseKeeperInfo.hbStatus">
+                            </div>
+                            <script>
+                                var hbStatus = 'hbStatus';
+                                $.ajax({
+                                    type : "GET" ,
+                                    url: "/ci/selectByType",
+                                    dataType: "json",
+                                    data:{commonType : hbStatus},
+                                    success: function (data) {
+                                        if (data.success) {
+                                            hbStatusSource = eval(data.rows);
+                                            $("#hbStatus").kendoComboBox({
+                                                dataTextField: "commonName",
+                                                dataValueField: "commonValue",
+                                                dataSource: hbStatusSource,
+                                            });
                                         }
-                                    });
-                                </script>
+                                    }
+                                });
+                            </script>
+                        </div>
+                    </div>
+                    <div class="col-sm-4" id="6">
+                        <div class="form-group">
+                            <label class="col-sm-4 control-label">工作手机号</label>
+                            <div class="col-sm-8">
+                                <input id="hbWorkPhone"  type="text" style="width: 100%" data-bind="value:model.houseKeeperInfo.hbWorkPhone" class="k-textbox">
                             </div>
                         </div>
-                        <div class="col-sm-4" id="6">
+                    </div>
+                </div>
+
+                    <div class="row">
+                        <div class="col-sm-4" id="16">
                             <div class="form-group">
-                                <label class="col-sm-4 control-label">工作手机号</label>
+                                <label class="col-sm-4 control-label">工号</label>
                                 <div class="col-sm-8">
-                                    <input id="hbWorkPhone"  type="text" style="width: 100%" data-bind="value:model.houseKeeperInfo.hbWorkPhone" class="k-textbox">
+                                    <input id="hbNumber"  type="text" style="width: 100%" data-bind="value:model.houseKeeperInfo.hbNumber" class="k-textbox">
                                 </div>
                             </div>
                         </div>
@@ -205,6 +216,14 @@
         },
         columns: [
             {
+                field: "hbNumber",
+                title: "工号",
+                headerAttributes: {
+                    "class": "table-header-cell",
+                    style  : "text-align: center"
+                },
+                width: 120
+            }, {
                 field: "hbName",
                 title: "姓名",
                 headerAttributes: {
@@ -212,7 +231,7 @@
                     style  : "text-align: center"
                 },
                 width: 120
-            }, {
+            },{
                 field: "hbGender",
                 title: "性别",
                 headerAttributes: {

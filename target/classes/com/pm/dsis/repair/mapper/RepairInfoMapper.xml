@@ -40,7 +40,29 @@
     select
     <include refid="Base_Column_List" />
     from repair_info
-    where USER_ID = #{userId,jdbcType=BIGINT}
+    <where>
+      <if test="userId!=null and userId!='' ">
+        USER_ID = #{userId,jdbcType=BIGINT}
+      </if>
+      <if test="riPeople!=null and riPeople!=''">
+        and RI_PEOPLE = #{riPeople}
+      </if>
+      <if test="riType!=null and riType!=''">
+        and RI_TYPE = #{riType}
+      </if>
+      <if test="riLocation!=null and riLocation!=''">
+        and RI_LOCATION = #{riLocation}
+      </if>
+      <if test="riFlag!=null and riFlag!=''">
+        and RI_FLAG = #{riFlag}
+      </if>
+      <if test="riDealSituation!=null and riDealSituation!=''">
+        and RI_DEAL_SITUATION = #{riDealSituation}
+      </if>
+      <if test="riDealPeople!=null and riDealPeople!=''">
+        and RI_DEAL_PEOPLE = #{riDealPeople}
+      </if>
+    </where>
   </select>
 
 
@@ -237,7 +259,7 @@
     </set>
     where RI_ID = #{riId,jdbcType=BIGINT}
   </update>
-  <update id="updateByPrimaryKey" parameterType="com.pm.dsis.repair.dto.RepairInfo" >
+  <update id="updateRepairInfoById" parameterType="com.pm.dsis.repair.dto.RepairInfo" >
     update repair_info
     set USER_ID = #{userId,jdbcType=BIGINT},
       RI_TYPE = #{riType,jdbcType=VARCHAR},

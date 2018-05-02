@@ -19,6 +19,7 @@
     <mvc:resources location="/WEB-INF/kendoui/" mapping="/kendoui/**"/>
     <mvc:resources location="/WEB-INF/view/" mapping="/view/**"/>
     <mvc:resources location="/WEB-INF/common/" mapping="/common/**"/>
+    <mvc:resources location="/WEB-INF/images/" mapping="/images/**"/>
 
     <bean  class="org.springframework.web.servlet.mvc.annotation.AnnotationMethodHandlerAdapter" >
         <property name="messageConverters">
@@ -85,5 +86,29 @@
         <!-- 最大文件大小，-1为不限制大小 -->
         <property name="maxUploadSize" value="-1"/>
     </bean>
+
+
+    <!-- 拦截器 -->
+    <!--<mvc:interceptors>
+        <mvc:interceptor>
+            <mvc:mapping path="/**"/>
+            &lt;!&ndash; 不拦截的url &ndash;&gt;
+            <mvc:exclude-mapping path="/resources/**" />
+            <mvc:exclude-mapping path="/lib/**" />
+            <mvc:exclude-mapping path="/login" />
+            <mvc:exclude-mapping path="/login.html" />
+            <mvc:exclude-mapping path="/403.html" />
+            <mvc:exclude-mapping path="/404.html" />
+            <mvc:exclude-mapping path="/500.html" />
+            <mvc:exclude-mapping path="/message.html" />
+            <mvc:exclude-mapping path="/verifiCode" />
+            <bean class="com.pm.platform.LoginInterceptor"/>
+        </mvc:interceptor>
+        &lt;!&ndash;<bean class="com.lkkhpg.dsis.platform.security.interceptor.MonitorInterceptor"/>
+        <bean class="com.lkkhpg.dsis.platform.security.interceptor.SecurityInterceptor">
+            <property name="filter" value="false"/>
+        </bean>&ndash;&gt;
+    </mvc:interceptors>-->
+
 
 </beans>

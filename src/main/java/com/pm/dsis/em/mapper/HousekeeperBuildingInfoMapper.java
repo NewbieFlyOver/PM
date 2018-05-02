@@ -35,6 +35,11 @@ public interface HousekeeperBuildingInfoMapper {
      */
     List<HousekeeperBuildingInfo> selectHbByCondtion(HousekeeperBuildingInfo hb);
 
+    /**
+     * 还回最大的员工编号
+     * @return
+     */
+    long selectBigNumber ();
 
 
     int deleteByPrimaryKey(Long hbId);

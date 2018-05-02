@@ -5,6 +5,7 @@
     <id column="HB_ID" property="hbId" jdbcType="BIGINT" />
     <result column="HB_ACCOUNT" property="hbAccount" jdbcType="VARCHAR" />
     <result column="HB_PASSWORD" property="hbPassword" jdbcType="VARCHAR" />
+    <result column="HB_NUMBER" property="hbNumber" jdbcType="BIGINT" />
     <result column="HB_NAME" property="hbName" jdbcType="VARCHAR" />
     <result column="HB_NATIONAL" property="hbNational" jdbcType="VARCHAR" />
     <result column="HB_GENDER" property="hbGender" jdbcType="VARCHAR" />
@@ -29,7 +30,7 @@
     <result column="ATTRIBUTE6" property="attribute6" jdbcType="VARCHAR" />
   </resultMap>
   <sql id="Base_Column_List" >
-    HB_ID, HB_ACCOUNT, HB_PASSWORD, HB_NAME, HB_NATIONAL, HB_GENDER, HB_NATIVE_PLACE, 
+    HB_ID, HB_ACCOUNT, HB_PASSWORD, HB_NUMBER, HB_NAME, HB_NATIONAL, HB_GENDER, HB_NATIVE_PLACE,
     HB_PHONE, HB_WORK_PHONE, HB_EMAIL, HB_ID_NUMBER, HB_HOME_ADDRESS, EMERGENCY_CONTACT, 
     EMERGENCY_CONTACT_PHONE, HB_POSITION, HB_ROLE, HB_INDUCTION_DATE, HB_STATUS, HB_STATUS_FALG,
     ATTRIBUTE1, ATTRIBUTE2, ATTRIBUTE3,ATTRIBUTE4, ATTRIBUTE5, ATTRIBUTE6
@@ -49,6 +50,9 @@
       <if test="hbName!=null and hbName!=''">
         hb.HB_NAME = #{hbName}
       </if>
+      <if test="hbNumber!=null and hbNumber!=''">
+      hb.HB_NUMBER = #{hbNumber}
+    </if>
       <if test="hbPosition!=null and hbPosition!=''">
         and hb.HB_POSITION = #{hbPosition}
       </if>
@@ -67,13 +71,22 @@
     </where>
   </select>
 
+  <select id="selectBigNumber" resultType="java.lang.Long">
+    select HB_NUMBER
+    from housekeeper_building_info
+    order by HB_NUMBER
+    desc LIMIT 0,1
+  </select>
+
+
+
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Long" >
     delete from housekeeper_building_info
     where HB_ID = #{hbId,jdbcType=BIGINT}
   </delete>
   <insert id="insertHouseInfo" parameterType="com.pm.dsis.em.dto.HousekeeperBuildingInfo" >
     insert into housekeeper_building_info (HB_ID, HB_ACCOUNT, HB_PASSWORD, 
-      HB_NAME, HB_NATIONAL, HB_GENDER, 
+      HB_NUMBER, HB_NAME, HB_NATIONAL, HB_GENDER,
       HB_NATIVE_PLACE, HB_PHONE, HB_WORK_PHONE, 
       HB_EMAIL, HB_ID_NUMBER, HB_HOME_ADDRESS, 
       EMERGENCY_CONTACT, EMERGENCY_CONTACT_PHONE, 
@@ -81,7 +94,7 @@
       ATTRIBUTE1,ATTRIBUTE2, ATTRIBUTE3, ATTRIBUTE4,
       ATTRIBUTE5, ATTRIBUTE6)
     values (#{hbId,jdbcType=BIGINT}, #{hbAccount,jdbcType=VARCHAR}, #{hbPassword,jdbcType=VARCHAR}, 
-      #{hbName,jdbcType=VARCHAR}, #{hbNational,jdbcType=VARCHAR}, #{hbGender,jdbcType=VARCHAR}, 
+      #{hbName,jdbcType=VARCHAR}, #{hbNumber}, #{hbNational,jdbcType=VARCHAR}, #{hbGender,jdbcType=VARCHAR},
       #{hbNativePlace,jdbcType=VARCHAR}, #{hbPhone,jdbcType=VARCHAR}, #{hbWorkPhone,jdbcType=VARCHAR}, 
       #{hbEmail,jdbcType=VARCHAR}, #{hbIdNumber,jdbcType=VARCHAR}, #{hbHomeAddress,jdbcType=VARCHAR}, 
       #{emergencyContact,jdbcType=VARCHAR}, #{emergencyContactPhone,jdbcType=VARCHAR}, 
@@ -302,6 +315,7 @@
     update housekeeper_building_info
     set HB_ACCOUNT = #{hbAccount,jdbcType=VARCHAR},
       HB_PASSWORD = #{hbPassword,jdbcType=VARCHAR},
+      HB_NUMBER = #{hbNumber},
       HB_NAME = #{hbName,jdbcType=VARCHAR},
       HB_NATIONAL = #{hbNational,jdbcType=VARCHAR},
       HB_GENDER = #{hbGender,jdbcType=VARCHAR},

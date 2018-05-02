@@ -41,6 +41,18 @@ public class HousekeeperBuildingInfo {
 
     private String hbStatusFalg;
 
+    /* 工号
+     */
+    private Long hbNumber;
+
+    public Long getHbNumber() {
+        return hbNumber;
+    }
+
+    public void setHbNumber(Long hbNumber) {
+        this.hbNumber = hbNumber;
+    }
+
     public Date getHbInductionDate() {
         return hbInductionDate;
     }

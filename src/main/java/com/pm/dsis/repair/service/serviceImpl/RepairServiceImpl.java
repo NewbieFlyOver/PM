@@ -46,4 +46,14 @@ public class RepairServiceImpl implements RepairService{
         return repairInfoList;
     }
 
+    /**
+     * 更新报修信息
+     * @param repairInfos
+     * @return
+     */
+    public void updateRepairInfoById(List<RepairInfo> repairInfos) {
+        for(RepairInfo ri:repairInfos) {
+            repairInfoMapper.updateRepairInfoById(ri);
+        }
+    }
 }

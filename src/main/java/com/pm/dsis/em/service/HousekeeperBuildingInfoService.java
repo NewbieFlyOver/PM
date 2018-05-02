@@ -37,4 +37,5 @@ public interface HousekeeperBuildingInfoService {
      */
     List<HousekeeperBuildingInfo> selectHbByCondtion(HousekeeperBuildingInfo hb);
 
+
 }

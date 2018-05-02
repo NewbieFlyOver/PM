@@ -24,5 +24,12 @@ public interface RepairService {
      */
     List<RepairInfo> selectRepairInfo(RepairInfo repairInfo);
 
+    /**
+     * 更新报修信息
+     * @param repairInfos
+     * @return
+     */
+    void updateRepairInfoById(List<RepairInfo> repairInfos);
+
 
 }

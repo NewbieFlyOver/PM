@@ -22,6 +22,8 @@ public class HousekeeperBuildingInfoServiceImpl implements HousekeeperBuildingIn
     public void insertHouseInfo(HousekeeperBuildingInfo housekeeperBuildingInfo){
 
         if( null == housekeeperBuildingInfo.getHbId() ) {
+            Long bigNumber = housekeeperBuildingInfoMapper.selectBigNumber()+1;
+            housekeeperBuildingInfo.setHbNumber(bigNumber);
             housekeeperBuildingInfoMapper.insertHouseInfo(housekeeperBuildingInfo);
         } else {
             housekeeperBuildingInfoMapper.updateHouseInfoById(housekeeperBuildingInfo);

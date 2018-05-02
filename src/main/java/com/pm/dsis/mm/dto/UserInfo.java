@@ -53,6 +53,20 @@ public class UserInfo {
 
     private String object;
 
+    /**
+     * 房屋全称，不存出数据库
+     */
+    private String buildingFullRoom;
+
+
+    public String getBuildingFullRoom() {
+        return buildingFullRoom;
+    }
+
+    public void setBuildingFullRoom(String buildingFullRoom) {
+        this.buildingFullRoom = buildingFullRoom;
+    }
+
     private String attribute1;
 
     private String attribute2;

@@ -20,10 +20,14 @@ public interface RepairInfoMapper {
      * @param repairInfo
      * @return
      */
-    //todo:只有userId
     List<RepairInfo> selectRepairInfo(RepairInfo repairInfo);
 
-
+    /**
+     * 更新报修信息
+     * @param repairInfo
+     * @return
+     */
+    int updateRepairInfoById(RepairInfo repairInfo);
 
 
     int deleteByPrimaryKey(Long riId);
