@@ -41,6 +41,19 @@ public interface HousekeeperBuildingInfoMapper {
      */
     long selectBigNumber ();
 
+    /**
+     * 查询登录信息
+     * @param housekeeperBuildingInfo
+     * @return
+     */
+    HousekeeperBuildingInfo selectLoginInfo(HousekeeperBuildingInfo housekeeperBuildingInfo);
+
+
+
+
+
+
+
 
     int deleteByPrimaryKey(Long hbId);
 

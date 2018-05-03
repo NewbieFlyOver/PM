@@ -42,6 +42,15 @@
     where HB_ID = #{hbId,jdbcType=BIGINT}
   </select>
 
+  <select id="selectLoginInfo" resultMap="BaseResultMap" parameterType="com.pm.dsis.em.dto.HousekeeperBuildingInfo" >
+    select
+    <include refid="Base_Column_List" />
+    from housekeeper_building_info
+    where HB_ACCOUNT = #{hbAccount}
+    AND HB_PASSWORD = #{hbPassword}
+    AND HB_STATUS IN ('onJob','trial','intern')
+  </select>
+
   <select id="selectHbByCondtion" resultMap="BaseResultMap" parameterType="java.lang.Long" >
     select
     <include refid="Base_Column_List" />

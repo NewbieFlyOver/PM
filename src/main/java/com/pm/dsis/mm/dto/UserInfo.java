@@ -67,6 +67,9 @@ public class UserInfo {
         this.buildingFullRoom = buildingFullRoom;
     }
 
+    /**
+     * 标志是否激活
+     */
     private String attribute1;
 
     private String attribute2;

@@ -30,4 +30,18 @@ public interface UserInfoMapper {
      */
     int updateByUserId(UserInfo userInfo);
 
+    /**
+     * 根据条件查询为激活的新用户
+     * @param userInfo
+     * @return
+     */
+    UserInfo selectActiveUserInfo(UserInfo userInfo);
+
+    /**
+     * 查询登录信息
+     * @param userInfo
+     * @return
+     */
+    UserInfo selectLoginUserInfo(UserInfo userInfo);
+
 }

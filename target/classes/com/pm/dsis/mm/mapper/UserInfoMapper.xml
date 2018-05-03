@@ -44,6 +44,14 @@
         USER_NOTE,OBJECT, ATTRIBUTE1, ATTRIBUTE2, ATTRIBUTE3, ATTRIBUTE4, ATTRIBUTE5, ATTRIBUTE6
     </sql>
 
+    <sql id="Base_Column_List1" >
+        ui.USER_ID, USER_ACCOUNT, USER_PASSWORD, USER_NAME, USER_NATIONAL, USER_GENDER, USER_NATIVE_PLACE,
+        USER_ID_NUMBER, FIXED_TELEPHONE, USER_QQ, USER_EMAIL, USER_PHONE, USER_WE_CHAT, USER_BLOG,
+        USER_WORK_UNITS, USER_DEPARTMENT, USER_HOME_ADDRESS, USER_CORRESPONDENCE_ADDRESS,
+        USER_CAR_BRAND, USER_HOBBY, EMERGENCY_CONTACT, EMERGENCY_CONTACT_PHONE, USER_TABOO,
+        USER_NOTE,OBJECT, ui.ATTRIBUTE1, ui.ATTRIBUTE2, ui.ATTRIBUTE3, ui.ATTRIBUTE4, ui.ATTRIBUTE5, ui.ATTRIBUTE6
+    </sql>
+
     <select id="selectByUserId" resultMap="BaseResultMap" parameterType="java.lang.Long" >
         select
         <include refid="Base_Column_List" />
@@ -51,6 +59,25 @@
         where USER_ID = #{userId,jdbcType=BIGINT}
     </select>
 
+    <select id="selectActiveUserInfo" resultMap="BaseResultMap" parameterType="com.pm.dsis.mm.dto.UserInfo" >
+        select
+        <include refid="Base_Column_List1" />
+        from user_info ui, building_info bi
+        where ui.USER_ID = bi.USER_ID
+        AND bi.BUILDING_FULL_ROOM = #{buildingFullRoom}
+        AND ui.USER_NAME = #{userName}
+        AND ui.USER_ID_NUMBER = #{userIdNumber}
+        AND ui.ATTRIBUTE1 = 'N'
+    </select>
+
+    <select id="selectLoginUserInfo" resultMap="BaseResultMap" parameterType="com.pm.dsis.mm.dto.UserInfo" >
+        select
+        <include refid="Base_Column_List" />
+        from user_info
+        where USER_ACCOUNT = #{userAccount}
+        AND USER_PASSWORD = #{userPassword}
+        AND ATTRIBUTE1 = 'Y'
+    </select>
 
     <insert id="insertUserInfo" parameterType="com.pm.dsis.mm.dto.UserInfo" >
     insert into USER_INFO (USER_ACCOUNT, USER_PASSWORD,

@@ -27,11 +27,11 @@
 			</ul>
 			<div class="tab-content">
 				<div id="signin-agile">
-					<form action="#" method="post">
+					<form action="/login" method="post">
 						<p class="header">账号</p>
-						<input type="text" name="user" value="请输入账号" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = '请输入账号';}">
+						<input type="text" name="userAccount" value="请输入账号" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = '请输入账号';}">
 						<p class="header">密码</p>
-						<input type="password" name="password">
+						<input type="password" name="userPassword">
 
 						<input type="submit" class="sign-in" value="登录">
 						<ul class="links">
@@ -40,7 +40,7 @@
 					</form>
 				</div>
 				<div id="signup-agile">
-					<form action="#" method="post">
+					<form action="/active" method="post">
 						<p class="header">账号</p>
 						<input type="text" name="userAccount" value="请输入2~6全中文名称作为登录账号" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = '请输入2~6全中文名称作为登录账号';}">
 						<p class="header">门牌号</p>
@@ -63,13 +63,15 @@
 
 	</body>
 <script>
-	$.ajax({
+	//a = ${info}
+	//alert(a);
+	/*$.ajax({
 	    type:"GET",
 	    url:"/active",
 		success:function (data) {
 			alert(JSON.stringify(data))
         }
-	})
+	})*/
 
 </script>
 
