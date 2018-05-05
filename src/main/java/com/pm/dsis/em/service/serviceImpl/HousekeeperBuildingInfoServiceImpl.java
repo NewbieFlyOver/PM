@@ -6,6 +6,8 @@ import com.pm.dsis.em.service.HousekeeperBuildingInfoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.List;
 
 /**
@@ -37,7 +39,12 @@ public class HousekeeperBuildingInfoServiceImpl implements HousekeeperBuildingIn
 
 
     public HousekeeperBuildingInfo selectHouseInfoById(Long hbId){
-        return housekeeperBuildingInfoMapper.selectHouseInfoById(hbId);
+
+        HousekeeperBuildingInfo hbi= housekeeperBuildingInfoMapper.selectHouseInfoById(hbId);
+        DateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+        String hbInductionStr = sdf.format(hbi.getHbInductionDate());
+        hbi.setHbInductionDateStr(hbInductionStr);
+        return hbi;
     }
 
     public List<HousekeeperBuildingInfo> selectHbByCondtion(HousekeeperBuildingInfo hb){

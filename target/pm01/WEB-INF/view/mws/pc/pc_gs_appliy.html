@@ -95,7 +95,7 @@
                     </div>
                 </div>
                 <div class="panel-footer text-right"><!--data-bind="click:queryApply"-->
-                    <span class="btn btn-success" onclick="saveGarageState()"><i class="fa fa-search"></i>保存</span>
+                    <span class="btn btn-success" onclick="saveGarageState()"><i class="fa fa-search"></i>申请</span>
                 </div>
             </form>
             <script>kendo.bind($('#gsInfo'), viewModel);</script>
@@ -152,7 +152,7 @@
             </form>
             <script>kendo.bind($('#queryUserInfo'), viewModel);</script>
         </div>
-        <div style="height: 450px">
+        <div>
             <script>kendo.bind($('#toolbar-btn'), viewModel);</script>
             <script>kendo.bind($('#query-form'), viewModel);</script>
             <script>kendo.bind($('#base'), viewModel);</script>
@@ -209,7 +209,7 @@
                     resizable  : true,
                     scrollable : true,
                     navigatable: false,
-                    selectable : 'multiple, rowbox',
+                    //selectable : 'multiple, rowbox',
                     pageable: {
                         pageSizes:[5, 10, 20, 50],
                         refresh:true,

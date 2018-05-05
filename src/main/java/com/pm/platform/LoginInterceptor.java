@@ -1,5 +1,6 @@
 package com.pm.platform;
 
+import com.pm.dsis.lr.service.ServiceImpl.LrServiceImpl;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.web.servlet.handler.HandlerInterceptorAdapter;
@@ -18,11 +19,31 @@ public class LoginInterceptor extends HandlerInterceptorAdapter {
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler)
             throws Exception{
         logger.info("loginInterceptor");
-        //TODO：登录验证使用session值
 
+        //TODO：登录验证
+
+       /* if(LrServiceImpl.userLoginFlag == 0) {
+            response.sendRedirect("/view/activeLogin/index.html");
+            return false;
+        }
+
+        if(LrServiceImpl.adminLoginFlag == 0) {
+            response.sendRedirect("/view/activeLogin/index.html");
+            return false;
+        }*/
+
+        if(LrServiceImpl.userLoginFlag == 2) {
+            response.sendRedirect("/view/activeLogin/index.html");
+           // LrServiceImpl.userLoginFlag = 0;
+            return false;
+        }
+        if(LrServiceImpl.adminLoginFlag == 2) {
+            response.sendRedirect("/view/activeLogin/index.html");
+           // LrServiceImpl.adminLoginFlag = 0;
+            return false;
+        }
         return true;
     }
-
 
 
   /*  public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler)

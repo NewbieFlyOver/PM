@@ -21,6 +21,9 @@
 	<body>
 		<h1>物业管理系统</h1>
 		<div class="form-w3ls">
+			<div>
+
+			</div>
 			<ul class="tab-group cl-effect-4">
 				<li class="tab active"><a href="#signin-agile">登录</a></li>
 				<li class="tab"><a href="#signup-agile">新户激活</a></li>
@@ -28,8 +31,10 @@
 			<div class="tab-content">
 				<div id="signin-agile">
 					<form action="/login" method="post">
-						<p class="header">账号</p>
-						<input type="text" name="userAccount" value="请输入账号" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = '请输入账号';}">
+
+						<p class="header">账号<span id="prompt" style="color: red"></span></p>
+						<input type="text" name="userAccount" id="loginAccount" value="请输入账号" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = '请输入账号';}">
+
 						<p class="header">密码</p>
 						<input type="password" name="userPassword">
 
@@ -41,18 +46,24 @@
 				</div>
 				<div id="signup-agile">
 					<form action="/active" method="post">
-						<p class="header">账号</p>
-						<input type="text" name="userAccount" value="请输入2~6全中文名称作为登录账号" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = '请输入2~6全中文名称作为登录账号';}">
-						<p class="header">门牌号</p>
-						<input type="text" name="buildingFullRoom" value="门牌号格式：1-1-101" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = '门牌号格式：1-1-101';}">
+						<p class="header">账号 <span id="Accountprompt" style="color: red"></span></p>
+						<input type="text" name="userAccount" id="activeAccount" value="请输入2~6全中文名称作为登录账号" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = '请输入2~6全中文名称作为登录账号';}">
+
+						<p class="header">门牌号 <span id="bhprompt" style="color: red"></span></p>
+						<input type="text" name="buildingFullRoom" id="buildingFullRoom" value="门牌号格式：1-1-101" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = '门牌号格式：1-1-101';}">
+
 						<p class="header">业主姓名</p>
-						<input type="text" name="userName" value="请输入业主姓名" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = '请输入业主姓名';}">
+						<input type="text" name="userName" id="userName" value="请输入业主姓名" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = '请输入业主姓名';}">
+
 						<p class="header">身份证号</p>
-						<input type="text" name="userIdNumber" value="请输入业主身份证号" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = '请输入业主身份证号';}">
-						<p class="header">密码</p>
-						<input type="password" name="userPassword">
+						<input type="text" name="userIdNumber" id="userIdNumber" value="请输入业主身份证号" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = '请输入业主身份证号';}">
+
+						<p class="header">密码 <span id="pwdprompt" style="color: red"></span></p>
+						<input type="password" id="userPassword" name="userPassword">
+
 						<p class="header">再次输入密码</p>
-						<input type="password" name="password">
+						<input type="password" id="password" name="password">
+
 						<input type="submit" class="register" value="激活">
 					</form>
 				</div>
@@ -60,19 +71,128 @@
 		</div>
 		<script src='js/jquery-1.11.0.min.js'></script>
 		<script src="js/index.js"></script>
-
+<!--<div>
+	<#if msg??>
+		<span style="color: red">${msg}</span>
+	</#if>
+</div>-->
 	</body>
 <script>
-	//a = ${info}
-	//alert(a);
-	/*$.ajax({
-	    type:"GET",
-	    url:"/active",
-		success:function (data) {
-			alert(JSON.stringify(data))
-        }
-	})*/
+	/* 登录账号验证 */
+    $("#loginAccount").blur(function(){
+        $("#prompt").html("");
+        name = $("#loginAccount").val();
+        $.ajax({
+            type: "POST",
+            url: "/lr/selectAccount",
+            data: {
+                account :name
+            },
+            dataType: "json",
+            success: function(data){
+                if(data.success){
+                    $("#prompt").html("账号不存在");
+                }
+            }
+        });
+    });
 
+	/* 激活账号验证 */
+    $("#activeAccount").blur(function(){
+        $("#Accountprompt").html("");
+
+        var regexName = /^([\u4e00-\u9fa5\·]{2,10})$/;
+        var uname = $("#activeAccount").val();
+        if(regexName.test(uname) == false){
+            $("#Accountprompt").html('请输入2~6全中文名称作为登录账号');
+            return;
+        }
+
+        name = $("#activeAccount").val();
+        $.ajax({
+            type: "POST",
+            url: "/lr/selectAccount",
+            data: {
+                account :name
+            },
+            dataType: "json",
+            success: function(data){
+                if(!data.success){
+                    $("#Accountprompt").html("账号已存在");
+                }
+            }
+        });
+    });
+
+	/* 房屋格式验证 */
+    $("#buildingFullRoom").blur(function(){
+        $("#bhprompt").html("");
+
+        var regexName = /^[1-9]+-[0-9]+-[0-9]+$/;
+        var uname = $("#buildingFullRoom").val();
+        if(regexName.test(uname) == false){
+            $("#bhprompt").html('门牌号格式：1-1-101');
+            return;
+        }
+    });
+
+	/* 激活信息验证 */
+    $("#userIdNumber").blur(function(){
+        $("#pwdprompt").html("");
+        bfr = $("#buildingFullRoom").val();
+        name = $("#userName").val();
+        idNum = $("#userIdNumber").val();
+        /*$("#").val();*/
+
+        $.ajax({
+            type: "POST",
+            url: "/lr/active",
+            data: {
+                bfr :bfr,
+                name :name,
+                idNum :idNum
+            },
+            dataType: "json",
+            success: function(data){
+
+                if(data.success){
+                    window.localStorage["vLoginFlag"]=JSON.stringify('true');
+                }else {
+                    $("#pwdprompt").html("已被激活！");
+                    window.localStorage["vLoginFlag"]=JSON.stringify('false');
+				}
+
+            }
+        });
+        vflag =JSON.parse(window.localStorage["vLoginFlag"]);
+
+		if (vflag) {
+            $.ajax({
+                type: "POST",
+                url: "/lr/validationAccount",
+                data: {
+                    bfr :bfr,
+                    name :name,
+                    idNum :idNum
+                },
+                dataType: "json",
+                success: function(data){
+                    if(!data.success){
+                        $("#pwdprompt").html("门牌号、业主姓名与身份证号信息不符");
+                    }
+                }
+            });
+
+        }
+    });
+
+	/* 获取URL后的参数 */
+    function getQueryString(name) {
+        var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i");
+        var r = window.location.search.substr(1).match(reg);
+        if (r != null) return decodeURI(r[2]); return null;
+    }
+    $("#prompt").html(getQueryString("msg"));
 </script>
 
 

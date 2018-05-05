@@ -37,7 +37,7 @@
 
 </script>
 <div id="base">
-    <div class="demo-section k-content">
+    <div class="demo-section k-content" style="width: 98%;">
         <div class="panel" style="padding: 0px">
             <form class="form-horizontal">
                 <div id="basebuilding" class="panel-body">
@@ -59,7 +59,7 @@
             </div>
 
             <script type="text/javascript">
-                var userId=JSON.parse(window.localStorage["editUserId"]||'');
+                var userId= JSON.parse(window.localStorage["userIdInfo"]);
                 dataSource = new kendo.data.DataSource({
                     transport: {
                         read:  {
@@ -272,7 +272,7 @@
     </style>
 
     <script>
-        var userId= 45; //userID
+        var userId= JSON.parse(window.localStorage["userIdInfo"]); //user_ID
         //时间格式化
         function dateStr(oDate) {
             oYear = oDate.getFullYear(),

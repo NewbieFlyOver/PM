@@ -36,6 +36,10 @@ public class LrServiceImpl implements LrService {
     @Autowired
     private HousekeeperBuildingInfoMapper housekeeperBuildingInfoMapper;
 
+    //用于是否登录的标志 0:未登录；1：登录； 2：登录退出
+    static public int adminLoginFlag = 0;
+    static public int userLoginFlag = 0;
+
     private static final int CAPTCHA_WIDTH = 90;
     private static final int CAPTCHA_HEIGHT = 34;
     private static final int CAPTCHA_CODE_COUNT = 4;
@@ -166,7 +170,7 @@ public class LrServiceImpl implements LrService {
     }
 
     /**
-     * 查询登录信息
+     * 登录
      * @param userInfo
      * @return
      */
@@ -182,7 +186,9 @@ public class LrServiceImpl implements LrService {
 
             UserInfo userInf = userInfoMapper.selectLoginUserInfo(user);
             if (null != userInf) {
-                mv.addObject("userInfo",userInf);
+                Long id = userInf.getUserId();
+                userLoginFlag = 1;
+                mv.addObject("id",id);
                 mv.setViewName("redirect:/view/mws/index.html");
             } else {
                 mv.addObject("msg","密码或用户名错误");
@@ -196,7 +202,9 @@ public class LrServiceImpl implements LrService {
 
             HousekeeperBuildingInfo hbInf = housekeeperBuildingInfoMapper.selectLoginInfo(hb);
             if (null != hbInf) {
-                mv.addObject("hbInfo",hbInf);
+                Long id= hbInf.getHbId();
+                adminLoginFlag = 1;
+                mv.addObject("id",id);
                 mv.setViewName("redirect:/index");
             } else {
                 mv.addObject("msg","密码或用户名错误");
@@ -207,11 +215,85 @@ public class LrServiceImpl implements LrService {
 
     }
 
+    /**
+     * 退出登录
+     * @return
+     */
+    /*public void logout(ModelAndView mv) throws Exception{
+        if (loginFlag) {
+            loginFlag = false;
+            mv.setViewName("redirect:/view/activeLogin/index.html");
+        }
+    }*/
 
 
 
 
+    /**
+     * 查询账号是否存在
+     * @param account
+     * @return
+     */
+    public int selectAccount(String account){
+        Pattern p = Pattern.compile("\\d+");        //得到字符串中的数字
+        Matcher m = p.matcher(account);
+        boolean b = m.matches();
 
+        if(!b) {
+            if (userInfoMapper.selectAccount(account) == null) {
+                return 0;
+            }else {
+                return 1;
+            }
+        } else {
+            if (housekeeperBuildingInfoMapper.selectAccount(account) == null) {
+                return 0;
+            }else {
+                return 1;
+            }
+        }
+    }
+
+    /**
+     * 验证激活信息
+     * @param bfr
+     * @param name
+     * @param idNum
+     * @return
+     */
+    public int validationAccount(String bfr,String name,String idNum){
+        UserInfo userInfo = new UserInfo();
+        userInfo.setBuildingFullRoom(bfr);
+        userInfo.setUserName(name);
+        userInfo.setUserIdNumber(idNum);
+        UserInfo user = userInfoMapper.selectActiveUserInfo(userInfo);
+        if (user == null) {
+            return 1;
+        }else {
+            //未激活
+            return 0;
+        }
+    }
+
+    /**
+     * 是否被激活
+     * @param bfr
+     * @param name
+     * @param idNum
+     * @return
+     */
+    public int active(String bfr,String name,String idNum){
+        UserInfo userInfo = new UserInfo();
+        userInfo.setBuildingFullRoom(bfr);
+        userInfo.setUserName(name);
+        userInfo.setUserIdNumber(idNum);
+        UserInfo user = userInfoMapper.active(userInfo);
+        if (user == null) {
+            return 0;
+        }else {
+            return 1;
+        }
+    }
     /**
      * 对字符串md5加密
      *

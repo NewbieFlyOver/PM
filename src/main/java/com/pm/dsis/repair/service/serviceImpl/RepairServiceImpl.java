@@ -39,7 +39,7 @@ public class RepairServiceImpl implements RepairService{
 
         List<RepairInfo> repairInfoList =repairInfoMapper.selectRepairInfo(repairInfo);
         for (RepairInfo ri : repairInfoList) {
-            DateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+            DateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
             String bigenDateStr = sdf.format(ri.getRiDate());
             ri.setRiDateStr(bigenDateStr);
         }

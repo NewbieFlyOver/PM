@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -56,8 +57,10 @@ public class HouserKeeperBuildingInfoController {
     @ResponseBody
     public ResponseData selectHouseInfoById(HttpServletRequest request, HttpServletResponse response,
                                             Long hdId){
-        housekeeperBuildingInfoService.selectHouseInfoById(hdId);
-        return new ResponseData();
+        HousekeeperBuildingInfo hbi = housekeeperBuildingInfoService.selectHouseInfoById(hdId);
+        List<HousekeeperBuildingInfo> hbiList = new ArrayList<HousekeeperBuildingInfo>();
+        hbiList.add(hbi);
+        return new ResponseData(hbiList);
 
     }
 

@@ -35,6 +35,7 @@
     EMERGENCY_CONTACT_PHONE, HB_POSITION, HB_ROLE, HB_INDUCTION_DATE, HB_STATUS, HB_STATUS_FALG,
     ATTRIBUTE1, ATTRIBUTE2, ATTRIBUTE3,ATTRIBUTE4, ATTRIBUTE5, ATTRIBUTE6
   </sql>
+
   <select id="selectHouseInfoById" resultMap="BaseResultMap" parameterType="java.lang.Long" >
     select 
     <include refid="Base_Column_List" />
@@ -49,6 +50,13 @@
     where HB_ACCOUNT = #{hbAccount}
     AND HB_PASSWORD = #{hbPassword}
     AND HB_STATUS IN ('onJob','trial','intern')
+  </select>
+
+  <select id="selectAccount" resultMap="BaseResultMap" parameterType="java.lang.String">
+    select
+    <include refid="Base_Column_List" />
+    from housekeeper_building_info
+    where HB_ACCOUNT = #{hbAccount}
   </select>
 
   <select id="selectHbByCondtion" resultMap="BaseResultMap" parameterType="java.lang.Long" >

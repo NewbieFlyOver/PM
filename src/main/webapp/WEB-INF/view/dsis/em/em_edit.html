@@ -58,22 +58,22 @@
                                         <label class="col-sm-4 control-label">姓名</label>
                                         <div class="col-sm-8">
                                             <input id="hbName" name="hbName" data-bind="value:model.houseKeeperInfo.hbName" type="text" style="width: 96%" class="k-textbox">
-                                            <span style="color: red">*</span>
-                                            <span style="color: red">请输入姓名</span>
                                         </div>
 
                                     </div>
                                     <script>
-                                        $("#userName").attr("required", true);
+                                        $("#hbName").attr("disabled", true);
                                     </script>
 
                                 </div>
                                 <div class="col-sm-4" id="2">
                                     <div class="form-group">
-                                        <label class="col-sm-4 control-label">籍贯</label>
+                                        <label class="col-sm-4 control-label">工号</label>
                                         <div class="col-sm-8">
-                                            <input id="hbNativePlace" name="hbNativePlace" data-bind="value:model.houseKeeperInfo.hbNativePlace" type="text" style="width: 96%" class="k-textbox">
-
+                                            <input id="hbNumber" name="hbNumber" data-bind="value:model.houseKeeperInfo.hbNumber" type="text" style="width: 96%" class="k-textbox">
+                                            <script>
+                                                $("#hbNumber").attr("disabled", true);
+                                            </script>
                                         </div>
                                     </div>
                                 </div>
@@ -98,6 +98,7 @@
                                         </div>
                                     </div>
                                     <script>
+                                        $("#hbGender").attr("disabled", true);
                                         var gender = 'gender';
                                         $.ajax({
                                             type : "GET" ,
@@ -144,6 +145,9 @@
                                         <div class="col-sm-8">
                                             <input id="hbPosition" name="hbPosition" data-bind="value:model.houseKeeperInfo.hbPosition"  type="text" style="width:96%" class="k-textbox">
                                         </div>
+                                        <script>
+                                            $("#hbPosition").attr("disabled", true);
+                                        </script>
                                     </div>
                                 </div>
 
@@ -151,8 +155,11 @@
                                     <div class="form-group">
                                         <label class="col-sm-4 control-label">入职时间</label>
                                         <div class="col-sm-8">
-                                            <input id="hbInductionDate" name="hbInductionDate" data-bind="value:model.houseKeeperInfo.hbInductionDate" type="date" style="width:96%" class="k-textbox">
+                                            <input id="hbInductionDateStr" name="hbInductionDateStr" data-bind="value:model.houseKeeperInfo.hbInductionDateStr" type="text" style="width:96%" class="k-textbox">
                                         </div>
+                                        <script>
+                                            $("#hbInductionDateStr").attr("disabled", true);
+                                        </script>
                                     </div>
                                 </div>
                                 <div class="col-sm-4" id="10">
@@ -162,6 +169,7 @@
                                             <input id="hbStatus" name="hbStatus" type="text" style="width:96%" data-bind="value:model.houseKeeperInfo.hbStatus">
                                         </div>
                                         <script>
+                                            $("#hbStatus").attr("disabled", true);
                                             var hbStatus = 'hbStatus';
                                             $.ajax({
                                                 type : "GET" ,
@@ -309,7 +317,22 @@
             }
             return num;
         }
+        hdId =JSON.parse(window.localStorage["loginIdInfo"]);
 
+        /*  查询全部信息 */
+        $.ajax({
+            type: 'POST',
+            url: '/em/selectHouseInfoById',
+            dataType: "json",
+            data:{hdId:hdId},
+            success: function (data) {
+                viewModel.model.set('houseKeeperInfo', data.rows[0]);
+                gender = viewModel.model.houseKeeperInfo.hbGender;
+                $("#hbGender").data("kendoComboBox").value(gender);
+                /*object = viewModel.model.userInfo.object;
+                 $("#object").data("kendoComboBox").value(object);*/
+            }
+        });
 
         function saveHouseInfo(){
             if( $("#hbGender").val()!="" ){
@@ -321,6 +344,8 @@
                 viewModel.model.houseKeeperInfo.set('hbStatus',status);
             }
             var houseKeeperInfo = JSON.stringify(viewModel.model.houseKeeperInfo);
+            alert( $("#hbGender").val())
+            alert( $("#hbStatus").val())
             $.ajax({
                 type: 'POST',
                 url: '/em/insertHouseInfo',

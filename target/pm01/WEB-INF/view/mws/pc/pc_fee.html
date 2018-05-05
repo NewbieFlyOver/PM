@@ -34,7 +34,12 @@
 
 </script>
 <div id="content-container">
-    <div id="page-content">
+    <div class="panel-body">
+        <div style="margin-bottom: 10px;margin-top: 5px">
+            <span class="btn btn-primary" style="width: 150px;">物业费</span>
+        </div>
+    </div>
+    <div id="page-content" style="margin-top: -20px">
         <div class="panel" style="padding: 0px;">
             <form class="form-horizontal" id = "queryUserInfo">
                 <div id="conditionForm" class="panel-body">
@@ -82,7 +87,7 @@
 
     </div>
 
-    <div class="panel-footer text-right"><!--data-bind="click:queryApply"-->
+    <div class="panel-footer text-right" style="width: 99%;"><!--data-bind="click:queryApply"-->
         <span class="btn btn-success" onclick="queryAllFeeInfo()"><i class="fa fa-search"></i>查询</span>
     </div>
 
@@ -91,7 +96,7 @@
 
 </div>
 <div>
-    <div id="grid" style="clear: both"></div>
+    <div id="grid" style="clear: both ;width: 99%"></div>
 </div>
 </div>
 </div>
@@ -143,7 +148,7 @@
 
     $("#grid").kendoGrid({
         dataSource: dataSource,
-        height: 400,
+        height: 337,
         resizable  : true,
         scrollable : true,
         navigatable: false,
@@ -235,7 +240,8 @@
         ],
         editable: false,
     });
-    var userId = 45;//userID
+
+    var userId = JSON.parse(window.localStorage["userIdInfo"]);//user_ID
     viewModel.model.pmFeeAmountInfo.set('userId',userId);
     pmFeeAmount=JSON.stringify(viewModel.model.pmFeeAmountInfo)
     $.ajax({
@@ -261,7 +267,7 @@
                         }
                     },
                     page:1,
-                    pageSize:5
+                    pageSize:10
                 });
                 grid.setDataSource(dataSource);
             }
@@ -298,7 +304,7 @@
                                 }
                             },
                             page: 1,
-                            pageSize: 5
+                            pageSize: 10
                         }
                     });
                     grid.setDataSource(dataSource);

@@ -25,11 +25,40 @@ public interface LrService {
 
 
     /**
-     * 查询登录信息
+     * 登录
      * @param userInfo
-     * @return
      */
     void selectLoginInfo(ModelAndView mv, UserInfo userInfo) throws Exception;
 
+    /**
+     * 退出登录
+     */
+   // void logout(ModelAndView mv) throws Exception;
 
+
+
+    /**
+     * 查询账号是否村子
+     * @param account
+     * @return
+     */
+    int selectAccount(String account);
+
+    /**
+     * 验证激活信息
+     * @param bfr
+     * @param name
+     * @param idNum
+     * @return
+     */
+    int validationAccount(String bfr,String name,String idNum);
+
+    /**
+     * 是否被激活
+     * @param bfr
+     * @param name
+     * @param idNum
+     * @return
+     */
+    int active(String bfr,String name,String idNum);
 }

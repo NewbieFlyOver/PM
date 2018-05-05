@@ -34,15 +34,65 @@
 
 </script>
 <div id="content-container">
+    <div class="panel-body">
+        <div style="margin-bottom: 10px;margin-top: 5px">
+            <span class="btn btn-primary" style="width: 150px;">已有车位</span>
+        </div>
+    </div>
     <div id="page-content">
-        <div class="panel" style="padding: 0px;">
+        <div class="panel" style="padding: 0px;margin-top: -20px">
             <form class="form-horizontal" id = "queryUserInfo">
+                <div id="conditionForm" class="panel-body">
+                    <div class="row">
+                        <div class="col-sm-6" id="1">
+                            <div class="form-group">
+                                <label class="col-sm-4 control-label">车位编号</label>
+                                <div class="col-sm-8">
+                                    <input id="gsNum"  type="text" style="width: 100%" data-bind="value:model.garageStateInfo.gsNum"
+                                           class="k-textbox">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-sm-6" id="2">
+                            <div class="form-group">
+                                <label class="col-sm-4 control-label">车位状态</label>
+                                <div class="col-sm-8">
+                                    <input id="gsState"  type="text" style="width: 100%" data-bind="value:model.garageStateInfo.gsState">
+                                </div>
+                            </div>
+                        </div>
+                        <script>
+                            var type = 'CarState';
+                            $.ajax({
+                                type : "GET" ,
+                                url: "/ci/selectByType",
+                                dataType: "json",
+                                data:{commonType : type},
+                                success: function (data) {
+                                    if (data.success) {
+                                        commonInfoSource = eval(data.rows);
+                                        $("#gsState").kendoComboBox({
+                                            dataTextField: "commonName",
+                                            dataValueField: "commonValue",
+                                            dataSource: commonInfoSource,
+                                        });
+                                    }
+                                }
+                            });
+                        </script>
+                    </div>
+                </div>
+
+                <div class="panel-footer text-right"><!--data-bind="click:queryApply"-->
+                    <span class="btn btn-success" onclick="queryAllGarageStateInfo()"><i class="fa fa-search"></i>查询</span>
+                </div>
             </form>
             <script>kendo.bind($('#queryUserInfo'), viewModel);</script>
 
         </div>
         <div>
-            <div style="height: 450px">
+            <div>
 
                 <!--<div class="pull-right" id="toolbar-btn" style="padding-bottom:10px;">
                     <span class="btn btn-primary k-grid-add" style="float:left;margin-right:5px;" data-bind="click:createFunction">新建</span>
@@ -101,7 +151,7 @@
 
                     $("#grid").kendoGrid({
                         dataSource: dataSource,
-                        height: 350,
+                        height: 337,
                         resizable  : true,
                         scrollable : true,
                         navigatable: false,
@@ -150,7 +200,7 @@
                         editable: false,
                     });
 
-                    var userId = 45; //userID
+                    var userId =JSON.parse(window.localStorage["userIdInfo"]); //user_ID
                     viewModel.model.garageStateInfo.set('userId',userId);
                     garageState=JSON.stringify(viewModel.model.garageStateInfo)
                     $.ajax({
@@ -174,12 +224,48 @@
                                         }
                                     },
                                     page:1,
-                                    pageSize:5
+                                    pageSize:10
                                 });
                                 grid.setDataSource(dataSource);
                             }
                         }
                     });
+
+                    function queryAllGarageStateInfo() {
+                        //garageState=JSON.stringify(viewModel.model.garageStateInfo)
+                        if( $("#gsState").val()!="" ){
+                            gsState = viewModel.model.garageStateInfo.gsState.commonValue;
+                            viewModel.model.garageStateInfo.set('gsState',gsState);
+                        }
+                        garageState=JSON.stringify(viewModel.model.garageStateInfo)
+                        $.ajax({
+                            type : "POST" ,
+                            url: "/gs/selectGarageState",
+                            dataType: "json",
+                            contentType: "application/json",
+                            data: garageState,
+                            success: function (data) {
+                                if (data.success) {
+                                    var grid = $('#grid').data('kendoGrid');
+                                    var dataSource = new kendo.data.DataSource({
+                                        data: data.rows,
+                                        schema: {
+                                            total:function (e) {
+                                                return data.rows.length;
+                                            },
+                                            model: {
+                                                id: "waId",
+                                                fields: {}
+                                            }
+                                        },
+                                        page:1,
+                                        pageSize:10
+                                    });
+                                    grid.setDataSource(dataSource);
+                                }
+                            }
+                        });
+                    }
                 </script>
             </div>
         </div>

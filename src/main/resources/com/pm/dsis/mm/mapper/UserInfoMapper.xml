@@ -70,6 +70,17 @@
         AND ui.ATTRIBUTE1 = 'N'
     </select>
 
+    <select id="active" resultMap="BaseResultMap" parameterType="com.pm.dsis.mm.dto.UserInfo" >
+        select
+        <include refid="Base_Column_List1" />
+        from user_info ui, building_info bi
+        where ui.USER_ID = bi.USER_ID
+        AND bi.BUILDING_FULL_ROOM = #{buildingFullRoom}
+        AND ui.USER_NAME = #{userName}
+        AND ui.USER_ID_NUMBER = #{userIdNumber}
+        AND ui.ATTRIBUTE1 = 'Y'
+    </select>
+
     <select id="selectLoginUserInfo" resultMap="BaseResultMap" parameterType="com.pm.dsis.mm.dto.UserInfo" >
         select
         <include refid="Base_Column_List" />
@@ -77,6 +88,13 @@
         where USER_ACCOUNT = #{userAccount}
         AND USER_PASSWORD = #{userPassword}
         AND ATTRIBUTE1 = 'Y'
+    </select>
+
+    <select id="selectAccount" resultMap="BaseResultMap" parameterType="java.lang.String" >
+        select
+        <include refid="Base_Column_List" />
+        from user_info
+        where USER_ACCOUNT = #{userAccount}
     </select>
 
     <insert id="insertUserInfo" parameterType="com.pm.dsis.mm.dto.UserInfo" >

@@ -13,16 +13,31 @@
         <div class="nav_l">
             <a href="index.html"><img src="../images/logo.jpg" /></a>
         </div>
-        <div class="nav_r">
+        <div class="nav_r" >
             <ul>
                 <li><a href="../index.html" target="_parent">首页</a></li>
-                <li><a href="../cn/cn_new.html" target="_parent">社区新闻</a></li>
-                <li><a href="../ke/ke_know.html" target="_parent">知识天地</a></li>
+               <!-- <li><a href="../cn/cn_new.html" target="_parent">社区新闻</a></li>-->
                 <li><a href="../pc/pc_center.html" class="this">个人中心</a></li>
                 <li><a href="../ri/ri_info.html" target="_parent">报修信息</a></li>
                 <li><a href="../au/au_intro.html" target="_parent">关于我们</a></li>
+                <li><a href="javascript:;onclick=logout()" style="color: #4169E1" id="userName"></a></li>
+                <li style="margin-left: -20px;"><a href="javascript:;onclick=logout()" style="color: #4169E1">退出</a></li>
             </ul>
+
+            <script>
+                function logout() {
+                    $.ajax({
+                        type:"POST",
+                        url:"/logout",
+                        dataType: "json",
+                        data:{loginFlag:"user"},
+                    });
+                    location.reload();
+                }
+                $("#userName").html(JSON.parse(window.localStorage["userName"]));
+                </script>
         </div>
     </div>
+<hr style="margin-left: 1%" width="98%" size="5px" color="#B8B8B8">
 </body>
 </html>

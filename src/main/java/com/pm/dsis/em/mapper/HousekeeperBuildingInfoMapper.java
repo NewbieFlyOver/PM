@@ -49,7 +49,12 @@ public interface HousekeeperBuildingInfoMapper {
     HousekeeperBuildingInfo selectLoginInfo(HousekeeperBuildingInfo housekeeperBuildingInfo);
 
 
-
+    /**
+     * 查询账号是否存在
+     * @param hbAccount
+     * @return
+     */
+    HousekeeperBuildingInfo selectAccount(String hbAccount);
 
 
 

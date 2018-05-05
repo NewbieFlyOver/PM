@@ -38,10 +38,26 @@ public interface UserInfoMapper {
     UserInfo selectActiveUserInfo(UserInfo userInfo);
 
     /**
+     * 是否激活
+     * @param userInfo
+     * @return
+     */
+    UserInfo active(UserInfo userInfo);
+
+    /**
      * 查询登录信息
      * @param userInfo
      * @return
      */
     UserInfo selectLoginUserInfo(UserInfo userInfo);
+
+    /**
+     * 查询账号是否存在
+     * @param userAccount
+     * @return
+     */
+    UserInfo selectAccount(String userAccount);
+
+
 
 }

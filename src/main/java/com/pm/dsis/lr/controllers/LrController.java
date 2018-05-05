@@ -1,20 +1,22 @@
 package com.pm.dsis.lr.controllers;
 
 import com.pm.dsis.lr.service.LrService;
+import com.pm.dsis.lr.service.ServiceImpl.LrServiceImpl;
 import com.pm.dsis.mm.dto.UserInfo;
 import com.pm.platform.BaseController;
+import com.pm.platform.ResponseData;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.MessageSource;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by admin on 2018/4/20.
@@ -27,6 +29,7 @@ public class LrController extends BaseController{
 
     @Autowired
     private MessageSource messageSource;
+
 
     private Logger logger = LoggerFactory.getLogger(LrController.class);
 
@@ -42,7 +45,6 @@ public class LrController extends BaseController{
         return mv;
     }
 
-
     @RequestMapping("/verifiCode")
     public void code(HttpServletRequest req, HttpServletResponse resp) throws Exception{
             // 禁止图像缓存。
@@ -52,7 +54,6 @@ public class LrController extends BaseController{
             resp.setContentType("image/jpeg");
             lrService.generateCaptcha();
     }
-
 
     /**
      * 登录
@@ -66,6 +67,23 @@ public class LrController extends BaseController{
         lrService.selectLoginInfo(mv, userInfo);
         return mv;
     }
+
+    /**
+     * 退出登录
+     * @param
+     * @return
+     */
+    @RequestMapping(value = "/logout", method = RequestMethod.POST)
+    public void logout(HttpServletRequest request, HttpServletResponse response,String loginFlag) throws Exception{
+       if("admin".equals(loginFlag)) {
+           LrServiceImpl.adminLoginFlag = 2;
+       }
+        if("user".equals(loginFlag)) {
+            LrServiceImpl.userLoginFlag = 2;
+        }
+    }
+
+
 
     /**
      * 新户激活
@@ -82,13 +100,75 @@ public class LrController extends BaseController{
         //mv.setViewName("redirect:/index");
         return mv;
     }
-    /*public String active() throws Exception{
-        if (true)
-         throw new Exception("新户激活成功！");*/
-        /*ModelAndView mv = new ModelAndView();
-        mv.setViewName("/index");
-        return "index";
-    }*/
 
-//http://localhost:8088/lr/home
+    /**
+     * 查询账号
+     * @param request
+     * @param response
+     * @param account
+     * @return
+     */
+    @RequestMapping(value = "/lr/selectAccount",method = RequestMethod.POST)
+    @ResponseBody
+    public ResponseData selectAccount(HttpServletRequest request, HttpServletResponse response, String account){
+
+        int num = lrService.selectAccount(account);
+        if (num > 0) {
+            return new ResponseData(false);
+        } else {
+            return new ResponseData(true) ;
+        }
+    }
+
+
+    /**
+     * 验证激活信息
+     * @param request
+     * @param response
+     * @param bfr
+     * @param name
+     * @param idNum
+     * @return
+     */
+    @RequestMapping(value = "/lr/validationAccount",method = RequestMethod.POST)
+    @ResponseBody
+    public ResponseData validationAccount(HttpServletRequest request, HttpServletResponse response,
+                                          String bfr,String name,String idNum){
+
+        int num = lrService.validationAccount(bfr,name,idNum);
+        if (num > 0) {
+            return new ResponseData(false);
+        } else {
+            return new ResponseData(true) ;
+        }
+    }
+
+
+    /**
+     * 是否被激活
+     * @param request
+     * @param response
+     * @param bfr
+     * @param name
+     * @param idNum
+     * @return
+     */
+    @RequestMapping(value = "/lr/active",method = RequestMethod.POST)
+    @ResponseBody
+    public ResponseData active(HttpServletRequest request, HttpServletResponse response,
+                                          String bfr,String name,String idNum){
+
+        int num = lrService.validationAccount(bfr,name,idNum);
+        if (num > 0) {
+            return new ResponseData(false);
+        } else {
+            return new ResponseData(true) ;
+        }
+    }
+
+
+
+
+
+
 }

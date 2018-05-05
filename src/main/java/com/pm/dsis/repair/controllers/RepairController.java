@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
+import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -36,9 +37,9 @@ public class RepairController {
      */
     @RequestMapping(value = "/repair/saveRepairInfo",method = RequestMethod.POST)
     @ResponseBody
-    public ResponseData saveRepairInfo(HttpServletRequest request, HttpServletResponse response,  RepairInfo repairInfo,
+    public ModelAndView saveRepairInfo(HttpServletRequest request, HttpServletResponse response, RepairInfo repairInfo,
                                        @RequestParam(value="file",required=false) MultipartFile file) throws Exception{
-        System.out.println(repairInfo.toString());
+        ModelAndView mv = new ModelAndView();
         //获得物理路径webapp所在路径
         //String pathRoot = request.getSession().getServletContext().getRealPath("");
         //String pathRoot = "D:/Graduation design/code/PM";
@@ -58,8 +59,14 @@ public class RepairController {
         }
         repairInfo.setRiImg(picName);
         repairInfo.setRiDate(new Date());
-        repairService.insertRepairInfo(repairInfo);
-        return new ResponseData();
+        int sum = repairService.insertRepairInfo(repairInfo);
+        if (sum == 1) {
+            mv.addObject("msg","报修成功！");
+        }else {
+            mv.addObject("msg","报修失败！");
+        }
+        mv.setViewName("redirect:/view/mws/ri/ri_info.html");
+        return mv;
     }
 
 
