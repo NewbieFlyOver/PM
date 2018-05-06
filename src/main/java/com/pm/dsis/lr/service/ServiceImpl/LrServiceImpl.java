@@ -152,21 +152,15 @@ public class LrServiceImpl implements LrService {
            //TODO:MD5加密
            user.setUserPassword(getMD5(userInfo.getUserPassword()));
            user.setAttribute1("Y");
-           userInfoMapper.updateByUserId(user);
+           int sum = userInfoMapper.updateByUserId(user);
+           if(sum == 1) {
+               mv.addObject("acMsg","激活成功，请登录！");
+           }else {
+               mv.addObject("acMsg","激活失败！");
+           }
         }
 
-        mv.setViewName("redirect:/view/mws/index.html");
-
-
-       /* HttpSession session = request.getSession(false);
-        if (true) {
-            mv.setViewName("redirect:/view/activeLogin/index.html");
-            //mv.addObject("info","户激活成功！");
-            session.setAttribute("info","户激活成功！");
-            //throw new Exception("新户激活成功！");
-        }else {
-            mv.setViewName("redirect:/view/mws/index.html");
-        }*/
+        mv.setViewName("redirect:/view/activeLogin/index.html");
     }
 
     /**

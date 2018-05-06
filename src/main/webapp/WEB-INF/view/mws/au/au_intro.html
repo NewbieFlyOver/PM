@@ -1,10 +1,228 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-    <meta charset="UTF-8">
-    <title>Title</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>物业平台</title>
+    <link href="../css/index.css"  type="text/css" rel="stylesheet"/>
+    <link href="../css/top.css" type="text/css" rel="stylesheet" />
+    <script type="text/javascript" src="http://api.map.baidu.com/api?key=&v=1.1&services=true"></script>
+    <script src="../js/jquery-1.8.3.min.js"></script>
+
+
 </head>
+
 <body>
+<!--导航开始-->
+<div class="nav">
+    <div class="nav_l">
+        <a href="#"><img src="../images/logo.jpg" /></a>
+    </div>
+    <div class="nav_r">
+        <ul>
+            <li><a href="../index.html">首页</a></li>
+            <!--<li><a href="cn/cn_new.html">社区新闻</a></li>-->
+            <li><a href="../pc/pc_center.html">个人中心</a></li>
+            <li><a href="../ri/ri_info.html">报修信息</a></li>
+            <li><a href="#" class="this">关于我们</a></li>
+            <li><a href="javascript:;" style="color: #4169E1" id="userName"></a></li>
+            <li style="margin-left: -20px;"><a href="javascript:;onclick=logout()" style="color: #4169E1">退出</a></li>
+        </ul>
+    </div>
+</div>
+<script>
+
+    function logout() {
+        // loginFlag = "admin";
+        $.ajax({
+            type:"POST",
+            url:"/logout",
+            dataType: "json",
+            data:{loginFlag:"user"},
+        });
+        location.reload();
+    }
+    $("#userName").html(JSON.parse(window.localStorage["userName"]));
+
+</script>
+<hr style="margin-left: 1%;margin-top: -20px;margin-bottom: 0px;border: 3px solid #B8B8B8" width="98%" >
+<!--内容一开始-->
+<div class="main1">
+    <div class="us">
+        <div class="we">
+            <b>关于我们</b>
+            <span>我们提供更加全面、便捷、优质的服务</span>
+            <em>ABOUT&nbsp;US</em>
+        </div>
+    </div>
+</div>
+<!--内容二开始-->
+<div class="main2">
+    <div class="main2_l">
+        <img src="../images/pm01.png" />
+    </div>
+    <div class="main2_r">
+        <h1><span>公司简介</span></h1>
+        <p>公司成立于2000年，扎根从事物业管理近二十年，是具有独立法人资格的有限公司，具有国家二级物业管理资质。公司始终贯彻“用心服务、创造幸福”的服务理念，为客户提供全方位的专业物业管理服务，努力创建全国一流的物业服务企业。</p>
+        <h1><span>服务范围</span></h1>
+        <p>物业管理，清洁服务，机电设备维修，园林景观工程施工，盆景、花卉出租，商务信息咨询，建筑装饰工程施工，清洁用品、机电设备、机械设备。</p>
+    </div>
+</div>
+<!--内容三开始-->
+<div class="main3a">
+    <div class="main3_">
+        <div class="service">
+            <b>企业优势</b>
+            <span>我们提供更加安全、便捷、优质的服务</span>
+            <em>SERVICE&nbsp;ADVANTGE</em>
+        </div>
+    </div>
+</div>
+<div class="main3b">
+    <div class="main3b_">
+        <ul>
+            <li>
+                <img src="../images/main3_1.jpg" />
+                <h1>全面</h1>
+                <p>本着提供星级服务目标，在目前物业服务的基础上不断完善服务范围，给业主提供更加全面可靠的服务。</p>
+            </li>
+            <li>
+                <img src="../images/main3_2.jpg" />
+                <h1>透明</h1>
+                <p>物业管理的过程中，各种费用收取及去向都会在社区内定时向业主公布，业主可以参与监督。</p>
+            </li>
+            <li>
+                <img src="../images/main3_3.jpg" />
+                <h1>高效</h1>
+                <p>有求必应是我们一向服务的宗旨，第一时间处理业主的各项问题，时刻给业主提供一个完美的体验。</p>
+            </li>
+        </ul>
+    </div>
+</div>
+<!--内容四开始-->
+
+<!--内容五开始-->
+<div class="main5a">
+    <div class="main5a_">
+        <div class="contact">
+            <b>联系我们</b>
+            <span>我们提供更加全面、便捷、优质的服务</span>
+            <em>CONTACT&nbsp;US</em>
+        </div>
+    </div>
+</div>
+<div class="main5b">
+    <div class="main5b_">
+        <!--百度地图容器-->
+        <div style="width:1200px;height:372px;" id="dituContent"></div>
+    </div>
+</div>
+<!--底部开始-->
+<div class="bottom">
+    <center style="color: white; padding-top: 22px; font-size:20px">
+        <p>&copy;2018&nbsp;安徽信息工程学院14级毕设&nbsp;</p>
+    </center>
+
+</div>
 
 </body>
+<script type="text/javascript">
+    //创建和初始化地图函数：
+    function initMap(){
+        createMap();//创建地图
+        setMapEvent();//设置地图事件
+        addMapControl();//向地图添加控件
+        addMarker();//向地图中添加marker
+    }
+
+    //创建地图函数：
+    function createMap(){
+        var map = new BMap.Map("dituContent");//在百度地图容器中创建一个地图
+        var point = new BMap.Point(118.363231,31.288575);//定义一个中心点坐标
+        map.centerAndZoom(point,20);//设定地图的中心点和坐标并将地图显示在地图容器中
+        window.map = map;//将map变量存储在全局
+    }
+
+    //地图事件设置函数：
+    function setMapEvent(){
+        map.enableDragging();//启用地图拖拽事件，默认启用(可不写)
+        map.enableScrollWheelZoom();//启用地图滚轮放大缩小
+        map.enableDoubleClickZoom();//启用鼠标双击放大，默认启用(可不写)
+        map.enableKeyboard();//启用键盘上下左右键移动地图
+    }
+
+    //地图控件添加函数：
+    function addMapControl(){
+        //向地图中添加缩放控件
+        var ctrl_nav = new BMap.NavigationControl({anchor:BMAP_ANCHOR_TOP_LEFT,type:BMAP_NAVIGATION_CONTROL_LARGE});
+        map.addControl(ctrl_nav);
+        //向地图中添加缩略图控件
+        var ctrl_ove = new BMap.OverviewMapControl({anchor:BMAP_ANCHOR_BOTTOM_RIGHT,isOpen:1});
+        map.addControl(ctrl_ove);
+        //向地图中添加比例尺控件
+        var ctrl_sca = new BMap.ScaleControl({anchor:BMAP_ANCHOR_BOTTOM_LEFT});
+        map.addControl(ctrl_sca);
+    }
+
+    //标注点数组
+    var markerArr = [{title:"2",content:"我的备注",point:"113.57817|23.562335",isOpen:0,icon:{w:23,h:25,l:46,t:21,x:9,lb:12}}
+        ,{title:"1",content:"我的备注",point:"113.606772|23.557962",isOpen:0,icon:{w:23,h:25,l:46,t:21,x:9,lb:12}}
+        ,{title:"3",content:"我的备注",point:"113.605766|23.546434",isOpen:0,icon:{w:23,h:25,l:46,t:21,x:9,lb:12}}
+    ];
+    //创建marker
+    function addMarker(){
+        for(var i=0;i<markerArr.length;i++){
+            var json = markerArr[i];
+            var p0 = json.point.split("|")[0];
+            var p1 = json.point.split("|")[1];
+            var point = new BMap.Point(p0,p1);
+            var iconImg = createIcon(json.icon);
+            var marker = new BMap.Marker(point,{icon:iconImg});
+            var iw = createInfoWindow(i);
+            var label = new BMap.Label(json.title,{"offset":new BMap.Size(json.icon.lb-json.icon.x+10,-20)});
+            marker.setLabel(label);
+            map.addOverlay(marker);
+            label.setStyle({
+                borderColor:"#808080",
+                color:"#333",
+                cursor:"pointer"
+            });
+
+            (function(){
+                var index = i;
+                var _iw = createInfoWindow(i);
+                var _marker = marker;
+                _marker.addEventListener("click",function(){
+                    this.openInfoWindow(_iw);
+                });
+                _iw.addEventListener("open",function(){
+                    _marker.getLabel().hide();
+                })
+                _iw.addEventListener("close",function(){
+                    _marker.getLabel().show();
+                })
+                label.addEventListener("click",function(){
+                    _marker.openInfoWindow(_iw);
+                })
+                if(!!json.isOpen){
+                    label.hide();
+                    _marker.openInfoWindow(_iw);
+                }
+            })()
+        }
+    }
+    //创建InfoWindow
+    function createInfoWindow(i){
+        var json = markerArr[i];
+        var iw = new BMap.InfoWindow("<b class='iw_poi_title' title='" + json.title + "'>" + json.title + "</b><div class='iw_poi_content'>"+json.content+"</div>");
+        return iw;
+    }
+    //创建一个Icon
+    function createIcon(json){
+        var icon = new BMap.Icon("http://app.baidu.com/map/images/us_mk_icon.png", new BMap.Size(json.w,json.h),{imageOffset: new BMap.Size(-json.l,-json.t),infoWindowOffset:new BMap.Size(json.lb+5,1),offset:new BMap.Size(json.x,json.h)})
+        return icon;
+    }
+
+    initMap();//创建和初始化地图
+</script>
+<script src="../js/index.js"></script>
 </html>

@@ -193,6 +193,13 @@
         if (r != null) return decodeURI(r[2]); return null;
     }
     $("#prompt").html(getQueryString("msg"));
+
+    if(getQueryString("acMsg") != null) {
+        alert(getQueryString("acMsg"));
+	}
+
+
+
 </script>
 
 

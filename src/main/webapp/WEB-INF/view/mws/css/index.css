@@ -26,7 +26,7 @@ body{ font-size:12px; font-family:"微软雅黑"}
 
 /*内容二*/
 .main2{ width:1200px; height:373px; margin:0 auto; padding-top:22px}
-.main2_l{ width:600px; height:331px; float:left}
+.main2_l{ width:400px; height:331px; float:left;margin-left: 160px}
 .main2_r{ width:565px; height:331px; float:right}
 .main2_r h1{ height:35px; line-height:35px; background:url(../images/main2_rbg.jpg); font-size:18px; font-weight:normal; color:#333333;font-family:"微软雅黑";}
 .main2_r h1 span{ margin-left:30px}
