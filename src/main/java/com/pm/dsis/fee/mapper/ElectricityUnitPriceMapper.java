@@ -15,19 +15,37 @@ public interface ElectricityUnitPriceMapper {
     List<ElectricityUnitPrice> selectAllelectPrice();
 
 
+    /**
+     * 添加电价
+     * @param electricityUnitPrice
+     * @return
+     */
+    int insertElectUnitPrice(ElectricityUnitPrice electricityUnitPrice);
+
+
+    /**
+     * 更新电价
+     * @param electricityUnitPrice
+     * @return
+     */
+    int updateElectUnitPriceById(ElectricityUnitPrice electricityUnitPrice);
+
+    /**
+     * 删除电价
+     * @param electricityUnitPrice
+     * @return
+     */
+    int deleteElectUnitPriceById(ElectricityUnitPrice electricityUnitPrice);
+
 
 
 
 
     int deleteByPrimaryKey(Long eaUrId);
 
-    int insert(ElectricityUnitPrice record);
-
     int insertSelective(ElectricityUnitPrice record);
 
     ElectricityUnitPrice selectByPrimaryKey(Long eaUrId);
 
     int updateByPrimaryKeySelective(ElectricityUnitPrice record);
-
-    int updateByPrimaryKey(ElectricityUnitPrice record);
 }

@@ -61,9 +61,7 @@
                                         </div>
 
                                     </div>
-                                    <script>
-                                        $("#hbName").attr("disabled", true);
-                                    </script>
+
 
                                 </div>
                                 <div class="col-sm-4" id="2">
@@ -71,10 +69,10 @@
                                         <label class="col-sm-4 control-label">工号</label>
                                         <div class="col-sm-8">
                                             <input id="hbNumber" name="hbNumber" data-bind="value:model.houseKeeperInfo.hbNumber" type="text" style="width: 96%" class="k-textbox">
-                                            <script>
-                                                $("#hbNumber").attr("disabled", true);
-                                            </script>
                                         </div>
+                                        <script>
+                                            $("#hbNumber").attr("disabled", true);
+                                        </script>
                                     </div>
                                 </div>
 
@@ -90,15 +88,13 @@
                             <div class="row">
                                 <div class="col-sm-4" id="4">
                                     <div class="form-group">
-                                        <label class="col-sm-4 control-label">性别</label>
+                                        <label class="col-sm-4 control-label">性别 <span style="color: red">*</span></label>
                                         <div class="col-sm-8">
-                                            <input id="hbGender" name="hbGender" data-bind="value:model.houseKeeperInfo.hbGender" type="text" style="width: 96%">
-                                            <span style="color: red">*</span>
-                                            <span style="color: red">请输入性别</span>
+                                            <input id="hbGender" name="hbGender" type="text" style="width: 96%">
                                         </div>
                                     </div>
                                     <script>
-                                        $("#hbGender").attr("disabled", true);
+
                                         var gender = 'gender';
                                         $.ajax({
                                             type : "GET" ,
@@ -120,11 +116,9 @@
                                 </div>
                                 <div class="col-sm-4" id="6">
                                     <div class="form-group">
-                                        <label class="col-sm-4 control-label">身份证号</label>
+                                        <label class="col-sm-4 control-label">身份证号 <span style="color: red">*</span></label>
                                         <div class="col-sm-8">
                                             <input id="hbIdNumber" name="hbIdNumber" data-bind="value:model.houseKeeperInfo.hbIdNumber" type="text" style="width:96%" class="k-textbox">
-                                            <span style="color: red">*</span>
-                                            <span style="color: red">请输入身份证号</span>
                                         </div>
                                     </div>
                                 </div>
@@ -145,9 +139,6 @@
                                         <div class="col-sm-8">
                                             <input id="hbPosition" name="hbPosition" data-bind="value:model.houseKeeperInfo.hbPosition"  type="text" style="width:96%" class="k-textbox">
                                         </div>
-                                        <script>
-                                            $("#hbPosition").attr("disabled", true);
-                                        </script>
                                     </div>
                                 </div>
 
@@ -157,19 +148,15 @@
                                         <div class="col-sm-8">
                                             <input id="hbInductionDateStr" name="hbInductionDateStr" data-bind="value:model.houseKeeperInfo.hbInductionDateStr" type="text" style="width:96%" class="k-textbox">
                                         </div>
-                                        <script>
-                                            $("#hbInductionDateStr").attr("disabled", true);
-                                        </script>
                                     </div>
                                 </div>
                                 <div class="col-sm-4" id="10">
                                     <div class="form-group">
                                         <label class="col-sm-4 control-label">状态</label>
                                         <div class="col-sm-8">
-                                            <input id="hbStatus" name="hbStatus" type="text" style="width:96%" data-bind="value:model.houseKeeperInfo.hbStatus">
+                                            <input id="hbStatus" name="hbStatus" type="text" style="width:96%" >
                                         </div>
                                         <script>
-                                            $("#hbStatus").attr("disabled", true);
                                             var hbStatus = 'hbStatus';
                                             $.ajax({
                                                 type : "GET" ,
@@ -192,7 +179,33 @@
                                 </div>
                             </div>
                             <div class="row">
-
+                                <div class="col-sm-4" id="hbRoleMd">
+                                    <div class="form-group">
+                                        <label class="col-sm-4 control-label">系统角色 <span style="color: red">*</span></label>
+                                        <div class="col-sm-8">
+                                            <input id="hbRole"  type="text" style="width: 100%" >
+                                        </div>
+                                        <script>
+                                            var type = 'hbRole';
+                                            $.ajax({
+                                                type : "GET" ,
+                                                url: "/ci/selectByType",
+                                                dataType: "json",
+                                                data:{commonType : type},
+                                                success: function (data) {
+                                                    if (data.success) {
+                                                        hbRoleInfoSource = eval(data.rows);
+                                                        $("#hbRole").kendoComboBox({
+                                                            dataTextField: "commonName",
+                                                            dataValueField: "commonValue",
+                                                            dataSource: hbRoleInfoSource,
+                                                        });
+                                                    }
+                                                }
+                                            });
+                                        </script>
+                                    </div>
+                                </div>
                             </div>
                             <div style="margin-bottom: 10px;margin-top: 5px">
                                 <span class="btn btn-primary" style="width: 150px">联系方式</span>
@@ -200,31 +213,25 @@
                             <div class="row">
                                 <div class="col-sm-4" id="19">
                                     <div class="form-group">
-                                        <label class="col-sm-4 control-label">手机号</label>
+                                        <label class="col-sm-4 control-label">手机号 <span style="color: red">*</span></label>
                                         <div class="col-sm-8">
                                             <input id="hbPhone" name="hbPhone" type="text" style="width: 96%" data-bind="value:model.houseKeeperInfo.hbPhone" class="k-textbox">
-                                            <span style="color: red">*</span>
-                                            <span style="color: red">请输入手机号</span>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="col-sm-4" id="22">
                                     <div class="form-group">
-                                        <label class="col-sm-4 control-label">紧急联系人</label>
+                                        <label class="col-sm-4 control-label">紧急联系人 <span style="color: red">*</span></label>
                                         <div class="col-sm-8">
                                             <input id="emergencyContact" name="emergencyContact" type="text" style="width: 96%" data-bind="value:model.houseKeeperInfo.emergencyContact" class="k-textbox">
-                                            <span style="color: red">*</span>
-                                            <span style="color: red">请输入紧急联系人</span>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="col-sm-4" id="23">
                                     <div class="form-group">
-                                        <label class="col-sm-4 control-label">紧急联系人电话</label>
+                                        <label class="col-sm-4 control-label">紧急联系人电话 <span style="color: red">*</span></label>
                                         <div class="col-sm-8">
                                             <input id="emergencyContactPhone" name="emergencyContactPhone" type="text" style="width: 96%" data-bind="value:model.houseKeeperInfo.emergencyContactPhone" class="k-textbox">
-                                            <span style="color: red">*</span>
-                                            <span style="color: red">请输入紧急联系人电话</span>
                                         </div>
                                     </div>
                                 </div>
@@ -232,11 +239,9 @@
                             <div class="row">
                                 <div class="col-sm-4" id="16">
                                     <div class="form-group">
-                                        <label class="col-sm-4 control-label">工作手机号</label>
+                                        <label class="col-sm-4 control-label">工作手机号<span style="color: red">*</span></label>
                                         <div class="col-sm-8">
                                             <input id="hbWorkPhone" name="hbWorkPhone" type="text" style="width:96%" data-bind="value:model.houseKeeperInfo.hbWorkPhone" class="k-textbox">
-                                            <span style="color: red">*</span>
-                                            <span style="color: red">请输入紧急联系人电话</span>
                                         </div>
                                     </div>
                                 </div>
@@ -249,6 +254,8 @@
                                     </div>
                                 </div>
                             </div>
+
+
                         </div>
                     </form>
                 </div>
@@ -317,35 +324,57 @@
             }
             return num;
         }
+
+        /* 获取URL后的参数 */
+        function getQueryString(name) {
+            var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i");
+            var r = window.location.search.substr(1).match(reg);
+            if (r != null) return decodeURI(r[2]); return null;
+        }
+
+        editFlag = getQueryString("newEdit");
+        editHbId = getQueryString("editHbId");
+
         hdId =JSON.parse(window.localStorage["loginIdInfo"]);
 
-        /*  查询全部信息 */
-        $.ajax({
-            type: 'POST',
-            url: '/em/selectHouseInfoById',
-            dataType: "json",
-            data:{hdId:hdId},
-            success: function (data) {
-                viewModel.model.set('houseKeeperInfo', data.rows[0]);
-                gender = viewModel.model.houseKeeperInfo.hbGender;
-                $("#hbGender").data("kendoComboBox").value(gender);
-                /*object = viewModel.model.userInfo.object;
-                 $("#object").data("kendoComboBox").value(object);*/
-            }
-        });
+        if (editHbId != null) {
+            hdId = editHbId;
+            editFlag = null;
+        }
+
+        if (editFlag != null) {
+            $("#hbInductionDateStr").attr('type','date');
+           // data-bind="value:model.houseKeeperInfo.hbInductionDateStr"
+            $("#hbInductionDateStr").attr('data-bind','value:model.houseKeeperInfo.hbInductionDate');
+            $("#hbInductionDateStr").attr('name','hbInductionDate');
+        }
+
+        if (editFlag == null) {
+            /*  查询全部信息 */
+            $.ajax({
+                type: 'POST',
+                url: '/em/selectHouseInfoById',
+                dataType: "json",
+                data:{hdId:hdId},
+                success: function (data) {
+                    viewModel.model.set('houseKeeperInfo', data.rows[0]);
+                    gender = viewModel.model.houseKeeperInfo.hbGender;
+                    $("#hbGender").data("kendoComboBox").value(data.rows[0].hbGender);
+                    $("#hbStatus").data("kendoComboBox").value(data.rows[0].hbStatus);
+                    $("#hbRole").data("kendoComboBox").value(data.rows[0].hbRole);
+                }
+            });
+        }
+
 
         function saveHouseInfo(){
-            if( $("#hbGender").val()!="" ){
-                gender = viewModel.model.houseKeeperInfo.hbGender.commonValue;
-                viewModel.model.houseKeeperInfo.set('hbGender',gender);
-            }
-            if( $("#hbStatus").val()!="" ){
-                status = viewModel.model.houseKeeperInfo.hbStatus.commonValue;
-                viewModel.model.houseKeeperInfo.set('hbStatus',status);
-            }
+
+            //多个选择框的更改
+            viewModel.model.houseKeeperInfo.set('hbGender',$("#hbGender").val());
+            viewModel.model.houseKeeperInfo.set('hbStatus',$("#hbStatus").val());
+            viewModel.model.houseKeeperInfo.set('hbRole',$("#hbRole").val());
+
             var houseKeeperInfo = JSON.stringify(viewModel.model.houseKeeperInfo);
-            alert( $("#hbGender").val())
-            alert( $("#hbStatus").val())
             $.ajax({
                 type: 'POST',
                 url: '/em/insertHouseInfo',
@@ -355,41 +384,25 @@
                 success: function (data) {
                     if (data.success) {
                         alert("保存成功！")
-                        //userId = data.rows[0];
-                        //viewModel.model.houseKeeperInfo.set('userId',data.rows[0]);
                     }
                 }
             });
         }
 
-        function saveBuildingInfo(){
-            var userId= viewModel.model.houseKeeperInfo.userId;
-            va = $("#buildType").data("kendoComboBox").value();
-            $.ajax({
-                type: 'POST',
-                url: '/mm/insertBuildingInfo',
-                dataType: "json",
-                contentType: "application/json",
-                data: BuildingInfo,
-                success: function (data) {
-                    if (data.success) {
-                        alert("保存成功！")
-                        $.ajax({
-                            type : "POST" ,
-                            url: "/mm/selectBuildById",
-                            dataType: "json",
-                            data: {userId:userId},
-                            success: function (data) {
-                                if (data.success) {
-                                    viewModel.model.set('BuildingInfo',data.rows[0]);
-                                }
-                            }
-                        });
+        //权限控制
 
-                    }
-                }
-            });
+        adminRole = JSON.parse(window.localStorage["adminRole"]);
+        if (adminRole == "admin") {
+            $("#hbName").attr("disabled", true);
+            $("#hbNumber").attr("disabled", true);
+            $("#hbGender").attr("disabled", true);
+            $("#hbPosition").attr("disabled", true);
+            $("#hbInductionDateStr").attr("disabled", true);
+            $("#hbRole").attr("disabled", true);
+            $("#hbStatus").attr("disabled", true);
         }
+
+
     </script>
 </div>
 

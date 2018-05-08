@@ -139,6 +139,7 @@
                 </div>
 
                     <div class="row">
+
                         <div class="col-sm-4" id="16">
                             <div class="form-group">
                                 <label class="col-sm-4 control-label">工号</label>
@@ -147,11 +148,40 @@
                                 </div>
                             </div>
                         </div>
+
+                        <div class="col-sm-4" id="hbRoleMd">
+                            <div class="form-group">
+                                <label class="col-sm-4 control-label">系统角色</label>
+                                <div class="col-sm-8">
+                                    <input id="hbRole"  type="text" style="width: 100%" data-bind="value:model.houseKeeperInfo.hbRole">
+                                </div>
+                                <script>
+                                    var type = 'hbRole';
+                                    $.ajax({
+                                        type : "GET" ,
+                                        url: "/ci/selectByType",
+                                        dataType: "json",
+                                        data:{commonType : type},
+                                        success: function (data) {
+                                            if (data.success) {
+                                                hbRoleInfoSource = eval(data.rows);
+                                                $("#hbRole").kendoComboBox({
+                                                    dataTextField: "commonName",
+                                                    dataValueField: "commonValue",
+                                                    dataSource: hbRoleInfoSource,
+                                                });
+                                            }
+                                        }
+                                    });
+                                </script>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
                 <div class="panel-footer text-right"><!--data-bind="click:queryApply"-->
-                    <span class="btn btn-success" onclick="queryAllUserInfo()"><i class="fa fa-search"></i>查询</span>
+                    <span class="btn btn-success" onclick="queryAllUserInfo()" style="margin-right: 5px"><i class="fa fa-search"></i>查询</span>
+                    <span id="newEditBtn" class="btn btn-primary k-grid-add" onclick="newEditUserInfo()">新建</span>
                 </div>
 
             </form>
@@ -201,9 +231,9 @@
     });
 
 
-    $("#grid").kendoGrid({
+    var grid = $("#grid").kendoGrid({
         dataSource: dataSource,
-        height: 400,
+        height: 355,
         resizable  : true,
         scrollable : true,
         navigatable: false,
@@ -222,7 +252,7 @@
                     "class": "table-header-cell",
                     style  : "text-align: center"
                 },
-                width: 120
+             //   width: 120
             }, {
                 field: "hbName",
                 title: "姓名",
@@ -230,7 +260,19 @@
                     "class": "table-header-cell",
                     style  : "text-align: center"
                 },
-                width: 120
+                template: function (rowdata) {
+                    adminRole = JSON.parse(window.localStorage["adminRole"]);
+                    if (!!rowdata.hbId) {
+                        if (adminRole != 'admin') {
+                            return '<a id="'+rowdata.hbId+'" href="javascript:void(0);" onclick="editHbInfo('+rowdata.hbId +')">'+rowdata.hbName+'</a>';
+                        } else {
+                            return '<span id="'+rowdata.hbId+'">'+rowdata.hbName+'</span>';
+                        }
+                        return '<a id="'+rowdata.hbId+'" href="javascript:void(0);" onclick="editHbInfo('+rowdata.hbId +')">'+rowdata.hbName+'</a>';
+                    }
+                    return '';
+                },
+            //    width: 120
             },{
                 field: "hbGender",
                 title: "性别",
@@ -238,7 +280,7 @@
                     "class": "table-header-cell",
                     style  : "text-align: center"
                 },
-                width: 120,
+             //   width: 120,
                 template: function(dataItem){
                     var v = dataItem.hbGender;
                     $.each(commonInfoSource,function(i,n){
@@ -259,14 +301,42 @@
 
                             });
                 }
-            }, {
+            },{
+                field: "hbRole",
+                title: "系统角色",
+                headerAttributes: {
+                    "class": "table-header-cell",
+                    style  : "text-align: center"
+                },
+                //   width: 120,
+                template: function(dataItem){
+                    var v = dataItem.hbRole;
+                    $.each(hbRoleInfoSource,function(i,n){
+                        if((n.commonValue||'').toLowerCase() == (v||'').toLowerCase()){
+                            v = n.commonName;
+                            return v;
+                        }
+                    })
+                    return v;
+                },
+                editor: function (container, options) {
+                    $('<input  name="' + options.field + '"/>').appendTo(container)
+                        .kendoDropDownList(
+                            {
+                                dataTextField: "commonName",
+                                dataValueField: "commonValue",
+                                dataSource: hbRoleInfoSource,
+
+                            });
+                }
+            },{
                 field: "hbPosition",
                 title: "职务",
                 headerAttributes: {
                     "class": "table-header-cell",
                     style  : "text-align: center"
                 },
-                width: 120,
+             //   width: 120,
 
             }, {
                 field: "hbStatus",
@@ -275,7 +345,7 @@
                     "class": "table-header-cell",
                     style  : "text-align: center"
                 },
-                width: 120,
+              //  width: 120,
                 template: function(dataItem){
                     var v = dataItem.hbStatus;
                     $.each(hbStatusSource,function(i,n){
@@ -303,7 +373,7 @@
                     "class": "table-header-cell",
                     style  : "text-align: center"
                 },
-                width: 120
+              //  width: 120
             }, {
                 field: "hbWorkPhone",
                 title: "工作手机号",
@@ -311,14 +381,24 @@
                     "class": "table-header-cell",
                     style  : "text-align: center"
                 },
-                width: 120
+               // width: 120
             }
         ],
         editable:false
     });
 
-    function queryAllUserInfo() {
+    var grid = $("#grid").data("kendoGrid");
 
+   //权限控制
+    adminRole = JSON.parse(window.localStorage["adminRole"]);
+    if (adminRole == "admin") {
+        $("#hbRoleMd").hide();
+        grid.hideColumn("hbRole");
+        $("#newEditBtn").hide();
+
+    }
+
+    function queryAllUserInfo() {
         if( $("#hbGender").val()!="" ){
             gender = viewModel.model.houseKeeperInfo.hbGender.commonValue;
             viewModel.model.houseKeeperInfo.set('hbGender',gender);
@@ -326,6 +406,10 @@
         if( $("#hbStatus").val()!="" ){
             status = viewModel.model.houseKeeperInfo.hbStatus.commonValue;
             viewModel.model.houseKeeperInfo.set('hbStatus',status);
+        }
+        if( $("#hbRole").val()!="" ){
+            role = viewModel.model.houseKeeperInfo.hbRole.commonValue;
+            viewModel.model.houseKeeperInfo.set('hbRole',role);
         }
 
         queryUserInfo=JSON.stringify(viewModel.model.houseKeeperInfo)
@@ -351,7 +435,7 @@
                             }
                         },
                         page:1,
-                        pageSize:5
+                        pageSize:10
                     });
                     grid.setDataSource(dataSource);
                 }
@@ -359,6 +443,15 @@
         })
     }
 
+    function newEditUserInfo() {
+        window.open ("./em_edit.html?newEdit=edit", "newwindow","toolbar=no, location=no, directories=no, status=no," +
+            " menubar=no, scrollbars=no, resizable=no, copyhistory=no, width=1000, height=600, left=200")
+    }
+
+    function editHbInfo(hbId) {
+        window.open ("./em_edit.html?editHbId="+hbId+"", "newwindow","toolbar=no, location=no, directories=no, status=no," +
+            " menubar=no, scrollbars=no, resizable=no, copyhistory=no, width=1000, height=600, left=200")
+    }
 
     var houseKeeperInfo = JSON.stringify(viewModel.model.houseKeeperInfo);
     $.ajax({
@@ -384,7 +477,7 @@
                         }
                     },
                     page:1,
-                    pageSize:5
+                    pageSize:10
                 });
                 grid.setDataSource(dataSource);
             }

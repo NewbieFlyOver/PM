@@ -17,18 +17,26 @@
     ATTRIBUTE5, ATTRIBUTE6
   </sql>
 
+  <select id="selectPmUnitPrice" resultMap="BaseResultMap">
+    select
+    <include refid="Base_Column_List" />
+    from pm_unit_price
+  </select>
+
   <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Long" >
     select 
     <include refid="Base_Column_List" />
     from pm_unit_price
     where PM_UP_ID = #{pmUpId,jdbcType=BIGINT}
   </select>
-  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long" >
+
+
+  <delete id="deletePmUnitPriceById" parameterType="java.lang.Long" >
     delete from pm_unit_price
     where PM_UP_ID = #{pmUpId,jdbcType=BIGINT}
   </delete>
 
-  <insert id="insert" parameterType="com.pm.dsis.fee.dto.PmUnitPrice" >
+  <insert id="insertPmUnitPrice" parameterType="com.pm.dsis.fee.dto.PmUnitPrice" >
     insert into pm_unit_price (PM_UP_ID, BUILDING_TYPE_ID, PM_UP_PRICE, 
       ATTRIBUTE1, ATTRIBUTE2, ATTRIBUTE3, 
       ATTRIBUTE4, ATTRIBUTE5, ATTRIBUTE6
@@ -38,6 +46,8 @@
       #{attribute4,jdbcType=VARCHAR}, #{attribute5,jdbcType=VARCHAR}, #{attribute6,jdbcType=VARCHAR}
       )
   </insert>
+
+
   <insert id="insertSelective" parameterType="com.pm.dsis.fee.dto.PmUnitPrice" >
     insert into pm_unit_price
     <trim prefix="(" suffix=")" suffixOverrides="," >
@@ -130,7 +140,8 @@
     </set>
     where PM_UP_ID = #{pmUpId,jdbcType=BIGINT}
   </update>
-  <update id="updateByPrimaryKey" parameterType="com.pm.dsis.fee.dto.PmUnitPrice" >
+
+  <update id="updatePmUnitPriceById" parameterType="com.pm.dsis.fee.dto.PmUnitPrice" >
     update pm_unit_price
     set BUILDING_TYPE_ID = #{buildingTypeId,jdbcType=BIGINT},
       PM_UP_PRICE = #{pmUpPrice,jdbcType=REAL},
@@ -142,4 +153,5 @@
       ATTRIBUTE6 = #{attribute6,jdbcType=VARCHAR}
     where PM_UP_ID = #{pmUpId,jdbcType=BIGINT}
   </update>
+
 </mapper>

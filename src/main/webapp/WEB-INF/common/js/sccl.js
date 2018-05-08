@@ -412,7 +412,6 @@ $(function(){
                         {"id":"25","name":"物业费","parentId":"7","url":"view/dsis/cm/cm_fee_amount.html","icon":"","order":"1","isHeader":"0","childMenus":""},
 						{"id":"23","name":"用水量","parentId":"7","url":"view/dsis/cm/cm_water_amount.html","icon":"","order":"1","isHeader":"0","childMenus":""},
 						{"id":"24","name":"用电量","parentId":"7","url":"view/dsis/cm/cm_elect_amount.html","icon":"","order":"1","isHeader":"0","childMenus":""},
-						{"id":"19","name":"测试","parentId":"7","url":"test01.html","icon":"","order":"1","isHeader":"0","childMenus":""}
 					]},
 					{"id":"8","name":"车位管理","parentId":"1","url":"","icon":"&#xe602;","order":"1","isHeader":"0","childMenus":[
 						{"id":"26","name":"车位查询","parentId":"8","url":"view/dsis/gs/gs_query.html","icon":"","order":"1","isHeader":"0","childMenus":""},

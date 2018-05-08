@@ -284,6 +284,18 @@
                                 },
                                 width: 120
                             },{
+                                title: '故障图片',
+                                width: 80,
+                                template: function (rowdata) {
+                                    if (!!rowdata.riId) {
+                                        return'<img src="../../../images/riImg/'+rowdata.riImg+'" style="width: 100px;height: 100px">'
+                                    }
+                                    return '';
+                                },
+                                attributes: {style: "text-align:center"},
+                                headerAttributes: { style: "text-align:center"}
+
+                            },{
                                 field: "riFlag",
                                 title: "是否处理",
                                 headerAttributes: {
@@ -347,18 +359,6 @@
                                     style: "text-align: center"
                                 },
                                 width: 80,
-                            }, {
-                                title: '故障图片',
-                                width: 80,
-                                template: function (rowdata) {
-                                    if (!!rowdata.riId) {
-                                          return'<img src="../../../images/riImg/'+rowdata.riImg+'" style="width: 100px;height: 100px">'
-                                    }
-                                    return '';
-                                },
-                                attributes: {style: "text-align:center"},
-                                headerAttributes: { style: "text-align:center"}
-
                             }
                         ],
                         editable: true,

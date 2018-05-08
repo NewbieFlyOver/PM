@@ -191,7 +191,7 @@ public class LrServiceImpl implements LrService {
 
         } else {
             HousekeeperBuildingInfo hb = new HousekeeperBuildingInfo();
-            hb.setHbAccount(userInfo.getUserAccount());
+            hb.setHbNumber((long) Integer.parseInt(userInfo.getUserAccount()));
             hb.setHbPassword(getMD5(userInfo.getUserPassword()));
 
             HousekeeperBuildingInfo hbInf = housekeeperBuildingInfoMapper.selectLoginInfo(hb);

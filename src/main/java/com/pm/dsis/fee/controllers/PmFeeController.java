@@ -36,6 +36,7 @@ public class PmFeeController {
     public ResponseData selectPmFeeById(HttpServletRequest request, HttpServletResponse response, @RequestBody PmFee pmFee){
         return new ResponseData(pmFeeService.selectPmFeeById(pmFee));
     }
+
     /**
      * 条件userId查询
      * @param request
@@ -64,5 +65,23 @@ public class PmFeeController {
         return new ResponseData();
 
     }
+
+
+    /**
+     * 添加当年剩下月份的物业费
+     * @param request
+     * @param response
+     * @param buildFullRoom
+     * @return
+     */
+    @RequestMapping(value = "/fee/insertRePmFee",method = RequestMethod.POST)
+    @ResponseBody//
+    public ResponseData insertRePmFee(HttpServletRequest request, HttpServletResponse response, String buildFullRoom){
+        pmFeeService.insertRePmFee(buildFullRoom);
+        return new ResponseData();
+    }
+
+
+
 
 }

@@ -14,7 +14,7 @@ public interface HousekeeperBuildingInfoService {
      * @param housekeeperBuildingInfo
      * @return
      */
-    void insertHouseInfo(HousekeeperBuildingInfo housekeeperBuildingInfo);
+    void insertHouseInfo(HousekeeperBuildingInfo housekeeperBuildingInfo) throws Exception;
 
     /**
      * 更新员工信息

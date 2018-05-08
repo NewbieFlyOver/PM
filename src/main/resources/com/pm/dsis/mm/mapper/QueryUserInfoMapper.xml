@@ -21,43 +21,39 @@
       FROM user_info ui,building_info bi
       <where>
           ui.USER_ID = bi.USER_ID
-          <if test="memberSituation!=null">
+          <if test="memberSituation!=null and memberSituation!=''">
               AND ui.USER_ID = um.USER_ID
           </if>
 
-          <if test="userName!=null">
+          <if test="userName!=null and userName!=''">
              AND ui.USER_NAME like concat('%', concat(#{userName}, '%'))
           </if>
-          <if test="userPhone!=null">
+          <if test="userPhone!=null and userPhone!=''">
               and ui.USER_PHONE like concat('%', concat(#{userPhone}, '%'))
           </if>
-          <if test="object!=null">
+          <if test="object!=null and object!=''">
               and ui.OBJECT =#{object}
           </if>
-          <if test="memberSituation!=null">
+          <if test="memberSituation!=null and memberSituation!=''">
               and um.MEMBER_SITUATION =  #{memberSituation}
           </if>
-          <if test="buildingTheater!=null">
+          <if test="buildingTheater!=null and buildingTheater!=''">
               and bi.BUILDING_THEATER =  #{buildingTheater}
           </if>
-          <if test="buildingUnit!=null">
+          <if test="buildingUnit!=null and buildingUnit!=''">
               and bi.BUILDING_UNIT =  #{buildingUnit}
           </if>
-          <if test="buildingFloor!=null">
+          <if test="buildingFloor!=null and buildingFloor!=''">
               and bi.BUILDING_FLOOR =  #{buildingFloor}
           </if>
-          <if test="buildingRoom!=null">
+          <if test="buildingRoom!=null and buildingRoom!=''">
               and bi.BUILDING_ROOM =  #{buildingRoom}
           </if>
-          <if test="housingUsage!=null">
-          and bi.bi.HOUSING_USAGE =  #{housingUsage}
-      </if>
+          <if test="housingUsage!=null and housingUsage!=''">
+              and bi.HOUSING_USAGE =  #{housingUsage}
+          </if>
       </where>
     </select>
-
-
-
-
 </mapper>
 
 

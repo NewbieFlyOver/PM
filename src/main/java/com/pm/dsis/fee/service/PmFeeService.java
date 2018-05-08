@@ -10,10 +10,16 @@ import java.util.List;
 public interface PmFeeService {
 
     /**
-     * 添加物业费
+     * 添加下一年物业费
      * @return
      */
     void insert();
+
+    /**
+     * 添加当年剩下月份的物业费
+     * @return
+     */
+    void insertRePmFee(String buildFullRoom);
 
     /**
      * 条件查询

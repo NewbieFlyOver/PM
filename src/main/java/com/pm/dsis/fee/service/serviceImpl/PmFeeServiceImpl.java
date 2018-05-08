@@ -71,6 +71,60 @@ public class PmFeeServiceImpl implements PmFeeService{
         }
     }
 
+
+    /**
+     * 添加当年剩下月份的物业费
+     * @return
+     */
+    public void insertRePmFee(String buildFullRoom) {
+        List<PmFee> pmFeeList = pmFeeMapper.selectPriceAndType();
+        for (PmFee pf : pmFeeList) {
+            Date date = new Date();
+            DateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+            String dateStr = sdf.format(date);
+
+            String yearStr = dateStr.substring(0,dateStr.length()-6);
+            String monthStr = dateStr.substring(5,7);
+            String nextMonthStr = "";
+            String dayStr = "28";
+
+            int monthInt = Integer.parseInt(monthStr);
+
+            for (int i=1;i<13;i++) {
+                if (i<10) {
+                    monthStr = "0" + i;
+                }else{
+                    monthStr = "" +i ;
+                }
+                if (i+1<10) {
+                    nextMonthStr = "0"+(i+1);
+                }else{
+                    nextMonthStr = ""+(i+1);
+                }
+
+                SimpleDateFormat formatter = new SimpleDateFormat( "yyyy-MM-dd");
+                String beginDateS = yearStr+"-"+monthStr+"-"+dayStr;
+                String endDateS = yearStr+"-"+nextMonthStr+"-"+dayStr;
+                Date beginDate = null;
+                Date endDate = null;
+                try {
+                    beginDate = formatter.parse(beginDateS);
+                    endDate =formatter.parse(endDateS);
+                } catch (ParseException e) {
+                    e.printStackTrace();
+                }
+
+                Float sumFee = pf.getPmPrice()*pf.getBuildingArea();
+                //添加月份
+                pf.setPmBeginDate(beginDate);
+                pf.setPmEndDate(endDate);
+                pf.setPmMonth(Integer.parseInt(yearStr+monthStr));
+                pf.setMonthFee(sumFee);
+                pmFeeMapper.insert(pf);
+            }
+        }
+    }
+
     public List<PmFee> selectPmFee(PmFee pmFee){
         List<PmFee> pmFeeList = pmFeeMapper.selectPmFee(pmFee);
         for (PmFee pf : pmFeeList) {

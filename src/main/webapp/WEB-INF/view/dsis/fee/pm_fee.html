@@ -94,7 +94,9 @@
 
     <div class="panel-footer text-right"><!--data-bind="click:queryApply"-->
         <span class="btn btn-success" onclick="queryAllUserInfo()"><i class="fa fa-search"></i>查询</span>
+        <span class="btn btn-primary k-grid-add"  onclick="feePrice()" style="float:right;margin-left:15px;">物业费单价</span>
         <span class="btn btn-primary k-grid-add"  onclick="saveMemberInfo()" style="float:right;margin-left:15px;">缴费</span>
+
     </div>
 
     </form>
@@ -131,7 +133,7 @@
         },
         batch: true,
         serverPaging : true,
-        pageSize: 10,
+        pageSize: 20,
         schema: {
             data:'rows',
             total:'total',
@@ -154,7 +156,7 @@
 
     $("#grid").kendoGrid({
         dataSource: dataSource,
-        height: 400,
+        height: 420,
         resizable  : true,
         scrollable : true,
         navigatable: false,
@@ -271,7 +273,7 @@
                         }
                     },
                     page:1,
-                    pageSize:5
+                    pageSize:20
                 });
                 grid.setDataSource(dataSource);
             }
@@ -326,7 +328,7 @@
                                                     }
                                                 },
                                                 page: 1,
-                                                pageSize: 5
+                                                pageSize: 20
                                             }
                                         });
                                         grid.setDataSource(dataSource);
@@ -343,6 +345,12 @@
 
     }
 
+    function feePrice() {
+        window.open ("./fee_pmUnitPrice.html", "newwindow","toolbar=no, location=no, directories=no, status=no," +
+            " menubar=no, scrollbars=no, resizable=no, copyhistory=no, width=1000, height=460, left=200");
+    }
+    
+    
     function queryAllUserInfo() {
         if( $("#pmFlag").val()!="" ){
             pmFlag = viewModel.model.pmFeeAmountInfo.pmFlag.commonValue;
@@ -371,7 +379,7 @@
                                 }
                             },
                             page: 1,
-                            pageSize: 5
+                            pageSize: 20
                         }
                     });
                     grid.setDataSource(dataSource);
@@ -379,7 +387,6 @@
             }
         })
     }
-
 
 
 </script>

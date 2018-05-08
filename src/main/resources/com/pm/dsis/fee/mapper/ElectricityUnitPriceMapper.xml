@@ -31,12 +31,12 @@
     from electricity_unit_price
     where EA_UR_ID = #{eaUrId,jdbcType=BIGINT}
   </select>
-  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long" >
+  <delete id="deleteElectUnitPriceById" parameterType="com.pm.dsis.fee.dto.ElectricityUnitPrice" >
     delete from electricity_unit_price
     where EA_UR_ID = #{eaUrId,jdbcType=BIGINT}
   </delete>
 
-  <insert id="insert" parameterType="com.pm.dsis.fee.dto.ElectricityUnitPrice" >
+  <insert id="insertElectUnitPrice" parameterType="com.pm.dsis.fee.dto.ElectricityUnitPrice" >
     insert into electricity_unit_price (EA_UR_ID, EA_UR_CEILING, EA_UR_LOWER, 
       EA_UR_PRICE, ATTRIBUTE1, ATTRIBUTE2, 
       ATTRIBUTE3, ATTRIBUTE4, ATTRIBUTE5, 
@@ -146,7 +146,7 @@
     </set>
     where EA_UR_ID = #{eaUrId,jdbcType=BIGINT}
   </update>
-  <update id="updateByPrimaryKey" parameterType="com.pm.dsis.fee.dto.ElectricityUnitPrice" >
+  <update id="updateElectUnitPriceById" parameterType="com.pm.dsis.fee.dto.ElectricityUnitPrice" >
     update electricity_unit_price
     set EA_UR_CEILING = #{eaUrCeiling,jdbcType=REAL},
       EA_UR_LOWER = #{eaUrLower,jdbcType=REAL},

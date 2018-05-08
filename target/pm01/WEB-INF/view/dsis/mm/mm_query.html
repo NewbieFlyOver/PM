@@ -63,9 +63,27 @@
                             <div class="form-group">
                                 <label class="col-sm-4 control-label">缴费对象</label>
                                 <div class="col-sm-8">
-                                    <input id="object"  type="text" style="width: 100%" data-bind="value:model.queryUserInfo.object"
-                                           class="k-textbox">
+                                    <input id="object"  type="text" style="width: 100%">
                                 </div>
+                                <script>
+                                    var gender = 'payObject';
+                                    $.ajax({
+                                        type : "GET" ,
+                                        url: "/ci/selectByType",
+                                        dataType: "json",
+                                        data:{commonType : gender},
+                                        success: function (data) {
+                                            if (data.success) {
+                                                commonInfoSource = eval(data.rows);
+                                                $("#object").kendoComboBox({
+                                                    dataTextField: "commonName",
+                                                    dataValueField: "commonValue",
+                                                    dataSource: commonInfoSource,
+                                                });
+                                            }
+                                        }
+                                    });
+                                </script>
                             </div>
                         </div>
                     </div>
@@ -85,7 +103,8 @@
                             <div class="form-group">
                                 <label class="col-sm-4 control-label">单元号</label>
                                 <div class="col-sm-8">
-                                    <input id="buildingUnit"  type="text" style="width: 100%" data-bind="value:model.queryUserInfo.buildingUnit">
+                                    <input id="buildingUnit"  type="text" style="width: 100%" data-bind="value:model.queryUserInfo.buildingUnit"
+                                           class="k-textbox">
                                 </div>
                             </div>
                         </div>
@@ -94,7 +113,8 @@
                             <div class="form-group">
                                 <label class="col-sm-4 control-label">楼层数</label>
                                 <div class="col-sm-8">
-                                    <input id="buildingFloor"  type="text" style="width: 100%" data-bind="value:model.queryUserInfo.buildingFloor">
+                                    <input id="buildingFloor"  type="text" style="width: 100%" data-bind="value:model.queryUserInfo.buildingFloor"
+                                           class="k-textbox">
                                 </div>
                             </div>
                         </div>
@@ -105,7 +125,8 @@
                             <div class="form-group">
                                 <label class="col-sm-4 control-label">门牌号</label>
                                 <div class="col-sm-8">
-                                    <input type="text" style="width: 100%" data-bind="value:model.queryUserInfo.buildingRoom" id="buildingRoom">
+                                    <input type="text" style="width: 100%" data-bind="value:model.queryUserInfo.buildingRoom" id="buildingRoom"
+                                           class="k-textbox">
                                 </div>
                             </div>
                         </div>
@@ -114,21 +135,29 @@
                             <div class="form-group">
                                 <label class="col-sm-4 control-label">房屋使用情况</label>
                                 <div class="col-sm-8">
-                                    <input id="housingUsage"  type="text" style="width: 100%" data-bind="value:model.queryUserInfo.housingUsage"
-                                           class="k-textbox">
+                                    <input id="housingUsage"  type="text" style="width: 100%">
                                 </div>
+                                <script>
+                                    var type = 'HouseUsage';
+                                    $.ajax({
+                                        type : "GET" ,
+                                        url: "/ci/selectByType",
+                                        dataType: "json",
+                                        data:{commonType : type},
+                                        success: function (data) {
+                                            if (data.success) {
+                                                commonInfoSourceHouse = eval(data.rows);
+                                                $("#housingUsage").kendoComboBox({
+                                                    dataTextField: "commonName",
+                                                    dataValueField: "commonValue",
+                                                    dataSource: commonInfoSourceHouse,
+                                                });
+                                            }
+                                        }
+                                    });
+                                </script>
                             </div>
                         </div>
-
-                        <!--<div class="col-sm-4" id="9">
-                            <div class="form-group">
-                                <label class="col-sm-4 control-label">老人儿童情况</label>
-                                <div class="col-sm-8">
-                                    <input id="memberSituation"  type="text" style="width: 100%" data-bind="value:model.queryUserInfo.memberSituation"
-                                           class="k-textbox">
-                                </div>
-                            </div>
-                        </div>-->
                     </div>
 
                 </div>
@@ -192,11 +221,6 @@
             success: function (data) {
                 if (data.success) {
                     commonInfoSource = eval(data.rows);
-                   /* $("#object").kendoComboBox({
-                        dataTextField: "commonName",
-                        dataValueField: "commonValue",
-                        dataSource: commonInfoSource,
-                    });*/
                 }
             }
         });
@@ -210,11 +234,6 @@
             success: function (data) {
                 if (data.success) {
                     commonInfoSourceHouse = eval(data.rows);
-                    /* $("#object").kendoComboBox({
-                     dataTextField: "commonName",
-                     dataValueField: "commonValue",
-                     dataSource: commonInfoSource,
-                     });*/
                 }
             }
         });
@@ -222,7 +241,7 @@
 
     $("#grid").kendoGrid({
         dataSource: dataSource,
-        height: 400,
+        height: 355,
         resizable  : true,
         scrollable : true,
         navigatable: false,
@@ -304,11 +323,6 @@
                                 dataValueField: "commonValue",
                                 dataSource: commonInfoSource,
                                 valuePrimitive: true,
-                               /* change : function (e) {
-                                    options.model.object = {};
-                                    options.model.object.name = this.text();
-                                    options.model.object.value = this.value();
-                                }*/
                             });
                 }
             }, {
@@ -329,12 +343,14 @@
     });
 
      function editUserInfo(userId) {
-         //top.location='./mm_edit.html';
-         window.open ("./mm_edit.html", "newwindow","'location=no, toolbar=no'")
-            /* "height=100, width=400, top=0, left=0, toolbar=no, menubar=no, scrollbars=no, resizable=no,location=no, status=no")*/
+         window.open ("./mm_edit.html", "newwindow","toolbar=no, location=no, directories=no, status=no," +
+             " menubar=no, scrollbars=no, resizable=no, copyhistory=no, width=1000, height=600, left=200");
          window.localStorage["editUserId"]=JSON.stringify(userId);
      }
     function queryAllUserInfo() {
+        viewModel.model.queryUserInfo.set("object",$("#object").val());
+        viewModel.model.queryUserInfo.set("housingUsage",$("#housingUsage").val());
+
         queryUserInfo=JSON.stringify(viewModel.model.queryUserInfo)
         $.ajax({
             type: 'POST',
@@ -358,7 +374,7 @@
                             }
                         },
                         page:1,
-                        pageSize:5
+                        pageSize:10
                     });
                     grid.setDataSource(dataSource);
                 }

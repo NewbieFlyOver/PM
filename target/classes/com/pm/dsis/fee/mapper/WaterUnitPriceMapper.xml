@@ -32,12 +32,12 @@
     from water_unit_price
     where WA_UR_ID = #{waUrId,jdbcType=BIGINT}
   </select>
-  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long" >
+  <delete id="deleteWaterUnitPriceById" parameterType="com.pm.dsis.fee.dto.WaterUnitPrice" >
     delete from water_unit_price
     where WA_UR_ID = #{waUrId,jdbcType=BIGINT}
   </delete>
 
-  <insert id="insert" parameterType="com.pm.dsis.fee.dto.WaterUnitPrice" >
+  <insert id="insertWaterUnitPrice" parameterType="com.pm.dsis.fee.dto.WaterUnitPrice" >
     insert into water_unit_price (WA_UR_ID, WA_UR_CEILING, WA_UR_LOWER, 
       WA_UR_PRICE, ATTRIBUTE1, ATTRIBUTE2, 
       ATTRIBUTE3, ATTRIBUTE4, ATTRIBUTE5, 
@@ -47,6 +47,8 @@
       #{attribute3,jdbcType=VARCHAR}, #{attribute4,jdbcType=VARCHAR}, #{attribute5,jdbcType=VARCHAR}, 
       #{attribute6,jdbcType=VARCHAR})
   </insert>
+
+
   <insert id="insertSelective" parameterType="com.pm.dsis.fee.dto.WaterUnitPrice" >
     insert into water_unit_price
     <trim prefix="(" suffix=")" suffixOverrides="," >
@@ -148,7 +150,7 @@
     </set>
     where WA_UR_ID = #{waUrId,jdbcType=BIGINT}
   </update>
-  <update id="updateByPrimaryKey" parameterType="com.pm.dsis.fee.dto.WaterUnitPrice" >
+  <update id="updateWaterUnitPriceById" parameterType="com.pm.dsis.fee.dto.WaterUnitPrice" >
     update water_unit_price
     set WA_UR_CEILING = #{waUrCeiling,jdbcType=REAL},
       WA_UR_LOWER = #{waUrLower,jdbcType=REAL},

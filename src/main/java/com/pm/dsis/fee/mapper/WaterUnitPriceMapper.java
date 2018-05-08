@@ -12,13 +12,30 @@ public interface WaterUnitPriceMapper {
      */
     List<WaterUnitPrice> selectAllWaterPrice();
 
+    /**
+     * 增加水价
+     * @param waterUnitPrice
+     * @return
+     */
+    int insertWaterUnitPrice(WaterUnitPrice waterUnitPrice);
+
+    /**
+     * 更改水价
+     * @param waterUnitPrice
+     * @return
+     */
+    int updateWaterUnitPriceById(WaterUnitPrice waterUnitPrice);
+
+    /**
+     * 删除水价
+     * @param waterUnitPrice
+     * @return
+     */
+    int deleteWaterUnitPriceById(WaterUnitPrice waterUnitPrice);
 
 
 
 
-    int deleteByPrimaryKey(Long waUrId);
-
-    int insert(WaterUnitPrice record);
 
     int insertSelective(WaterUnitPrice record);
 
@@ -26,5 +43,4 @@ public interface WaterUnitPriceMapper {
 
     int updateByPrimaryKeySelective(WaterUnitPrice record);
 
-    int updateByPrimaryKey(WaterUnitPrice record);
 }

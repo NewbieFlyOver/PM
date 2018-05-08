@@ -3,11 +3,13 @@ package com.pm.dsis.em.service.serviceImpl;
 import com.pm.dsis.em.dto.HousekeeperBuildingInfo;
 import com.pm.dsis.em.mapper.HousekeeperBuildingInfoMapper;
 import com.pm.dsis.em.service.HousekeeperBuildingInfoService;
+import com.pm.dsis.lr.service.ServiceImpl.LrServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -21,11 +23,18 @@ public class HousekeeperBuildingInfoServiceImpl implements HousekeeperBuildingIn
 
 
 
-    public void insertHouseInfo(HousekeeperBuildingInfo housekeeperBuildingInfo){
+    public void insertHouseInfo(HousekeeperBuildingInfo housekeeperBuildingInfo) throws Exception{
 
         if( null == housekeeperBuildingInfo.getHbId() ) {
             Long bigNumber = housekeeperBuildingInfoMapper.selectBigNumber()+1;
             housekeeperBuildingInfo.setHbNumber(bigNumber);
+            housekeeperBuildingInfo.setHbPassword(LrServiceImpl.getMD5("123456"));
+
+            String dateStr = housekeeperBuildingInfo.getHbInductionDateStr().substring(0,10);
+            SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");
+            Date date = format.parse(dateStr);
+            housekeeperBuildingInfo.setHbInductionDate(date);
+
             housekeeperBuildingInfoMapper.insertHouseInfo(housekeeperBuildingInfo);
         } else {
             housekeeperBuildingInfoMapper.updateHouseInfoById(housekeeperBuildingInfo);

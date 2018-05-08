@@ -21,14 +21,14 @@
 			<ul class="header-bar">
 				<!--<li class="header-bar-role"><a href="javascript:;">管理员</a></li>-->
 				<li class="header-bar-nav">
-					<a href="javascript:;"><span id="logName"></span><i class="icon-font" style="margin-left:5px;">&#xe60c;</i></a>
+					<a href="javascript:;">欢迎你 <span id="logName"></span><i class="icon-font" style="margin-left:5px;">&#xe60c;</i></a>
 					<ul class="header-dropdown-menu">
 						<li><a href="javascript:void(0);onclick=editBhInfo()">个人信息</a></li>
 						<!--<li><a href="javascript:;">切换账户</a></li>-->
 						<li><a href="javascript:;onclick=logout()">退出</a></li>
 					</ul>
 				</li>
-				<li class="header-bar-nav"> 
+				<li class="header-bar-nav">
 					<a href="javascript:;" title="换肤"><i class="icon-font">&#xe608;</i></a>
 					<ul class="header-dropdown-menu right dropdown-skin">
 						<li><a href="javascript:;" data-val="qingxin" title="清新">清新</a></li>
@@ -71,7 +71,9 @@
 <script>
 
 	function editBhInfo() {
-        window.open ("view/dsis/em/em_edit.html", "newwindow","'location=no, toolbar=no'")
+        //window.open ("view/dsis/em/em_edit.html", "newwindow","location=no, toolbar=no, resizable=no, width=1000")
+		window.open ("view/dsis/em/em_edit.html", "newwindow","toolbar=no, location=no, directories=no, status=no," +
+			" menubar=no, scrollbars=no, resizable=no, copyhistory=no, width=1000, height=600, left=200")
     }
 
 
@@ -97,30 +99,23 @@
 
     window.localStorage["loginIdInfo"]=JSON.stringify(loginId);
 
-    loginInfo = null;
-
-    $.ajax({
-        type: "POST",
-        url: "/em/selectHouseInfoById",
-        data: {
-            hdId :loginId
-        },
-        dataType: "json",
-        success: function(data){
-            if(data.success){
-                loginInfo = eval(data.rows)[0];
-                $("#logName").html(loginInfo.hbName);
-            }
-        }
-    });
-
-
-
-   /* function getLogInfo() {
-
-    }*/
-
-
+   if (loginId != null) {
+       $.ajax({
+           type: "POST",
+           url: "/em/selectHouseInfoById",
+           data: {
+               hdId :loginId
+           },
+           dataType: "json",
+           success: function(data){
+               if(data.success){
+                   loginInfo = eval(data.rows)[0];
+                   $("#logName").html(loginInfo.hbName);
+                   window.localStorage["adminRole"]=JSON.stringify(loginInfo.hbRole);
+               }
+           }
+       });
+   }
 
 </script>
 </html>

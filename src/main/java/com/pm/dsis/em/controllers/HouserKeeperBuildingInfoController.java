@@ -39,7 +39,7 @@ public class HouserKeeperBuildingInfoController {
     @RequestMapping(value = "/em/insertHouseInfo",method = RequestMethod.POST)
     @ResponseBody
     public ResponseData insertHouseInfo(HttpServletRequest request, HttpServletResponse response,
-                                    @RequestBody HousekeeperBuildingInfo housekeeperBuildingInfo){
+                                    @RequestBody HousekeeperBuildingInfo housekeeperBuildingInfo) throws Exception{
 
         housekeeperBuildingInfoService.insertHouseInfo(housekeeperBuildingInfo);
         return new ResponseData();
