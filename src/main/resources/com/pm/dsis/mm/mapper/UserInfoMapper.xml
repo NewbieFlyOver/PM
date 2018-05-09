@@ -160,6 +160,13 @@
         ATTRIBUTE6 = #{attribute6,jdbcType=VARCHAR}
         where USER_ID = #{userId,jdbcType=BIGINT}
     </update>
+
+    <update id="resetPwd">
+        update user_info
+        set user_password = #{newPwd}
+        where user_id = #{userId}
+        and user_password = #{oldPwd}
+    </update>
 </mapper>
 
 

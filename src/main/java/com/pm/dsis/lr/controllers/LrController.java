@@ -76,10 +76,10 @@ public class LrController extends BaseController{
     @RequestMapping(value = "/logout", method = RequestMethod.POST)
     public void logout(HttpServletRequest request, HttpServletResponse response,String loginFlag) throws Exception{
        if("admin".equals(loginFlag)) {
-           LrServiceImpl.adminLoginFlag = 2;
+           LrServiceImpl.adminLoginFlag = 0;
        }
         if("user".equals(loginFlag)) {
-            LrServiceImpl.userLoginFlag = 2;
+            LrServiceImpl.userLoginFlag = 0;
         }
     }
 
@@ -168,7 +168,29 @@ public class LrController extends BaseController{
 
 
 
-
-
-
+    /**
+     * 修改密码
+     * @param request
+     * @param response
+     * @param userId
+     * @param oldPwd
+     * @param newPwd
+     * @param flag
+     * @return
+     */
+    @RequestMapping(value = "/lr/resetPwd",method = RequestMethod.POST)
+    @ResponseBody
+    public ResponseData resetPwd(HttpServletRequest request, HttpServletResponse response,
+                                 Long userId, String oldPwd, String newPwd, String flag) throws Exception{
+        ResponseData responseData = new ResponseData();
+        int sum = lrService.resetPwd(userId, oldPwd, newPwd,flag);
+        if (sum == 0 ) {
+            responseData.setMessage("旧密码错误！");
+            responseData.setSuccess(false);
+        } else {
+            responseData.setMessage("密码修改成功！");
+            responseData.setSuccess(true);
+        }
+        return responseData;
+    }
 }

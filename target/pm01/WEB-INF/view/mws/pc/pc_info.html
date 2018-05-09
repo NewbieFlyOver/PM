@@ -54,7 +54,6 @@
                                         <label class="col-sm-4 control-label">户主姓名</label>
                                         <div class="col-sm-8">
                                             <input id="userName" name="userName" data-bind="value:model.userInfo.userName" type="text" style="width: 100%" class="k-textbox">
-                                            <span style="color: red">*</span>
                                         </div>
                                         <script>
                                             $("#userName").attr("required", true);
@@ -270,6 +269,7 @@
                         </div>
                         <div class="panel-footer text-right">
                             <span class="btn btn-success" onclick="saveUserInfo()">保存</span>
+                            <span class="btn btn-primary" onclick="resetPwd()">密码重置</span>
                         </div>
                     </form>
                 </div>
@@ -370,6 +370,11 @@
                     }
                 }
             });
+        }
+
+        function resetPwd() {
+            window.open ("../resetPwd.html", "newwindow","toolbar=no, location=no, directories=no, status=no," +
+                " menubar=no, scrollbars=no, resizable=no, copyhistory=no, width=800, height=400, left=240, top=40");
         }
     </script>
 </div>

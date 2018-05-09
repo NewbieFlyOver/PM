@@ -309,4 +309,26 @@ public class LrServiceImpl implements LrService {
     }
 
 
+    /**
+     * 重置密码
+     * @param userId
+     * @param oldPwd
+     * @param newPwd
+     * @return
+     */
+    public int resetPwd(Long userId, String oldPwd, String newPwd, String flag) throws Exception{
+        oldPwd = getMD5(oldPwd);
+        newPwd = getMD5(newPwd);
+        int sum = 0;
+        if (flag.equals("user")) {
+            sum = userInfoMapper.resetPwd(userId, oldPwd, newPwd);
+        }
+
+        if (flag.equals("admin")) {
+            sum = housekeeperBuildingInfoMapper.resetPwd(userId, oldPwd, newPwd);
+        }
+        return sum;
+    }
+
+
 }

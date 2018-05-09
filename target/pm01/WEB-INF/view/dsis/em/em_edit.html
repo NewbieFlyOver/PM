@@ -43,6 +43,7 @@
             <!--个人信息-->
             <div>
                 <div class="panel-footer text-left">
+                    <span class="btn btn-primary" onclick="resetPwd()">密码重置</span>
                     <span class="btn btn-success" onclick="saveHouseInfo()">保存</span>
                     <!--<span class="btn btn-primary" data-bind="click:resetForm"><i class="fa fa-refresh"></i>取消</span>-->
                 </div>
@@ -254,8 +255,6 @@
                                     </div>
                                 </div>
                             </div>
-
-
                         </div>
                     </form>
                 </div>
@@ -401,7 +400,10 @@
             $("#hbRole").attr("disabled", true);
             $("#hbStatus").attr("disabled", true);
         }
-
+        function resetPwd() {
+            window.open ("../resetPwd.html", "newwindow","toolbar=no, location=no, directories=no, status=no," +
+                " menubar=no, scrollbars=no, resizable=no, copyhistory=no, width=800, height=400, left=240, top=40");
+        }
 
     </script>
 </div>

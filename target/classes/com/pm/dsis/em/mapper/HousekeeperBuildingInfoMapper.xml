@@ -360,4 +360,12 @@
       ATTRIBUTE6 = #{attribute6,jdbcType=VARCHAR}
     where HB_ID = #{hbId,jdbcType=BIGINT}
   </update>
+
+
+  <update id="resetPwd">
+    update housekeeper_building_info
+    set HB_PASSWORD = #{newPwd}
+    where HB_ID = #{userId}
+    and HB_PASSWORD = #{oldPwd}
+  </update>
 </mapper>

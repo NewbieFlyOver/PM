@@ -56,6 +56,14 @@ public interface HousekeeperBuildingInfoMapper {
      */
     HousekeeperBuildingInfo selectAccount(String hbAccount);
 
+    /**
+     * 重置密码
+     * @param userId
+     * @param oldPwd
+     * @param newPwd
+     * @return
+     */
+    int resetPwd(@Param("userId") Long userId, @Param("oldPwd") String oldPwd, @Param("newPwd") String newPwd);
 
 
 

@@ -96,10 +96,9 @@
     }
 
     loginId = getQueryString("id");
-
-    window.localStorage["loginIdInfo"]=JSON.stringify(loginId);
-
+	
    if (loginId != null) {
+       window.localStorage["loginIdInfo"]=JSON.stringify(loginId);
        $.ajax({
            type: "POST",
            url: "/em/selectHouseInfoById",

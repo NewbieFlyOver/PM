@@ -32,12 +32,12 @@ public class LoginInterceptor extends HandlerInterceptorAdapter {
             return false;
         }*/
 
-        if(LrServiceImpl.userLoginFlag == 2) {
+        if(LrServiceImpl.userLoginFlag == 0) {
             response.sendRedirect("/view/activeLogin/index.html");
            // LrServiceImpl.userLoginFlag = 0;
             return false;
         }
-        if(LrServiceImpl.adminLoginFlag == 2) {
+        if(LrServiceImpl.adminLoginFlag == 0) {
             response.sendRedirect("/view/activeLogin/index.html");
            // LrServiceImpl.adminLoginFlag = 0;
             return false;

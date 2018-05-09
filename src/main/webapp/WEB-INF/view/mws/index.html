@@ -24,13 +24,15 @@
             <li><a href="pc/pc_center.html">个人中心</a></li>
             <li><a href="ri/ri_info.html">报修信息</a></li>
             <li><a href="au/au_intro.html">关于我们</a></li>
-            <li><a href="javascript:;" style="color: #4169E1" id="userName"></a></li>
+            <li><a href="javascript:;onclick=toPc()" style="color: #4169E1" id="userName"></a></li>
             <li style="margin-left: -20px;"><a href="javascript:;onclick=logout()" style="color: #4169E1">退出</a></li>
 	    </ul>
   </div>
 </div>
 <script>
-
+    function toPc() {
+        window.open ("./pc/pc_center.html","_self")
+    }
     function logout() {
         // loginFlag = "admin";
         $.ajax({
@@ -50,25 +52,27 @@
 
     loginId = getQueryString("id");
 
-    window.localStorage["userIdInfo"]=JSON.stringify(loginId);
 
-    loginInfo = null;
+    if (loginId !=null) {
 
-    $.ajax({
-        type: "POST",
-        url: "/mm/selectByUserId",
-        data: {
-            userId :loginId
-        },
-        dataType: "json",
-        success: function(data){
-            if(data.success){
-                loginInfo = eval(data.rows)[0];
-                window.localStorage["userName"]=JSON.stringify(loginInfo.userAccount);
-                $("#userName").html(JSON.parse(window.localStorage["userName"]));
+        window.localStorage["userIdInfo"]=JSON.stringify(loginId);
+
+        $.ajax({
+            type: "POST",
+            url: "/mm/selectByUserId",
+            data: {
+                userId :loginId
+            },
+            dataType: "json",
+            success: function(data){
+                if(data.success){
+                    loginInfo = eval(data.rows)[0];
+                    window.localStorage["userName"]=JSON.stringify(loginInfo.userAccount);
+                    $("#userName").html(JSON.parse(window.localStorage["userName"]));
+                }
             }
-        }
-    });
+        });
+    }
 
     $("#userName").html(JSON.parse(window.localStorage["userName"]));
 

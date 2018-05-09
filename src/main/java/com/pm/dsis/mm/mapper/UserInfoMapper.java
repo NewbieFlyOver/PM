@@ -1,6 +1,7 @@
 package com.pm.dsis.mm.mapper;
 
 import com.pm.dsis.mm.dto.UserInfo;
+import org.apache.ibatis.annotations.Param;
 
 /**
  * Created by admin on 2018/3/18.
@@ -58,6 +59,14 @@ public interface UserInfoMapper {
      */
     UserInfo selectAccount(String userAccount);
 
+    /**
+     * 重置密码
+     * @param userId
+     * @param oldPwd
+     * @param newPwd
+     * @return
+     */
+    int resetPwd(@Param("userId") Long userId, @Param("oldPwd") String oldPwd, @Param("newPwd") String newPwd);
 
 
 }

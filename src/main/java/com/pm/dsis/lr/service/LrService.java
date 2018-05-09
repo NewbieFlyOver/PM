@@ -61,4 +61,16 @@ public interface LrService {
      * @return
      */
     int active(String bfr,String name,String idNum);
+
+    /**
+     * 重置密码
+     * @param userId
+     * @param oldPwd
+     * @param newPwd
+     * @return
+     */
+    int resetPwd(Long userId, String oldPwd, String newPwd, String flag)  throws Exception;
+
+
+
 }
