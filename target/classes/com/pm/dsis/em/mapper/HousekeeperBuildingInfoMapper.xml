@@ -368,4 +368,18 @@
     where HB_ID = #{userId}
     and HB_PASSWORD = #{oldPwd}
   </update>
+
+  <select id="selectAccountByPhone" resultMap="BaseResultMap" >
+    select
+    <include refid="Base_Column_List" />
+    from housekeeper_building_info
+    WHERE HB_NUMBER = #{account}
+    AND HB_PHONE = #{phone}
+  </select>
+
+  <update id="updateByAccount">
+    update housekeeper_building_info
+    set HB_PASSWORD = #{newPwd}
+    where HB_NUMBER = #{account}
+  </update>
 </mapper>

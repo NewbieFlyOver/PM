@@ -40,7 +40,7 @@
 
 						<input type="submit" class="sign-in" value="登录">
 						<ul class="links">
-							<li class="pass-w3ls"><a href="#">找回密码</a></li>
+							<li class="pass-w3ls"><a href="javascript:;" onclick=findPwd()>找回密码</a></li>
 						</ul>
 					</form>
 				</div>
@@ -198,7 +198,11 @@
         alert(getQueryString("acMsg"));
 	}
 
+	function findPwd() {
+        window.open ("./sendVerif.html", "newwindow","toolbar=no, location=no, directories=no, status=no," +
+            " menubar=no, scrollbars=no, resizable=no, copyhistory=no, width=800, height=400, left=240, top=40");
 
+    }
 
 </script>
 

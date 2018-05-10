@@ -76,10 +76,10 @@ public class LrController extends BaseController{
     @RequestMapping(value = "/logout", method = RequestMethod.POST)
     public void logout(HttpServletRequest request, HttpServletResponse response,String loginFlag) throws Exception{
        if("admin".equals(loginFlag)) {
-           LrServiceImpl.adminLoginFlag = 0;
+           LrServiceImpl.loginFlag = false;
        }
         if("user".equals(loginFlag)) {
-            LrServiceImpl.userLoginFlag = 0;
+            LrServiceImpl.loginFlag = false;
         }
     }
 
@@ -193,4 +193,65 @@ public class LrController extends BaseController{
         }
         return responseData;
     }
+
+
+    /**
+     * 发送验证码
+     * @param request
+     * @param response
+     * @return
+     */
+    @RequestMapping(value = "/lr/sendVerif",method = RequestMethod.POST)
+    @ResponseBody
+    public ResponseData sendVerif(HttpServletRequest request, HttpServletResponse response, String phone) throws Exception{
+        lrService.sendVerif(phone);
+        return new ResponseData();
+    }
+
+
+    /**
+     * 验证验证码
+     * @param request
+     * @param response
+     * @return
+     */
+    @RequestMapping(value = "/lr/validVerif",method = RequestMethod.POST)
+    @ResponseBody
+    public ResponseData validVerif(HttpServletRequest request, HttpServletResponse response,
+                                   String loginName, String phone, String verif) throws Exception{
+
+        ResponseData responseData = new ResponseData();
+        int sum = lrService.validVerif(loginName, phone, verif);
+        if (sum == 0 ) {
+            responseData.setMessage("验证码、登录名、手机号不对应！");
+            responseData.setSuccess(false);
+        } else {
+            responseData.setMessage("密码修改成功！");
+            responseData.setSuccess(true);
+        }
+        return responseData;
+    }
+
+    /**
+     * 根据登录名更改密码
+     * @param request
+     * @param response
+     * @return
+     */
+    @RequestMapping(value = "/lr/findPwd",method = RequestMethod.POST)
+    @ResponseBody
+    public ResponseData findPwd(HttpServletRequest request, HttpServletResponse response,
+                                   String loginName, String pwd) throws Exception{
+        ResponseData responseData = new ResponseData();
+        int sum = lrService.findPwd(loginName, pwd);
+        if (sum == 0 ) {
+            responseData.setMessage("密码修改失败！");
+            responseData.setSuccess(false);
+        } else {
+            responseData.setMessage("密码修改成功！");
+            responseData.setSuccess(true);
+        }
+        return responseData;
+    }
+
 }

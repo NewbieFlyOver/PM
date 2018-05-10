@@ -2,6 +2,8 @@ package com.pm.dsis.em.mapper;
 
 import com.pm.dsis.em.dto.HousekeeperBuildingInfo;
 import java.util.List;
+
+import com.pm.dsis.mm.dto.UserInfo;
 import org.apache.ibatis.annotations.Param;
 
 public interface HousekeeperBuildingInfoMapper {
@@ -64,6 +66,21 @@ public interface HousekeeperBuildingInfoMapper {
      * @return
      */
     int resetPwd(@Param("userId") Long userId, @Param("oldPwd") String oldPwd, @Param("newPwd") String newPwd);
+
+    /**
+     * 查询登录信息通过电话
+     * @return
+     */
+    HousekeeperBuildingInfo selectAccountByPhone(@Param("phone") String phone, @Param("account") String account);
+
+    /**
+     * 根据登录名更改密码
+     * @param account
+     * @return
+     */
+    int updateByAccount(@Param("account") String account, @Param("newPwd") String newPwd);
+
+
 
 
 

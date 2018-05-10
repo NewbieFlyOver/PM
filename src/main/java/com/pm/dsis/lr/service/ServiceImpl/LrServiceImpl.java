@@ -2,9 +2,18 @@ package com.pm.dsis.lr.service.ServiceImpl;
 
 import com.pm.dsis.em.dto.HousekeeperBuildingInfo;
 import com.pm.dsis.em.mapper.HousekeeperBuildingInfoMapper;
+import com.pm.dsis.lr.SendMsgUtil.HttpClientUtil;
 import com.pm.dsis.lr.service.LrService;
 import com.pm.dsis.mm.dto.UserInfo;
 import com.pm.dsis.mm.mapper.UserInfoMapper;
+import org.apache.commons.httpclient.Header;
+import org.apache.commons.httpclient.HttpClient;
+import org.apache.commons.httpclient.NameValuePair;
+import org.apache.commons.httpclient.methods.PostMethod;
+
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.servlet.ModelAndView;
@@ -36,9 +45,14 @@ public class LrServiceImpl implements LrService {
     @Autowired
     private HousekeeperBuildingInfoMapper housekeeperBuildingInfoMapper;
 
-    //用于是否登录的标志 0:未登录；1：登录； 2：登录退出
+    static final public Logger logger = LoggerFactory.getLogger(LrServiceImpl.class);
+
+    static String ver = "";
+
+    /*//用于是否登录的标志 0:未登录；1：登录； 2：登录退出
     static public int adminLoginFlag = 0;
-    static public int userLoginFlag = 0;
+    static public int userLoginFlag = 0;*/
+    static public boolean loginFlag = false;
 
     private static final int CAPTCHA_WIDTH = 90;
     private static final int CAPTCHA_HEIGHT = 34;
@@ -181,7 +195,7 @@ public class LrServiceImpl implements LrService {
             UserInfo userInf = userInfoMapper.selectLoginUserInfo(user);
             if (null != userInf) {
                 Long id = userInf.getUserId();
-                userLoginFlag = 1;
+                loginFlag = true;
                 mv.addObject("id",id);
                 mv.setViewName("redirect:/view/mws/index.html");
             } else {
@@ -197,7 +211,7 @@ public class LrServiceImpl implements LrService {
             HousekeeperBuildingInfo hbInf = housekeeperBuildingInfoMapper.selectLoginInfo(hb);
             if (null != hbInf) {
                 Long id= hbInf.getHbId();
-                adminLoginFlag = 1;
+                loginFlag = true;
                 mv.addObject("id",id);
                 mv.setViewName("redirect:/index");
             } else {
@@ -328,6 +342,95 @@ public class LrServiceImpl implements LrService {
             sum = housekeeperBuildingInfoMapper.resetPwd(userId, oldPwd, newPwd);
         }
         return sum;
+    }
+
+    /**
+     * 发送验证码
+     * @return
+     */
+    public String sendVerif(String phone) throws Exception{
+        ver = verif();
+        logger.info("验证码是：{}",ver);
+        SendMsg(phone,ver);
+        return ver;
+    }
+
+    /**
+     * 产生验证码
+     * @return
+     */
+    private String verif() {
+        StringBuffer v = new StringBuffer();
+        for (int i=0; i<6; i++) {
+            v.append((int)(Math.random()*10));
+        }
+        return v.toString();
+    }
+
+    /**
+     * 验证码验证
+     * @param loginName
+     * @param phone
+     * @param verif
+     * @return
+     */
+    public int validVerif(String loginName, String phone, String verif) {
+        Pattern p = Pattern.compile("\\d+");        //得到字符串中的数字
+        Matcher m = p.matcher(loginName);
+        boolean b = m.matches();
+        int sum = 0;
+        if (verif.equals(ver)) {
+            if(!b) {
+                UserInfo userInfo = userInfoMapper.selectAccountByPhone(phone, loginName);
+                if (userInfo!=null) {
+                    sum = 1;
+                }
+            } else {
+                HousekeeperBuildingInfo hbi = housekeeperBuildingInfoMapper.selectAccountByPhone(phone, loginName);
+                if ( hbi!=null ) {
+                    sum = 1;
+                }
+            }
+        } else {
+                return sum;
+        }
+        return sum;
+    }
+
+    /**
+     * 更改密码
+     * @param loginName
+     * @return
+     */
+    public int findPwd(String loginName, String pwd) throws Exception{
+
+        Pattern p = Pattern.compile("\\d+");        //得到字符串中的数字
+        Matcher m = p.matcher(loginName);
+        boolean b = m.matches();
+
+        pwd = getMD5(pwd);
+
+        if(!b) {
+            return userInfoMapper.updateByAccount(loginName,pwd);
+        }else {
+            return housekeeperBuildingInfoMapper.updateByAccount(loginName,pwd);
+        }
+    }
+
+
+    private void SendMsg(String phone, String verif) throws Exception{
+
+
+        HttpClientUtil client = HttpClientUtil.getInstance();
+        //UTF发送
+        int result = client.sendMsgUtf8("明明11", "d41d8cd98f00b204e980",
+                 "物业平台忘记密码的验证码是："+verif, phone);
+
+        if(result>0){
+            System.out.println("UTF8成功发送条数=="+result);
+        }else{
+            System.out.println(client.getErrorMsg(result));
+        }
     }
 
 

@@ -89,10 +89,10 @@
 
 
     <!-- 拦截器 -->
-   <!-- <mvc:interceptors>
+    <mvc:interceptors>
         <mvc:interceptor>
             <mvc:mapping path="/**"/>
-            &lt;!&ndash; 不拦截的url &ndash;&gt;
+            <!-- 不拦截的url -->
             <mvc:exclude-mapping path="/resources/**" />
             <mvc:exclude-mapping path="/lib/**" />
             <mvc:exclude-mapping path="/view/activeLogin/js/**"/>
@@ -104,7 +104,12 @@
             <mvc:exclude-mapping path="/lr/selectAccount" />
             <mvc:exclude-mapping path="/lr/validationAccount" />
             <mvc:exclude-mapping path="/lr/active" />
+            <mvc:exclude-mapping path="/lr/sendVerif" />
+            <mvc:exclude-mapping path="/lr/validVerif" />
+            <mvc:exclude-mapping path="/lr/findPwd" />
             <mvc:exclude-mapping path="/view/activeLogin/index.html" />
+            <mvc:exclude-mapping path="/view/activeLogin/findPwd.html" />
+            <mvc:exclude-mapping path="/view/activeLogin/sendVerif.html" />
             <mvc:exclude-mapping path="/403.html" />
             <mvc:exclude-mapping path="/404.html" />
             <mvc:exclude-mapping path="/500.html" />
@@ -112,11 +117,11 @@
             <mvc:exclude-mapping path="/verifiCode" />
             <bean class="com.pm.platform.LoginInterceptor"/>
         </mvc:interceptor>
-        &lt;!&ndash;<bean class="com.lkkhpg.dsis.platform.security.interceptor.MonitorInterceptor"/>
+        <!--<bean class="com.lkkhpg.dsis.platform.security.interceptor.MonitorInterceptor"/>
         <bean class="com.lkkhpg.dsis.platform.security.interceptor.SecurityInterceptor">
             <property name="filter" value="false"/>
-        </bean>&ndash;&gt;
-    </mvc:interceptors>-->
+        </bean>-->
+    </mvc:interceptors>
 
     <bean id="freemarkerConfig" class="org.springframework.web.servlet.view.freemarker.FreeMarkerConfigurer">
         <property name="templateLoaderPaths">

@@ -53,6 +53,11 @@ public interface UserInfoMapper {
     UserInfo selectLoginUserInfo(UserInfo userInfo);
 
     /**
+     * 查询登录信息通过电话
+     * @return
+     */
+    UserInfo selectAccountByPhone(@Param("phone") String phone, @Param("account") String account);
+    /**
      * 查询账号是否存在
      * @param userAccount
      * @return
@@ -69,4 +74,10 @@ public interface UserInfoMapper {
     int resetPwd(@Param("userId") Long userId, @Param("oldPwd") String oldPwd, @Param("newPwd") String newPwd);
 
 
+    /**
+     * 根据登录名更改密码
+     * @param account
+     * @return
+     */
+    int updateByAccount(@Param("account") String account, @Param("newPwd") String newPwd);
 }

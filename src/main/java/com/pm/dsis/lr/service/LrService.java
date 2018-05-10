@@ -71,6 +71,27 @@ public interface LrService {
      */
     int resetPwd(Long userId, String oldPwd, String newPwd, String flag)  throws Exception;
 
+    /**
+     * 发送验证码
+     * @return
+     */
+    String sendVerif(String phone) throws Exception;
+
+    /**
+     * 验证码验证
+     * @param loginName
+     * @param phone
+     * @param verif
+     * @return
+     */
+    int validVerif(String loginName, String phone, String verif);
+
+    /**
+     * 更改密码
+     * @param loginName
+     * @return
+     */
+    int findPwd(String loginName, String pwd) throws Exception;
 
 
 }

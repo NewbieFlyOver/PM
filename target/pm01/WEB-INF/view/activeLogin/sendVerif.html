@@ -38,15 +38,15 @@
                         <div id="baseInfo" class="panel-body">
 
                             <div style="margin-bottom: 50px;margin-top: 5px">
-                                <span class="btn btn-primary" style="width: 150px">密码重置</span>
+                                <span class="btn btn-primary" style="width: 150px">发送验证码</span>
                             </div>
 
                             <div class="row">
                                 <div class="col-sm-10" id="1">
                                     <div class="form-group">
-                                        <label class="col-sm-4 control-label">旧密码</label>
+                                        <label class="col-sm-2 control-label">登录名</label>
                                         <div class="col-sm-8">
-                                            <input id="oldPwd" name="oldPwd" type="password" style="width: 100%" class="k-textbox">
+                                            <input id="loginName" name="loginName" type="text" style="width: 100%" class="k-textbox">
                                         </div>
                                     </div>
                                 </div>
@@ -55,9 +55,12 @@
                             <div class="row">
                                 <div class="col-sm-10" id="2">
                                     <div class="form-group">
-                                        <label class="col-sm-4 control-label">新密码</label>
+                                        <label class="col-sm-2 control-label">手机号</label>
                                         <div class="col-sm-8">
-                                            <input id="newPwd" name="newPwd" type="password" style="width: 100%" class="k-textbox">
+                                            <input id="phone" name="phone" type="text" style="width: 100%" class="k-textbox">
+                                        </div>
+                                        <div class="col-sm-2">
+                                            <span class="btn btn-success" onclick="sendVerif()">发送验证码</span>
                                         </div>
                                     </div>
                                 </div>
@@ -66,9 +69,9 @@
                             <div class="row">
                                 <div class="col-sm-10" id="3">
                                     <div class="form-group">
-                                        <label class="col-sm-4 control-label">再次输入新密码</label>
+                                        <label class="col-sm-2 control-label">验证码</label>
                                         <div class="col-sm-8">
-                                            <input id="newPwdRe" name="newPwdRe" type="password" style="width: 100%" class="k-textbox">
+                                            <input id="verif" name="verif" type="text" style="width: 100%" class="k-textbox">
                                         </div>
                                     </div>
                                 </div>
@@ -78,7 +81,7 @@
                                 <div class="col-sm-10" id="4">
                                     <div class="form-group">
                                         <div class="text-center">
-                                            <span class="btn btn-success" onclick="resetPwd()">重置</span>
+                                            <span class="btn btn-success" onclick="validVerif()">确定</span>
                                         </div>
                                     </div>
                                 </div>
@@ -92,36 +95,48 @@
     </div>
 
     <script>
-
-        function resetPwd() {
-            var userId= JSON.parse(window.localStorage["loginIdInfo"]);//user_ID
-            var oldPwd = $("#oldPwd").val();
-            var newPwd = $("#newPwd").val();
-            var newPwdRe = $("#newPwdRe").val();
-            if ( newPwd != newPwdRe ) {
-                alert("两次密码输入不一致，请新输入！")
-            } else {
-                $.ajax({
-                    type: 'POST',
-                    url: '/lr/resetPwd',
-                    dataType: "json",
-                    //contentType: "application/json",
-                    data: {
-                        userId:userId,
-                        oldPwd:oldPwd,
-                        newPwd:newPwd,
-                        flag:"admin"
-                    },
-                    success: function (data) {
-                        if (data.success) {
-                            alert(data.message)
-                        } else {
-                            alert(data.message)
-                        }
-                    }
-                });
-            }
+        
+        function sendVerif() {
+            phone = $("#phone").val();
+            $.ajax({
+                type: 'POST',
+                url: '/lr/sendVerif',
+                dataType: "json",
+                data: {
+                    phone :phone,
+                 },
+                success: function (data) {
+                }
+            });
         }
+        
+        function validVerif() {
+            loginName = $("#loginName").val();
+            phone = $("#phone").val();
+            verif = $("#verif").val();
+
+            $.ajax({
+                type: 'POST',
+                url: '/lr/validVerif',
+                dataType: "json",
+                data: {
+                    loginName :loginName,
+                    phone :phone,
+                    verif :verif
+                },
+                success: function (data) {
+                    if (data.success) {
+                        window.open ("./findPwd.html?loginName="+loginName+"", "newwindow","toolbar=no, location=no, directories=no, status=no," +
+                            " menubar=no, scrollbars=no, resizable=no, copyhistory=no, width=800, height=400, left=240, top=40");
+
+                    }else {
+                        alert(data.message)
+                    }
+
+                }
+            });
+        }
+        
     </script>
 </div>
 

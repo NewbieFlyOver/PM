@@ -21,6 +21,10 @@ public class LoginInterceptor extends HandlerInterceptorAdapter {
         logger.info("loginInterceptor");
 
         //TODO：登录验证
+        if (!LrServiceImpl.loginFlag) {
+            response.sendRedirect("/view/activeLogin/index.html");
+            return false;
+        }
 
        /* if(LrServiceImpl.userLoginFlag == 0) {
             response.sendRedirect("/view/activeLogin/index.html");
@@ -32,7 +36,7 @@ public class LoginInterceptor extends HandlerInterceptorAdapter {
             return false;
         }*/
 
-        if(LrServiceImpl.userLoginFlag == 0) {
+        /*if(LrServiceImpl.userLoginFlag == 0) {
             response.sendRedirect("/view/activeLogin/index.html");
            // LrServiceImpl.userLoginFlag = 0;
             return false;
@@ -41,7 +45,7 @@ public class LoginInterceptor extends HandlerInterceptorAdapter {
             response.sendRedirect("/view/activeLogin/index.html");
            // LrServiceImpl.adminLoginFlag = 0;
             return false;
-        }
+        }*/
         return true;
     }
 

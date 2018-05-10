@@ -42,17 +42,6 @@
                             </div>
 
                             <div class="row">
-                                <div class="col-sm-10" id="1">
-                                    <div class="form-group">
-                                        <label class="col-sm-4 control-label">旧密码</label>
-                                        <div class="col-sm-8">
-                                            <input id="oldPwd" name="oldPwd" type="password" style="width: 100%" class="k-textbox">
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="row">
                                 <div class="col-sm-10" id="2">
                                     <div class="form-group">
                                         <label class="col-sm-4 control-label">新密码</label>
@@ -93,24 +82,29 @@
 
     <script>
 
+        /* 获取URL后的参数 */
+        function getQueryString(name) {
+            var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i");
+            var r = window.location.search.substr(1).match(reg);
+            if (r != null) return decodeURI(r[2]); return null;
+        }
+
         function resetPwd() {
-            var userId= JSON.parse(window.localStorage["loginIdInfo"]);//user_ID
-            var oldPwd = $("#oldPwd").val();
             var newPwd = $("#newPwd").val();
             var newPwdRe = $("#newPwdRe").val();
+            loginName = getQueryString("loginName");
             if ( newPwd != newPwdRe ) {
                 alert("两次密码输入不一致，请新输入！")
             } else {
+                //alert(loginName)
                 $.ajax({
                     type: 'POST',
-                    url: '/lr/resetPwd',
+                    url: '/lr/findPwd',
                     dataType: "json",
                     //contentType: "application/json",
                     data: {
-                        userId:userId,
-                        oldPwd:oldPwd,
-                        newPwd:newPwd,
-                        flag:"admin"
+                        pwd:newPwd,
+                        loginName:loginName
                     },
                     success: function (data) {
                         if (data.success) {

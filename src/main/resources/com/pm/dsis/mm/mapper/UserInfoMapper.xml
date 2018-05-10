@@ -90,11 +90,20 @@
         AND ATTRIBUTE1 = 'Y'
     </select>
 
+
     <select id="selectAccount" resultMap="BaseResultMap" parameterType="java.lang.String" >
         select
         <include refid="Base_Column_List" />
         from user_info
         where USER_ACCOUNT = #{userAccount}
+    </select>
+
+    <select id="selectAccountByPhone" resultMap="BaseResultMap" >
+        select
+        <include refid="Base_Column_List" />
+        from user_info
+        WHERE USER_ACCOUNT = #{account}
+        AND USER_PHONE = #{phone}
     </select>
 
     <insert id="insertUserInfo" parameterType="com.pm.dsis.mm.dto.UserInfo" >
@@ -166,6 +175,12 @@
         set user_password = #{newPwd}
         where user_id = #{userId}
         and user_password = #{oldPwd}
+    </update>
+
+    <update id="updateByAccount">
+        update user_info
+        set user_password = #{newPwd}
+        where user_account = #{account}
     </update>
 </mapper>
 
