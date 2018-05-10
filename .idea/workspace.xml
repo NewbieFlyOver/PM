@@ -2,48 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="fae49d94-6251-4fda-977e-4cfe51227b06" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/pm/dsis/lr/SendMsgUtil/HttpClientUtil.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/pm/dsis/lr/SendMsgUtil/test.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/activeLogin/sendVerif.html" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__commons_codec_commons_codec_1_6.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/pm01/WEB-INF/lib/commons-codec-1.6.jar" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/pm/dsis/em/mapper/HousekeeperBuildingInfoMapper.class" afterPath="$PROJECT_DIR$/target/classes/com/pm/dsis/em/mapper/HousekeeperBuildingInfoMapper.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/pm/dsis/lr/controllers/LrController.class" afterPath="$PROJECT_DIR$/target/classes/com/pm/dsis/lr/controllers/LrController.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/pm/dsis/lr/service/LrService.class" afterPath="$PROJECT_DIR$/target/classes/com/pm/dsis/lr/service/LrService.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/pm/dsis/lr/service/ServiceImpl/LrServiceImpl.class" afterPath="$PROJECT_DIR$/target/classes/com/pm/dsis/lr/service/ServiceImpl/LrServiceImpl.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/pm/dsis/mm/mapper/UserInfoMapper.class" afterPath="$PROJECT_DIR$/target/classes/com/pm/dsis/mm/mapper/UserInfoMapper.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/pm/platform/LoginInterceptor.class" afterPath="$PROJECT_DIR$/target/classes/com/pm/platform/LoginInterceptor.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/pm01/WEB-INF/classes/com/pm/dsis/em/mapper/HousekeeperBuildingInfoMapper.class" afterPath="$PROJECT_DIR$/target/pm01/WEB-INF/classes/com/pm/dsis/em/mapper/HousekeeperBuildingInfoMapper.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/pm01/WEB-INF/classes/com/pm/dsis/lr/controllers/LrController.class" afterPath="$PROJECT_DIR$/target/pm01/WEB-INF/classes/com/pm/dsis/lr/controllers/LrController.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/pm01/WEB-INF/classes/com/pm/dsis/lr/service/LrService.class" afterPath="$PROJECT_DIR$/target/pm01/WEB-INF/classes/com/pm/dsis/lr/service/LrService.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/pm01/WEB-INF/classes/com/pm/dsis/lr/service/ServiceImpl/LrServiceImpl.class" afterPath="$PROJECT_DIR$/target/pm01/WEB-INF/classes/com/pm/dsis/lr/service/ServiceImpl/LrServiceImpl.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/pm01/WEB-INF/classes/com/pm/dsis/mm/mapper/UserInfoMapper.class" afterPath="$PROJECT_DIR$/target/pm01/WEB-INF/classes/com/pm/dsis/mm/mapper/UserInfoMapper.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/pm01/WEB-INF/classes/com/pm/platform/LoginInterceptor.class" afterPath="$PROJECT_DIR$/target/pm01/WEB-INF/classes/com/pm/platform/LoginInterceptor.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/artifacts/propertyManagement_war_exploded.xml" afterPath="$PROJECT_DIR$/.idea/artifacts/propertyManagement_war_exploded.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/mws/images/xj1.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/mws/images/xj2.jpg" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pom.xml" afterPath="$PROJECT_DIR$/pom.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/propertyManagement.iml" afterPath="$PROJECT_DIR$/propertyManagement.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/pm/dsis/em/mapper/HousekeeperBuildingInfoMapper.java" afterPath="$PROJECT_DIR$/src/main/java/com/pm/dsis/em/mapper/HousekeeperBuildingInfoMapper.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/pm/dsis/lr/controllers/LrController.java" afterPath="$PROJECT_DIR$/src/main/java/com/pm/dsis/lr/controllers/LrController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/pm/dsis/lr/service/LrService.java" afterPath="$PROJECT_DIR$/src/main/java/com/pm/dsis/lr/service/LrService.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/pm/dsis/lr/service/ServiceImpl/LrServiceImpl.java" afterPath="$PROJECT_DIR$/src/main/java/com/pm/dsis/lr/service/ServiceImpl/LrServiceImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/pm/dsis/mm/mapper/UserInfoMapper.java" afterPath="$PROJECT_DIR$/src/main/java/com/pm/dsis/mm/mapper/UserInfoMapper.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/pm/platform/LoginInterceptor.java" afterPath="$PROJECT_DIR$/src/main/java/com/pm/platform/LoginInterceptor.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/com/pm/dsis/em/mapper/HousekeeperBuildingInfoMapper.xml" afterPath="$PROJECT_DIR$/src/main/resources/com/pm/dsis/em/mapper/HousekeeperBuildingInfoMapper.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/com/pm/dsis/mm/mapper/UserInfoMapper.xml" afterPath="$PROJECT_DIR$/src/main/resources/com/pm/dsis/mm/mapper/UserInfoMapper.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/spring/springmvc.xml" afterPath="$PROJECT_DIR$/src/main/resources/spring/springmvc.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/activeLogin/index.html" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/activeLogin/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/dsis/resetPwd.html" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/dsis/resetPwd.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/index.html" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/pm/dsis/em/mapper/HousekeeperBuildingInfoMapper.xml" afterPath="$PROJECT_DIR$/target/classes/com/pm/dsis/em/mapper/HousekeeperBuildingInfoMapper.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/pm/dsis/mm/mapper/UserInfoMapper.xml" afterPath="$PROJECT_DIR$/target/classes/com/pm/dsis/mm/mapper/UserInfoMapper.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/spring/springmvc.xml" afterPath="$PROJECT_DIR$/target/classes/spring/springmvc.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/pm01/WEB-INF/classes/com/pm/dsis/em/mapper/HousekeeperBuildingInfoMapper.xml" afterPath="$PROJECT_DIR$/target/pm01/WEB-INF/classes/com/pm/dsis/em/mapper/HousekeeperBuildingInfoMapper.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/pm01/WEB-INF/classes/com/pm/dsis/mm/mapper/UserInfoMapper.xml" afterPath="$PROJECT_DIR$/target/pm01/WEB-INF/classes/com/pm/dsis/mm/mapper/UserInfoMapper.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/pm01/WEB-INF/classes/spring/springmvc.xml" afterPath="$PROJECT_DIR$/target/pm01/WEB-INF/classes/spring/springmvc.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/pm01/WEB-INF/view/activeLogin/index.html" afterPath="$PROJECT_DIR$/target/pm01/WEB-INF/view/activeLogin/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/pm01/WEB-INF/view/dsis/resetPwd.html" afterPath="$PROJECT_DIR$/target/pm01/WEB-INF/view/dsis/resetPwd.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/pm01/WEB-INF/view/index.html" afterPath="$PROJECT_DIR$/target/pm01/WEB-INF/view/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/mws/au/au_intro.html" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/mws/au/au_intro.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/mws/css/index.css" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/mws/css/index.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/mws/index.html" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/mws/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/pm01/WEB-INF/view/mws/au/au_intro.html" afterPath="$PROJECT_DIR$/target/pm01/WEB-INF/view/mws/au/au_intro.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/pm01/WEB-INF/view/mws/css/index.css" afterPath="$PROJECT_DIR$/target/pm01/WEB-INF/view/mws/css/index.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/pm01/WEB-INF/view/mws/index.html" afterPath="$PROJECT_DIR$/target/pm01/WEB-INF/view/mws/index.html" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -84,14 +51,52 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="LrServiceImpl.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="LrServiceImpl.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/pm/dsis/lr/service/ServiceImpl/LrServiceImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-71">
-              <caret line="305" column="16" lean-forward="true" selection-start-line="305" selection-start-column="16" selection-end-line="305" selection-end-column="16" />
+            <state relative-caret-position="132">
+              <caret line="333" column="30" lean-forward="false" selection-start-line="333" selection-start-column="24" selection-end-line="333" selection-end-column="30" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/view/mws/index.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="239">
+              <caret line="165" column="26" lean-forward="false" selection-start-line="165" selection-start-column="26" selection-end-line="165" selection-end-column="26" />
+              <folding>
+                <element signature="n#style#0;n#div#0;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#p#0;n#div#0;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#1;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#h1#0;n#div#1;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#img#0;n#div#1;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#img#0;n#div#2;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#p#0;n#div#3;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="au_intro.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/view/mws/au/au_intro.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="380">
+              <caret line="70" column="6" lean-forward="true" selection-start-line="50" selection-start-column="0" selection-end-line="70" selection-end-column="6" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.css" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/view/mws/css/index.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="213">
+              <caret line="31" column="4" lean-forward="false" selection-start-line="31" selection-start-column="4" selection-end-line="31" selection-end-column="4" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -113,16 +118,6 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="275">
               <caret line="36" column="5" lean-forward="true" selection-start-line="36" selection-start-column="5" selection-end-line="36" selection-end-column="5" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="springmvc.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/spring/springmvc.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="240">
-              <caret line="111" column="66" lean-forward="false" selection-start-line="111" selection-start-column="66" selection-end-line="111" selection-end-column="66" />
               <folding />
             </state>
           </provider>
@@ -208,7 +203,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/java/com/pm/dsis/fee/service/serviceImpl/PmFeeServiceImpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/pm/dsis/fee/controllers/PmFeeController.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/dsis/mm/mm_new_edit.html" />
         <option value="$PROJECT_DIR$/src/main/resources/com/pm/dsis/fee/mapper/PmUnitPriceMapper.xml" />
@@ -240,8 +234,6 @@
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/dsis/em/em_edit.html" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/mws/pc/pc_info.html" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/mws/ri/ri_info.html" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/mws/au/au_intro.html" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/mws/index.html" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/index.html" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/activeLogin/index.html" />
         <option value="$PROJECT_DIR$/src/main/resources/com/pm/dsis/mm/mapper/UserInfoMapper.xml" />
@@ -259,6 +251,9 @@
         <option value="$PROJECT_DIR$/src/main/java/com/pm/dsis/lr/SendMsgUtil/test.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/pm/dsis/lr/SendMsgUtil/HttpClientUtil.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/pm/dsis/lr/service/ServiceImpl/LrServiceImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/mws/css/index.css" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/mws/au/au_intro.html" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/mws/index.html" />
       </list>
     </option>
   </component>
@@ -420,6 +415,44 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="mws" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="propertyManagement" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="propertyManagement" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="webapp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="WEB-INF" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="view" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mws" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="au" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -842,9 +875,9 @@
       <recent name="com.pm.platform" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\Graduation design\code\PM\propertyManagement\src\main\webapp\WEB-INF\view\mws\images" />
       <recent name="D:\Graduation design\code\PM\propertyManagement\src\main\webapp\WEB-INF\view\activeLogin" />
       <recent name="D:\Graduation design\code\PM\propertyManagement\src\main\webapp\WEB-INF\view\dsis" />
-      <recent name="D:\Graduation design\code\PM\propertyManagement\src\main\webapp\WEB-INF\view\mws\images" />
       <recent name="D:\Graduation design\code\PM\propertyManagement\src\main\webapp\WEB-INF\images\riImg" />
       <recent name="D:\Graduation design\code\PM\propertyManagement\src\main\resources\com\pm\dsis\fee\mapper" />
     </key>
@@ -1392,16 +1425,16 @@
       <workItem from="1525594060259" duration="5898000" />
       <workItem from="1525676251084" duration="5426000" />
       <workItem from="1525737593141" duration="28134000" />
-      <workItem from="1525844668819" duration="25399000" />
+      <workItem from="1525844668819" duration="30629000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="475537000" />
+    <option name="totallyTimeSpent" value="480767000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
-    <editor active="false" />
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="7" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Nl-Palette" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -1415,7 +1448,7 @@
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.50163937" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.05409836" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.22131148" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -1426,7 +1459,7 @@
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.019672131" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.0" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.036308624" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.10363086" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.12622951" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
@@ -1531,21 +1564,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/resources/com/pm/dsis/fee/mapper/WaterUnitPriceMapper.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="80">
-          <caret line="4" column="42" lean-forward="false" selection-start-line="4" selection-start-column="36" selection-end-line="4" selection-end-column="42" />
-          <folding>
-            <marker date="1525770142017" expanded="true" signature="1321:1426" ph="select from water_unit_price" />
-            <marker date="1525770142017" expanded="true" signature="1537:1658" ph="select from water_unit_price" />
-            <marker date="1525770142017" expanded="true" signature="1768:1843" ph="delete from " />
-            <marker date="1525770142017" expanded="true" signature="1950:2461" ph="insert into water_unit_price... " />
-            <marker date="1525770142017" expanded="true" signature="4423:5436" ph="update water... " />
-            <marker date="1525770142017" expanded="true" signature="5546:6071" ph="update water... " />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/pm/dsis/fee/service/WaterUnitPriceService.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="100">
@@ -1801,14 +1819,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/view/mws/au/au_intro.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="320">
-          <caret line="34" column="5" lean-forward="false" selection-start-line="34" selection-start-column="5" selection-end-line="34" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/view/mws/pc/pc_center.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -1822,16 +1832,6 @@
         <state relative-caret-position="190">
           <caret line="447" column="105" lean-forward="true" selection-start-line="446" selection-start-column="7" selection-end-line="447" selection-end-column="105" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/view/mws/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="160">
-          <caret line="33" column="20" lean-forward="false" selection-start-line="33" selection-start-column="8" selection-end-line="33" selection-end-column="20" />
-          <folding>
-            <element signature="n#style#0;n#a#0;n#li#4;n#ul#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -2049,10 +2049,42 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/pm/dsis/lr/service/ServiceImpl/LrServiceImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-71">
-          <caret line="305" column="16" lean-forward="true" selection-start-line="305" selection-start-column="16" selection-end-line="305" selection-end-column="16" />
+        <state relative-caret-position="132">
+          <caret line="333" column="30" lean-forward="false" selection-start-line="333" selection-start-column="24" selection-end-line="333" selection-end-column="30" />
           <folding>
             <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/view/mws/css/index.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="213">
+          <caret line="31" column="4" lean-forward="false" selection-start-line="31" selection-start-column="4" selection-end-line="31" selection-end-column="4" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/view/mws/au/au_intro.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="380">
+          <caret line="70" column="6" lean-forward="true" selection-start-line="50" selection-start-column="0" selection-end-line="70" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/view/mws/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="239">
+          <caret line="165" column="26" lean-forward="false" selection-start-line="165" selection-start-column="26" selection-end-line="165" selection-end-column="26" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#p#0;n#div#0;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#1;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#h1#0;n#div#1;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#img#0;n#div#1;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#img#0;n#div#2;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#p#0;n#div#3;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
           </folding>
         </state>
       </provider>
