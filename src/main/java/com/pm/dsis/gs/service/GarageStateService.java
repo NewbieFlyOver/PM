@@ -36,4 +36,11 @@ public interface GarageStateService {
      */
     int updateByGsId(GarageState record);
 
+    /**
+     * 根据userId查询车位
+     * @return
+     */
+    List<GarageState> selectGarageStateByStatu(GarageState garageState);
+
+
 }

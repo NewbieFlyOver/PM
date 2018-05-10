@@ -113,7 +113,7 @@
       HB_POSITION, HB_ROLE, HB_INDUCTION_DATE, HB_STATUS, HB_STATUS_FALG,
       ATTRIBUTE1,ATTRIBUTE2, ATTRIBUTE3, ATTRIBUTE4,
       ATTRIBUTE5, ATTRIBUTE6)
-    values (#{hbId,jdbcType=BIGINT}, #{hbAccount,jdbcType=VARCHAR}, '123456',
+    values (#{hbId,jdbcType=BIGINT}, #{hbAccount,jdbcType=VARCHAR}, #{hbPassword},
       #{hbNumber}, #{hbName,jdbcType=VARCHAR}, #{hbNational,jdbcType=VARCHAR}, #{hbGender,jdbcType=VARCHAR},
       #{hbNativePlace,jdbcType=VARCHAR}, #{hbPhone,jdbcType=VARCHAR}, #{hbWorkPhone,jdbcType=VARCHAR}, 
       #{hbEmail,jdbcType=VARCHAR}, #{hbIdNumber,jdbcType=VARCHAR}, #{hbHomeAddress,jdbcType=VARCHAR}, 

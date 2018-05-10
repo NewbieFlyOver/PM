@@ -125,7 +125,7 @@
         #{userDepartment,jdbcType=VARCHAR}, #{userHomeAddress,jdbcType=VARCHAR}, #{userCorrespondenceAddress,jdbcType=VARCHAR},
         #{userCarBrand,jdbcType=VARCHAR}, #{userHobby,jdbcType=VARCHAR}, #{emergencyContact,jdbcType=VARCHAR},
         #{emergencyContactPhone,jdbcType=VARCHAR}, #{userTaboo,jdbcType=VARCHAR}, #{userNote,jdbcType=VARCHAR}, #{object,jdbcType=VARCHAR},
-        #{attribute1,jdbcType=VARCHAR}, #{attribute2,jdbcType=VARCHAR}, #{attribute3,jdbcType=VARCHAR},
+        'N', #{attribute2,jdbcType=VARCHAR}, #{attribute3,jdbcType=VARCHAR},
         #{attribute4,jdbcType=VARCHAR},#{attribute5,jdbcType=VARCHAR},#{attribute6,jdbcType=VARCHAR}
       )
   </insert>

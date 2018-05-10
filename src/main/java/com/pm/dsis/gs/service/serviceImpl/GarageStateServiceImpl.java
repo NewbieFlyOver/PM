@@ -61,4 +61,12 @@ public class GarageStateServiceImpl implements GarageStateService {
         return garageStateMapper.updateByGsId(record);
     }
 
+    /**
+     * 根据userId查询车位
+     * @return
+     */
+    public List<GarageState> selectGarageStateByStatu(GarageState garageState) {
+        return garageStateMapper.selectGarageStateByStatu(garageState);
+    }
+
 }

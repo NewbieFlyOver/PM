@@ -2,15 +2,93 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="fae49d94-6251-4fda-977e-4cfe51227b06" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/mws/images/xj1.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/mws/images/xj2.jpg" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/images/riImg/0f3b6f95581846ab98f983bd99ca4a08.jpeg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/images/riImg/284c8d21d8c24206987632b00f5d4eac.jpeg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/images/riImg/2c4f09cfdd634c63a74cf1be9f3fcd4b.jpeg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/images/riImg/39f92a1f2d8745f087c320fda845d262.jpeg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/images/riImg/428c5966824f4aa4a2a0d98a2688b22a.jpeg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/images/riImg/49b0f67cdfb146cab9b85d1f97d3ca32.jpeg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/images/riImg/4ebababe9d104a8db92c3072fef3c935.jpeg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/images/riImg/4f8930e575d24853b60e39bab49c1b7b.jpeg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/images/riImg/594a6e38aedf4ab48e05439ae7acabfe.jpeg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/images/riImg/6268801df7cb4f8597930b7ea9d0279f.jpeg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/images/riImg/7800ca2392cb4f8b82ad2e0caf672b70.jpeg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/images/riImg/7e88c5ccac974ff3be85a84773fb3d9b.jpeg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/images/riImg/874199903f08451ba2cd1d743c86397a.jpeg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/images/riImg/8b032692eb0d401a98bcd5d745040404.jpeg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/images/riImg/b8d31f45d76549679588b0dc524dc661.jpeg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/images/riImg/c7a58e161b3744ddbf7ff485a7117ab1.jpeg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/images/riImg/cf10f5aac0044b918c7e85c319198b71.jpeg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/images/riImg/d0299f85932a4528a679a3594d7c4d0b.jpeg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/images/riImg/d81597941e064fb7b1a7765fa1d780aa.jpeg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/images/riImg/da9bce820723462283d147f4c685a56b.jpeg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/images/riImg/e1c420466d2144b6ba7f39127016593f.jpeg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/images/riImg/ec0723ace1f74742b31a087ea06eb90a.jpeg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/images/riImg/f3b47a81d9bd49c3ae0c232b2d3fb2f6.jpeg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/pm01/WEB-INF/images/riImg/0f3b6f95581846ab98f983bd99ca4a08.jpeg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/pm01/WEB-INF/images/riImg/284c8d21d8c24206987632b00f5d4eac.jpeg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/pm01/WEB-INF/images/riImg/2c4f09cfdd634c63a74cf1be9f3fcd4b.jpeg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/pm01/WEB-INF/images/riImg/39f92a1f2d8745f087c320fda845d262.jpeg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/pm01/WEB-INF/images/riImg/428c5966824f4aa4a2a0d98a2688b22a.jpeg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/pm01/WEB-INF/images/riImg/49b0f67cdfb146cab9b85d1f97d3ca32.jpeg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/pm01/WEB-INF/images/riImg/4ebababe9d104a8db92c3072fef3c935.jpeg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/pm01/WEB-INF/images/riImg/4f8930e575d24853b60e39bab49c1b7b.jpeg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/pm01/WEB-INF/images/riImg/594a6e38aedf4ab48e05439ae7acabfe.jpeg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/pm01/WEB-INF/images/riImg/6268801df7cb4f8597930b7ea9d0279f.jpeg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/pm01/WEB-INF/images/riImg/7800ca2392cb4f8b82ad2e0caf672b70.jpeg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/pm01/WEB-INF/images/riImg/7e88c5ccac974ff3be85a84773fb3d9b.jpeg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/pm01/WEB-INF/images/riImg/874199903f08451ba2cd1d743c86397a.jpeg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/pm01/WEB-INF/images/riImg/8b032692eb0d401a98bcd5d745040404.jpeg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/pm01/WEB-INF/images/riImg/b8d31f45d76549679588b0dc524dc661.jpeg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/pm01/WEB-INF/images/riImg/c7a58e161b3744ddbf7ff485a7117ab1.jpeg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/pm01/WEB-INF/images/riImg/cf10f5aac0044b918c7e85c319198b71.jpeg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/pm01/WEB-INF/images/riImg/d0299f85932a4528a679a3594d7c4d0b.jpeg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/pm01/WEB-INF/images/riImg/d81597941e064fb7b1a7765fa1d780aa.jpeg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/pm01/WEB-INF/images/riImg/da9bce820723462283d147f4c685a56b.jpeg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/pm01/WEB-INF/images/riImg/e1c420466d2144b6ba7f39127016593f.jpeg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/pm01/WEB-INF/images/riImg/ec0723ace1f74742b31a087ea06eb90a.jpeg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/pm01/WEB-INF/images/riImg/f3b47a81d9bd49c3ae0c232b2d3fb2f6.jpeg" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/images/riImg/03578eced581487b9ece5c5eb8fcf601.jpeg" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/images/riImg/03578eced581487b9ece5c5eb8fcf601.jpeg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/pm/dsis/fee/job/PmFeeJob.class" afterPath="$PROJECT_DIR$/target/classes/com/pm/dsis/fee/job/PmFeeJob.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/pm/dsis/fee/service/serviceImpl/PmFeeServiceImpl.class" afterPath="$PROJECT_DIR$/target/classes/com/pm/dsis/fee/service/serviceImpl/PmFeeServiceImpl.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/pm/dsis/gs/controllers/GarageStateController.class" afterPath="$PROJECT_DIR$/target/classes/com/pm/dsis/gs/controllers/GarageStateController.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/pm/dsis/gs/mapper/GarageStateMapper.class" afterPath="$PROJECT_DIR$/target/classes/com/pm/dsis/gs/mapper/GarageStateMapper.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/pm/dsis/gs/service/GarageStateService.class" afterPath="$PROJECT_DIR$/target/classes/com/pm/dsis/gs/service/GarageStateService.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/pm/dsis/gs/service/serviceImpl/GarageStateServiceImpl.class" afterPath="$PROJECT_DIR$/target/classes/com/pm/dsis/gs/service/serviceImpl/GarageStateServiceImpl.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/pm01/WEB-INF/classes/com/pm/dsis/fee/job/PmFeeJob.class" afterPath="$PROJECT_DIR$/target/pm01/WEB-INF/classes/com/pm/dsis/fee/job/PmFeeJob.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/pm01/WEB-INF/classes/com/pm/dsis/fee/service/serviceImpl/PmFeeServiceImpl.class" afterPath="$PROJECT_DIR$/target/pm01/WEB-INF/classes/com/pm/dsis/fee/service/serviceImpl/PmFeeServiceImpl.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/pm01/WEB-INF/classes/com/pm/dsis/gs/controllers/GarageStateController.class" afterPath="$PROJECT_DIR$/target/pm01/WEB-INF/classes/com/pm/dsis/gs/controllers/GarageStateController.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/pm01/WEB-INF/classes/com/pm/dsis/gs/mapper/GarageStateMapper.class" afterPath="$PROJECT_DIR$/target/pm01/WEB-INF/classes/com/pm/dsis/gs/mapper/GarageStateMapper.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/pm01/WEB-INF/classes/com/pm/dsis/gs/service/GarageStateService.class" afterPath="$PROJECT_DIR$/target/pm01/WEB-INF/classes/com/pm/dsis/gs/service/GarageStateService.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/pm01/WEB-INF/classes/com/pm/dsis/gs/service/serviceImpl/GarageStateServiceImpl.class" afterPath="$PROJECT_DIR$/target/pm01/WEB-INF/classes/com/pm/dsis/gs/service/serviceImpl/GarageStateServiceImpl.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/pm01/WEB-INF/images/riImg/03578eced581487b9ece5c5eb8fcf601.jpeg" afterPath="$PROJECT_DIR$/target/pm01/WEB-INF/images/riImg/03578eced581487b9ece5c5eb8fcf601.jpeg" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/mws/au/au_intro.html" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/mws/au/au_intro.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/mws/css/index.css" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/mws/css/index.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/mws/index.html" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/mws/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/pm01/WEB-INF/view/mws/au/au_intro.html" afterPath="$PROJECT_DIR$/target/pm01/WEB-INF/view/mws/au/au_intro.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/pm01/WEB-INF/view/mws/css/index.css" afterPath="$PROJECT_DIR$/target/pm01/WEB-INF/view/mws/css/index.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/pm01/WEB-INF/view/mws/index.html" afterPath="$PROJECT_DIR$/target/pm01/WEB-INF/view/mws/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/pm/dsis/fee/job/PmFeeJob.java" afterPath="$PROJECT_DIR$/src/main/java/com/pm/dsis/fee/job/PmFeeJob.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/pm/dsis/gs/controllers/GarageStateController.java" afterPath="$PROJECT_DIR$/src/main/java/com/pm/dsis/gs/controllers/GarageStateController.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/pm/dsis/gs/mapper/GarageStateMapper.java" afterPath="$PROJECT_DIR$/src/main/java/com/pm/dsis/gs/mapper/GarageStateMapper.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/pm/dsis/gs/service/GarageStateService.java" afterPath="$PROJECT_DIR$/src/main/java/com/pm/dsis/gs/service/GarageStateService.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/pm/dsis/gs/service/serviceImpl/GarageStateServiceImpl.java" afterPath="$PROJECT_DIR$/src/main/java/com/pm/dsis/gs/service/serviceImpl/GarageStateServiceImpl.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/com/pm/dsis/em/mapper/HousekeeperBuildingInfoMapper.xml" afterPath="$PROJECT_DIR$/src/main/resources/com/pm/dsis/em/mapper/HousekeeperBuildingInfoMapper.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/com/pm/dsis/gs/mapper/GarageStateMapper.xml" afterPath="$PROJECT_DIR$/src/main/resources/com/pm/dsis/gs/mapper/GarageStateMapper.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/com/pm/dsis/mm/mapper/UserInfoMapper.xml" afterPath="$PROJECT_DIR$/src/main/resources/com/pm/dsis/mm/mapper/UserInfoMapper.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/spring/springmvc.xml" afterPath="$PROJECT_DIR$/src/main/resources/spring/springmvc.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/common/js/sccl.js" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/common/js/sccl.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/dsis/gs/gs_edit.html" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/dsis/gs/gs_edit.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/dsis/mm/mm_new_edit.html" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/dsis/mm/mm_new_edit.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/mws/pc/pc_gs_appliy.html" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/mws/pc/pc_gs_appliy.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/mws/pc/pc_info.html" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/mws/pc/pc_info.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/mws/pc/pc_info_build.html" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/mws/pc/pc_info_build.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/pm/dsis/em/mapper/HousekeeperBuildingInfoMapper.xml" afterPath="$PROJECT_DIR$/target/classes/com/pm/dsis/em/mapper/HousekeeperBuildingInfoMapper.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/pm/dsis/gs/mapper/GarageStateMapper.xml" afterPath="$PROJECT_DIR$/target/classes/com/pm/dsis/gs/mapper/GarageStateMapper.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/pm/dsis/mm/mapper/UserInfoMapper.xml" afterPath="$PROJECT_DIR$/target/classes/com/pm/dsis/mm/mapper/UserInfoMapper.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/pm01/WEB-INF/classes/com/pm/dsis/em/mapper/HousekeeperBuildingInfoMapper.xml" afterPath="$PROJECT_DIR$/target/pm01/WEB-INF/classes/com/pm/dsis/em/mapper/HousekeeperBuildingInfoMapper.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/pm01/WEB-INF/classes/com/pm/dsis/gs/mapper/GarageStateMapper.xml" afterPath="$PROJECT_DIR$/target/pm01/WEB-INF/classes/com/pm/dsis/gs/mapper/GarageStateMapper.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/pm01/WEB-INF/classes/com/pm/dsis/mm/mapper/UserInfoMapper.xml" afterPath="$PROJECT_DIR$/target/pm01/WEB-INF/classes/com/pm/dsis/mm/mapper/UserInfoMapper.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/pm01/WEB-INF/view/dsis/gs/gs_edit.html" afterPath="$PROJECT_DIR$/target/pm01/WEB-INF/view/dsis/gs/gs_edit.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/pm01/WEB-INF/view/dsis/mm/mm_new_edit.html" afterPath="$PROJECT_DIR$/target/pm01/WEB-INF/view/dsis/mm/mm_new_edit.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/pm01/WEB-INF/view/mws/pc/pc_gs_appliy.html" afterPath="$PROJECT_DIR$/target/pm01/WEB-INF/view/mws/pc/pc_gs_appliy.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/pm01/WEB-INF/view/mws/pc/pc_info.html" afterPath="$PROJECT_DIR$/target/pm01/WEB-INF/view/mws/pc/pc_info.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/pm01/WEB-INF/view/mws/pc/pc_info_build.html" afterPath="$PROJECT_DIR$/target/pm01/WEB-INF/view/mws/pc/pc_info_build.html" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -31,113 +109,88 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="LrController.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/pm/dsis/lr/controllers/LrController.java">
+      <file leaf-file-name="pc_gs_appliy.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/view/mws/pc/pc_gs_appliy.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="213">
-              <caret line="66" column="26" lean-forward="false" selection-start-line="66" selection-start-column="26" selection-end-line="66" selection-end-column="26" />
+            <state relative-caret-position="140">
+              <caret line="325" column="58" lean-forward="false" selection-start-line="325" selection-start-column="58" selection-end-line="325" selection-end-column="58" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="LrService.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/pm/dsis/lr/service/LrService.java">
+      <file leaf-file-name="GarageStateService.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/pm/dsis/gs/service/GarageStateService.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="117">
-              <caret line="30" column="9" lean-forward="false" selection-start-line="30" selection-start-column="9" selection-end-line="30" selection-end-column="9" />
+            <state relative-caret-position="103">
+              <caret line="15" column="22" lean-forward="false" selection-start-line="15" selection-start-column="22" selection-end-line="15" selection-end-column="22" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="LrServiceImpl.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/pm/dsis/lr/service/ServiceImpl/LrServiceImpl.java">
+      <file leaf-file-name="GarageStateServiceImpl.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/pm/dsis/gs/service/serviceImpl/GarageStateServiceImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="132">
-              <caret line="333" column="30" lean-forward="false" selection-start-line="333" selection-start-column="24" selection-end-line="333" selection-end-column="30" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/view/mws/index.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="239">
-              <caret line="165" column="26" lean-forward="false" selection-start-line="165" selection-start-column="26" selection-end-line="165" selection-end-column="26" />
-              <folding>
-                <element signature="n#style#0;n#div#0;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#p#0;n#div#0;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#1;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#h1#0;n#div#1;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#img#0;n#div#1;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#img#0;n#div#2;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#p#0;n#div#3;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="au_intro.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/view/mws/au/au_intro.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="380">
-              <caret line="70" column="6" lean-forward="true" selection-start-line="50" selection-start-column="0" selection-end-line="70" selection-end-column="6" />
+            <state relative-caret-position="123">
+              <caret line="23" column="93" lean-forward="false" selection-start-line="23" selection-start-column="44" selection-end-line="23" selection-end-column="93" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.css" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/view/mws/css/index.css">
+      <file leaf-file-name="GarageStateMapper.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/pm/dsis/gs/mapper/GarageStateMapper.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="213">
-              <caret line="31" column="4" lean-forward="false" selection-start-line="31" selection-start-column="4" selection-end-line="31" selection-end-column="4" />
+            <state relative-caret-position="-537">
+              <caret line="13" column="22" lean-forward="false" selection-start-line="13" selection-start-column="22" selection-end-line="13" selection-end-column="22" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="HttpClientUtil.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/pm/dsis/lr/SendMsgUtil/HttpClientUtil.java">
+      <file leaf-file-name="PmFeeJob.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/pm/dsis/fee/job/PmFeeJob.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="104">
-              <caret line="135" column="63" lean-forward="false" selection-start-line="135" selection-start-column="56" selection-end-line="135" selection-end-column="63" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="test.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/pm/dsis/lr/SendMsgUtil/test.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="275">
-              <caret line="36" column="5" lean-forward="true" selection-start-line="36" selection-start-column="5" selection-end-line="36" selection-end-column="5" />
+            <state relative-caret-position="171">
+              <caret line="20" column="5" lean-forward="true" selection-start-line="20" selection-start-column="5" selection-end-line="20" selection-end-column="5" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="LoginInterceptor.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/pm/platform/LoginInterceptor.java">
+      <file leaf-file-name="03578eced581487b9ece5c5eb8fcf601.jpeg" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/images/riImg/03578eced581487b9ece5c5eb8fcf601.jpeg">
+          <provider selected="true" editor-type-id="images">
+            <state />
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="PmFeeService.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/pm/dsis/fee/service/PmFeeService.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="99">
-              <caret line="23" column="0" lean-forward="false" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
+            <state relative-caret-position="67">
+              <caret line="15" column="0" lean-forward="false" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="DispatcherServlet.class" pinned="false" current-in-tab="false">
-        <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-webmvc/4.1.3.RELEASE/spring-webmvc-4.1.3.RELEASE.jar!/org/springframework/web/servlet/DispatcherServlet.class">
+      <file leaf-file-name="PmFeeServiceImpl.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/pm/dsis/fee/service/serviceImpl/PmFeeServiceImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="155">
-              <caret line="476" column="0" lean-forward="false" selection-start-line="476" selection-start-column="0" selection-end-line="476" selection-end-column="0" />
+            <state relative-caret-position="127">
+              <caret line="36" column="11" lean-forward="false" selection-start-line="36" selection-start-column="11" selection-end-line="36" selection-end-column="11" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="springmvc.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/spring/springmvc.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="140">
+              <caret line="67" column="52" lean-forward="false" selection-start-line="67" selection-start-column="52" selection-end-line="67" selection-end-column="52" />
               <folding />
             </state>
           </provider>
@@ -157,8 +210,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>userID</find>
-      <find>保存</find>
       <find>450</find>
       <find>h1</find>
       <find>red</find>
@@ -174,7 +225,6 @@
       <find>房屋使用情况</find>
       <find>缴费</find>
       <find>使用</find>
-      <find>alert</find>
       <find>saveMemberInfo</find>
       <find>tabstrip</find>
       <find>adminRole == &quot;admin&quot;</find>
@@ -185,8 +235,11 @@
       <find>hu</find>
       <find>重置</find>
       <find>findPwd</find>
-      <find>sendVerif</find>
       <find>sendHttpsGet</find>
+      <find>sendVerif</find>
+      <find>MD5</find>
+      <find>alert</find>
+      <find>gsState</find>
     </findStrings>
     <dirStrings>
       <dir>D:\Graduation design\code\PM\propertyManagement\src\main\webapp\WEB-INF\view\dsis</dir>
@@ -203,17 +256,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/java/com/pm/dsis/fee/controllers/PmFeeController.java" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/dsis/mm/mm_new_edit.html" />
-        <option value="$PROJECT_DIR$/src/main/resources/com/pm/dsis/fee/mapper/PmUnitPriceMapper.xml" />
-        <option value="$PROJECT_DIR$/src/main/java/com/pm/dsis/fee/mapper/PmUnitPriceMapper.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/pm/dsis/fee/controllers/PmUnitPriceController.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/pm/dsis/fee/service/serviceImpl/PmUnitPriceServiceImpl.java" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/dsis/mm/mm_query.html" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/dsis/fee/fee_pmUnitPrice.html" />
-        <option value="$PROJECT_DIR$/src/main/resources/com/pm/dsis/fee/mapper/WaterUnitPriceMapper.xml" />
-        <option value="$PROJECT_DIR$/src/main/java/com/pm/dsis/fee/mapper/WaterUnitPriceMapper.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/pm/dsis/fee/service/PmUnitPriceService.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/pm/dsis/fee/service/WaterUnitPriceService.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/pm/dsis/fee/service/serviceImpl/WaterUnitPriceServiceImpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/pm/dsis/fee/controllers/WaterUnitPriceController.java" />
@@ -224,7 +266,6 @@
         <option value="$PROJECT_DIR$/src/main/java/com/pm/dsis/fee/service/ElectUnitPriceService.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/pm/dsis/fee/controllers/ElectUnitPriceController.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/pm/dsis/fee/service/serviceImpl/ElectUnitPriceServiceImpl.java" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/common/js/sccl.js" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/dsis/fee/fee_electUnitPrice.html" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/dsis/fee/fee_elect.html" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/dsis/fee/fee_water.html" />
@@ -232,20 +273,16 @@
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/resetPwd.html" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/mws/resetPwd.html" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/dsis/em/em_edit.html" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/mws/pc/pc_info.html" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/mws/ri/ri_info.html" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/index.html" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/activeLogin/index.html" />
-        <option value="$PROJECT_DIR$/src/main/resources/com/pm/dsis/mm/mapper/UserInfoMapper.xml" />
         <option value="$PROJECT_DIR$/src/main/java/com/pm/dsis/mm/mapper/UserInfoMapper.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/activeLogin/findPwd.html" />
         <option value="$PROJECT_DIR$/src/main/java/com/pm/dsis/em/mapper/HousekeeperBuildingInfoMapper.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/com/pm/dsis/em/mapper/HousekeeperBuildingInfoMapper.xml" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/dsis/resetPwd.html" />
         <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/src/main/java/com/pm/dsis/lr/service/LrService.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/activeLogin/sendVerif.html" />
-        <option value="$PROJECT_DIR$/src/main/resources/spring/springmvc.xml" />
         <option value="$PROJECT_DIR$/src/main/java/com/pm/dsis/lr/controllers/LrController.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/pm/platform/LoginInterceptor.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/pm/dsis/lr/SendMsgUtil/test.java" />
@@ -254,6 +291,22 @@
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/mws/css/index.css" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/mws/au/au_intro.html" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/mws/index.html" />
+        <option value="$PROJECT_DIR$/src/main/resources/com/pm/dsis/em/mapper/HousekeeperBuildingInfoMapper.xml" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/dsis/mm/mm_new_edit.html" />
+        <option value="$PROJECT_DIR$/src/main/resources/com/pm/dsis/mm/mapper/UserInfoMapper.xml" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/mws/pc/pc_info_build.html" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/mws/pc/pc_info.html" />
+        <option value="$PROJECT_DIR$/src/main/java/com/pm/dsis/gs/controllers/GarageStateController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/pm/dsis/gs/service/GarageStateService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/pm/dsis/gs/service/serviceImpl/GarageStateServiceImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/pm/dsis/gs/mapper/GarageStateMapper.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/com/pm/dsis/gs/mapper/GarageStateMapper.xml" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/dsis/gs/gs_edit.html" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/view/mws/pc/pc_gs_appliy.html" />
+        <option value="$PROJECT_DIR$/src/main/java/com/pm/dsis/fee/job/PmFeeJob.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/pm/dsis/fee/service/serviceImpl/PmFeeServiceImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/common/js/sccl.js" />
+        <option value="$PROJECT_DIR$/src/main/resources/spring/springmvc.xml" />
       </list>
     </option>
   </component>
@@ -380,147 +433,11 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="view" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="propertyManagement" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="propertyManagement" />
+              <option name="myItemId" value="images" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="webapp" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="WEB-INF" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="view" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="mws" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="propertyManagement" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="propertyManagement" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="webapp" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="WEB-INF" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="view" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="mws" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="au" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="propertyManagement" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="propertyManagement" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="webapp" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="WEB-INF" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="view" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="dsis" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="propertyManagement" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="propertyManagement" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="webapp" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="WEB-INF" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="view" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="activeLogin" />
+              <option name="myItemId" value="riImg" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -627,10 +544,6 @@
               <option name="myItemId" value="pm" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="platform" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
@@ -700,11 +613,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="lr" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="service" />
+              <option name="myItemId" value="fee" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -742,95 +651,11 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="lr" />
+              <option name="myItemId" value="fee" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="service" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ServiceImpl" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="propertyManagement" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="propertyManagement" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="com" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="pm" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="dsis" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="lr" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="SendMsgUtil" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="propertyManagement" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="propertyManagement" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="com" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="pm" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="dsis" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="lr" />
+              <option name="myItemId" value="job" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -849,7 +674,7 @@
     <property name="js-jscs-nodeInterpreter" value="C:\Program Files\nodejs\node.exe" />
     <property name="last_opened_file_path" value="D:/hand/tf/code3/TF" />
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
-    <property name="SearchEverywhereHistoryKey" value="em_edit.html&#9;FILE&#9;file://D:/Graduation design/code/PM/propertyManagement/src/main/webapp/WEB-INF/view/dsis/em/em_edit.html&#10;index.html&#9;FILE&#9;file://D:/Graduation design/code/PM/propertyManagement/src/main/webapp/WEB-INF/view/index.html&#10;em/em_edit.html&#9;FILE&#9;file://D:/Graduation design/code/PM/propertyManagement/src/main/webapp/WEB-INF/view/dsis/em/em_edit.html&#10;pc_info_member.html&#9;FILE&#9;file://D:/Graduation design/code/PM/propertyManagement/src/main/webapp/WEB-INF/view/mws/pc/pc_info_member.html&#10;pc_info.html&#9;FILE&#9;file://D:/Graduation design/code/PM/propertyManagement/src/main/webapp/WEB-INF/view/mws/pc/pc_info.html&#10;repair_info.html&#9;FILE&#9;file://D:/Graduation design/code/PM/propertyManagement/src/main/webapp/WEB-INF/view/dsis/repair/repair_info.html&#10;fee_elect.html&#9;FILE&#9;file://D:/Graduation design/code/PM/propertyManagement/src/main/webapp/WEB-INF/view/dsis/fee/fee_elect.html&#10;mm_&#9;FILE&#9;file://D:/Graduation design/code/PM/propertyManagement/src/main/webapp/WEB-INF/view/dsis/mm/mm_new_edit.html&#10;pm_fee.html&#9;FILE&#9;file://D:/Graduation design/code/PM/propertyManagement/src/main/webapp/WEB-INF/view/dsis/fee/pm_fee.html&#10;mm_new_edit&#9;FILE&#9;file://D:/Graduation design/code/PM/propertyManagement/src/main/webapp/WEB-INF/view/dsis/mm/mm_new_edit.html&#10;mm&#9;FILE&#9;file://D:/Graduation design/code/PM/propertyManagement/src/main/webapp/WEB-INF/view/dsis/mm/mm_query.html&#10;pc_info&#9;FILE&#9;file://D:/Graduation design/code/PM/propertyManagement/src/main/webapp/WEB-INF/view/mws/pc/pc_info.html&#10;mm/mm_edit.html&#9;FILE&#9;file://D:/Graduation design/code/PM/propertyManagement/src/main/webapp/WEB-INF/view/dsis/mm/mm_edit.html&#10;login.html&#9;FILE&#9;file://D:/Graduation design/code/PM/propertyManagement/src/main/webapp/WEB-INF/view/login.html&#10;query&#9;FILE&#9;file://D:/Graduation design/code/PM/propertyManagement/src/main/webapp/WEB-INF/view/dsis/mm/mm_query.html&#10;edit&#9;FILE&#9;file://D:/Graduation design/code/PM/propertyManagement/src/main/webapp/WEB-INF/view/dsis/mm/mm_edit.html&#10;water&#9;FILE&#9;file://D:/Graduation design/code/PM/propertyManagement/src/main/webapp/WEB-INF/view/dsis/cm/cm_water_amount.html&#10;elect&#9;PSI&#9;JAVA://com.pm.dsis.cm.dto.ElectricityAmount&#10;cm_elect&#9;FILE&#9;file://D:/Graduation design/code/PM/propertyManagement/src/main/webapp/WEB-INF/view/dsis/cm/cm_elect_amount.html&#10;cm/cm_water_amount.html&#9;FILE&#9;file://D:/Graduation design/code/PM/propertyManagement/src/main/webapp/WEB-INF/view/dsis/cm/cm_water_amount.html&#10;mm_q&#9;FILE&#9;file://D:/Graduation design/code/PM/propertyManagement/src/main/webapp/WEB-INF/view/dsis/mm/mm_query.html&#10;mm_edit.html&#9;FILE&#9;file://D:/Graduation design/code/PM/propertyManagement/src/main/webapp/WEB-INF/view/dsis/mm/mm_edit.html&#10;mm/mm_new_edit.html&#9;FILE&#9;file://D:/Graduation design/code/PM/propertyManagement/src/main/webapp/WEB-INF/view/dsis/mm/mm_new_edit.html&#10;mm_query&#9;FILE&#9;file://D:/Graduation design/code/PM/propertyManagement/src/main/webapp/WEB-INF/view/dsis/mm/mm_query.html" />
+    <property name="SearchEverywhereHistoryKey" value="pc_gs_appliy.html&#9;FILE&#9;file://D:/Graduation design/code/PM/propertyManagement/src/main/webapp/WEB-INF/view/mws/pc/pc_gs_appliy.html&#10;gs_edit.html&#9;FILE&#9;file://D:/Graduation design/code/PM/propertyManagement/src/main/webapp/WEB-INF/view/dsis/gs/gs_edit.html&#10;pc_info.html&#9;FILE&#9;file://D:/Graduation design/code/PM/propertyManagement/src/main/webapp/WEB-INF/view/mws/pc/pc_info.html&#10;/pc_info_build.html&#9;FILE&#9;file://D:/Graduation design/code/PM/propertyManagement/src/main/webapp/WEB-INF/view/mws/pc/pc_info_build.html&#10;mm_new_edit.html&#9;FILE&#9;file://D:/Graduation design/code/PM/propertyManagement/src/main/webapp/WEB-INF/view/dsis/mm/mm_new_edit.html&#10;em_edit.html&#9;FILE&#9;file://D:/Graduation design/code/PM/propertyManagement/src/main/webapp/WEB-INF/view/dsis/em/em_edit.html&#10;index.html&#9;FILE&#9;file://D:/Graduation design/code/PM/propertyManagement/src/main/webapp/WEB-INF/view/index.html&#10;em/em_edit.html&#9;FILE&#9;file://D:/Graduation design/code/PM/propertyManagement/src/main/webapp/WEB-INF/view/dsis/em/em_edit.html&#10;pc_info_member.html&#9;FILE&#9;file://D:/Graduation design/code/PM/propertyManagement/src/main/webapp/WEB-INF/view/mws/pc/pc_info_member.html&#10;repair_info.html&#9;FILE&#9;file://D:/Graduation design/code/PM/propertyManagement/src/main/webapp/WEB-INF/view/dsis/repair/repair_info.html&#10;fee_elect.html&#9;FILE&#9;file://D:/Graduation design/code/PM/propertyManagement/src/main/webapp/WEB-INF/view/dsis/fee/fee_elect.html&#10;mm_&#9;FILE&#9;file://D:/Graduation design/code/PM/propertyManagement/src/main/webapp/WEB-INF/view/dsis/mm/mm_new_edit.html&#10;pm_fee.html&#9;FILE&#9;file://D:/Graduation design/code/PM/propertyManagement/src/main/webapp/WEB-INF/view/dsis/fee/pm_fee.html&#10;mm_new_edit&#9;FILE&#9;file://D:/Graduation design/code/PM/propertyManagement/src/main/webapp/WEB-INF/view/dsis/mm/mm_new_edit.html&#10;mm&#9;FILE&#9;file://D:/Graduation design/code/PM/propertyManagement/src/main/webapp/WEB-INF/view/dsis/mm/mm_query.html&#10;pc_info&#9;FILE&#9;file://D:/Graduation design/code/PM/propertyManagement/src/main/webapp/WEB-INF/view/mws/pc/pc_info.html&#10;mm/mm_edit.html&#9;FILE&#9;file://D:/Graduation design/code/PM/propertyManagement/src/main/webapp/WEB-INF/view/dsis/mm/mm_edit.html&#10;login.html&#9;FILE&#9;file://D:/Graduation design/code/PM/propertyManagement/src/main/webapp/WEB-INF/view/login.html&#10;query&#9;FILE&#9;file://D:/Graduation design/code/PM/propertyManagement/src/main/webapp/WEB-INF/view/dsis/mm/mm_query.html&#10;edit&#9;FILE&#9;file://D:/Graduation design/code/PM/propertyManagement/src/main/webapp/WEB-INF/view/dsis/mm/mm_edit.html&#10;water&#9;FILE&#9;file://D:/Graduation design/code/PM/propertyManagement/src/main/webapp/WEB-INF/view/dsis/cm/cm_water_amount.html&#10;elect&#9;PSI&#9;JAVA://com.pm.dsis.cm.dto.ElectricityAmount&#10;cm_elect&#9;FILE&#9;file://D:/Graduation design/code/PM/propertyManagement/src/main/webapp/WEB-INF/view/dsis/cm/cm_elect_amount.html&#10;cm/cm_water_amount.html&#9;FILE&#9;file://D:/Graduation design/code/PM/propertyManagement/src/main/webapp/WEB-INF/view/dsis/cm/cm_water_amount.html&#10;mm_q&#9;FILE&#9;file://D:/Graduation design/code/PM/propertyManagement/src/main/webapp/WEB-INF/view/dsis/mm/mm_query.html&#10;mm_edit.html&#9;FILE&#9;file://D:/Graduation design/code/PM/propertyManagement/src/main/webapp/WEB-INF/view/dsis/mm/mm_edit.html&#10;mm/mm_new_edit.html&#9;FILE&#9;file://D:/Graduation design/code/PM/propertyManagement/src/main/webapp/WEB-INF/view/dsis/mm/mm_new_edit.html&#10;mm_query&#9;FILE&#9;file://D:/Graduation design/code/PM/propertyManagement/src/main/webapp/WEB-INF/view/dsis/mm/mm_query.html" />
   </component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
@@ -1425,15 +1250,15 @@
       <workItem from="1525594060259" duration="5898000" />
       <workItem from="1525676251084" duration="5426000" />
       <workItem from="1525737593141" duration="28134000" />
-      <workItem from="1525844668819" duration="30629000" />
+      <workItem from="1525844668819" duration="38254000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="480767000" />
+    <option name="totallyTimeSpent" value="488392000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="744" extended-state="7" />
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -1448,7 +1273,7 @@
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.05409836" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.4557377" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.22131148" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -1459,7 +1284,7 @@
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.019672131" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.0" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.10363086" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.38956127" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.12622951" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
@@ -1534,28 +1359,28 @@
           <option name="timeStamp" value="207" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/pm/dsis/em/service/serviceImpl/HousekeeperBuildingInfoServiceImpl.java</url>
-          <line>27</line>
-          <properties />
-          <option name="timeStamp" value="388" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/pm/dsis/mm/controllers/UserInfoController.java</url>
-          <line>165</line>
-          <properties />
-          <option name="timeStamp" value="391" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/pm/dsis/fee/service/serviceImpl/WaterUnitPriceServiceImpl.java</url>
           <line>42</line>
           <properties />
           <option name="timeStamp" value="395" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/pm/dsis/fee/job/PmFeeJob.java</url>
+          <line>17</line>
+          <properties />
+          <option name="timeStamp" value="438" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/pm/dsis/fee/job/PmFeeJob.java</url>
+          <line>18</line>
+          <properties />
+          <option name="timeStamp" value="440" />
+        </line-breakpoint>
       </breakpoints>
       <breakpoints-dialog>
         <breakpoints-dialog />
       </breakpoints-dialog>
-      <option name="time" value="430" />
+      <option name="time" value="441" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -1564,253 +1389,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/pm/dsis/fee/service/WaterUnitPriceService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="100">
-          <caret line="24" column="9" lean-forward="false" selection-start-line="24" selection-start-column="9" selection-end-line="24" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/pm/dsis/fee/service/serviceImpl/WaterUnitPriceServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="200">
-          <caret line="43" column="63" lean-forward="false" selection-start-line="43" selection-start-column="11" selection-end-line="43" selection-end-column="63" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="e#1346#1347#0" expanded="false" />
-            <element signature="e#1411#1412#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/view/dsis/fee/pm_fee.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="5286">
-          <caret line="350" column="5" lean-forward="true" selection-start-line="350" selection-start-column="5" selection-end-line="350" selection-end-column="5" />
-          <folding>
-            <element signature="n#style#0;n#span#1;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#style#0;n#span#2;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/pm/dsis/fee/mapper/PmFeeMapper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="100">
-          <caret line="7" column="17" lean-forward="false" selection-start-line="7" selection-start-column="17" selection-end-line="7" selection-end-column="17" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/com/pm/dsis/fee/mapper/ElectricityUnitPriceMapper.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="139">
-          <caret line="33" column="95" lean-forward="false" selection-start-line="33" selection-start-column="95" selection-end-line="33" selection-end-column="95" />
-          <folding>
-            <marker date="1525780863338" expanded="true" signature="1332:1443" ph="select from electricity_unit_price" />
-            <marker date="1525780863338" expanded="true" signature="1554:1681" ph="select from electricity_unit_price" />
-            <marker date="1525780863338" expanded="true" signature="1797:1878" ph="delete from " />
-            <marker date="1525780863338" expanded="true" signature="1991:2508" ph="insert into electricity_unit_price... " />
-            <marker date="1525780863338" expanded="true" signature="4485:5504" ph="update elect... " />
-            <marker date="1525780863338" expanded="true" signature="5620:6151" ph="update elect... " />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/pm/dsis/fee/mapper/ElectricityUnitPriceMapper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="256">
-          <caret line="39" column="0" lean-forward="true" selection-start-line="10" selection-start-column="4" selection-end-line="39" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/pm/dsis/fee/service/CostManagService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="140">
-          <caret line="10" column="17" lean-forward="false" selection-start-line="10" selection-start-column="17" selection-end-line="10" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/pm/dsis/fee/controllers/WaterUnitPriceController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1140">
-          <caret line="70" column="0" lean-forward="false" selection-start-line="26" selection-start-column="0" selection-end-line="70" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/pm/dsis/fee/dto/ElectricityUnitPrice.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="3" column="23" lean-forward="false" selection-start-line="3" selection-start-column="17" selection-end-line="3" selection-end-column="23" />
-          <folding>
-            <element signature="e#404#405#0" expanded="false" />
-            <element signature="e#433#434#0" expanded="false" />
-            <element signature="e#475#476#0" expanded="false" />
-            <element signature="e#511#512#0" expanded="false" />
-            <element signature="e#548#549#0" expanded="false" />
-            <element signature="e#582#583#0" expanded="false" />
-            <element signature="e#635#636#0" expanded="false" />
-            <element signature="e#681#682#0" expanded="false" />
-            <element signature="e#716#717#0" expanded="false" />
-            <element signature="e#748#749#0" expanded="false" />
-            <element signature="e#797#798#0" expanded="false" />
-            <element signature="e#839#840#0" expanded="false" />
-            <element signature="e#874#875#0" expanded="false" />
-            <element signature="e#906#907#0" expanded="false" />
-            <element signature="e#955#956#0" expanded="false" />
-            <element signature="e#997#998#0" expanded="false" />
-            <element signature="e#1034#1035#0" expanded="false" />
-            <element signature="e#1067#1068#0" expanded="false" />
-            <element signature="e#1119#1120#0" expanded="false" />
-            <element signature="e#1198#1199#0" expanded="false" />
-            <element signature="e#1235#1236#0" expanded="false" />
-            <element signature="e#1268#1269#0" expanded="false" />
-            <element signature="e#1320#1321#0" expanded="false" />
-            <element signature="e#1399#1400#0" expanded="false" />
-            <element signature="e#1436#1437#0" expanded="false" />
-            <element signature="e#1469#1470#0" expanded="false" />
-            <element signature="e#1521#1522#0" expanded="false" />
-            <element signature="e#1600#1601#0" expanded="false" />
-            <element signature="e#1637#1638#0" expanded="false" />
-            <element signature="e#1670#1671#0" expanded="false" />
-            <element signature="e#1722#1723#0" expanded="false" />
-            <element signature="e#1801#1802#0" expanded="false" />
-            <element signature="e#1838#1839#0" expanded="false" />
-            <element signature="e#1871#1872#0" expanded="false" />
-            <element signature="e#1923#1924#0" expanded="false" />
-            <element signature="e#2002#2003#0" expanded="false" />
-            <element signature="e#2039#2040#0" expanded="false" />
-            <element signature="e#2072#2073#0" expanded="false" />
-            <element signature="e#2124#2125#0" expanded="false" />
-            <element signature="e#2203#2204#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/pm/dsis/fee/controllers/ElectUnitPriceController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="480">
-          <caret line="37" column="41" lean-forward="false" selection-start-line="37" selection-start-column="41" selection-end-line="37" selection-end-column="41" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/pm/dsis/fee/service/serviceImpl/ElectUnitPriceServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="560">
-          <caret line="36" column="69" lean-forward="false" selection-start-line="36" selection-start-column="16" selection-end-line="36" selection-end-column="69" />
-          <folding>
-            <element signature="e#658#659#0" expanded="false" />
-            <element signature="e#729#730#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/common/js/sccl.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="190">
-          <caret line="414" column="20" lean-forward="false" selection-start-line="414" selection-start-column="20" selection-end-line="414" selection-end-column="20" />
-          <folding>
-            <marker date="1525782022421" expanded="true" signature="1877:1885" ph="&amp;##xe617;" />
-            <marker date="1525782022421" expanded="true" signature="8397:8405" ph="&amp;##xe60b;" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/view/dsis/fee/fee_electUnitPrice.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4560">
-          <caret line="228" column="51" lean-forward="false" selection-start-line="228" selection-start-column="51" selection-end-line="228" selection-end-column="51" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/view/dsis/fee/fee_waterUnitPrice.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="6720">
-          <caret line="336" column="33" lean-forward="false" selection-start-line="336" selection-start-column="33" selection-end-line="336" selection-end-column="33" />
-          <folding>
-            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#style#0;n#span#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#style#0;n#span#2;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#style#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/view/dsis/fee/fee_elect.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="6000">
-          <caret line="300" column="31" lean-forward="false" selection-start-line="300" selection-start-column="31" selection-end-line="300" selection-end-column="31" />
-          <folding>
-            <element signature="n#style#0;n#span#1;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/view/dsis/repair/repair_info.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="20">
-          <caret line="297" column="30" lean-forward="false" selection-start-line="297" selection-start-column="30" selection-end-line="297" selection-end-column="30" />
-          <folding>
-            <marker date="1525782397070" expanded="true" signature="14837:14863" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/view/dsis/fee/fee_water.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="20">
-          <caret line="138" column="24" lean-forward="false" selection-start-line="138" selection-start-column="24" selection-end-line="138" selection-end-column="24" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/pm/dsis/fee/service/ElectUnitPriceService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="181">
-          <caret line="22" column="9" lean-forward="false" selection-start-line="22" selection-start-column="9" selection-end-line="22" selection-end-column="9" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/view/mws/pc/pc_info_member.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="160">
-          <caret line="51" column="44" lean-forward="true" selection-start-line="51" selection-start-column="29" selection-end-line="51" selection-end-column="44" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-web/4.1.3.RELEASE/spring-web-4.1.3.RELEASE.jar!/org/springframework/web/method/support/InvocableHandlerMethod.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="87">
-          <caret line="134" column="0" lean-forward="false" selection-start-line="134" selection-start-column="0" selection-end-line="134" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/view/mws/pc/pc_info.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="164">
-          <caret line="375" column="42" lean-forward="false" selection-start-line="375" selection-start-column="42" selection-end-line="375" selection-end-column="42" />
-          <folding>
-            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/view/mws/pc/pc_top.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="160">
-          <caret line="17" column="34" lean-forward="true" selection-start-line="17" selection-start-column="34" selection-end-line="17" selection-end-column="34" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/view/mws/ri/ri_info.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="340">
@@ -1848,64 +1426,6 @@
         <state relative-caret-position="156">
           <caret line="193" column="5" lean-forward="true" selection-start-line="188" selection-start-column="4" selection-end-line="193" selection-end-column="5" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/pm/dsis/em/mapper/HousekeeperBuildingInfoMapper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="69">
-          <caret line="80" column="23" lean-forward="false" selection-start-line="80" selection-start-column="8" selection-end-line="80" selection-end-column="23" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/pm/dsis/mm/mapper/UserInfoMapper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="149">
-          <caret line="80" column="7" lean-forward="true" selection-start-line="80" selection-start-column="7" selection-end-line="80" selection-end-column="7" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/com/pm/dsis/mm/mapper/UserInfoMapper.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="249">
-          <caret line="183" column="13" lean-forward="true" selection-start-line="179" selection-start-column="3" selection-end-line="183" selection-end-column="13" />
-          <folding>
-            <marker date="1525883047864" expanded="true" signature="4067:4191" ph="select from user_info" />
-            <marker date="1525883047864" expanded="true" signature="4325:4634" ph="select from user_info" />
-            <marker date="1525883047864" expanded="true" signature="4754:5063" ph="select from user_info" />
-            <marker date="1525883047864" expanded="true" signature="5196:5387" ph="select from user_info" />
-            <marker date="1525883047864" expanded="true" signature="5504:5622" ph="select from user_info" />
-            <marker date="1525883047864" expanded="true" signature="5712:5860" ph="select from user_info" />
-            <marker date="1525883047864" expanded="true" signature="5958:7549" ph="insert into USER_INFO... " />
-            <marker date="1525883047864" expanded="true" signature="7630:7653" ph="select last_... " />
-            <marker date="1525883047864" expanded="true" signature="7756:9517" ph="update user_... " />
-            <marker date="1525883047864" expanded="true" signature="9568:9694" ph="update user_... " />
-            <marker date="1525883047864" expanded="true" signature="9752:9846" ph="update user_... " />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/com/pm/dsis/em/mapper/HousekeeperBuildingInfoMapper.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="142">
-          <caret line="382" column="32" lean-forward="true" selection-start-line="382" selection-start-column="32" selection-end-line="382" selection-end-column="32" />
-          <folding>
-            <marker date="1525914088642" expanded="true" signature="2821:2946" ph="select from housekeeper_building_info" />
-            <marker date="1525914088642" expanded="true" signature="3082:3282" ph="select from housekeeper_building_info" />
-            <marker date="1525914088642" expanded="true" signature="3389:3505" ph="select from housekeeper_building_info" />
-            <marker date="1525914088642" expanded="true" signature="4592:4685" ph="select HB_NU... housekeeper_building_info" />
-            <marker date="1525914088642" expanded="true" signature="4772:4851" ph="delete from " />
-            <marker date="1525914088642" expanded="true" signature="4960:6241" ph="insert into housekeeper_building_info... " />
-            <marker date="1525914088642" expanded="true" signature="10191:12491" ph="update house... " />
-            <marker date="1525914088642" expanded="true" signature="12604:13980" ph="update house... " />
-            <marker date="1525914088642" expanded="true" signature="14024:14148" ph="update house... " />
-            <marker date="1525914088642" expanded="true" signature="14230:14373" ph="select from housekeeper_building_info" />
-            <marker date="1525914088642" expanded="true" signature="14423:14520" ph="update house... " />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1981,30 +1501,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/spring/springmvc.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="111" column="66" lean-forward="false" selection-start-line="111" selection-start-column="66" selection-end-line="111" selection-end-column="66" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/pm/dsis/lr/controllers/LrController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="213">
-          <caret line="66" column="26" lean-forward="false" selection-start-line="66" selection-start-column="26" selection-end-line="66" selection-end-column="26" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/pm/dsis/lr/service/LrService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="117">
-          <caret line="30" column="9" lean-forward="false" selection-start-line="30" selection-start-column="9" selection-end-line="30" selection-end-column="9" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-webmvc/4.1.3.RELEASE/spring-webmvc-4.1.3.RELEASE.jar!/org/springframework/web/servlet/DispatcherServlet.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="155">
@@ -2034,7 +1530,7 @@
         <state relative-caret-position="104">
           <caret line="135" column="63" lean-forward="false" selection-start-line="135" selection-start-column="56" selection-end-line="135" selection-end-column="63" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="imports" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -2044,16 +1540,6 @@
         <state relative-caret-position="275">
           <caret line="36" column="5" lean-forward="true" selection-start-line="36" selection-start-column="5" selection-end-line="36" selection-end-column="5" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/pm/dsis/lr/service/ServiceImpl/LrServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="132">
-          <caret line="333" column="30" lean-forward="false" selection-start-line="333" selection-start-column="24" selection-end-line="333" selection-end-column="30" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -2075,7 +1561,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/view/mws/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="239">
+        <state relative-caret-position="359">
           <caret line="165" column="26" lean-forward="false" selection-start-line="165" selection-start-column="26" selection-end-line="165" selection-end-column="26" />
           <folding>
             <element signature="n#style#0;n#div#0;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -2086,6 +1572,275 @@
             <element signature="n#style#0;n#img#0;n#div#2;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#p#0;n#div#3;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/pm/dsis/lr/service/ServiceImpl/LrServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="132">
+          <caret line="333" column="30" lean-forward="false" selection-start-line="333" selection-start-column="24" selection-end-line="333" selection-end-column="30" />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/pm/dsis/lr/service/LrService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="117">
+          <caret line="30" column="9" lean-forward="false" selection-start-line="30" selection-start-column="9" selection-end-line="30" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/pm/dsis/lr/controllers/LrController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="213">
+          <caret line="66" column="26" lean-forward="false" selection-start-line="66" selection-start-column="26" selection-end-line="66" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/pm/dsis/em/controllers/HouserKeeperBuildingInfoController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="182">
+          <caret line="43" column="44" lean-forward="false" selection-start-line="43" selection-start-column="44" selection-end-line="43" selection-end-column="44" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/pm/dsis/em/service/HousekeeperBuildingInfoService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="16" column="9" lean-forward="false" selection-start-line="16" selection-start-column="9" selection-end-line="16" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/pm/dsis/em/mapper/HousekeeperBuildingInfoMapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="115">
+          <caret line="15" column="8" lean-forward="false" selection-start-line="15" selection-start-column="8" selection-end-line="15" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/com/pm/dsis/em/mapper/HousekeeperBuildingInfoMapper.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="215">
+          <caret line="114" column="29" lean-forward="true" selection-start-line="114" selection-start-column="29" selection-end-line="114" selection-end-column="29" />
+          <folding>
+            <marker date="1525942546437" expanded="true" signature="2821:2946" ph="select from housekeeper_building_info" />
+            <marker date="1525942546437" expanded="true" signature="3082:3282" ph="select from housekeeper_building_info" />
+            <marker date="1525942546437" expanded="true" signature="3389:3505" ph="select from housekeeper_building_info" />
+            <marker date="1525942546437" expanded="true" signature="4592:4685" ph="select HB_NU... housekeeper_building_info" />
+            <marker date="1525942546437" expanded="true" signature="4772:4851" ph="delete from " />
+            <marker date="1525942546437" expanded="true" signature="4960:6246" ph="insert into housekeeper_building_info... " />
+            <marker date="1525942546437" expanded="true" signature="10196:12496" ph="update house... " />
+            <marker date="1525942546437" expanded="true" signature="12609:13985" ph="update house... " />
+            <marker date="1525942546437" expanded="true" signature="14029:14153" ph="update house... " />
+            <marker date="1525942546437" expanded="true" signature="14235:14378" ph="select from housekeeper_building_info" />
+            <marker date="1525942546437" expanded="true" signature="14428:14525" ph="update house... " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/pm/dsis/em/service/serviceImpl/HousekeeperBuildingInfoServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="78">
+          <caret line="29" column="59" lean-forward="true" selection-start-line="29" selection-start-column="59" selection-end-line="29" selection-end-column="59" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/pm/dsis/mm/mapper/UserInfoMapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1349">
+          <caret line="80" column="7" lean-forward="true" selection-start-line="80" selection-start-column="7" selection-end-line="80" selection-end-column="7" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/pm/dsis/mm/controllers/UserInfoController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="165" column="0" lean-forward="false" selection-start-line="165" selection-start-column="0" selection-end-line="165" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/com/pm/dsis/mm/mapper/UserInfoMapper.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="149">
+          <caret line="125" column="2" lean-forward="true" selection-start-line="125" selection-start-column="2" selection-end-line="125" selection-end-column="2" />
+          <folding>
+            <marker date="1525943561132" expanded="true" signature="4067:4191" ph="select from user_info" />
+            <marker date="1525943561132" expanded="true" signature="4325:4634" ph="select from user_info" />
+            <marker date="1525943561132" expanded="true" signature="4754:5063" ph="select from user_info" />
+            <marker date="1525943561132" expanded="true" signature="5196:5387" ph="select from user_info" />
+            <marker date="1525943561132" expanded="true" signature="5504:5622" ph="select from user_info" />
+            <marker date="1525943561132" expanded="true" signature="5712:5860" ph="select from user_info" />
+            <marker date="1525943561132" expanded="true" signature="5958:7522" ph="insert into USER_INFO... " />
+            <marker date="1525943561132" expanded="true" signature="7603:7626" ph="select last_... " />
+            <marker date="1525943561132" expanded="true" signature="7729:9490" ph="update user_... " />
+            <marker date="1525943561132" expanded="true" signature="9541:9667" ph="update user_... " />
+            <marker date="1525943561132" expanded="true" signature="9725:9819" ph="update user_... " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/view/dsis/mm/mm_new_edit.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="5210">
+          <caret line="796" column="29" lean-forward="false" selection-start-line="796" selection-start-column="24" selection-end-line="796" selection-end-column="29" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/view/mws/pc/pc_info_build.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="100">
+          <caret line="236" column="41" lean-forward="false" selection-start-line="236" selection-start-column="33" selection-end-line="236" selection-end-column="41" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/view/mws/pc/pc_info.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="224">
+          <caret line="60" column="42" lean-forward="false" selection-start-line="60" selection-start-column="42" selection-end-line="60" selection-end-column="42" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/com/pm/dsis/gs/mapper/GarageStateMapper.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-86">
+          <caret line="32" column="2" lean-forward="false" selection-start-line="32" selection-start-column="2" selection-end-line="32" selection-end-column="2" />
+          <folding>
+            <marker date="1525948771759" expanded="true" signature="2804:3027" ph="select from user_info" />
+            <marker date="1525948771759" expanded="true" signature="3112:3215" ph="select from garage_state" />
+            <marker date="1525948771759" expanded="true" signature="3301:3367" ph="delete from " />
+            <marker date="1525948771759" expanded="true" signature="3467:4215" ph="insert into garage_state... " />
+            <marker date="1525948771759" expanded="true" signature="6594:7878" ph="update garag... " />
+            <marker date="1525948771759" expanded="true" signature="7972:8566" ph="update garag... " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/pm/dsis/gs/controllers/GarageStateController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="163">
+          <caret line="36" column="0" lean-forward="false" selection-start-line="36" selection-start-column="0" selection-end-line="36" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/view/dsis/gs/gs_edit.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="194">
+          <caret line="335" column="62" lean-forward="false" selection-start-line="335" selection-start-column="38" selection-end-line="335" selection-end-column="62" />
+          <folding>
+            <element signature="n#style#0;n#input#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#form#0;n#div#1;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/view/mws/pc/pc_gs_appliy.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="140">
+          <caret line="325" column="58" lean-forward="false" selection-start-line="325" selection-start-column="58" selection-end-line="325" selection-end-column="58" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/images/riImg/0f3b6f95581846ab98f983bd99ca4a08.jpeg">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/images/riImg/7800ca2392cb4f8b82ad2e0caf672b70.jpeg">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/pm/dsis/gs/service/GarageStateService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="103">
+          <caret line="15" column="22" lean-forward="false" selection-start-line="15" selection-start-column="22" selection-end-line="15" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/pm/dsis/gs/service/serviceImpl/GarageStateServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="123">
+          <caret line="23" column="93" lean-forward="false" selection-start-line="23" selection-start-column="44" selection-end-line="23" selection-end-column="93" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/pm/dsis/gs/mapper/GarageStateMapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-537">
+          <caret line="13" column="22" lean-forward="false" selection-start-line="13" selection-start-column="22" selection-end-line="13" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/pm/dsis/fee/service/PmFeeService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="67">
+          <caret line="15" column="0" lean-forward="false" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/pm/dsis/fee/service/serviceImpl/PmFeeServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="127">
+          <caret line="36" column="11" lean-forward="false" selection-start-line="36" selection-start-column="11" selection-end-line="36" selection-end-column="11" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/common/js/sccl.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="411" column="159" lean-forward="false" selection-start-line="411" selection-start-column="23" selection-end-line="411" selection-end-column="161" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+            <marker date="1525951729800" expanded="true" signature="1877:1885" ph="&amp;##xe617;" />
+            <marker date="1525951729800" expanded="true" signature="8397:8405" ph="&amp;##xe60b;" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/spring/springmvc.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="140">
+          <caret line="67" column="52" lean-forward="false" selection-start-line="67" selection-start-column="52" selection-end-line="67" selection-end-column="52" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/images/riImg/03578eced581487b9ece5c5eb8fcf601.jpeg">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/images/riImg/2efb2d92ba4643709476433d82c6948f.jpeg">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/pm/dsis/fee/job/PmFeeJob.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="171">
+          <caret line="20" column="5" lean-forward="true" selection-start-line="20" selection-start-column="5" selection-end-line="20" selection-end-column="5" />
+          <folding />
         </state>
       </provider>
     </entry>

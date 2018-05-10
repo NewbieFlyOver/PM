@@ -25,6 +25,11 @@
     gs.BUILDING_FULL_ROOM, ui.USER_NAME,gs.ATTRIBUTE1, gs.ATTRIBUTE2, gs.ATTRIBUTE3, gs.ATTRIBUTE4, gs.ATTRIBUTE5, gs.ATTRIBUTE6
   </sql>
 
+  <sql id="Base_Column_List01" >
+    GS_ID, GS_NUM, GS_LOCATION, GS_STATE, USER_ID, VF_BIGEN_DATE, VF_END_DATE, GS_LICEN_NUMBER,
+    BUILDING_FULL_ROOM, ATTRIBUTE1, ATTRIBUTE2, ATTRIBUTE3, ATTRIBUTE4, ATTRIBUTE5, ATTRIBUTE6
+  </sql>
+
   <select id="selectGarageState" resultMap="BaseResultMap">
     select 
     <include refid="Base_Column_List" />
@@ -57,6 +62,12 @@
     AND bi.USER_ID = #{userId}
   </select>
 
+  <select id="selectGarageStateByStatu" resultMap="BaseResultMap">
+    select
+    <include refid="Base_Column_List01" />
+    from garage_state
+    where GS_STATE = #{gsState}
+  </select>
 
 
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Long" >

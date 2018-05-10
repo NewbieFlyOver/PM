@@ -20,6 +20,11 @@ public interface GarageStateMapper {
      */
     List<GarageState> selectGarageStateByUserId(GarageState garageState);
 
+    /**
+     * 根据Statu查询车位
+     * @return
+     */
+    List<GarageState> selectGarageStateByStatu(GarageState garageState);
 
     /**
      * 保存

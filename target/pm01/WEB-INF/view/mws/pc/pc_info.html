@@ -56,7 +56,7 @@
                                             <input id="userName" name="userName" data-bind="value:model.userInfo.userName" type="text" style="width: 100%" class="k-textbox">
                                         </div>
                                         <script>
-                                            $("#userName").attr("required", true);
+                                            $("#userName").attr("disabled", true);
                                         </script>
                                     </div>
                                 </div>
@@ -126,6 +126,9 @@
                                         <div class="col-sm-8">
                                             <input id="userIdNumber" name="userIdNumber" data-bind="value:model.userInfo.userIdNumber" type="text" style="width: 100%" class="k-textbox">
                                         </div>
+                                        <script>
+                                            $("#userIdNumber").attr("disabled", true);
+                                        </script>
                                     </div>
                                 </div>
 

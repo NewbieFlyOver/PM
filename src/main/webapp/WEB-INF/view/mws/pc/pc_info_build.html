@@ -231,6 +231,17 @@
     </style>
 
     <script>
+        $("#buildType").attr("disabled", true);
+        $("#buildingFullRoom").attr("disabled", true);
+        $("#buildingTheater").attr("disabled", true);
+        $("#buildingUnit").attr("disabled", true);
+        $("#buildingFloor").attr("disabled", true);
+        $("#buildingRoom").attr("disabled", true);
+        $("#housingUsage").attr("disabled", true);
+        $("#buildingArea").attr("disabled", true);
+        $("#checkinDate").attr("disabled", true);
+        $("#stayinDate").attr("disabled", true);
+
         var userId= JSON.parse(window.localStorage["userIdInfo"]);//user_ID
         $.ajax({
             type: 'POST',

@@ -15,9 +15,9 @@ public class PmFeeJob {
     private PmFeeService pmFeeService;
 
     public void insertPmFee(){
-        System.out.println("job begin");
-        //pmFeeService.insert();
-        System.out.println("job end");
+        System.out.println("job begin fee");
+        pmFeeService.insert();
+        System.out.println("job end fee");
     }
 
 
